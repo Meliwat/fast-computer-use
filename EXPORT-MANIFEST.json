@@ -401,9 +401,9 @@
       "sha256": "40c4a4b661cdb6e70d56e74a29b71508c8396fe9504cc1d23998a6b07133ffb9"
     },
     "voice/browser/tests/aria-clock-evidence.json": {
-      "bytes": 1862,
+      "bytes": 2317,
       "mode": "0o644",
-      "sha256": "c8c774714f9723b5e52e70750116810967c475c688db05bf54be0a9af7c414e3"
+      "sha256": "9b2531a00fe57e7e4b5bbd494a6e1ead4517146e8f04c720f75b8c70a2861c44"
     },
     "voice/browser/tests/aria-evidence.json": {
       "bytes": 77467,
@@ -411,9 +411,9 @@
       "sha256": "65ccdcf73906007004ce229bd78e95f8a8e428d2b6dbb64f1f801246e936ff26"
     },
     "voice/browser/tests/aria-headless.cjs": {
-      "bytes": 12206,
+      "bytes": 12627,
       "mode": "0o644",
-      "sha256": "45c38f92e06c8dd018fe6868408ae7821b26b076511668e68725e1ecd98432d5"
+      "sha256": "be2e8ff3a533396d8f6ad2786d90e1e3551658642e80460d792796d1cdbfba86"
     },
     "voice/browser/tests/background.test.cjs": {
       "bytes": 2043,

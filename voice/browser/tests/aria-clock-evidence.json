@@ -14,7 +14,7 @@
   },
   "productionControllerSHA256": "a5b907e14aa75cec0296524283d5d7469e209db2997ea43d0c7ea8b7ae2c40c1",
   "productionChangedForTimingFix": false,
-  "newTestSHA256": "45c38f92e06c8dd018fe6868408ae7821b26b076511668e68725e1ecd98432d5",
+  "newTestSHA256": "be2e8ff3a533396d8f6ad2786d90e1e3551658642e80460d792796d1cdbfba86",
   "controlledClock": {
     "passed": 37,
     "total": 37,
@@ -36,5 +36,11 @@
   "limits": [
     "The fixture controls nominal timer order; it is not a latency benchmark.",
     "An observed stable effect cannot predict all later application state changes."
-  ]
+  ],
+  "priorControlledTestSHA256": "45c38f92e06c8dd018fe6868408ae7821b26b076511668e68725e1ecd98432d5",
+  "hostedTimeoutInvestigation": {
+    "run": "https://github.com/Meliwat/fast-computer-use/actions/runs/36055193243",
+    "outcome": "Runtime.evaluate timed out; stage not recorded by old fixture",
+    "status": "Unresolved; case/stage diagnostics added before another hosted check. Local controlled-clock suites pass; this is not evidence of a fix."
+  }
 }
