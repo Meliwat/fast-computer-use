@@ -586,9 +586,9 @@
       "sha256": "d64376bc3f09caefb7b762889e05c0ce8d224958d44573812565430b4230ef62"
     },
     "voice/release/source-files.json": {
-      "bytes": 11132,
+      "bytes": 11207,
       "mode": "0o644",
-      "sha256": "96346bb21ad99878d8fbf2c0727a0022fdab619a6208f746850bcee68c08dcc3"
+      "sha256": "4e0ceccb3103e35a0956cf1e5b547bb546aec1de854db81aeda7efc16db63053"
     },
     "voice/release/source.gitignore": {
       "bytes": 219,
@@ -741,9 +741,14 @@
       "sha256": "3b24ac7fdb661ce5a9e0fe7a63db101032aed16026cade02a37275041d24b18b"
     },
     "voice/vision/MULTILINE-TEXT.md": {
-      "bytes": 3285,
+      "bytes": 4061,
       "mode": "0o644",
-      "sha256": "14b0de521b1a9e564d9da88d8445dbe7edcb4954e2528d4c65c10246c068ad0b"
+      "sha256": "3ea491aabef56458f11c2545e34307a854dc100127bbdf39d81f1fa5a25ce38a"
+    },
+    "voice/vision/multiline-text-evaluation.json": {
+      "bytes": 74076,
+      "mode": "0o644",
+      "sha256": "4a82a916d10dd9bb3065b17278b45f5ada8ff3bf475c87715aa5ec7dc6ebcc8d"
     },
     "voice/vision/test_worker.py": {
       "bytes": 2657,

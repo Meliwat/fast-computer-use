@@ -32,9 +32,21 @@ unresolved: OCR reads the words correctly but assigns `new chat` confidence 0.5,
 so the existing threshold refuses that line. The case and failure are retained;
 no threshold was lowered. All nine negative cases abstain.
 
-Full OCR-plus-GoClick validation is pending. This branch's evidence is generated
-development data, not a general GUI accuracy or live voice-to-outcome benchmark.
-No user's screen, microphone or application input is involved.
+The full OCR-plus-GoClick run produced the same 18/19 decisions: nine of ten
+positive targets selected and all nine negative requests declined. Every accepted
+model point falls inside its expected control. The original twelve cases retain
+their results; the two newly supported wrapped labels also agree with GoClick.
+The unresolved case never reaches model decoding because its full label lacks
+sufficient OCR evidence. Negative cases also stop at label binding; this does
+not demonstrate that GoClick itself recognizes absent targets.
+
+[Complete evidence](multiline-text-evaluation.json) preserves both runs, including
+the miss and their nonzero exit codes. An independent audit checked image hashes,
+case counts, unchanged compiled-source hashes, model asset hashes and accepted
+point geometry. CPU training ran concurrently; component timings are not clean
+speed comparisons. These are generated development fixtures, not general GUI
+accuracy or live voice-to-outcome measurements. No user's screen, microphone or
+application input is involved.
 
 ## Reproduce
 
@@ -57,7 +69,7 @@ overwritten. Each directory contains generated PNGs and `report.json` with
 recognized text, confidence, composed labels and per-case results.
 
 The diagnostic exits nonzero when any expected target is missed, including a
-confidence-related refusal. The known 18/19 OCR result is therefore a failed
-perfect-coverage run, not a claim that every case passed. CI compiles the tool
+confidence-related refusal. The known 18/19 result therefore includes a missed
+target. CI compiles the tool
 and runs the Swift contracts; it does not supply model weights or run this
 coverage diagnostic.
