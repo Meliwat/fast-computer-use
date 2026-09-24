@@ -1,5 +1,5 @@
 // Generic interactive ARIA widgets in disposable Chrome; no personal pages/input.
-const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto');
+const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto'),assert=require('node:assert/strict');
 const {Headless}=require('./headless.cjs');
 const args=process.argv.slice(2),option=name=>{const i=args.indexOf(name);return i<0?null:args[i+1];};
 const source=fs.readFileSync(option('--controller')||path.join(__dirname,'../extension/controller.js'),'utf8');
@@ -46,25 +46,37 @@ const cases=[
   {name:'inert shadow host excludes its control',html:'<div id="host" inert></div>',mount:`document.querySelector('#host').attachShadow({mode:'open'}).innerHTML=${JSON.stringify(widget('switch','aria-checked="false"'))}`,pick:'document.querySelector("#host").shadowRoot.querySelector("#target")',setup:on,outcome:'failed',clicks:0,observed:false,read:checked,value:'false'},
   {name:'plain named text is not made clickable',html:'<p id="target">Night mode</p>',outcome:'failed',clicks:0,observed:false},
 ];
-(async()=>{const browser=new Headless(),rows=[];try{
+(async()=>{const browser=new Headless({virtualTime:true}),rows=[];let stage='browser startup';try{
   await browser.start();
+  // These fixtures assert nominal timer ordering, not wall-clock latency. VM stalls
+  // may otherwise defer a main-world 60 ms reversal beyond the 120 ms verifier.
+  const pausedAt=await browser.evaluate('Date.now()');
+  await new Promise(resolve=>setTimeout(resolve,30));
+  assert.equal(await browser.evaluate('Date.now()'),pausedAt,'Fixture clock must stay paused between actions');
   for(const c of cases){
+    console.error(`[ARIA ${rows.length+1}/${cases.length}] ${c.name}`);
+    stage=`${c.name}: fixture setup`;
     await browser.evaluate(`document.body.innerHTML=${JSON.stringify(c.html)};${c.mount||''};globalThis.clicks=0;globalThis.control=${c.pick||'document.querySelector("#target")'};control.addEventListener('click',()=>clicks++);${c.setup||''}`);
+    stage=`${c.name}: controller installation`;
     await browser.controller(source);
+    stage=`${c.name}: observation`;
     const observation=(await browser.run('observe')).observation;
     const candidates=observation.candidates.filter(x=>x.labels.includes('night mode'));
     const observed=candidates.some(x=>x.clickable);
     let request={target:'Night mode',...(c.request||{})};
     if(c.bound && candidates.length===1){request={...request,targetId:candidates[0].id,documentId:observation.documentId,observationId:observation.observationId};}
     if(c.beforeDispatch)await browser.evaluate(c.beforeDispatch);
+    stage=`${c.name}: ${c.op||'click'} dispatch and verification`;
     const result=await browser.run(c.op||'click',request);
+    stage=`${c.name}: independent effect read`;
     const clicks=await browser.evaluate('clicks');const value=c.read?await browser.evaluate(c.read):undefined;
     const passed=result.outcome===c.outcome && clicks===(c.clicks??1) && observed===(c.observed??true) &&
       (c.enabled===undefined || candidates.every(x=>x.enabled===c.enabled)) && (!c.read || value===c.value);
     rows.push({name:c.name,passed,observed,outcome:result.outcome,expectedOutcome:c.outcome,clicks,
       message:result.message||result.error,totalMs:result.totalMs??null,...(c.read?{value}:{}),...(result.transition?{transition:result.transition}:{})});
   }
-  const report={scope:'Authored standard-widget fixtures, production controller in isolated headless Chrome. Independent DOM effects and click counters. No personal browser, speech, native host or app launch.',controllerSHA256:crypto.createHash('sha256').update(source).digest('hex'),testSHA256:crypto.createHash('sha256').update(fs.readFileSync(__filename)).digest('hex'),browser:browser.version.product,passed:rows.filter(r=>r.passed).length,total:rows.length,rows};
+  const report={scope:'Authored standard-widget fixtures, production controller in isolated headless Chrome. Independent DOM effects and click counters. Simulated page clock tests timer ordering, not latency. No personal browser, speech, native host or app launch.',controllerSHA256:crypto.createHash('sha256').update(source).digest('hex'),testSHA256:crypto.createHash('sha256').update(fs.readFileSync(__filename)).digest('hex'),browser:browser.version.product,passed:rows.filter(r=>r.passed).length,total:rows.length,rows};
   if(output)fs.writeFileSync(output,JSON.stringify(report,null,2)+'\n',{flag:'wx'});
   console.log(JSON.stringify(report,null,2));if(report.passed!==report.total)process.exitCode=1;
-}finally{await browser.close();}})().catch(error=>{console.error(error);process.exitCode=1;});
+}catch(error){throw new Error(`ARIA fixture failed during ${stage}`,{cause:error});}
+finally{await browser.close();}})().catch(error=>{console.error(error);process.exitCode=1;});

@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Local Voice Browser",
-  "version": "0.4.7",
+  "version": "0.4.8",
   "description": "Local voice actions on the active website. Hold Option and speak. No cloud connection.",
   "permissions": [
     "scripting",

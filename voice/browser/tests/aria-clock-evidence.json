@@ -1,0 +1,80 @@
+{
+  "scope": "Correction to timer-driven regression fixtures; production verification windows unchanged. Historical controller13 evidence is preserved separately.",
+  "failedHostedRun": "https://github.com/Meliwat/fast-computer-use/actions/runs/36054584216",
+  "realClockFailure": {
+    "passed": 36,
+    "total": 37,
+    "case": "reverted switch is not reported verified",
+    "scheduledReversalMs": 60,
+    "returnedOutcome": "verified",
+    "laterDOMValue": "false",
+    "observedStableMs": 129.30000000001746,
+    "browser": "Chrome/152.0.7977.83",
+    "interpretation": "A nominal main-world timer did not establish when the reversal actually ran. The earlier verified observation and later DOM read saw different states."
+  },
+  "productionControllerSHA256": "a5b907e14aa75cec0296524283d5d7469e209db2997ea43d0c7ea8b7ae2c40c1",
+  "productionChangedForTimingFix": false,
+  "newTestSHA256": "be2e8ff3a533396d8f6ad2786d90e1e3551658642e80460d792796d1cdbfba86",
+  "controlledClock": {
+    "passed": 37,
+    "total": 37,
+    "frozenClockAsserted": true,
+    "scope": "Authored standard-widget fixtures, production controller in isolated headless Chrome. Independent DOM effects and click counters. Simulated page clock tests timer ordering, not latency. No personal browser, speech, native host or app launch.",
+    "browser": "Chrome/153.0.8010.53",
+    "earlyReversal": {
+      "name": "reverted switch is not reported verified",
+      "passed": true,
+      "observed": true,
+      "outcome": "unverified",
+      "expectedOutcome": "unverified",
+      "clicks": 1,
+      "message": "Click delivered; result not verified",
+      "totalMs": 60,
+      "value": "false"
+    }
+  },
+  "limits": [
+    "The fixture controls nominal timer order; it is not a latency benchmark.",
+    "An observed stable effect cannot predict all later application state changes."
+  ],
+  "priorControlledTestSHA256": "45c38f92e06c8dd018fe6868408ae7821b26b076511668e68725e1ecd98432d5",
+  "hostedTimeoutInvestigation": {
+    "run": "https://github.com/Meliwat/fast-computer-use/actions/runs/36055193243",
+    "outcome": "Runtime.evaluate timed out; stage not recorded by old fixture",
+    "status": "Reproduced locally during malformed-state activation verification. The harness must await budget expiration as well as action completion; Chromium schedules a separate budget callback which can survive an early pause.",
+    "diagnosticRun": "https://github.com/Meliwat/fast-computer-use/actions/runs/36056185975",
+    "diagnosticRunConclusion": "passed, before the fix; passing reruns alone did not resolve the intermittent failure"
+  },
+  "clockLifecycleFix": {
+    "source": "https://chromium.googlesource.com/chromium/src/+/main/third_party/blink/renderer/platform/scheduler/common/thread_scheduler_base.cc",
+    "contractBefore": {
+      "passed": 2,
+      "total": 3
+    },
+    "contractAfter": {
+      "passed": 3,
+      "total": 3
+    },
+    "contracts": [
+      "Wait for synchronous action-start acknowledgement before advancing",
+      "Wait for both action result and virtualTimeBudgetExpired before ending interval",
+      "Remove event listener on protocol failure"
+    ],
+    "headlessSHA256": "508deebeb46cedbf7e68b437a5028e197dff4d5ae2525c6035fa46c28536cd1d",
+    "testSHA256": "4c47e88b63a602b3d1bb9c18cf9026a7ff2066d5fade86af45e2a9628cc37a1e",
+    "realChromeAfter": {
+      "widgets": {
+        "passed": 37,
+        "total": 37
+      },
+      "disclosure": {
+        "passed": 32,
+        "total": 32
+      },
+      "swiftSequences": {
+        "passed": 33,
+        "total": 33
+      }
+    }
+  }
+}

@@ -5,15 +5,15 @@
     "voice/Sources/VoiceCore/Observation.swift": "2f29752f562b2fa6dde8ef58814b088e0d134fe90262fef2688e5a44411d1ea7",
     "voice/Sources/LocalVoice/BrowserBridge.swift": "38c92ed8a6167b0db3c4dba5035709a91a0627d1d300e4ff0d4f1a10144753eb",
     "voice/Sources/LocalVoice/LocalVoiceApp.swift": "5fa6ac3b089d0776b4167dc51975b3fee79c8b9bb98a5e68b4fad5782a00724f",
-    "voice/browser/extension/controller.js": "3c7164bae007fa008c94c30f953103afac39b4c7c1504f9d52462e5f2e160fd6",
-    "voice/browser/tests/headless.cjs": "e1a99187b2f2b0cb30f1ca784ca1580c2ff4597b9cce3db961eab7a8ac6eaa92",
+    "voice/browser/extension/controller.js": "a5b907e14aa75cec0296524283d5d7469e209db2997ea43d0c7ea8b7ae2c40c1",
+    "voice/browser/tests/headless.cjs": "508deebeb46cedbf7e68b437a5028e197dff4d5ae2525c6035fa46c28536cd1d",
     "voice/tools/browser_sequence_check.swift": "aa4d1a822e704b6184dd4c3575b3347f1a6a0347ba6d7c224db30cbd9f198c74",
-    "voice/browser/tests/sequences-headless.cjs": "497d9ad9f81b338481fc93314eecc4c6b6fa56d80f9e472b1321ed64bb9918ec"
+    "voice/browser/tests/sequences-headless.cjs": "2a0b876f739f6e3e7afd4c299ac740592e4816834baa33d187f81822db941100"
   },
   "browser": "Chrome/153.0.8010.53",
   "scope": "Actual Swift planner/executor; generated pages; simulated page clock; controlled model replies only in two routing cases; no microphone or personal browser",
-  "total": 29,
-  "passed": 29,
+  "total": 33,
+  "passed": 33,
   "rows": [
     {
       "name": "delayed test transport starts before clock advances",
@@ -163,7 +163,7 @@
       "name": "missing later field",
       "passed": true,
       "verified": null,
-      "error": "Stopped at step 2 (1 verified): Couldn\u2019t identify one available control; name its field, button or section",
+      "error": "Stopped at step 2 (1 verified): Couldn’t identify one available control; name its field, button or section",
       "observed": 3,
       "dispatched": 1,
       "modelCalls": 0,
@@ -178,7 +178,7 @@
       "name": "duplicate later field",
       "passed": true,
       "verified": null,
-      "error": "Stopped at step 2 (1 verified): Couldn\u2019t identify one available control; name its field, button or section",
+      "error": "Stopped at step 2 (1 verified): Couldn’t identify one available control; name its field, button or section",
       "observed": 3,
       "dispatched": 1,
       "modelCalls": 0,
@@ -193,7 +193,7 @@
       "name": "protected field never receives text",
       "passed": true,
       "verified": null,
-      "error": "Stopped at step 2 (1 verified): Couldn\u2019t identify one available control; name its field, button or section",
+      "error": "Stopped at step 2 (1 verified): Couldn’t identify one available control; name its field, button or section",
       "observed": 3,
       "dispatched": 1,
       "modelCalls": 0,
@@ -412,6 +412,64 @@
       "submits": 0,
       "textWrites": 0,
       "value": "hello"
+    },
+    {
+      "name": "typed checkbox reveals field among homonyms",
+      "passed": true,
+      "verified": 2,
+      "error": null,
+      "observed": 4,
+      "dispatched": 2,
+      "modelCalls": 0,
+      "events": [
+        "check"
+      ],
+      "submits": 0,
+      "textWrites": 1,
+      "value": "Hello"
+    },
+    {
+      "name": "typed menu item then focus and type",
+      "passed": true,
+      "verified": 3,
+      "error": null,
+      "observed": 6,
+      "dispatched": 3,
+      "modelCalls": 0,
+      "events": [
+        "details"
+      ],
+      "submits": 0,
+      "textWrites": 1,
+      "value": "Hello"
+    },
+    {
+      "name": "prefix tab type then scoped fill",
+      "passed": true,
+      "verified": 2,
+      "error": null,
+      "observed": 4,
+      "dispatched": 2,
+      "modelCalls": 0,
+      "events": [
+        "account"
+      ],
+      "submits": 0,
+      "textWrites": 1,
+      "value": "Hello"
+    },
+    {
+      "name": "wrong typed name stops before related target or text",
+      "passed": true,
+      "verified": null,
+      "error": "Stopped at step 1 (0 verified): Couldn’t identify one available control; name its field, button or section",
+      "observed": 1,
+      "dispatched": 0,
+      "modelCalls": 0,
+      "events": [],
+      "submits": 0,
+      "textWrites": 0,
+      "value": ""
     },
     {
       "name": "mixed learned phrase uses fresh state",

@@ -497,6 +497,21 @@
     },
     {
       "source": "voice/browser/tests/sequences-evidence.json"
+    },
+    {
+      "source": "voice/browser/FAST-TARGETS.md"
+    },
+    {
+      "source": "voice/browser/tests/role-targets-headless.cjs"
+    },
+    {
+      "source": "voice/browser/tests/role-targets-evidence.json"
+    },
+    {
+      "source": "voice/browser/tests/aria-clock-evidence.json"
+    },
+    {
+      "source": "voice/browser/tests/headless-clock.test.cjs"
     }
   ]
 }
