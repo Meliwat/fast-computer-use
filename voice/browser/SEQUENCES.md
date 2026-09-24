@@ -37,7 +37,7 @@ work with `--no-grounded-commands`; unknown phrasing requires the local models.
 
 `npm run test:sequences` compiles a small offline adapter around the **same Swift
 planner and executor used by the app**. It exchanges observations and commands
-with the production controller in a separate headless Chrome profile. The 29
+with the production controller in a separate headless Chrome profile. The 33
 fixtures check actual field contents, text input counts, control event counts
 and absence of submission, including post-action changes and dispatch races.
 A delayed test-transport case ensures virtual time advances only after Chrome

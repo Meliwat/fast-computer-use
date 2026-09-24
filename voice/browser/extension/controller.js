@@ -1,6 +1,6 @@
 /* Generic DOM actions plus a read-only X search demo verifier. No eval or network. */
 (() => {
-  if (globalThis.LocalVoiceDOM?.version === 17) return;
+  if (globalThis.LocalVoiceDOM?.version === 18) return;
   globalThis.LocalVoiceDOM?.dispose?.();
   const documentId = crypto.randomUUID();
   const identities = new WeakMap();
@@ -99,29 +99,64 @@
     if(!recorded || recorded.signature!==signature(el)) throw Error('Target changed since observation; observe again');
     if(recorded.query) {
       const context=targetContext(recorded.query);
-      if(context.scope!==recorded.scope || chooseWithin(context.target,predicate,context.scope)!==el) throw Error('Named scope changed since observation; observe again');
+      if(context.scope!==recorded.scope || chooseWithin(context.target,predicate,context.scope)!==el) throw Error('Named target or scope changed since observation; observe again');
     }
     return el;
   }
-  function matchesTarget(el,target) {
-    const original=normalize(target),field=/\b(?:field|box|input|editor)$/.test(original);
-    if(field && !editable(el)) return false;
-    if(/\bbutton$/.test(original) && !el.matches('button,input[type=submit],input[type=button],[role=button]')) return false;
-    if(/\blink$/.test(original) && !el.matches('a[href],[role=link]')) return false;
-    const wanted=original.replace(/^the\s+/,'').replace(/\s+(?:text field|field|box|input|editor|button|link)$/,'').trim();
-    if(labels(el).includes(original) || labels(el).includes(wanted)) return true;
+  const targetRoles={'radio button':'radio','menu item':'menuitem','text field':'textbox','text box':'textbox',
+    checkbox:'checkbox',switch:'switch',radio:'radio',option:'option',tab:'tab',link:'link',button:'button',
+    field:'textbox',box:'textbox',textbox:'textbox',input:'textbox',editor:'textbox'};
+  const targetRolePattern=Object.keys(targetRoles).sort((a,b)=>b.length-a.length).map(word=>word.replaceAll(' ','\\s+')).join('|');
+  const targetRolePrefix=new RegExp('^(?:the\\s+)?('+targetRolePattern+')\\s+(?:called|named|labelled|labeled)\\s+(.+)$');
+  const targetRoleSuffix=new RegExp('^(.+?)\\s+('+targetRolePattern+')$');
+  function matchesRole(el,role) {
+    if(role==='textbox')return !!editable(el);
+    if(editable(el))return false;
+    const actual=controlRole(el);
+    if(role==='link')return actual==='a' || actual==='link';
+    if(role==='button')return ['button','input','summary'].includes(actual);
+    if(role==='menuitem')return ['menuitem','menuitemcheckbox','menuitemradio'].includes(actual);
+    return actual===role;
+  }
+  function targetMatcher(target,pool) {
+    const original=normalize(target),cleaned=original.replace(/[.!?,;:]+$/,'').replace(/^the\s+/,'').trim();
+    const prefix=cleaned.match(targetRolePrefix),suffix=prefix?null:cleaned.match(targetRoleSuffix);
+    let role=null,wanted=cleaned,exactName=false;
+    if(prefix || suffix) {
+      role=targetRoles[normalize(prefix?prefix[1]:suffix[2])];wanted=prefix?prefix[2]:suffix[1];
+      // Literal control names take precedence. Otherwise, an exact requested
+      // name of the wrong/disabled type must not retarget a similarly named control.
+      const literalNames=new Set([original,cleaned]);
+      let literal=false;
+      for(const el of pool) {
+        if(!(clickable(el) || el.matches('select')))continue;
+        const names=labels(el),isLiteral=names.some(label=>literalNames.has(label)),isExact=names.includes(wanted);
+        if(isLiteral || isExact) {
+          exactName ||= isExact;
+          if(isLiteral){literal=true;break;}
+        }
+      }
+      if(literal)return el=>labels(el).some(label=>literalNames.has(label));
+    }
     const words=wanted.split(/[^\p{L}\p{N}]+/u).filter(Boolean);
-    return words.length>0 && labels(el).some(label=>{
-      const available=new Set(label.split(/[^\p{L}\p{N}]+/u).filter(Boolean));
-      return words.every(word=>available.has(word));
-    });
+    return el=>{
+      if(role && !matchesRole(el,role))return false;
+      const availableLabels=labels(el);
+      if(availableLabels.includes(original) || availableLabels.includes(wanted))return true;
+      if(exactName)return false;
+      return words.length>0 && availableLabels.some(label=>{
+        const available=new Set(label.split(/[^\p{L}\p{N}]+/u).filter(Boolean));
+        return words.every(word=>available.has(word));
+      });
+    };
   }
   function choose(target, predicate) {
     const context=targetContext(target);
     return chooseWithin(context.target,predicate,context.scope);
   }
   function chooseWithin(target,predicate,scope) {
-    const matches=controls().filter(el=>within(scope,el) && predicate(el) && matchesTarget(el,target) && visible(el) && enabled(el));
+    const pool=controls().filter(el=>within(scope,el) && visible(el)),matchesTarget=targetMatcher(target,pool);
+    const matches=pool.filter(el=>predicate(el) && matchesTarget(el) && enabled(el));
     if(matches.length!==1) throw Error(matches.length ? `More than one control matches “${target}”; name its field or button` : `No available control named “${target}”`);
     return matches[0];
   }
@@ -171,7 +206,7 @@
   }
   function scopeBinding(request) {
     const recorded=request.targetId?observations.get(request.observationId)?.get(request.targetId):null;
-    if(recorded?.query)return {query:recorded.query,scope:recorded.scope};
+    if(recorded?.query && recorded.qualified)return {query:recorded.query,scope:recorded.scope};
     if(!qualifiedTarget(request.target))return null;
     const context=targetContext(request.target);
     return context.qualified?{query:request.target,scope:context.scope}:null;
@@ -441,9 +476,10 @@
   function observe(target) {
     flush();
     const context=targetContext(target),scope=context.scope;
-    const all=controls().filter(el=>within(scope,el) && visible(el) && (typeof target!=='string' || ((clickable(el) || el.matches('select')) && matchesTarget(el,context.target))));
+    const pool=controls().filter(el=>within(scope,el) && visible(el)),matchesTarget=targetMatcher(context.target,pool);
+    const all=typeof target==='string'?pool.filter(el=>(clickable(el) || el.matches('select')) && matchesTarget(el)):pool;
     const observationId=`${documentId}/${++observationSequence}`;
-    observations.set(observationId,new Map(all.slice(0,48).map(el=>[identity(el),{signature:signature(el),scope:context.qualified?scope:null,query:context.qualified?target:null}])));
+    observations.set(observationId,new Map(all.slice(0,48).map(el=>[identity(el),{signature:signature(el),scope:typeof target==='string'?scope:null,query:typeof target==='string'?target:null,qualified:context.qualified}])));
     while(observations.size>4) observations.delete(observations.keys().next().value);
     return {
       version:1,documentId,observationId,targetQuery:typeof target==='string'?target:null,
@@ -626,5 +662,5 @@
       return {ok:false,commandId,outcome:before?'unverified':'failed',error:error.message};
     }
   }
-  globalThis.LocalVoiceDOM=Object.freeze({version:17,run,runVerified,observe,dispose:()=>observer.disconnect()});
+  globalThis.LocalVoiceDOM=Object.freeze({version:18,run,runVerified,observe,dispose:()=>observer.disconnect()});
 })();

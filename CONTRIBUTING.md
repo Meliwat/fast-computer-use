@@ -25,6 +25,7 @@ npm run test:outcomes
 npm run test:aria
 npm run test:existing-text
 npm run test:scoped-targets
+npm run test:role-targets
 npm run test:sequences
 npm run test:editor
 python3.11 voice/browser/setup.py

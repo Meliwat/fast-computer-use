@@ -1,9 +1,9 @@
 {
   "files": {
     ".github/workflows/checks.yml": {
-      "bytes": 2507,
+      "bytes": 2543,
       "mode": "0o644",
-      "sha256": "f54ffcd611d5afeffd51758100592137a01ca41eb3a85ea100657bb9a2d8025a"
+      "sha256": "3702eff523052282750dee705f1f12f6aec6dbd7ca4db17d1ca72a9b4d6c4c72"
     },
     ".gitignore": {
       "bytes": 219,
@@ -11,14 +11,14 @@
       "sha256": "84487ddbc5990562db9d5a3106bda93db0f27a9eced76d187fcd366f320f7777"
     },
     "CHANGELOG.md": {
-      "bytes": 3802,
+      "bytes": 4031,
       "mode": "0o644",
-      "sha256": "6c9086efe78a6480370f7a8490c11520b769df9412e3983eb30d7656362d54cb"
+      "sha256": "f8a4a3e7d8e3053e42c8fbcf48cdc25353a605ee4564ea8d209fe22441d22b52"
     },
     "CONTRIBUTING.md": {
-      "bytes": 3128,
+      "bytes": 3154,
       "mode": "0o644",
-      "sha256": "e4e67b31a901552ca545096ac78720a7c48c8ed5810ac09950c09270305b22ca"
+      "sha256": "ed77e659afbde4b58035a4fc109e7e475930650e041a60c75df24c0acc71c707"
     },
     "LICENSE": {
       "bytes": 1081,
@@ -26,9 +26,9 @@
       "sha256": "f3de4f1c8a6c81b0bd129770fb4b85ef7348270bce06c4f357d6db992fe118c5"
     },
     "README.md": {
-      "bytes": 13452,
+      "bytes": 13658,
       "mode": "0o644",
-      "sha256": "aef8d43ce798339773604888025ec0d4ccddff19ab6c23abe5e062ee780c059d"
+      "sha256": "948f6dfea800fee36e0b12befb413440a4a81e4a005ef0cb1785ec6ffa6f23aa"
     },
     "package-lock.json": {
       "bytes": 19556,
@@ -36,9 +36,9 @@
       "sha256": "03e8e04181313ba5c17d0fb2a302bdbc19217d3aaf78963b2f60641ec67517b1"
     },
     "package.json": {
-      "bytes": 775,
+      "bytes": 854,
       "mode": "0o644",
-      "sha256": "d873db2d7ba96aad99f102d7b3d2db8e78bd63b2ea18231c1a57f7574272f824"
+      "sha256": "50024f0a2da8d9295c51ddee1b2bfc5bbbbc6fa2a9fae66a37bc86167393a2ce"
     },
     "voice/LICENSE": {
       "bytes": 1081,
@@ -350,6 +350,11 @@
       "mode": "0o644",
       "sha256": "3d5959a115570c1247affdb519c9271d1f397c67f1ff367186edd067b3896693"
     },
+    "voice/browser/FAST-TARGETS.md": {
+      "bytes": 3089,
+      "mode": "0o644",
+      "sha256": "21a758d2c8215a6ba547cdc7aba745488166f592113f676238605829626001a3"
+    },
     "voice/browser/OUTCOMES.md": {
       "bytes": 5670,
       "mode": "0o644",
@@ -368,7 +373,7 @@
     "voice/browser/SEQUENCES.md": {
       "bytes": 3032,
       "mode": "0o644",
-      "sha256": "b35de0930d6eb95764bc3c2122d836a1bee51c2d840a8aef7a4ccd0c4589f553"
+      "sha256": "5bef7c51d394251abfc1a09a53da051b881240d14c26f0968a7d47ae52b2816d"
     },
     "voice/browser/extension/background.js": {
       "bytes": 2880,
@@ -376,14 +381,14 @@
       "sha256": "0ff5d17acb349b3adedea62e62ac6d2e05c183644197a449d1416e4ad3c54193"
     },
     "voice/browser/extension/controller.js": {
-      "bytes": 43679,
+      "bytes": 45686,
       "mode": "0o644",
-      "sha256": "3c7164bae007fa008c94c30f953103afac39b4c7c1504f9d52462e5f2e160fd6"
+      "sha256": "a5b907e14aa75cec0296524283d5d7469e209db2997ea43d0c7ea8b7ae2c40c1"
     },
     "voice/browser/extension/manifest.json": {
       "bytes": 871,
       "mode": "0o644",
-      "sha256": "76d1a45cd7894e17f5819f780e630e5efe5eaeb699ee55d9dfaaad3b7be62efe"
+      "sha256": "bb566322eea39b7c8d4175fa8b2fa2914ce13b75a24332ba00f42a773dd7175c"
     },
     "voice/browser/native_host.py": {
       "bytes": 2891,
@@ -475,6 +480,16 @@
       "mode": "0o644",
       "sha256": "ed1365356fe1445e1f15c351541189f0a8aebf4a962eef4755b1c9dbb65497e9"
     },
+    "voice/browser/tests/role-targets-evidence.json": {
+      "bytes": 15088,
+      "mode": "0o644",
+      "sha256": "bb9ddfe3dd6fbe08642e4a170990d33a88f5a25dcb39ef83c35757def039df4f"
+    },
+    "voice/browser/tests/role-targets-headless.cjs": {
+      "bytes": 9488,
+      "mode": "0o644",
+      "sha256": "dfbc64919a0b6dd8471299f0d5aa0f94c101e3d7b98c29e201ec38e8a0ebbb0d"
+    },
     "voice/browser/tests/run-sequences.sh": {
       "bytes": 377,
       "mode": "0o755",
@@ -491,14 +506,14 @@
       "sha256": "89e890377c0e221e5ca9dd85fe47f6698f600c71690d26beb668eb221a07f449"
     },
     "voice/browser/tests/sequences-evidence.json": {
-      "bytes": 11142,
+      "bytes": 12476,
       "mode": "0o644",
-      "sha256": "2edff8c724c51a946f93ffcaad482c5db4afc9b14969f33d786b1a0d1bcfa2e5"
+      "sha256": "d62cad23b873dfb9960a7181470d62335f0b2bbbf3c1e7e87a1f2074e98ea9e5"
     },
     "voice/browser/tests/sequences-headless.cjs": {
-      "bytes": 12179,
+      "bytes": 13951,
       "mode": "0o644",
-      "sha256": "497d9ad9f81b338481fc93314eecc4c6b6fa56d80f9e472b1321ed64bb9918ec"
+      "sha256": "2a0b876f739f6e3e7afd4c299ac740592e4816834baa33d187f81822db941100"
     },
     "voice/browser/tests/test_native_host.py": {
       "bytes": 2507,
@@ -601,24 +616,24 @@
       "sha256": "60ff582db5c0418879188281511338037a26f1b53f246006c95147754e720f92"
     },
     "voice/release/CHANGELOG.md": {
-      "bytes": 3802,
+      "bytes": 4031,
       "mode": "0o644",
-      "sha256": "6c9086efe78a6480370f7a8490c11520b769df9412e3983eb30d7656362d54cb"
+      "sha256": "f8a4a3e7d8e3053e42c8fbcf48cdc25353a605ee4564ea8d209fe22441d22b52"
     },
     "voice/release/CONTRIBUTING.md": {
-      "bytes": 3128,
+      "bytes": 3154,
       "mode": "0o644",
-      "sha256": "e4e67b31a901552ca545096ac78720a7c48c8ed5810ac09950c09270305b22ca"
+      "sha256": "ed77e659afbde4b58035a4fc109e7e475930650e041a60c75df24c0acc71c707"
     },
     "voice/release/README.md": {
-      "bytes": 13452,
+      "bytes": 13658,
       "mode": "0o644",
-      "sha256": "aef8d43ce798339773604888025ec0d4ccddff19ab6c23abe5e062ee780c059d"
+      "sha256": "948f6dfea800fee36e0b12befb413440a4a81e4a005ef0cb1785ec6ffa6f23aa"
     },
     "voice/release/checks.yml": {
-      "bytes": 2507,
+      "bytes": 2543,
       "mode": "0o644",
-      "sha256": "f54ffcd611d5afeffd51758100592137a01ca41eb3a85ea100657bb9a2d8025a"
+      "sha256": "3702eff523052282750dee705f1f12f6aec6dbd7ca4db17d1ca72a9b4d6c4c72"
     },
     "voice/release/package-lock.json": {
       "bytes": 19556,
@@ -626,14 +641,14 @@
       "sha256": "03e8e04181313ba5c17d0fb2a302bdbc19217d3aaf78963b2f60641ec67517b1"
     },
     "voice/release/package.json": {
-      "bytes": 775,
+      "bytes": 854,
       "mode": "0o644",
-      "sha256": "d873db2d7ba96aad99f102d7b3d2db8e78bd63b2ea18231c1a57f7574272f824"
+      "sha256": "50024f0a2da8d9295c51ddee1b2bfc5bbbbc6fa2a9fae66a37bc86167393a2ce"
     },
     "voice/release/source-files.json": {
-      "bytes": 11964,
+      "bytes": 12180,
       "mode": "0o644",
-      "sha256": "a2f0e99ac82ca5c09eff9e396d804b40d8889e0c8b535ad7dd847d5c5b698126"
+      "sha256": "aafda81c3ab9c4cbdd5248670c523e320bc4c4d0fa77f6c967d058bffa8540ca"
     },
     "voice/release/source.gitignore": {
       "bytes": 219,

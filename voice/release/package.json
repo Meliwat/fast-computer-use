@@ -13,7 +13,8 @@
     "test:aria": "node voice/browser/tests/aria-headless.cjs",
     "test:existing-text": "node voice/browser/tests/existing-text-headless.cjs",
     "test:scoped-targets": "node voice/browser/tests/scoped-targets-headless.cjs",
-    "test:sequences": "bash voice/browser/tests/run-sequences.sh"
+    "test:sequences": "bash voice/browser/tests/run-sequences.sh",
+    "test:role-targets": "node voice/browser/tests/role-targets-headless.cjs"
   },
   "devDependencies": {
     "jsdom": "29.1.1"

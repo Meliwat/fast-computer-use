@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+- Extension 0.4.8 resolves explicit control types on the fast DOM path, preserves
+  literal names, and revalidates named bindings before dispatch. Includes 64
+  target checks and four additional Swift-to-browser sequence cases.
+
 - Route exact and learned browser sequences through the same result checks.
   Resolve each target from fresh state; stop after an unverified action. Exact
   commands skip the language model. Includes 29 Swift-to-Chrome fixture checks.

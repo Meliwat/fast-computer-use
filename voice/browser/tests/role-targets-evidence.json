@@ -1,0 +1,660 @@
+{
+  "scope": "Generic authored role requests, actual controller in disposable offline Chrome; exact preflight + bound dispatch; no language model, speech or personal UI. Target identity/focus oracle, not generic task completion or latency.",
+  "passed": 64,
+  "total": 64,
+  "rows": [
+    {
+      "name": "button matching type",
+      "passed": true,
+      "target": "Notifications button",
+      "expected": "wanted",
+      "actions": [
+        "wanted"
+      ],
+      "focused": "",
+      "outcome": "unverified"
+    },
+    {
+      "name": "button wrong type",
+      "passed": true,
+      "target": "Notifications link",
+      "expected": null,
+      "actions": [],
+      "focused": "",
+      "outcome": null
+    },
+    {
+      "name": "link matching type",
+      "passed": true,
+      "target": "Notifications link",
+      "expected": "wanted",
+      "actions": [
+        "wanted"
+      ],
+      "focused": "",
+      "outcome": "unverified"
+    },
+    {
+      "name": "link wrong type",
+      "passed": true,
+      "target": "Notifications button",
+      "expected": null,
+      "actions": [],
+      "focused": "",
+      "outcome": null
+    },
+    {
+      "name": "checkbox matching type",
+      "passed": true,
+      "target": "Notifications checkbox",
+      "expected": "wanted",
+      "actions": [
+        "wanted"
+      ],
+      "focused": "",
+      "outcome": "unverified"
+    },
+    {
+      "name": "checkbox wrong type",
+      "passed": true,
+      "target": "Notifications link",
+      "expected": null,
+      "actions": [],
+      "focused": "",
+      "outcome": null
+    },
+    {
+      "name": "switch matching type",
+      "passed": true,
+      "target": "Notifications switch",
+      "expected": "wanted",
+      "actions": [
+        "wanted"
+      ],
+      "focused": "",
+      "outcome": "unverified"
+    },
+    {
+      "name": "switch wrong type",
+      "passed": true,
+      "target": "Notifications link",
+      "expected": null,
+      "actions": [],
+      "focused": "",
+      "outcome": null
+    },
+    {
+      "name": "radio matching type",
+      "passed": true,
+      "target": "Notifications radio button",
+      "expected": "wanted",
+      "actions": [
+        "wanted"
+      ],
+      "focused": "",
+      "outcome": "unverified"
+    },
+    {
+      "name": "radio wrong type",
+      "passed": true,
+      "target": "Notifications link",
+      "expected": null,
+      "actions": [],
+      "focused": "",
+      "outcome": null
+    },
+    {
+      "name": "option matching type",
+      "passed": true,
+      "target": "Notifications option",
+      "expected": "wanted",
+      "actions": [
+        "wanted"
+      ],
+      "focused": "",
+      "outcome": "unverified"
+    },
+    {
+      "name": "option wrong type",
+      "passed": true,
+      "target": "Notifications link",
+      "expected": null,
+      "actions": [],
+      "focused": "",
+      "outcome": null
+    },
+    {
+      "name": "tab matching type",
+      "passed": true,
+      "target": "Notifications tab",
+      "expected": "wanted",
+      "actions": [
+        "wanted"
+      ],
+      "focused": "",
+      "outcome": "unverified"
+    },
+    {
+      "name": "tab wrong type",
+      "passed": true,
+      "target": "Notifications link",
+      "expected": null,
+      "actions": [],
+      "focused": "",
+      "outcome": null
+    },
+    {
+      "name": "menuitem matching type",
+      "passed": true,
+      "target": "Notifications menu item",
+      "expected": "wanted",
+      "actions": [
+        "wanted"
+      ],
+      "focused": "",
+      "outcome": "unverified"
+    },
+    {
+      "name": "menuitem wrong type",
+      "passed": true,
+      "target": "Notifications link",
+      "expected": null,
+      "actions": [],
+      "focused": "",
+      "outcome": null
+    },
+    {
+      "name": "menuitemcheckbox matching type",
+      "passed": true,
+      "target": "Notifications menu item",
+      "expected": "wanted",
+      "actions": [
+        "wanted"
+      ],
+      "focused": "",
+      "outcome": "unverified"
+    },
+    {
+      "name": "menuitemcheckbox wrong type",
+      "passed": true,
+      "target": "Notifications link",
+      "expected": null,
+      "actions": [],
+      "focused": "",
+      "outcome": null
+    },
+    {
+      "name": "menuitemradio matching type",
+      "passed": true,
+      "target": "Notifications menu item",
+      "expected": "wanted",
+      "actions": [
+        "wanted"
+      ],
+      "focused": "",
+      "outcome": "unverified"
+    },
+    {
+      "name": "menuitemradio wrong type",
+      "passed": true,
+      "target": "Notifications link",
+      "expected": null,
+      "actions": [],
+      "focused": "",
+      "outcome": null
+    },
+    {
+      "name": "native-checkbox matching type",
+      "passed": true,
+      "target": "Notifications checkbox",
+      "expected": "wanted",
+      "actions": [
+        "wanted"
+      ],
+      "focused": "",
+      "outcome": "verified"
+    },
+    {
+      "name": "native-checkbox wrong type",
+      "passed": true,
+      "target": "Notifications link",
+      "expected": null,
+      "actions": [],
+      "focused": "",
+      "outcome": null
+    },
+    {
+      "name": "native-radio matching type",
+      "passed": true,
+      "target": "Notifications radio button",
+      "expected": "wanted",
+      "actions": [
+        "wanted"
+      ],
+      "focused": "",
+      "outcome": "verified"
+    },
+    {
+      "name": "native-radio wrong type",
+      "passed": true,
+      "target": "Notifications link",
+      "expected": null,
+      "actions": [],
+      "focused": "",
+      "outcome": null
+    },
+    {
+      "name": "native-button matching type",
+      "passed": true,
+      "target": "Notifications button",
+      "expected": "wanted",
+      "actions": [
+        "wanted"
+      ],
+      "focused": "",
+      "outcome": "unverified"
+    },
+    {
+      "name": "native-button wrong type",
+      "passed": true,
+      "target": "Notifications link",
+      "expected": null,
+      "actions": [],
+      "focused": "",
+      "outcome": null
+    },
+    {
+      "name": "summary matching type",
+      "passed": true,
+      "target": "Notifications button",
+      "expected": "wanted",
+      "actions": [
+        "wanted"
+      ],
+      "focused": "",
+      "outcome": "verified"
+    },
+    {
+      "name": "summary wrong type",
+      "passed": true,
+      "target": "Notifications link",
+      "expected": null,
+      "actions": [],
+      "focused": "",
+      "outcome": null
+    },
+    {
+      "name": "same label / button",
+      "passed": true,
+      "target": "Notifications button",
+      "expected": "button",
+      "actions": [
+        "button"
+      ],
+      "focused": "",
+      "outcome": "unverified"
+    },
+    {
+      "name": "same label / link",
+      "passed": true,
+      "target": "Notifications link",
+      "expected": "link",
+      "actions": [
+        "link"
+      ],
+      "focused": "",
+      "outcome": "unverified"
+    },
+    {
+      "name": "same label / checkbox",
+      "passed": true,
+      "target": "Notifications checkbox",
+      "expected": "checkbox",
+      "actions": [
+        "checkbox"
+      ],
+      "focused": "",
+      "outcome": "unverified"
+    },
+    {
+      "name": "same label / switch",
+      "passed": true,
+      "target": "Notifications switch",
+      "expected": "switch",
+      "actions": [
+        "switch"
+      ],
+      "focused": "",
+      "outcome": "unverified"
+    },
+    {
+      "name": "same label / tab",
+      "passed": true,
+      "target": "Notifications tab",
+      "expected": "tab",
+      "actions": [
+        "tab"
+      ],
+      "focused": "",
+      "outcome": "unverified"
+    },
+    {
+      "name": "same label / option",
+      "passed": true,
+      "target": "Notifications option",
+      "expected": "option",
+      "actions": [
+        "option"
+      ],
+      "focused": "",
+      "outcome": "unverified"
+    },
+    {
+      "name": "unqualified duplicates refuse",
+      "passed": true,
+      "target": "Notifications",
+      "expected": null,
+      "actions": [],
+      "focused": "",
+      "outcome": null
+    },
+    {
+      "name": "leading type",
+      "passed": true,
+      "target": "the link called Notifications",
+      "expected": "wanted",
+      "actions": [
+        "wanted"
+      ],
+      "focused": "",
+      "outcome": "unverified"
+    },
+    {
+      "name": "leading type label is role noun",
+      "passed": true,
+      "target": "the link named Button",
+      "expected": "wanted",
+      "actions": [
+        "wanted"
+      ],
+      "focused": "",
+      "outcome": "unverified"
+    },
+    {
+      "name": "labelled type",
+      "passed": true,
+      "target": "the checkbox labelled Notifications",
+      "expected": "wanted",
+      "actions": [
+        "wanted"
+      ],
+      "focused": "",
+      "outcome": "unverified"
+    },
+    {
+      "name": "extra whitespace",
+      "passed": true,
+      "target": "Notifications radio   button",
+      "expected": "wanted",
+      "actions": [
+        "wanted"
+      ],
+      "focused": "",
+      "outcome": "unverified"
+    },
+    {
+      "name": "punctuated wrong type",
+      "passed": true,
+      "target": "Notifications link,",
+      "expected": null,
+      "actions": [],
+      "focused": "",
+      "outcome": null
+    },
+    {
+      "name": "literal suffix",
+      "passed": true,
+      "target": "Help link",
+      "expected": "wanted",
+      "actions": [
+        "wanted"
+      ],
+      "focused": "",
+      "outcome": "unverified"
+    },
+    {
+      "name": "literal suffix beats alternate role reading",
+      "passed": true,
+      "target": "Help link",
+      "expected": "wanted",
+      "actions": [
+        "wanted"
+      ],
+      "focused": "",
+      "outcome": "unverified"
+    },
+    {
+      "name": "literal prefix",
+      "passed": true,
+      "target": "link called Help",
+      "expected": "wanted",
+      "actions": [
+        "wanted"
+      ],
+      "focused": "",
+      "outcome": "unverified"
+    },
+    {
+      "name": "standalone role noun label",
+      "passed": true,
+      "target": "Switch",
+      "expected": "wanted",
+      "actions": [
+        "wanted"
+      ],
+      "focused": "",
+      "outcome": "unverified"
+    },
+    {
+      "name": "role word in label",
+      "passed": true,
+      "target": "Radio settings button",
+      "expected": "wanted",
+      "actions": [
+        "wanted"
+      ],
+      "focused": "",
+      "outcome": "unverified"
+    },
+    {
+      "name": "role noun does not name another control",
+      "passed": true,
+      "target": "Notifications link",
+      "expected": "wanted",
+      "actions": [
+        "wanted"
+      ],
+      "focused": "",
+      "outcome": "unverified"
+    },
+    {
+      "name": "role noun cannot retarget missing name",
+      "passed": true,
+      "target": "Notifications link",
+      "expected": null,
+      "actions": [],
+      "focused": "",
+      "outcome": null
+    },
+    {
+      "name": "disabled matching role does not retarget homonym",
+      "passed": true,
+      "target": "Notifications link",
+      "expected": null,
+      "actions": [],
+      "focused": "",
+      "outcome": null
+    },
+    {
+      "name": "unrelated disabled role does not block",
+      "passed": true,
+      "target": "Notifications link",
+      "expected": "wanted",
+      "actions": [
+        "wanted"
+      ],
+      "focused": "",
+      "outcome": "unverified"
+    },
+    {
+      "name": "scoped role target",
+      "passed": true,
+      "target": "Notifications checkbox in Billing section",
+      "expected": "wanted",
+      "actions": [
+        "wanted"
+      ],
+      "focused": "",
+      "outcome": "unverified"
+    },
+    {
+      "name": "type changed after observation",
+      "passed": true,
+      "target": "Notifications checkbox",
+      "expected": "wanted",
+      "actions": [],
+      "focused": "",
+      "outcome": "failed"
+    },
+    {
+      "name": "new literal reading invalidates bound type",
+      "passed": true,
+      "target": "Help link",
+      "expected": "wanted",
+      "actions": [],
+      "focused": "",
+      "outcome": "failed"
+    },
+    {
+      "name": "new matching type duplicate invalidates binding",
+      "passed": true,
+      "target": "Notifications checkbox",
+      "expected": "wanted",
+      "actions": [],
+      "focused": "",
+      "outcome": "failed"
+    },
+    {
+      "name": "scoped literal priority ignores outside labels",
+      "passed": true,
+      "target": "Help link in Billing section",
+      "expected": "wanted",
+      "actions": [
+        "wanted"
+      ],
+      "focused": "",
+      "outcome": "unverified"
+    },
+    {
+      "name": "hidden literal does not change visible target",
+      "passed": true,
+      "target": "Help link",
+      "expected": "wanted",
+      "actions": [
+        "wanted"
+      ],
+      "focused": "",
+      "outcome": "unverified"
+    },
+    {
+      "name": "disabled literal is not another reading",
+      "passed": true,
+      "target": "Help link",
+      "expected": null,
+      "actions": [],
+      "focused": "",
+      "outcome": null
+    },
+    {
+      "name": "wrong named type cannot retarget related label",
+      "passed": true,
+      "target": "Notifications link",
+      "expected": null,
+      "actions": [],
+      "focused": "",
+      "outcome": null
+    },
+    {
+      "name": "exact typed name precedes related label",
+      "passed": true,
+      "target": "Notifications button",
+      "expected": "wanted",
+      "actions": [
+        "wanted"
+      ],
+      "focused": "",
+      "outcome": "unverified"
+    },
+    {
+      "name": "disabled exact typed name blocks related label",
+      "passed": true,
+      "target": "Notifications link",
+      "expected": null,
+      "actions": [],
+      "focused": "",
+      "outcome": null
+    },
+    {
+      "name": "noninteractive literal cannot steal role hint",
+      "passed": true,
+      "target": "Help link",
+      "expected": "wanted",
+      "actions": [
+        "wanted"
+      ],
+      "focused": "",
+      "outcome": "unverified"
+    },
+    {
+      "name": "empty prefix name refuses",
+      "passed": true,
+      "target": "link called",
+      "expected": null,
+      "actions": [],
+      "focused": "",
+      "outcome": null
+    },
+    {
+      "name": "field role preserves literal label",
+      "passed": true,
+      "target": "Search field",
+      "expected": "wanted",
+      "actions": [],
+      "focused": "wanted",
+      "outcome": "verified"
+    },
+    {
+      "name": "field role distinguishes homonym button",
+      "passed": true,
+      "target": "Search field",
+      "expected": "wanted",
+      "actions": [],
+      "focused": "wanted",
+      "outcome": "verified"
+    },
+    {
+      "name": "field type cannot select a button",
+      "passed": true,
+      "target": "Search field",
+      "expected": null,
+      "actions": [],
+      "focused": "",
+      "outcome": null
+    }
+  ],
+  "sourceSHA256": {
+    "controller": "a5b907e14aa75cec0296524283d5d7469e209db2997ea43d0c7ea8b7ae2c40c1",
+    "test": "dfbc64919a0b6dd8471299f0d5aa0f94c101e3d7b98c29e201ec38e8a0ebbb0d",
+    "headless": "e1a99187b2f2b0cb30f1ca784ca1580c2ff4597b9cce3db961eab7a8ac6eaa92"
+  }
+}

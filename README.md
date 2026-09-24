@@ -163,6 +163,8 @@ radio buttons, listbox options, menu items and custom links. Existing local
 semantic aliases can select these observed controls. Toggle/selection state is
 verified when exposed; a plain click without a measurable outcome remains
 unverified. See [widget support and limits](voice/browser/ARIA-WIDGETS.md).
+The fast DOM path now preserves the same explicit type vocabulary, literal
+names and scoped targets without a model call. See [exact target checks](voice/browser/FAST-TARGETS.md).
 Explicit types such as `click Notifications link` and `click Notifications
 checkbox` distinguish matching labels. Literal names such as `Help link` remain
 names. See [type-aware selection and evidence](voice/browser/ROLE-LANGUAGE.md).
@@ -178,6 +180,7 @@ npm run test:outcomes
 npm run test:aria
 npm run test:existing-text
 npm run test:scoped-targets
+npm run test:role-targets
 npm run test:sequences
 python3.11 voice/browser/setup.py
 python3.11 voice/browser/tests/test_native_host.py
