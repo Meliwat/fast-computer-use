@@ -1,11 +1,12 @@
 // Dedicated headless Chrome, private CDP pipes, temporary profile, all page network blocked.
 // Never attaches to an existing browser or reads a user's profile.
 const {spawn}=require('node:child_process');
+const {EventEmitter,once}=require('node:events');
 const fs=require('node:fs');
 const os=require('node:os');
 const path=require('node:path');
 class Headless {
-  constructor({virtualTime=false}={}){this.pending=new Map();this.sequence=0;this.buffer='';this.virtualTime=virtualTime;}
+  constructor({virtualTime=false}={}){this.pending=new Map();this.events=new EventEmitter();this.sequence=0;this.buffer='';this.virtualTime=virtualTime;}
   async start(){
     this.profile=fs.mkdtempSync(path.join(os.tmpdir(),'localvoice-headless-'));
     const binary=process.env.VOICE_TEST_CHROME || '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
@@ -15,6 +16,7 @@ class Headless {
       this.buffer+=data.toString();let end;
       while((end=this.buffer.indexOf('\0'))>=0){
         const message=JSON.parse(this.buffer.slice(0,end));this.buffer=this.buffer.slice(end+1);
+        if(message.method && message.sessionId===this.session)this.events.emit(message.method,message.params);
         const p=this.pending.get(message.id);if(!p)continue;
         this.pending.delete(message.id);clearTimeout(p.timer);
         if(message.error)p.reject(Error(message.error.message));else p.resolve(message.result);
@@ -57,13 +59,20 @@ class Headless {
     // before Runtime begins evaluating. Store the promise and await the synchronous
     // start reply while paused, then advance its page and verifier timers.
     await this.evaluate(`globalThis.__localVoiceFixturePending=${expression}; true`,true);
+    const cancel=new AbortController();
+    const budgetExpired=once(this.events,'Emulation.virtualTimeBudgetExpired',{
+      signal:AbortSignal.any([cancel.signal,AbortSignal.timeout(8000)]),
+    });
     try {
       const [result]=await Promise.all([
         this.evaluate('globalThis.__localVoiceFixturePending',true),
         this.call('Emulation.setVirtualTimePolicy',{policy:'advance',budget:1000},true),
+        // A completed action is not a completed clock interval. Pausing early
+        // leaves Chrome's old budget-expiration task able to pause a later run.
+        budgetExpired,
       ]);
       return result;
-    }finally{await this.call('Emulation.setVirtualTimePolicy',{policy:'pause'},true);}
+    }finally{cancel.abort();await this.call('Emulation.setVirtualTimePolicy',{policy:'pause'},true);}
   }
   async close(){
     try{if(this.child?.exitCode===null)await this.call('Browser.close');}catch{}

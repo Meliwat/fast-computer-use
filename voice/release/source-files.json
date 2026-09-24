@@ -509,6 +509,9 @@
     },
     {
       "source": "voice/browser/tests/aria-clock-evidence.json"
+    },
+    {
+      "source": "voice/browser/tests/headless-clock.test.cjs"
     }
   ]
 }

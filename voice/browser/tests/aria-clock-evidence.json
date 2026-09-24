@@ -41,6 +41,40 @@
   "hostedTimeoutInvestigation": {
     "run": "https://github.com/Meliwat/fast-computer-use/actions/runs/36055193243",
     "outcome": "Runtime.evaluate timed out; stage not recorded by old fixture",
-    "status": "Unresolved; case/stage diagnostics added before another hosted check. Local controlled-clock suites pass; this is not evidence of a fix."
+    "status": "Reproduced locally during malformed-state activation verification. The harness must await budget expiration as well as action completion; Chromium schedules a separate budget callback which can survive an early pause.",
+    "diagnosticRun": "https://github.com/Meliwat/fast-computer-use/actions/runs/36056185975",
+    "diagnosticRunConclusion": "passed, before the fix; passing reruns alone did not resolve the intermittent failure"
+  },
+  "clockLifecycleFix": {
+    "source": "https://chromium.googlesource.com/chromium/src/+/main/third_party/blink/renderer/platform/scheduler/common/thread_scheduler_base.cc",
+    "contractBefore": {
+      "passed": 2,
+      "total": 3
+    },
+    "contractAfter": {
+      "passed": 3,
+      "total": 3
+    },
+    "contracts": [
+      "Wait for synchronous action-start acknowledgement before advancing",
+      "Wait for both action result and virtualTimeBudgetExpired before ending interval",
+      "Remove event listener on protocol failure"
+    ],
+    "headlessSHA256": "508deebeb46cedbf7e68b437a5028e197dff4d5ae2525c6035fa46c28536cd1d",
+    "testSHA256": "4c47e88b63a602b3d1bb9c18cf9026a7ff2066d5fade86af45e2a9628cc37a1e",
+    "realChromeAfter": {
+      "widgets": {
+        "passed": 37,
+        "total": 37
+      },
+      "disclosure": {
+        "passed": 32,
+        "total": 32
+      },
+      "swiftSequences": {
+        "passed": 33,
+        "total": 33
+      }
+    }
   }
 }

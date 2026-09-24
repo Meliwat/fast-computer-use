@@ -92,3 +92,9 @@ interval, not a promise that a page will never change afterwards. Timing fields
 from this fixture are simulated and must not be used as latency measurements.
 
 See the [timing correction record](tests/aria-clock-evidence.json).
+
+The shared harness also waits for `virtualTimeBudgetExpired` before ending a
+clock interval. Returning as soon as the action promise resolved could leave an
+older budget callback to pause the next action. A protocol lifecycle regression
+failed before this correction, and widgets, disclosure and Swift sequence checks
+pass with it. The test clock and production verification windows remain separate.
