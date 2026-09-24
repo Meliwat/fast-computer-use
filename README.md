@@ -16,6 +16,10 @@ This first release handles supported command types, generic UI controls and
 short verified browser sequences. Arbitrary multi-step goals and experimental
 model fine-tunes are not integrated. See the [release notes](CHANGELOG.md).
 
+This README describes current `main`, including the additions listed under
+[Unreleased](CHANGELOG.md#unreleased). The v0.1.0 download archives are frozen;
+use the repository source to try subsequent improvements.
+
 ## Supported commands
 
 | Say | Scope |

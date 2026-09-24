@@ -78,3 +78,17 @@ Run the standalone widget check with `npm run test:aria`. The model harness is
 the bundled worker, `--output` for a fresh report, and `PYTHON` /
 `LOCALVOICE_MODEL_DIR` for the installed interpreter and bundled model directory.
 The actual signed-bundle result is recorded in the evidence file.
+
+## Fixture timing
+
+The current regression runner uses controlled Chrome page time. It waits for
+synchronous action start before advancing timers, and asserts that the clock
+stays paused between commands. A hosted real-clock run had 36/37 passes because
+the nominal 60 ms switch reversal occurred after a 129 ms verification window;
+the independent later read correctly found the reverted state. The early-reversal
+case remains unchanged and must reject under its specified timing. Production
+verification budgets are unchanged. A verified effect describes the observed
+interval, not a promise that a page will never change afterwards. Timing fields
+from this fixture are simulated and must not be used as latency measurements.
+
+See the [timing correction record](tests/aria-clock-evidence.json).
