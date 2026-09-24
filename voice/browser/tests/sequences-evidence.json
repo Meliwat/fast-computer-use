@@ -4,16 +4,16 @@
     "voice/Sources/VoiceCore/GroundedSequence.swift": "a74c942d5ad35bf7e14d53d2fd30ca75449ce1b09a5d5a281b06c40b81f55f4b",
     "voice/Sources/VoiceCore/Observation.swift": "2f29752f562b2fa6dde8ef58814b088e0d134fe90262fef2688e5a44411d1ea7",
     "voice/Sources/LocalVoice/BrowserBridge.swift": "38c92ed8a6167b0db3c4dba5035709a91a0627d1d300e4ff0d4f1a10144753eb",
-    "voice/Sources/LocalVoice/LocalVoiceApp.swift": "5fa6ac3b089d0776b4167dc51975b3fee79c8b9bb98a5e68b4fad5782a00724f",
-    "voice/browser/extension/controller.js": "a5b907e14aa75cec0296524283d5d7469e209db2997ea43d0c7ea8b7ae2c40c1",
-    "voice/browser/tests/headless.cjs": "508deebeb46cedbf7e68b437a5028e197dff4d5ae2525c6035fa46c28536cd1d",
+    "voice/Sources/LocalVoice/LocalVoiceApp.swift": "a1b50d09a33e07636e756f8ace269da49f58c93455cd41d549d5873929b6cf8f",
+    "voice/browser/extension/controller.js": "ed77e32ea8c011ca61ada20763c61766cfe0592aa0a8056ba68262673893320b",
+    "voice/browser/tests/headless.cjs": "d791142e4ba8ff7a8abecfce097b6a22a46533baf2f0b23074bad2d9dea7c2ee",
     "voice/tools/browser_sequence_check.swift": "aa4d1a822e704b6184dd4c3575b3347f1a6a0347ba6d7c224db30cbd9f198c74",
-    "voice/browser/tests/sequences-headless.cjs": "2a0b876f739f6e3e7afd4c299ac740592e4816834baa33d187f81822db941100"
+    "voice/browser/tests/sequences-headless.cjs": "d82e28120c7ad2d4ea2249e80136ccbb752b54dc15f7c12a837be26acfc567c0"
   },
   "browser": "Chrome/153.0.8010.53",
-  "scope": "Actual Swift planner/executor; generated pages; simulated page clock; controlled model replies only in two routing cases; no microphone or personal browser",
-  "total": 33,
-  "passed": 33,
+  "scope": "Actual Swift planner/executor; generated pages; simulated timers for existing cases, actual rendering for offscreen cases; controlled model replies only in two routing cases; no microphone or personal browser",
+  "total": 37,
+  "passed": 37,
   "rows": [
     {
       "name": "delayed test transport starts before clock advances",
@@ -26,7 +26,8 @@
       "events": [],
       "submits": 0,
       "textWrites": 1,
-      "value": "Hello"
+      "value": "Hello",
+      "clock": "virtual"
     },
     {
       "name": "disclosure reveals field",
@@ -41,7 +42,8 @@
       ],
       "submits": 0,
       "textWrites": 1,
-      "value": "Hello"
+      "value": "Hello",
+      "clock": "virtual"
     },
     {
       "name": "focus and literal tail",
@@ -54,7 +56,8 @@
       "events": [],
       "submits": 0,
       "textWrites": 1,
-      "value": "Hello, then click Send!"
+      "value": "Hello, then click Send!",
+      "clock": "virtual"
     },
     {
       "name": "three steps through popover",
@@ -69,7 +72,8 @@
       ],
       "submits": 0,
       "textWrites": 1,
-      "value": "Hello"
+      "value": "Hello",
+      "clock": "virtual"
     },
     {
       "name": "exact click field then type",
@@ -82,7 +86,8 @@
       "events": [],
       "submits": 0,
       "textWrites": 1,
-      "value": "Hello"
+      "value": "Hello",
+      "clock": "virtual"
     },
     {
       "name": "named region with duplicate field",
@@ -97,7 +102,8 @@
       ],
       "submits": 0,
       "textWrites": 1,
-      "value": ""
+      "value": "",
+      "clock": "virtual"
     },
     {
       "name": "checkbox reveals field",
@@ -112,7 +118,8 @@
       ],
       "submits": 0,
       "textWrites": 1,
-      "value": "Hello"
+      "value": "Hello",
+      "clock": "virtual"
     },
     {
       "name": "native select followed by check",
@@ -127,7 +134,8 @@
         "check"
       ],
       "submits": 0,
-      "textWrites": 0
+      "textWrites": 0,
+      "clock": "virtual"
     },
     {
       "name": "exact and conjunction",
@@ -142,7 +150,8 @@
         "details"
       ],
       "submits": 0,
-      "textWrites": 0
+      "textWrites": 0,
+      "clock": "virtual"
     },
     {
       "name": "unverified click stops before fill",
@@ -157,13 +166,14 @@
       ],
       "submits": 0,
       "textWrites": 0,
-      "value": ""
+      "value": "",
+      "clock": "virtual"
     },
     {
       "name": "missing later field",
       "passed": true,
       "verified": null,
-      "error": "Stopped at step 2 (1 verified): Couldn’t identify one available control; name its field, button or section",
+      "error": "Stopped at step 2 (1 verified): Couldn\u2019t identify one available control; name its field, button or section",
       "observed": 3,
       "dispatched": 1,
       "modelCalls": 0,
@@ -172,13 +182,14 @@
       ],
       "submits": 0,
       "textWrites": 0,
-      "value": ""
+      "value": "",
+      "clock": "virtual"
     },
     {
       "name": "duplicate later field",
       "passed": true,
       "verified": null,
-      "error": "Stopped at step 2 (1 verified): Couldn’t identify one available control; name its field, button or section",
+      "error": "Stopped at step 2 (1 verified): Couldn\u2019t identify one available control; name its field, button or section",
       "observed": 3,
       "dispatched": 1,
       "modelCalls": 0,
@@ -187,13 +198,14 @@
       ],
       "submits": 0,
       "textWrites": 0,
-      "value": ""
+      "value": "",
+      "clock": "virtual"
     },
     {
       "name": "protected field never receives text",
       "passed": true,
       "verified": null,
-      "error": "Stopped at step 2 (1 verified): Couldn’t identify one available control; name its field, button or section",
+      "error": "Stopped at step 2 (1 verified): Couldn\u2019t identify one available control; name its field, button or section",
       "observed": 3,
       "dispatched": 1,
       "modelCalls": 0,
@@ -202,7 +214,8 @@
       ],
       "submits": 0,
       "textWrites": 0,
-      "value": ""
+      "value": "",
+      "clock": "virtual"
     },
     {
       "name": "unsupported submission preflight",
@@ -215,7 +228,8 @@
       "events": [],
       "submits": 0,
       "textWrites": 0,
-      "value": ""
+      "value": "",
+      "clock": "virtual"
     },
     {
       "name": "unsupported later operation model abstains",
@@ -228,7 +242,8 @@
       "events": [],
       "submits": 0,
       "textWrites": 0,
-      "value": ""
+      "value": "",
+      "clock": "virtual"
     },
     {
       "name": "search must be separate",
@@ -241,7 +256,8 @@
       "events": [],
       "submits": 0,
       "textWrites": 0,
-      "value": ""
+      "value": "",
+      "clock": "virtual"
     },
     {
       "name": "page replaced after verified step",
@@ -256,7 +272,8 @@
       ],
       "submits": 0,
       "textWrites": 0,
-      "value": ""
+      "value": "",
+      "clock": "virtual"
     },
     {
       "name": "focus stolen before typing",
@@ -269,7 +286,8 @@
       "events": [],
       "submits": 0,
       "textWrites": 0,
-      "value": ""
+      "value": "",
+      "clock": "virtual"
     },
     {
       "name": "field replaced before later step",
@@ -282,7 +300,8 @@
       "events": [],
       "submits": 0,
       "textWrites": 0,
-      "value": ""
+      "value": "",
+      "clock": "virtual"
     },
     {
       "name": "replacement between binding and dispatch",
@@ -297,7 +316,8 @@
       ],
       "submits": 0,
       "textWrites": 0,
-      "value": ""
+      "value": "",
+      "clock": "virtual"
     },
     {
       "name": "readonly field fails without text",
@@ -312,7 +332,8 @@
       ],
       "submits": 0,
       "textWrites": 0,
-      "value": ""
+      "value": "",
+      "clock": "virtual"
     },
     {
       "name": "large page uses filtered target observations",
@@ -327,7 +348,8 @@
       ],
       "submits": 0,
       "textWrites": 1,
-      "value": "Hello"
+      "value": "Hello",
+      "clock": "virtual"
     },
     {
       "name": "copy text after disclosure",
@@ -342,7 +364,8 @@
       ],
       "submits": 0,
       "textWrites": 1,
-      "value": "Copied"
+      "value": "Copied",
+      "clock": "virtual"
     },
     {
       "name": "case change after disclosure",
@@ -357,7 +380,8 @@
       ],
       "submits": 0,
       "textWrites": 1,
-      "value": "HELLO"
+      "value": "HELLO",
+      "clock": "virtual"
     },
     {
       "name": "reverted first text edit blocks later checkbox",
@@ -370,7 +394,8 @@
       "events": [],
       "submits": 0,
       "textWrites": 1,
-      "value": "hello"
+      "value": "hello",
+      "clock": "virtual"
     },
     {
       "name": "scroll followed by fill",
@@ -383,7 +408,8 @@
       "events": [],
       "submits": 0,
       "textWrites": 1,
-      "value": "Hello"
+      "value": "Hello",
+      "clock": "virtual"
     },
     {
       "name": "scroll at boundary stops before text",
@@ -396,7 +422,8 @@
       "events": [],
       "submits": 0,
       "textWrites": 0,
-      "value": ""
+      "value": "",
+      "clock": "virtual"
     },
     {
       "name": "changed document blocks named text dispatch",
@@ -411,7 +438,8 @@
       ],
       "submits": 0,
       "textWrites": 0,
-      "value": "hello"
+      "value": "hello",
+      "clock": "virtual"
     },
     {
       "name": "typed checkbox reveals field among homonyms",
@@ -426,7 +454,8 @@
       ],
       "submits": 0,
       "textWrites": 1,
-      "value": "Hello"
+      "value": "Hello",
+      "clock": "virtual"
     },
     {
       "name": "typed menu item then focus and type",
@@ -441,7 +470,8 @@
       ],
       "submits": 0,
       "textWrites": 1,
-      "value": "Hello"
+      "value": "Hello",
+      "clock": "virtual"
     },
     {
       "name": "prefix tab type then scoped fill",
@@ -456,20 +486,22 @@
       ],
       "submits": 0,
       "textWrites": 1,
-      "value": "Hello"
+      "value": "Hello",
+      "clock": "virtual"
     },
     {
       "name": "wrong typed name stops before related target or text",
       "passed": true,
       "verified": null,
-      "error": "Stopped at step 1 (0 verified): Couldn’t identify one available control; name its field, button or section",
+      "error": "Stopped at step 1 (0 verified): Couldn\u2019t identify one available control; name its field, button or section",
       "observed": 1,
       "dispatched": 0,
       "modelCalls": 0,
       "events": [],
       "submits": 0,
       "textWrites": 0,
-      "value": ""
+      "value": "",
+      "clock": "virtual"
     },
     {
       "name": "mixed learned phrase uses fresh state",
@@ -484,7 +516,70 @@
       ],
       "submits": 0,
       "textWrites": 1,
-      "value": "Hello"
+      "value": "Hello",
+      "clock": "virtual"
+    },
+    {
+      "name": "offscreen field focus then literal typing",
+      "passed": true,
+      "verified": 2,
+      "error": null,
+      "observed": 4,
+      "dispatched": 2,
+      "modelCalls": 0,
+      "events": [],
+      "submits": 0,
+      "textWrites": 1,
+      "value": "Hello",
+      "clock": "rendering"
+    },
+    {
+      "name": "offscreen checkbox then return to field above",
+      "passed": true,
+      "verified": 2,
+      "error": null,
+      "observed": 4,
+      "dispatched": 2,
+      "modelCalls": 0,
+      "events": [
+        "check"
+      ],
+      "submits": 0,
+      "textWrites": 1,
+      "value": "Hello",
+      "clock": "rendering"
+    },
+    {
+      "name": "offscreen scoped form after disclosure",
+      "passed": true,
+      "verified": 2,
+      "error": null,
+      "observed": 4,
+      "dispatched": 2,
+      "modelCalls": 0,
+      "events": [
+        "details"
+      ],
+      "submits": 0,
+      "textWrites": 1,
+      "value": "Hello",
+      "clock": "rendering"
+    },
+    {
+      "name": "replacement before offscreen second action stops text",
+      "passed": true,
+      "verified": null,
+      "error": "Stopped at step 2 (1 verified): Action result could not be verified; it will not be repeated",
+      "observed": 3,
+      "dispatched": 2,
+      "modelCalls": 0,
+      "events": [
+        "check"
+      ],
+      "submits": 0,
+      "textWrites": 0,
+      "value": "",
+      "clock": "rendering"
     }
   ]
 }

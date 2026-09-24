@@ -37,15 +37,19 @@ work with `--no-grounded-commands`; unknown phrasing requires the local models.
 
 `npm run test:sequences` compiles a small offline adapter around the **same Swift
 planner and executor used by the app**. It exchanges observations and commands
-with the production controller in a separate headless Chrome profile. The 33
+with the production controller in a separate headless Chrome profile. The 37
 fixtures check actual field contents, text input counts, control event counts
 and absence of submission, including post-action changes and dispatch races.
 A delayed test-transport case ensures virtual time advances only after Chrome
 acknowledges that the action started. Two routing cases use controlled model replies; this is not new model-accuracy
-evidence. Page time is simulated, so these checks are not latency benchmarks.
+evidence. The original 33 cases use simulated page time; four offscreen cases
+use actual rendering events, in a separate disposable browser. These checks are
+behavior tests, not latency benchmarks. The offscreen cases cover focus then
+typing, checking then returning to a field above, a scoped form revealed by a
+previous step, and target replacement before dispatch.
 
 The tests do not use speech, the personal browser, the native messaging transport,
 or the app's hotkey interface. A fresh end-to-end voice check remains unmeasured.
 See [recorded results](tests/sequences-evidence.json). Source builds need the app
-rebuilt and extension 0.4.7 reloaded to receive this change. The v0.1 release
+rebuilt and extension 0.4.9 reloaded to receive this change. The v0.1 release
 archives remain unchanged.

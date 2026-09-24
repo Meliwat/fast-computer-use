@@ -42,10 +42,15 @@ const cases=[
  {name:'typed menu item then focus and type',text:'click Details menu item then focus Message field then type Hello',html:`<div role="menuitem" aria-expanded="false" onclick="events.push('details');this.setAttribute('aria-expanded','true');document.querySelector('#message').hidden=false">Details</div><button onclick="events.push('wrong')">Details</button><input id="message" hidden aria-label="Message">`,verified:3,events:['details'],value:'Hello'},
  {name:'prefix tab type then scoped fill',text:'click the tab named Account then fill Email in Account section with Hello',html:`<div role="tab" aria-selected="false" aria-controls="account" onclick="events.push('account');this.setAttribute('aria-selected','true');document.querySelector('#account').hidden=false">Account</div><div role="link" tabindex="0" onclick="events.push('wrong')">Account</div><section id="account" aria-label="Account" hidden><input id="message" aria-label="Email"></section>`,verified:2,events:['account'],value:'Hello'},
  {name:'wrong typed name stops before related target or text',text:'click Filters link then fill Message with Hello',html:`<label><input type="checkbox" onclick="events.push('wrong')">Filters</label><div role="link" tabindex="0" onclick="events.push('wrong')">Filters settings</div><input id="message" aria-label="Message">`,error:'step 1',events:[],value:''},
+ {name:'offscreen field focus then literal typing',text:'focus Message then type Hello',html:`<div style="height:3500px"><input id="message" aria-label="Message" style="position:absolute;top:2500px"></div>`,verified:2,events:[],value:'Hello',realClock:true},
+ {name:'offscreen checkbox then return to field above',text:'check Filters then fill Message with Hello',html:`<div style="height:3500px"><input id="message" aria-label="Message"><label style="position:absolute;top:2500px"><input type="checkbox" onclick="events.push('check')">Filters</label></div>`,verified:2,events:['check'],value:'Hello',realClock:true},
+ {name:'offscreen scoped form after disclosure',text:'click Details then fill Message in Billing form with Hello',html:`<details><summary onclick="events.push('details')">Details</summary><div style="height:3500px"><form aria-label="Billing" style="position:absolute;top:2500px"><input id="message" aria-label="Message"></form></div></details>`,verified:2,events:['details'],value:'Hello',realClock:true},
+ {name:'replacement before offscreen second action stops text',text:'check Filters then fill Message with Hello',html:`<div style="height:3500px"><input id="message" aria-label="Message"><label style="position:absolute;top:2500px"><input type="checkbox" onclick="events.push('check')">Filters</label></div>`,error:'step 2',events:['check'],value:'',realClock:true,beforeSecondDispatch:"document.querySelector('#message').outerHTML='<input id=message aria-label=Message>'"},
  {name:'mixed learned phrase uses fresh state',text:'Show Details then fill Message with Hello',html:details,verified:2,events:['details'],value:'Hello',modelCalls:2,acceptModel:true},
 ];
 async function run(b,c){
  await b.evaluate(`document.body.innerHTML=${JSON.stringify(c.html)};globalThis.events=[];globalThis.submits=0;globalThis.textWrites=0;document.body.oninput=e=>{if(e.target.matches('input:not([type=checkbox]),textarea,[contenteditable]'))textWrites++};document.body.addEventListener('submit',e=>{e.preventDefault();submits++});`);await b.controller(controller);
+ if(c.realClock)await b.evaluate("scrollTo({top:0,left:0,behavior:'instant'});new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)))");
  const child=spawn(binary,[],{stdio:['pipe','pipe','pipe']});let stderr='';child.stderr.on('data',d=>stderr+=d);
  const originalCall=b.call;
  const lines=createInterface({input:child.stdout});let observed=0,dispatched=0,modelCalls=0,done;const trace=[];
@@ -96,11 +101,16 @@ async function run(b,c){
   return {name:c.name,passed:true,verified:done.verified ?? null,error:done.error ?? null,observed,dispatched,modelCalls,...actual};
  }catch(error){error.message+=`\nTrace: ${JSON.stringify(trace)}`;throw error;}finally {b.call=originalCall;clearTimeout(timer);child.stdin.end();if(child.exitCode===null)child.kill();}
 }
-(async()=>{const b=new Headless({virtualTime:true}),rows=[];try{
- await b.start();
- for(const c of cases.filter(c=>!process.env.VOICE_SEQUENCE_CASE || c.name===process.env.VOICE_SEQUENCE_CASE)){try{rows.push(await run(b,c));}catch(e){rows.push({name:c.name,passed:false,error:e.message});}}
+(async()=>{const rows=[],versions=new Set();let browser;try{
+ const selected=cases.filter(c=>!process.env.VOICE_SEQUENCE_CASE || c.name===process.env.VOICE_SEQUENCE_CASE);
+ for(const realClock of [false,true]){
+  const group=selected.filter(c=>!!c.realClock===realClock);if(!group.length)continue;
+  browser=new Headless({virtualTime:!realClock});await browser.start();versions.add(browser.version.product);
+  for(const c of group){try{rows.push({...await run(browser,c),clock:realClock?'rendering':'virtual'});}catch(e){rows.push({name:c.name,passed:false,error:e.message});}}
+  await browser.close();browser=null;
+ }
  const sourceFiles=['voice/Sources/VoiceCore/BrowserSequence.swift','voice/Sources/VoiceCore/GroundedSequence.swift','voice/Sources/VoiceCore/Observation.swift','voice/Sources/LocalVoice/BrowserBridge.swift','voice/Sources/LocalVoice/LocalVoiceApp.swift','voice/browser/extension/controller.js','voice/browser/tests/headless.cjs','voice/tools/browser_sequence_check.swift','voice/browser/tests/sequences-headless.cjs'];
  const sourceSHA256=Object.fromEntries(sourceFiles.map(file=>[file,crypto.createHash('sha256').update(fs.readFileSync(path.join(__dirname,'../../..',file))).digest('hex')]));
- const report={sourceSHA256,browser:b.version.product,scope:'Actual Swift planner/executor; generated pages; simulated page clock; controlled model replies only in two routing cases; no microphone or personal browser',total:rows.length,passed:rows.filter(r=>r.passed).length,rows};
+ const report={sourceSHA256,browser:[...versions].join(', '),scope:'Actual Swift planner/executor; generated pages; simulated timers for existing cases, actual rendering for offscreen cases; controlled model replies only in two routing cases; no microphone or personal browser',total:rows.length,passed:rows.filter(r=>r.passed).length,rows};
  console.log(JSON.stringify(report,null,2));if(report.passed!==report.total)process.exitCode=1;
-}finally{await b.close();}})().catch(e=>{console.error(e);process.exitCode=1});
+}finally{await browser?.close();}})().catch(e=>{console.error(e);process.exitCode=1});

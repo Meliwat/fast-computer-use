@@ -1,9 +1,9 @@
 {
   "files": {
     ".github/workflows/checks.yml": {
-      "bytes": 2543,
+      "bytes": 2576,
       "mode": "0o644",
-      "sha256": "3702eff523052282750dee705f1f12f6aec6dbd7ca4db17d1ca72a9b4d6c4c72"
+      "sha256": "c0dd9878b9891033117f243087a8bdab18c603bc943aca0b5dc446b4d681ac85"
     },
     ".gitignore": {
       "bytes": 219,
@@ -11,14 +11,14 @@
       "sha256": "84487ddbc5990562db9d5a3106bda93db0f27a9eced76d187fcd366f320f7777"
     },
     "CHANGELOG.md": {
-      "bytes": 4031,
+      "bytes": 4638,
       "mode": "0o644",
-      "sha256": "f8a4a3e7d8e3053e42c8fbcf48cdc25353a605ee4564ea8d209fe22441d22b52"
+      "sha256": "f59266e505f405193acfa1ca84a9ece4c0c50996cf9c2330788224cfc8c95333"
     },
     "CONTRIBUTING.md": {
-      "bytes": 3154,
+      "bytes": 3177,
       "mode": "0o644",
-      "sha256": "ed77e659afbde4b58035a4fc109e7e475930650e041a60c75df24c0acc71c707"
+      "sha256": "b163f697a577d62e0dbc8a5f92e43993865eca692bd0bdfaaea408ab27755fbe"
     },
     "LICENSE": {
       "bytes": 1081,
@@ -26,9 +26,9 @@
       "sha256": "f3de4f1c8a6c81b0bd129770fb4b85ef7348270bce06c4f357d6db992fe118c5"
     },
     "README.md": {
-      "bytes": 13872,
+      "bytes": 14326,
       "mode": "0o644",
-      "sha256": "1c785ef445bd6522e1d92bb04ac8291a5d21334788878a9ecdfaf046f1c94a7b"
+      "sha256": "3bf669beba0a30decc26b9bb363d689c467dacc14e03c9fec270cebe7a0f927e"
     },
     "package-lock.json": {
       "bytes": 19556,
@@ -36,9 +36,9 @@
       "sha256": "03e8e04181313ba5c17d0fb2a302bdbc19217d3aaf78963b2f60641ec67517b1"
     },
     "package.json": {
-      "bytes": 854,
+      "bytes": 927,
       "mode": "0o644",
-      "sha256": "50024f0a2da8d9295c51ddee1b2bfc5bbbbc6fa2a9fae66a37bc86167393a2ce"
+      "sha256": "03634786ad03c158fb7499e5ebe85a7960165cd2eda0475881053659d77349bc"
     },
     "voice/LICENSE": {
       "bytes": 1081,
@@ -76,9 +76,9 @@
       "sha256": "a8461c1d59a987986c3ebbe00bc2f0265242d59c280dcdcaf41bb959b1b2c2d6"
     },
     "voice/Sources/LocalVoice/LocalVoiceApp.swift": {
-      "bytes": 79140,
+      "bytes": 79240,
       "mode": "0o644",
-      "sha256": "5fa6ac3b089d0776b4167dc51975b3fee79c8b9bb98a5e68b4fad5782a00724f"
+      "sha256": "a1b50d09a33e07636e756f8ace269da49f58c93455cd41d549d5873929b6cf8f"
     },
     "voice/Sources/LocalVoice/NativeMenus.swift": {
       "bytes": 13544,
@@ -351,9 +351,14 @@
       "sha256": "3d5959a115570c1247affdb519c9271d1f397c67f1ff367186edd067b3896693"
     },
     "voice/browser/FAST-TARGETS.md": {
-      "bytes": 3089,
+      "bytes": 3151,
       "mode": "0o644",
-      "sha256": "21a758d2c8215a6ba547cdc7aba745488166f592113f676238605829626001a3"
+      "sha256": "80f7d940017c060b9bac5192268a65c387a55490962df96bba09f86ab3f3d9ec"
+    },
+    "voice/browser/OFFSCREEN-TARGETS.md": {
+      "bytes": 4242,
+      "mode": "0o644",
+      "sha256": "ca7c1d3c0fa3ccbbd7280a025e78355eca4dfbdb5f736681def2760287bf1058"
     },
     "voice/browser/OUTCOMES.md": {
       "bytes": 5670,
@@ -371,9 +376,9 @@
       "sha256": "3cd5c04405a724864fc4be6cae81467b527caf5dbaf182f63ee095838a14e850"
     },
     "voice/browser/SEQUENCES.md": {
-      "bytes": 3032,
+      "bytes": 3322,
       "mode": "0o644",
-      "sha256": "5bef7c51d394251abfc1a09a53da051b881240d14c26f0968a7d47ae52b2816d"
+      "sha256": "b17c8f97e09dba6ac884f297cd6e32125000e8c1f0491b1d7d7e951e99dfcd4c"
     },
     "voice/browser/extension/background.js": {
       "bytes": 2880,
@@ -381,14 +386,14 @@
       "sha256": "0ff5d17acb349b3adedea62e62ac6d2e05c183644197a449d1416e4ad3c54193"
     },
     "voice/browser/extension/controller.js": {
-      "bytes": 45686,
+      "bytes": 52976,
       "mode": "0o644",
-      "sha256": "a5b907e14aa75cec0296524283d5d7469e209db2997ea43d0c7ea8b7ae2c40c1"
+      "sha256": "ed77e32ea8c011ca61ada20763c61766cfe0592aa0a8056ba68262673893320b"
     },
     "voice/browser/extension/manifest.json": {
       "bytes": 871,
       "mode": "0o644",
-      "sha256": "bb566322eea39b7c8d4175fa8b2fa2914ce13b75a24332ba00f42a773dd7175c"
+      "sha256": "a23bdee6aeac42b63937486c72068f5a23efe59171cc605fa3947c5bf5d10ec0"
     },
     "voice/browser/native_host.py": {
       "bytes": 2891,
@@ -456,19 +461,29 @@
       "sha256": "e22a5fb1d1d6ef21b12b1aa38ee0aef821e2feb6e00cd8eee2520eb0d1f62257"
     },
     "voice/browser/tests/headless-clock.test.cjs": {
-      "bytes": 2423,
+      "bytes": 4055,
       "mode": "0o644",
-      "sha256": "4c47e88b63a602b3d1bb9c18cf9026a7ff2066d5fade86af45e2a9628cc37a1e"
+      "sha256": "77bf4c6d63cf95ee55072ce3b1056024c168b0406966100785612618e82e6f7e"
     },
     "voice/browser/tests/headless.cjs": {
-      "bytes": 5610,
+      "bytes": 5673,
       "mode": "0o644",
-      "sha256": "508deebeb46cedbf7e68b437a5028e197dff4d5ae2525c6035fa46c28536cd1d"
+      "sha256": "d791142e4ba8ff7a8abecfce097b6a22a46533baf2f0b23074bad2d9dea7c2ee"
     },
     "voice/browser/tests/live-check.html": {
       "bytes": 1600,
       "mode": "0o644",
       "sha256": "a1421a19ebff330fb6254eac904a6e7850df4004dfe878eeb2595c6a6a1d00ac"
+    },
+    "voice/browser/tests/offscreen-evidence.json": {
+      "bytes": 16044,
+      "mode": "0o644",
+      "sha256": "0c6066d436393bbf0f63177434c51d2233a8830abecec141b9a6cfe6dee0e127"
+    },
+    "voice/browser/tests/offscreen-headless.cjs": {
+      "bytes": 14117,
+      "mode": "0o644",
+      "sha256": "6a7bf87a6f6d1f9306fba3fce1c1d2ec40870e43af45c2f24e87b9463870dfc7"
     },
     "voice/browser/tests/outcomes-baseline.json": {
       "bytes": 5407,
@@ -516,14 +531,14 @@
       "sha256": "89e890377c0e221e5ca9dd85fe47f6698f600c71690d26beb668eb221a07f449"
     },
     "voice/browser/tests/sequences-evidence.json": {
-      "bytes": 12464,
+      "bytes": 14827,
       "mode": "0o644",
-      "sha256": "1c966c0d1439bf1ad5aeee87db36e7a1902c3d0edca7a56a0776a810a9482017"
+      "sha256": "5832c2c0dd06f046c8ab21475cf9a65e34083f9c754fc3882bd4cf1d06c580be"
     },
     "voice/browser/tests/sequences-headless.cjs": {
-      "bytes": 13951,
+      "bytes": 16005,
       "mode": "0o644",
-      "sha256": "2a0b876f739f6e3e7afd4c299ac740592e4816834baa33d187f81822db941100"
+      "sha256": "d82e28120c7ad2d4ea2249e80136ccbb752b54dc15f7c12a837be26acfc567c0"
     },
     "voice/browser/tests/test_native_host.py": {
       "bytes": 2507,
@@ -626,24 +641,24 @@
       "sha256": "60ff582db5c0418879188281511338037a26f1b53f246006c95147754e720f92"
     },
     "voice/release/CHANGELOG.md": {
-      "bytes": 4031,
+      "bytes": 4638,
       "mode": "0o644",
-      "sha256": "f8a4a3e7d8e3053e42c8fbcf48cdc25353a605ee4564ea8d209fe22441d22b52"
+      "sha256": "f59266e505f405193acfa1ca84a9ece4c0c50996cf9c2330788224cfc8c95333"
     },
     "voice/release/CONTRIBUTING.md": {
-      "bytes": 3154,
+      "bytes": 3177,
       "mode": "0o644",
-      "sha256": "ed77e659afbde4b58035a4fc109e7e475930650e041a60c75df24c0acc71c707"
+      "sha256": "b163f697a577d62e0dbc8a5f92e43993865eca692bd0bdfaaea408ab27755fbe"
     },
     "voice/release/README.md": {
-      "bytes": 13872,
+      "bytes": 14326,
       "mode": "0o644",
-      "sha256": "1c785ef445bd6522e1d92bb04ac8291a5d21334788878a9ecdfaf046f1c94a7b"
+      "sha256": "3bf669beba0a30decc26b9bb363d689c467dacc14e03c9fec270cebe7a0f927e"
     },
     "voice/release/checks.yml": {
-      "bytes": 2543,
+      "bytes": 2576,
       "mode": "0o644",
-      "sha256": "3702eff523052282750dee705f1f12f6aec6dbd7ca4db17d1ca72a9b4d6c4c72"
+      "sha256": "c0dd9878b9891033117f243087a8bdab18c603bc943aca0b5dc446b4d681ac85"
     },
     "voice/release/package-lock.json": {
       "bytes": 19556,
@@ -651,14 +666,14 @@
       "sha256": "03e8e04181313ba5c17d0fb2a302bdbc19217d3aaf78963b2f60641ec67517b1"
     },
     "voice/release/package.json": {
-      "bytes": 854,
+      "bytes": 927,
       "mode": "0o644",
-      "sha256": "50024f0a2da8d9295c51ddee1b2bfc5bbbbc6fa2a9fae66a37bc86167393a2ce"
+      "sha256": "03634786ad03c158fb7499e5ebe85a7960165cd2eda0475881053659d77349bc"
     },
     "voice/release/source-files.json": {
-      "bytes": 12331,
+      "bytes": 12546,
       "mode": "0o644",
-      "sha256": "949f4ff7f5c0041c702124f42644578f822dffd7a9ff945268a16a1f513ffc5b"
+      "sha256": "911f8dbd446608a4e38fa70609dafdf1c9cf284dd89bad4a9115c22b5bee930f"
     },
     "voice/release/source.gitignore": {
       "bytes": 219,

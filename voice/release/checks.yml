@@ -62,6 +62,7 @@ jobs:
           npm run test:existing-text
           npm run test:scoped-targets
           npm run test:role-targets
+          npm run test:offscreen
           npm run test:sequences
           npm run test:editor
       - name: Confirm tracked source was not changed by checks

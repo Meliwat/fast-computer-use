@@ -44,7 +44,7 @@ four additional review cases exposed two incorrect related-label clicks and two
 abstentions. All four are retained in the final 64-case suite. Four new cases in
 `npm run test:sequences` also exercise the production Swift planner/executor with
 typed controls and the resulting field contents; the full sequence suite has
-33 cases.
+37 cases, including four later [offscreen cases](OFFSCREEN-TARGETS.md).
 
 The resolver shares one visible-control pool between name interpretation and
 matching. It keeps the existing scan and observation bounds. This does not prove

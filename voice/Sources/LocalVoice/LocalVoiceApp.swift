@@ -749,7 +749,8 @@ final class AudioActivity: @unchecked Sendable {
         guard context.app=="com.google.Chrome",NSWorkspace.shared.frontmostApplication?.bundleIdentifier=="com.google.Chrome",stillValid() else { throw fail("Cancelled or foreground app changed") }
         let started=ProcessInfo.processInfo.systemUptime
         // Capture destination before input, independently of the worker's proposal.
-        let current=try await browser.observe()
+        // A named observation also includes its unique scroll-reachable target.
+        let current=try await browser.observe(target:bound.target)
         let expected=current.documentId==bound.documentId ? current.candidates.first(where:{$0.id==bound.targetId})?.navigationURL : nil
         guard generation==token, stillValid() else { throw fail("Cancelled before dispatch") }
         do {
