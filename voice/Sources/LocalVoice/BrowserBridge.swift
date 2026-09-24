@@ -5,11 +5,12 @@ import VoiceCore
 final class BrowserBridge: @unchecked Sendable {
     private let work = DispatchQueue(label:"localvoice.browser",qos:.userInitiated)
     private func failure(_ message: String) -> NSError { NSError(domain:"LocalVoiceBrowser",code:1,userInfo:[NSLocalizedDescriptionKey:message]) }
-    func requireVerifiedDispatch(existingText:Bool=false) async throws {
+    func requireVerifiedDispatch(existingText:Bool=false,sequence:Bool=false) async throws {
         let data=try await exchange(BrowserCommand(op:"capabilities"))
         let capabilities=try JSONDecoder().decode(BrowserCapabilities.self,from:data)
         if existingText {try capabilities.requireExistingText()}
         else {try capabilities.requireVerifiedDispatch()}
+        if sequence {try capabilities.requireSequenceDispatch()}
     }
     func observe(target: String? = nil) async throws -> BrowserObservation {
         let data = try await exchange(BrowserCommand(op:"observe",target:target))

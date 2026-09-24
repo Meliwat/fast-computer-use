@@ -212,9 +212,9 @@ final class AudioActivity: @unchecked Sendable {
     private func finish(_ text: String, commands: [Command]) {
         let id = UUID(); parseGeneration = id
         guard !sequenceRunning else { status="Previous sequence is stopping; try again in a moment"; return }
-        if groundedEnabled && context.app == "com.google.Chrome" && commands.isEmpty && Parser.parse(text, apps:appCatalog.names, browserContext:true).isEmpty {
+        if context.app == "com.google.Chrome" {
             do {
-                if let clauses=try GroundedSequence.clauses(text) {
+                if let plan=try BrowserSequence.plan(text,apps:appCatalog.names) {
                     guard !draining && queue.isEmpty else { status="Wait for the current action to finish"; return }
                     sequenceRunning=true
                     let executeActions=execute
@@ -222,9 +222,9 @@ final class AudioActivity: @unchecked Sendable {
                     Task {
                         defer { sequenceRunning=false }
                         do {
-                            let count=try await runGroundedSequence(clauses,request:id,executeActions:executeActions)
+                            let count=try await runBrowserSequence(plan,request:id,executeActions:executeActions)
                             guard parseGeneration==id else { return }
-                            status=executeActions ? "Completed \(count) verified steps" : "Sequence preview · \(clauses.count) supported operations"
+                            status=executeActions ? "Completed \(count) verified steps" : "Sequence preview · \(plan.steps.count) supported operations"
                             actionStatus=status;log(status)
                         } catch {
                             guard parseGeneration==id else { return }
@@ -384,56 +384,31 @@ final class AudioActivity: @unchecked Sendable {
         return (proposal,command)
     }
     private func runGroundedSequence(_ clauses:[String],request:UUID,executeActions:Bool,expectedOrigin:String?=nil) async throws -> Int {
-        var expectedDocument:String?
-        var verifiedFocus:BrowserCommand?
-        let plan=try GroundedSequence.preflightPlan(clauses)
+        try await runBrowserSequence(BrowserSequence.plan(clauses:clauses,apps:appCatalog.names),request:request,executeActions:executeActions,expectedOrigin:expectedOrigin)
+    }
+    private func runBrowserSequence(_ plan:BrowserSequence.Plan,request:UUID,executeActions:Bool,expectedOrigin:String?=nil) async throws -> Int {
+        guard groundedEnabled || plan.preflightTexts.isEmpty else { throw fail("Local language models are disabled; use exact control names") }
         if !executeActions {
-            guard try await grounded.preflight(plan.texts,requestID:request.uuidString,requiredOperations:plan.requiredOperations), parseGeneration==request else { throw fail("Sequence contains an unsupported or uncertain operation; no actions sent") }
+            if !plan.preflightTexts.isEmpty {
+                guard try await grounded.preflight(plan.preflightTexts,requestID:request.uuidString,requiredOperations:plan.requiredOperations),parseGeneration==request else { throw fail("Sequence contains an unsupported or uncertain operation; no actions sent") }
+            }
             return 0
         }
-        return try await GroundedSequence.run(clauses,preflight:{ parts in
-            try await self.grounded.preflight(plan.texts,requestID:request.uuidString,requiredOperations:plan.requiredOperations)
-        },stillValid:{ self.execute && self.parseGeneration==request && NSWorkspace.shared.frontmostApplication?.bundleIdentifier=="com.google.Chrome" },step:{ clause in
-            let command:BrowserCommand,observation:BrowserObservation,isFocus:Bool
-            let literal=try GroundedSequence.textCommand(clause)
-            if let literal,literal.op=="type" {
-                guard let verifiedFocus else { throw self.fail("Focus a field before typing; no text sent") }
-                observation=try await self.browser.observe()
-                if let expectedOrigin,observation.origin != expectedOrigin { throw self.fail("Test page changed; no text sent") }
-                command=try GroundedSequence.bindType(literal.value ?? "",after:verifiedFocus,observation:observation,nowMs:Date().timeIntervalSince1970*1000)
-                isFocus=false
-            } else {
-                let targetText=literal.map { "Focus \($0.target ?? "")" } ?? clause
-                let decision=try await self.proposeGrounded(targetText,request:request,expectedOrigin:expectedOrigin)
-                observation=decision.observation
-                guard let selected=decision.command else { throw self.fail("Couldn’t identify one available control") }
-                if let literal {
-                    guard decision.proposal.operation?.operation=="focus" else { throw self.fail("Requested fill target is not a text field") }
-                    command=BrowserCommand(op:"fill",value:literal.value,targetId:selected.targetId,documentId:selected.documentId,observationId:selected.observationId)
-                    isFocus=false
-                } else {
-                    command=selected;isFocus=decision.proposal.operation?.operation=="focus"
-                }
-            }
-            if let expectedDocument,observation.documentId != expectedDocument { throw self.fail("Page changed between steps; sequence stopped") }
+        try await browser.requireVerifiedDispatch(existingText:plan.steps.contains { ["copyText","changeCase"].contains($0.command?.op ?? "") },sequence:true)
+        return try await BrowserSequence.run(plan,preflight:{texts,required in
+            try await self.grounded.preflight(texts,requestID:request.uuidString,requiredOperations:required)
+        },stillValid:{self.execute && self.parseGeneration==request && NSWorkspace.shared.frontmostApplication?.bundleIdentifier=="com.google.Chrome"},observe:{target in
+            let observation=try await self.browser.observe(target:target)
+            if let expectedOrigin,observation.origin != expectedOrigin { throw self.fail("Test page changed; no action sent") }
+            return observation
+        },propose:{text,observation in
+            let proposal=try await self.grounded.predict(text,observation:observation,requestID:request.uuidString)
+            return try proposal.validatedCommand(for:observation,requestID:request.uuidString,nowMs:Date().timeIntervalSince1970*1000)
+        },dispatch:{command,observation in
             if self.useJev { try await self.approveWithJev(command.command) }
-            guard self.execute, self.parseGeneration==request else { throw self.fail("Sequence cancelled before dispatch") }
             let result=try await self.boundBrowserAction(command,stillValid:{self.execute && self.parseGeneration==request})
             self.log("Sequence: \(result.summary)")
-            guard result.verified else { return false }
-            // Carry only a verified document identity; target IDs always come from a fresh observation.
-            guard self.parseGeneration==request else { throw self.fail("Sequence cancelled") }
-            let after=try await self.browser.observe()
-            let destination=observation.candidates.first(where:{$0.id==command.targetId})?.navigationURL
-            if let destination {
-                guard NavigationEvidence.matches(expected:destination,observed:after.url) else { throw self.fail("Destination changed after verification") }
-            } else {
-                guard after.documentId==observation.documentId else { throw self.fail("Page changed after verification") }
-            }
-            if isFocus,after.focusedId != command.targetId { throw self.fail("Field lost focus after verification") }
-            verifiedFocus=isFocus ? command : nil
-            expectedDocument=after.documentId
-            return true
+            return result.verified
         })
     }
     /// Actual resident model and native executor, restricted to our disposable fixture.

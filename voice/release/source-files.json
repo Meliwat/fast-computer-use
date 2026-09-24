@@ -475,6 +475,28 @@
     },
     {
       "source": "voice/browser/tests/scoped-targets-evidence.json"
+    },
+    {
+      "source": "voice/Sources/VoiceCore/BrowserSequence.swift"
+    },
+    {
+      "source": "voice/Tests/VoiceCoreTests/BrowserSequenceTests.swift"
+    },
+    {
+      "source": "voice/tools/browser_sequence_check.swift"
+    },
+    {
+      "source": "voice/browser/tests/sequences-headless.cjs"
+    },
+    {
+      "source": "voice/browser/tests/run-sequences.sh",
+      "executable": true
+    },
+    {
+      "source": "voice/browser/SEQUENCES.md"
+    },
+    {
+      "source": "voice/browser/tests/sequences-evidence.json"
     }
   ]
 }

@@ -172,9 +172,9 @@ test('capability negotiation distinguishes verified dispatch from an old direct 
   const f=fixture('<input aria-label="Search">');
   try {
     const verified=await f.run('capabilities');
-    assert.equal(verified.ok,true);assert.equal(verified.protocolVersion,2);assert.equal(verified.verifiedDispatch,true);
+    assert.equal(verified.ok,true);assert.equal(verified.protocolVersion,2);assert.equal(verified.verifiedDispatch,true);assert.equal(verified.sequenceDispatch,true);
     const legacy=f.w.LocalVoiceDOM.run({op:'capabilities',expectedURL:f.w.location.href,deadline:Date.now()+1800});
-    assert.equal(legacy.ok,true);assert.equal(legacy.verifiedDispatch,false);
+    assert.equal(legacy.ok,true);assert.equal(legacy.verifiedDispatch,false);assert.notEqual(legacy.sequenceDispatch,true);
     assert.equal(f.w.document.querySelector('input').value,'');
   } finally {f.close();}
 });

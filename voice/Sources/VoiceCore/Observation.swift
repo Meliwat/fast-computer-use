@@ -87,6 +87,13 @@ public struct BrowserCapabilities: Decodable, Sendable {
     public let protocolVersion: Int?
     public let verifiedDispatch: Bool?
     public let existingTextOperations: Bool?
+    public let sequenceDispatch: Bool?
+    public func requireSequenceDispatch() throws {
+        try requireVerifiedDispatch()
+        guard sequenceDispatch==true else {
+            throw NSError(domain:"LocalVoiceBrowser",code:4,userInfo:[NSLocalizedDescriptionKey:"Reload Local Voice Browser in Chrome’s Extensions page for verified sequences; no action sent."])
+        }
+    }
     public func requireExistingText() throws {
         try requireVerifiedDispatch()
         guard existingTextOperations==true else {
