@@ -5,7 +5,7 @@ const fs=require('node:fs');
 const os=require('node:os');
 const path=require('node:path');
 class Headless {
-  constructor(){this.pending=new Map();this.sequence=0;this.buffer='';}
+  constructor({virtualTime=false}={}){this.pending=new Map();this.sequence=0;this.buffer='';this.virtualTime=virtualTime;}
   async start(){
     this.profile=fs.mkdtempSync(path.join(os.tmpdir(),'localvoice-headless-'));
     const binary=process.env.VOICE_TEST_CHROME || '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
@@ -29,6 +29,7 @@ class Headless {
     const {frameTree}=await this.call('Page.getFrameTree',{},true);
     this.context=(await this.call('Page.createIsolatedWorld',{frameId:frameTree.frame.id,worldName:'LocalVoiceFixture',grantUniveralAccess:false},true)).executionContextId;
     this.version=await this.call('Browser.getVersion');
+    if(this.virtualTime)await this.call('Emulation.setVirtualTimePolicy',{policy:'pause'},true);
     return this;
   }
   call(method,params={},page=false){
@@ -48,7 +49,19 @@ class Headless {
     await this.evaluate(`globalThis.LocalVoiceDOM?.dispose();delete globalThis.LocalVoiceDOM;if(!crypto.randomUUID){let n=0;crypto.randomUUID=()=> 'fixture-'+Date.now()+'-'+(++n);}`,true);
     await this.evaluate(source,true);
   }
-  run(op,rest={}){return this.evaluate(`LocalVoiceDOM.runVerified({...${JSON.stringify({op,...rest})},expectedURL:location.href,deadline:Date.now()+2200})`,true);}
+  async run(op,rest={}){
+    const expression=`LocalVoiceDOM.runVerified({...${JSON.stringify({op,...rest})},expectedURL:location.href,deadline:Date.now()+2200})`;
+    if(!this.virtualTime)return this.evaluate(expression,true);
+    // Opt-in deterministic fixture timing. Benchmark callers keep the real clock.
+    // Start the action while paused before advancing its page and verifier timers.
+    try {
+      const [result]=await Promise.all([
+        this.evaluate(expression,true),
+        this.call('Emulation.setVirtualTimePolicy',{policy:'advance',budget:1000},true),
+      ]);
+      return result;
+    }finally{await this.call('Emulation.setVirtualTimePolicy',{policy:'pause'},true);}
+  }
   async close(){
     try{if(this.child?.exitCode===null)await this.call('Browser.close');}catch{}
     if(this.child?.exitCode===null)await new Promise(resolve=>{

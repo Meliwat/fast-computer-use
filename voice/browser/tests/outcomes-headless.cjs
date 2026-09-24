@@ -17,6 +17,7 @@ const cases=[
   {name:'native popover closes',html:'<button popovertarget="panel">Filters</button><div id="panel" popover>Filter options</div>',target:'Filters',setup:'document.querySelector("#panel").showPopover()',outcome:'verified',read:'document.querySelector("#panel").matches(":popover-open")',value:false},
   {name:'linked surface opens',html:'<button aria-controls="panel">Filters</button><section id="panel" hidden>Options</section>',target:'Filters',setup:'const panel=document.querySelector("#panel");button.onclick=()=>panel.hidden=false',outcome:'verified',read:'document.querySelector("#panel").hidden',value:false},
   {name:'linked surface opens after 220 ms',html:'<button aria-controls="panel">Filters</button><section id="panel" hidden>Options</section>',target:'Filters',setup:'const panel=document.querySelector("#panel");button.onclick=()=>setTimeout(()=>panel.hidden=false,220)',outcome:'verified',read:'document.querySelector("#panel").hidden',value:false},
+  {name:'linked surface opens too late to verify',html:'<button aria-controls="panel">Filters</button><section id="panel" hidden>Options</section>',target:'Filters',setup:'const panel=document.querySelector("#panel");button.onclick=()=>setTimeout(()=>panel.hidden=false,400)',outcome:'unverified',read:'document.querySelector("#panel").hidden',value:false},
   {name:'linked surface and state disagree',html:'<button aria-controls="panel" aria-expanded="false">Filters</button><section id="panel" hidden>Options</section>',target:'Filters',setup:'button.onclick=()=>button.setAttribute("aria-expanded","true")',outcome:'unverified'},
   {name:'linked dialog opens',html:'<button aria-controls="panel">Preferences</button><dialog id="panel"><input aria-label="Theme"></dialog>',target:'Preferences',setup:'const panel=document.querySelector("#panel");button.onclick=()=>panel.showModal()',outcome:'verified',read:'document.querySelector("#panel").open',value:true},
   {name:'brief delayed expansion reverts',html:'<button aria-expanded="false">Filters</button>',target:'Filters',setup:'button.onclick=()=>{setTimeout(()=>button.setAttribute("aria-expanded","true"),140);setTimeout(()=>button.setAttribute("aria-expanded","false"),220)}',outcome:'unverified'},
@@ -42,9 +43,14 @@ const cases=[
   {name:'surface ID may contain punctuation and Unicode',read:'document.getElementById("9:filters?絵").hidden',value:false,html:'<button aria-controls="9:filters?絵">Filters</button><section id="9:filters?絵" hidden>Options</section>',target:'Filters',setup:'const panel=document.getElementById("9:filters?絵");button.onclick=()=>panel.hidden=false',outcome:'verified'},
 ];
 (async()=>{
-  const browser=new Headless(),rows=[];
+  const browser=new Headless({virtualTime:true}),rows=[];
   try {
     await browser.start();
+    // Host scheduling must not consume the controller's simulated observation budget.
+    const before=await browser.evaluate('[Date.now(),performance.now()]');
+    await new Promise(resolve=>setTimeout(resolve,180));
+    const after=await browser.evaluate('[Date.now(),performance.now()]');
+    assert.deepEqual(after,before,'Fixture clock advanced while its host was idle');
     for(const c of cases){
       if(c.outcome==='verified')assert(c.read,'Positive cases need independent DOM outcome reads');
       await browser.evaluate(`document.body.innerHTML=${JSON.stringify(c.html)};${c.mount || ''};globalThis.clicks=0;globalThis.button=${c.pick || "document.querySelector('button,summary')"};(()=>{const button=globalThis.button;button.addEventListener('click',()=>clicks++);${c.setup || ''}})()`);
@@ -62,7 +68,7 @@ const cases=[
       const passed=result.outcome===c.outcome && clicks===(c.clicks??1) && (!c.read || value===c.value);
       rows.push({name:c.name,passed,expectedOutcome:c.outcome,outcome:result.outcome,clicks,totalMs:result.totalMs??null,message:result.message??result.error,...(c.read?{value}:{}),...(result.transition?{transition:result.transition}:{})});
     }
-    const report={scope:'Authored fixtures in isolated headless Chrome; actual default browser actions and isolated-world production controller. No user tabs, networking, speech, native host or app launch.',controllerSHA256:crypto.createHash('sha256').update(source).digest('hex'),testSHA256:crypto.createHash('sha256').update(fs.readFileSync(__filename)).digest('hex'),browser:browser.version.product,passed:rows.filter(r=>r.passed).length,total:rows.length,rows};
+    const report={scope:'Authored fixtures in isolated headless Chrome; actual default browser actions and isolated-world production controller. No user tabs, networking, speech, native host or app launch.',clock:'Chrome virtual time: reported milliseconds are simulated, not measured latency',controllerSHA256:crypto.createHash('sha256').update(source).digest('hex'),testSHA256:crypto.createHash('sha256').update(fs.readFileSync(__filename)).digest('hex'),browser:browser.version.product,passed:rows.filter(r=>r.passed).length,total:rows.length,rows};
     if(output)fs.writeFileSync(output,JSON.stringify(report,null,2)+'\n',{flag:'wx'});
     console.log(JSON.stringify(report,null,2));
     if(report.passed!==report.total)process.exitCode=1;

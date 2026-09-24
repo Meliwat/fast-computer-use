@@ -341,9 +341,9 @@
       "sha256": "3d5959a115570c1247affdb519c9271d1f397c67f1ff367186edd067b3896693"
     },
     "voice/browser/OUTCOMES.md": {
-      "bytes": 4473,
+      "bytes": 5670,
       "mode": "0o644",
-      "sha256": "f8405f3d2a1d67426f5060cb4d0949f8ceefc343c2c99895212f4112075828f4"
+      "sha256": "d02de33ffe05b85808a4e83808dac0ef070a003815171a6b55c5cfb9bfe4f6f1"
     },
     "voice/browser/ROLE-LANGUAGE.md": {
       "bytes": 4126,
@@ -426,9 +426,9 @@
       "sha256": "e22a5fb1d1d6ef21b12b1aa38ee0aef821e2feb6e00cd8eee2520eb0d1f62257"
     },
     "voice/browser/tests/headless.cjs": {
-      "bytes": 4063,
+      "bytes": 4744,
       "mode": "0o644",
-      "sha256": "38eaabbff9274a9163a25e0d49bb2cc03ae2400005a3faa08fb434c65fb7c5ea"
+      "sha256": "06195c36b24aa38e7f5320e196df97e1be2f018c6ad7432e778aa3e8e5f33eaf"
     },
     "voice/browser/tests/live-check.html": {
       "bytes": 1600,
@@ -446,9 +446,9 @@
       "sha256": "0651d99a80a4cfffc39e759f0550e5bc9f7e8ff39727e4ca50411eb23c604465"
     },
     "voice/browser/tests/outcomes-headless.cjs": {
-      "bytes": 12875,
+      "bytes": 13716,
       "mode": "0o644",
-      "sha256": "adc4d5ffab03955f1b12870998c37bc30a9b459a147e73ef8187a1b84a518681"
+      "sha256": "07d16cbbce5f11238d56504988fceb869754bfaa7111de8a27ccecd125b9e67d"
     },
     "voice/browser/tests/role-language-evidence.json": {
       "bytes": 314971,
