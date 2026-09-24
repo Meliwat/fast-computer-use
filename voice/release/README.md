@@ -123,6 +123,8 @@ what is verified. Closing a menu does not verify its command’s application res
 Unknown or ambiguous requests may stop. A delivered action is not always a
 verified outcome. The original vision model is included; rejected experimental
 fine-tunes are not installed.
+The visual fallback can combine [wrapped visible labels](voice/vision/MULTILINE-TEXT.md)
+inside one unnamed control when OCR confidence and geometric ownership agree.
 
 To stop a command or quit, use the waveform menu in the macOS menu bar. Releasing
 Option ends recording; it does not cancel an action already queued.

@@ -14,6 +14,49 @@ final class VisualTextTests: XCTestCase {
     func augmented(_ candidates: [VisualTargetPolicy.Candidate], _ regions: [VisualTextEvidence.Region]) -> [VisualTargetPolicy.Candidate] {
         VisualTextEvidence.augment(candidates, regions: regions, frame: frame)
     }
+    func line(_ value: String, x: CGFloat = -880, y: CGFloat, width: CGFloat = 120, height: CGFloat = 16) -> VisualTextEvidence.Region {
+        text(value, bounds: CGRect(x: (x - frame.minX) / frame.width,
+                                  y: 1 - (y + height - frame.minY) / frame.height,
+                                  width: width / frame.width, height: height / frame.height))
+    }
+    func testWrappedVisibleLabelUsesScreenReadingOrder() {
+        let observed = [candidate()]
+        let regions = [line("new chat", x: -873, y: 174, width: 106), line("Create", y: 150)]
+        let result = augmented(observed, regions)
+        XCTAssertEqual(result.first?.labels, ["Create new chat"])
+        XCTAssertEqual(VisualTargetPolicy.select(point: [0.2, 0.16], candidates: result, target: "Create new chat", frame: frame)?.id, "save")
+        XCTAssertEqual(observed.first?.labels, [])
+    }
+    func testThreeWrappedLinesCanNameOneControl() {
+        let tall = CGRect(x: -900, y: 140, width: 200, height: 120)
+        let regions = [line("Create a", y: 150), line("new chat", y: 175), line("window", y: 200)]
+        XCTAssertEqual(augmented([candidate(bounds: tall)], regions).first?.labels, ["Create a new chat window"])
+    }
+    func testSeparateColumnsLargeGapsAndOverlappingLinesAreNotJoined() {
+        let tall = CGRect(x: -900, y: 140, width: 200, height: 200)
+        let scenes = [
+            [line("Save", x: -890, y: 150, width: 60), line("Delete", x: -785, y: 174, width: 60)],
+            [line("Save", y: 150), line("Delete", y: 240)],
+            [line("Save", y: 150), line("Delete", y: 158)],
+            [line("Save", x: -890, y: 150, width: 60), line("Delete", x: -785, y: 150, width: 60)]
+        ]
+        for regions in scenes {
+            XCTAssertEqual(augmented([candidate(bounds: tall)], regions).first?.labels, [])
+        }
+    }
+    func testCombinedLabelKeepsExistingLengthBound() {
+        let regions = [line(String(repeating: "a", count: 200), y: 150), line(String(repeating: "b", count: 200), y: 174)]
+        XCTAssertEqual(augmented([candidate()], regions).first?.labels, [])
+    }
+    func testWrappedLabelsPreserveDuplicateAndConflictingNameChecks() {
+        let regions = [line("Create", y: 150), line("new chat", y: 174)]
+        XCTAssertEqual(augmented([candidate(labels: ["Delete"])], regions).first?.labels, ["Delete"])
+        let second = CGRect(x: -300, y: 140, width: 200, height: 70)
+        let allRegions = regions + [line("Create", x: -280, y: 150), line("new chat", x: -280, y: 174)]
+        let result = augmented([candidate(), candidate("second", bounds: second)], allRegions)
+        XCTAssertNil(VisualTargetPolicy.select(point: [0.2, 0.16], candidates: result, target: "Create new chat", frame: frame))
+        XCTAssertEqual(VisualTargetPolicy.select(point: [0.2, 0.16], candidates: result, target: "left Create new chat", frame: frame)?.id, "save")
+    }
     func testVisibleTextAddsEvidenceToAnOtherwiseUnnamedControl() {
         let observed = [candidate()]
         XCTAssertNil(VisualTargetPolicy.select(point: [0.2, 0.16], candidates: observed, target: "Save", frame: frame))
@@ -36,7 +79,7 @@ final class VisualTextTests: XCTestCase {
             XCTAssertEqual(augmented([candidate()], [region]).first?.labels, [])
         }
     }
-    func testOverlappingOwnersAndMultipleTextLinesRemainAmbiguous() {
+    func testOverlappingOwnersAndOverlappingTextRemainAmbiguous() {
         for enabled in [true, false] {
             let result = augmented([candidate(), candidate("other", enabled: enabled)], [text()])
             XCTAssertTrue(result.allSatisfy { $0.labels.isEmpty })

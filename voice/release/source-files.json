@@ -457,6 +457,12 @@
     {
       "source": "voice/release/checks.yml",
       "destination": ".github/workflows/checks.yml"
+    },
+    {
+      "source": "voice/tools/visual_grounding_check.swift"
+    },
+    {
+      "source": "voice/vision/MULTILINE-TEXT.md"
     }
   ]
 }

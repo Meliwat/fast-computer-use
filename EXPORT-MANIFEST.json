@@ -1,9 +1,9 @@
 {
   "files": {
     ".github/workflows/checks.yml": {
-      "bytes": 2099,
+      "bytes": 2436,
       "mode": "0o644",
-      "sha256": "c86736be2e84eb6a4f8ab432dfc1674b5245bee0ce05305a04a12239b922fbe9"
+      "sha256": "27af5e0b672baad9258c97eb671747947e1d41b9f97e55893ed0aeeb0f316321"
     },
     ".gitignore": {
       "bytes": 219,
@@ -11,9 +11,9 @@
       "sha256": "84487ddbc5990562db9d5a3106bda93db0f27a9eced76d187fcd366f320f7777"
     },
     "CHANGELOG.md": {
-      "bytes": 2796,
+      "bytes": 3114,
       "mode": "0o644",
-      "sha256": "168404e112266f2cd8cf4da0b6d85a511f406a26207e1eecc524b36be872df64"
+      "sha256": "0c79115cdda8c8afb2be696aa6713008c3e3e3f1d0299b36a96ef65ee4ca7b0d"
     },
     "CONTRIBUTING.md": {
       "bytes": 3077,
@@ -26,9 +26,9 @@
       "sha256": "f3de4f1c8a6c81b0bd129770fb4b85ef7348270bce06c4f357d6db992fe118c5"
     },
     "README.md": {
-      "bytes": 12562,
+      "bytes": 12729,
       "mode": "0o644",
-      "sha256": "d162c276954347a164e72407f91c8c46e195618b4a4ef4ac52271a15d1a3ed3c"
+      "sha256": "25befcbca411872801d3f4bc5149871bd5ff4256044dc5c40c27175425847806"
     },
     "package-lock.json": {
       "bytes": 19556,
@@ -161,9 +161,9 @@
       "sha256": "de75d049077e0bbab69bbdcaba1b0369d3e2fc6dd18379d7048415026ca4439c"
     },
     "voice/Sources/VoiceCore/VisualTextEvidence.swift": {
-      "bytes": 2646,
+      "bytes": 3684,
       "mode": "0o644",
-      "sha256": "29fefd45ceed0fa94cb6dd5bb5fa8dbb5dec07c9ab4a4de8891060ff3b44486a"
+      "sha256": "b991a46063a8e7c497c50f5b42aa53cba56a5e54f0fad8e76efc1a8b5f91e92b"
     },
     "voice/Sources/VoiceCore/WebDestination.swift": {
       "bytes": 2251,
@@ -276,9 +276,9 @@
       "sha256": "cf93896d5066405201ced98ec699fc6394f860cd64b5e503c8afc9636d96f7f3"
     },
     "voice/Tests/VoiceCoreTests/VisualTextTests.swift": {
-      "bytes": 4507,
+      "bytes": 7431,
       "mode": "0o644",
-      "sha256": "2da263b54b09bb2e0d00d38d78e39827937b1dfbd8d7ad517a8eaf6be1187ebd"
+      "sha256": "f558d03fcb2505ac28e5cab6f384806275562d2f8a5bd34e4772d16c9f5dbe6c"
     },
     "voice/Tests/VoiceCoreTests/XSearchEvidenceTests.swift": {
       "bytes": 1332,
@@ -556,9 +556,9 @@
       "sha256": "60ff582db5c0418879188281511338037a26f1b53f246006c95147754e720f92"
     },
     "voice/release/CHANGELOG.md": {
-      "bytes": 2796,
+      "bytes": 3114,
       "mode": "0o644",
-      "sha256": "168404e112266f2cd8cf4da0b6d85a511f406a26207e1eecc524b36be872df64"
+      "sha256": "0c79115cdda8c8afb2be696aa6713008c3e3e3f1d0299b36a96ef65ee4ca7b0d"
     },
     "voice/release/CONTRIBUTING.md": {
       "bytes": 3077,
@@ -566,14 +566,14 @@
       "sha256": "66f2706b662b49642c27a0c093285d6baf33f1b989b026b716e736753598f409"
     },
     "voice/release/README.md": {
-      "bytes": 12562,
+      "bytes": 12729,
       "mode": "0o644",
-      "sha256": "d162c276954347a164e72407f91c8c46e195618b4a4ef4ac52271a15d1a3ed3c"
+      "sha256": "25befcbca411872801d3f4bc5149871bd5ff4256044dc5c40c27175425847806"
     },
     "voice/release/checks.yml": {
-      "bytes": 2099,
+      "bytes": 2436,
       "mode": "0o644",
-      "sha256": "c86736be2e84eb6a4f8ab432dfc1674b5245bee0ce05305a04a12239b922fbe9"
+      "sha256": "27af5e0b672baad9258c97eb671747947e1d41b9f97e55893ed0aeeb0f316321"
     },
     "voice/release/package-lock.json": {
       "bytes": 19556,
@@ -586,9 +586,9 @@
       "sha256": "d64376bc3f09caefb7b762889e05c0ce8d224958d44573812565430b4230ef62"
     },
     "voice/release/source-files.json": {
-      "bytes": 10998,
+      "bytes": 11132,
       "mode": "0o644",
-      "sha256": "9687e0ef18b09094076a4a4240708aeffd469100af8084d9feaf9e03f80ee340"
+      "sha256": "96346bb21ad99878d8fbf2c0727a0022fdab619a6208f746850bcee68c08dcc3"
     },
     "voice/release/source.gitignore": {
       "bytes": 219,
@@ -734,6 +734,16 @@
       "bytes": 6382,
       "mode": "0o644",
       "sha256": "f4b9a460a52535cab0dc31d4b385962c8ac1fe184ac08df44a54ffd48f9ee494"
+    },
+    "voice/tools/visual_grounding_check.swift": {
+      "bytes": 11678,
+      "mode": "0o644",
+      "sha256": "3b24ac7fdb661ce5a9e0fe7a63db101032aed16026cade02a37275041d24b18b"
+    },
+    "voice/vision/MULTILINE-TEXT.md": {
+      "bytes": 3285,
+      "mode": "0o644",
+      "sha256": "14b0de521b1a9e564d9da88d8445dbe7edcb4954e2528d4c65c10246c068ad0b"
     },
     "voice/vision/test_worker.py": {
       "bytes": 2657,
