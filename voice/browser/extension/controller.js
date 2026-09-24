@@ -1,6 +1,6 @@
 /* Generic DOM actions plus a read-only X search demo verifier. No eval or network. */
 (() => {
-  if (globalThis.LocalVoiceDOM?.version === 18) return;
+  if (globalThis.LocalVoiceDOM?.version === 19) return;
   globalThis.LocalVoiceDOM?.dispose?.();
   const documentId = crypto.randomUUID();
   const identities = new WeakMap();
@@ -31,13 +31,17 @@
   const observer = new MutationObserver(() => { cache = null; revision++; });
   observer.observe(document, {subtree:true, childList:true, attributes:true, characterData:true});
   const blocked = el => el.matches('input[type=password],input[type=file],input[type=hidden]') || [...ancestors(el)].some(node=>node.matches('[inert],[aria-hidden="true"]'));
-  const painted = el => {
+  const painted = (el,inViewport=true) => {
     if (!el.isConnected || !el.getClientRects().length) return false;
     const rect=el.getBoundingClientRect();
-    if(rect.width<=0 || rect.height<=0 || rect.right<=0 || rect.bottom<=0 || rect.left>=innerWidth || rect.top>=innerHeight) return false;
+    if(rect.width<=0 || rect.height<=0 || inViewport && (rect.right<=0 || rect.bottom<=0 || rect.left>=innerWidth || rect.top>=innerHeight)) return false;
     for(let node=el;node instanceof Element;node=node.parentElement || node.getRootNode().host) {
       const style=getComputedStyle(node);
-      if(style.visibility==='hidden' || style.visibility==='collapse' || style.display==='none' || style.opacity==='0') return false;
+      if(node.matches('details:not([open])')) {
+        const summary=[...node.children].find(child=>child.matches('summary'));
+        if(!summary || !within(summary,el))return false;
+      }
+      if(style.visibility==='hidden' || style.visibility==='collapse' || style.display==='none' || style.opacity==='0' || style.contentVisibility==='hidden') return false;
     }
     return true;
   };
@@ -55,6 +59,27 @@
     }
     return true;
   };
+  // Geometric absence can be resolved by scrolling. Hidden/disclosed content and
+  // occlusion are different states; neither grants permission to open or bypass UI.
+  function scrollableOffscreen(el) {
+    if(blocked(el) || !painted(el,false))return false;
+    const r=el.getBoundingClientRect();
+    let outside=r.right<=0 || r.bottom<=0 || r.left>=innerWidth || r.top>=innerHeight;
+    for(const node of ancestors(el)) {
+      const style=getComputedStyle(node),box=node.getBoundingClientRect();
+      if(style.position==='fixed' && (box.right<=0 || box.bottom<=0 || box.left>=innerWidth || box.top>=innerHeight))return false;
+      if(node===el || node===document.body || node===document.documentElement)continue;
+      const left=box.left+node.clientLeft,top=box.top+node.clientTop;
+      const axes=[[style.overflowX,r.right<=left || r.left>=left+node.clientWidth],
+                  [style.overflowY,r.bottom<=top || r.top>=top+node.clientHeight]];
+      for(const [overflow,clipped] of axes) {
+        if(!clipped || !['auto','scroll','hidden','clip'].includes(overflow))continue;
+        if(overflow==='hidden' || overflow==='clip')return false;
+        outside=true;
+      }
+    }
+    return outside;
+  }
   const enabled = el => !el.matches(':disabled') && ![...ancestors(el)].some(node=>node.getAttribute('aria-disabled')==='true');
   function labelText(label) {
     if (!label) return '';
@@ -118,12 +143,23 @@
     if(role==='menuitem')return ['menuitem','menuitemcheckbox','menuitemradio'].includes(actual);
     return actual===role;
   }
-  function targetMatcher(target,pool) {
+  function targetParts(target) {
     const original=normalize(target),cleaned=original.replace(/[.!?,;:]+$/,'').replace(/^the\s+/,'').trim();
     const prefix=cleaned.match(targetRolePrefix),suffix=prefix?null:cleaned.match(targetRoleSuffix);
-    let role=null,wanted=cleaned,exactName=false;
-    if(prefix || suffix) {
-      role=targetRoles[normalize(prefix?prefix[1]:suffix[2])];wanted=prefix?prefix[2]:suffix[1];
+    return {original,cleaned,role:prefix || suffix?targetRoles[normalize(prefix?prefix[1]:suffix[2])]:null,wanted:prefix?prefix[2]:suffix?suffix[1]:cleaned};
+  }
+  function possibleTargetMatcher(target) {
+    const {original,cleaned,wanted}=targetParts(target),words=wanted.split(/[^\p{L}\p{N}]+/u).filter(Boolean);
+    return el=>labels(el).some(label=>{
+      if([original,cleaned,wanted].includes(label))return true;
+      const available=new Set(label.split(/[^\p{L}\p{N}]+/u).filter(Boolean));
+      return words.length>0 && words.every(word=>available.has(word));
+    });
+  }
+  function targetMatcher(target,pool) {
+    const {original,cleaned,role,wanted}=targetParts(target);
+    let exactName=false;
+    if(role) {
       // Literal control names take precedence. Otherwise, an exact requested
       // name of the wrong/disabled type must not retarget a similarly named control.
       const literalNames=new Set([original,cleaned]);
@@ -154,9 +190,20 @@
     const context=targetContext(target);
     return chooseWithin(context.target,predicate,context.scope);
   }
-  function chooseWithin(target,predicate,scope) {
-    const pool=controls().filter(el=>within(scope,el) && visible(el)),matchesTarget=targetMatcher(target,pool);
-    const matches=pool.filter(el=>predicate(el) && matchesTarget(el) && enabled(el));
+  function namedCandidates(target,scope,allowScroll=false) {
+    const pool=controls().filter(el=>within(scope,el) && visible(el)),match=targetMatcher(target,pool);
+    const matches=pool.filter(el=>(clickable(el) || el.matches('select')) && match(el));
+    if(matches.length || !allowScroll)return matches;
+    const visibleSet=new Set(pool),possible=possibleTargetMatcher(target);
+    // Read names before doing layout work on offscreen controls. Literal and
+    // base-name candidates still reach the full role/ambiguity resolver below.
+    const extra=controls().filter(el=>!visibleSet.has(el) && within(scope,el) &&
+      (clickable(el) || el.matches('select')) && possible(el) && scrollableOffscreen(el));
+    const extendedMatch=targetMatcher(target,[...pool,...extra]);
+    return extra.filter(el=>(clickable(el) || el.matches('select')) && extendedMatch(el));
+  }
+  function chooseWithin(target,predicate,scope,allowScroll=false) {
+    const matches=namedCandidates(target,scope,allowScroll).filter(el=>predicate(el) && enabled(el));
     if(matches.length!==1) throw Error(matches.length ? `More than one control matches “${target}”; name its field or button` : `No available control named “${target}”`);
     return matches[0];
   }
@@ -183,7 +230,7 @@
       const children=[...el.children],heading='h1,h2,h3,h4,h5,h6,[role=heading]';
       const names=el.matches('fieldset')?children.filter(node=>node.matches('legend')):
         children.flatMap(node=>node.matches(heading)?[node]:node.matches('header')?[...node.children].filter(child=>child.matches(heading)):[]);
-      if(names.length!==1 || !rendered(names[0]))return null;
+      if(names.length!==1 || blocked(names[0]) || !painted(names[0],false))return null;
       text=names[0].textContent;
     }
     const name=normalize(text);
@@ -193,7 +240,8 @@
     flush();
     const scope=interactionScope(),qualified=qualifiedTarget(target);
     if(!qualified)return {target,scope,qualified:false};
-    const matches=scopeCache.filter(el=>within(scope,el) && el.matches(scopeSelectors[qualified.kind]) && scopeName(el)===qualified.name && rendered(el) && enabled(el));
+    const available=scopeCache.filter(el=>within(scope,el) && el.matches(scopeSelectors[qualified.kind]) && scopeName(el)===qualified.name && !blocked(el) && painted(el,false) && enabled(el));
+    const inView=available.filter(rendered),matches=inView.length?inView:available;
     // Scope syntax must not turn a literal label such as “Open in side panel”
     // into a different action. Refuse when both readings are available.
     const literal=normalize(target).replace(/^the\s+/,''),literalMatch=controls().some(el=>within(scope,el) && (clickable(el) || el.matches('select')) && labels(el).includes(literal) && visible(el));
@@ -211,10 +259,17 @@
     const context=targetContext(request.target);
     return context.qualified?{query:request.target,scope:context.scope}:null;
   }
-  function recheckScopedTarget(request,el,binding) {
+  function recheckScopedTarget(request,el,binding,afterDispatch=false) {
     if(!binding)return;
     const context=targetContext(binding.query);
-    if(!context.qualified || context.scope!==binding.scope || targetFor(request)!==el)throw Error('Named target or section changed; action not repeated');
+    if(!context.qualified || context.scope!==binding.scope)throw Error('Named target or section changed; action not repeated');
+    const record=observations.get(request.observationId)?.get(request.targetId);
+    // An intentional scroll/edit can move the same field. After input, verify its
+    // identity, meaning and value; the pre-input check still requires exact geometry.
+    if(afterDispatch && record?.structuralSignature) {
+      if(!visible(el) || !enabled(el) || signature(el,false)!==record.structuralSignature ||
+         chooseWithin(context.target,targetPredicate(request.op),context.scope)!==el)throw Error('Named target or section changed; action not repeated');
+    } else if(targetFor(request)!==el)throw Error('Named target or section changed; action not repeated');
   }
   function within(scope,el) {
     for(let node=el;node;node=node.parentNode || node.host) if(node===scope) return true;
@@ -468,18 +523,19 @@
     if(target && target!=='_self') return null;
     try { const url=new URL(el.href,location.href);return /^https?:$/.test(url.protocol) && url.href!==location.href ? url.href : null; } catch {return null;}
   }
-  function signature(el) {
+  function signature(el,position=true) {
     const r=el.getBoundingClientRect();
     const relation=activationRelation(el);
-    return JSON.stringify([el.tagName,el.getAttribute('role'),controlRole(el),el instanceof HTMLInputElement?el.type:null,labels(el),enabled(el),el.getAttribute('href'),el.getAttribute('target'),el.hasAttribute('download'),navigationURL(el),r.x,r.y,r.width,r.height,relation.kind,relation.key,relation.valid,identity(relation.target)]);
+    return JSON.stringify([el.tagName,el.getAttribute('role'),controlRole(el),el instanceof HTMLInputElement?el.type:null,labels(el),enabled(el),el.getAttribute('href'),el.getAttribute('target'),el.hasAttribute('download'),navigationURL(el),position?r.x:null,position?r.y:null,r.width,r.height,relation.kind,relation.key,relation.valid,identity(relation.target)]);
   }
   function observe(target) {
     flush();
     const context=targetContext(target),scope=context.scope;
-    const pool=controls().filter(el=>within(scope,el) && visible(el)),matchesTarget=targetMatcher(context.target,pool);
-    const all=typeof target==='string'?pool.filter(el=>(clickable(el) || el.matches('select')) && matchesTarget(el)):pool;
+    const all=typeof target==='string'?namedCandidates(context.target,scope,true):controls().filter(el=>within(scope,el) && visible(el));
     const observationId=`${documentId}/${++observationSequence}`;
-    observations.set(observationId,new Map(all.slice(0,48).map(el=>[identity(el),{signature:signature(el),scope:typeof target==='string'?scope:null,query:typeof target==='string'?target:null,qualified:context.qualified}])));
+    // Named candidates are either the visible group or the offscreen fallback.
+    const offscreen=typeof target==='string' && all.length>0 && !visible(all[0]);
+    observations.set(observationId,new Map(all.slice(0,48).map(el=>[identity(el),{signature:signature(el),structuralSignature:offscreen || context.qualified?signature(el,false):null,offscreen,scope:typeof target==='string'?scope:null,query:typeof target==='string'?target:null,qualified:context.qualified}])));
     while(observations.size>4) observations.delete(observations.keys().next().value);
     return {
       version:1,documentId,observationId,targetQuery:typeof target==='string'?target:null,
@@ -488,13 +544,59 @@
       focusedId:identity(active()),truncated:all.length>48,
       candidates:all.slice(0,48).map(el=>{
         const r=el.getBoundingClientRect();
-        return {id:identity(el),role:controlRole(el),
+        return {id:identity(el),role:controlRole(el),offscreen,
           labels:labels(el).slice(0,3).map(s=>s.slice(0,100)),
           bounds:{x:r.x,y:r.y,width:r.width,height:r.height},
           enabled:enabled(el),editable:!!editable(el),clickable:clickable(el),navigationURL:navigationURL(el),
           selected:el.getAttribute('aria-selected'),expanded:el.getAttribute('aria-expanded')};
       })
     };
+  }
+  function targetPredicate(op) {
+    switch(op) {
+      case 'click':return clickable;
+      case 'fill':case 'type':return editable;
+      case 'select':return el=>el instanceof HTMLSelectElement;
+      case 'check':return checkable;
+      default:return null;
+    }
+  }
+  async function revealRequestedTarget(request) {
+    const predicate=request.op==='type'?null:targetPredicate(request.op);
+    if(!predicate || !request.targetId && typeof request.target!=='string')return request;
+    let bound=request,record,el;
+    if(!request.targetId) {
+      const context=targetContext(request.target);
+      el=chooseWithin(context.target,predicate,context.scope,true);
+      if(visible(el))return request;
+      const observation=observe(request.target);
+      bound={...request,targetId:identity(el),documentId,observationId:observation.observationId};
+    }
+    record=observations.get(bound.observationId)?.get(bound.targetId);
+    if(!record?.offscreen)return bound;
+    el=controls().find(node=>identity(node)===bound.targetId);
+    checkContext(bound);
+    if(bound.documentId!==documentId)throw Error('Offscreen target needs its original document binding');
+    if(!el || !record.query || !predicate(el) || !enabled(el) || !scrollableOffscreen(el) || signature(el)!==record.signature)throw Error('Offscreen target changed before scrolling');
+    if(request.op==='fill' && (el.readOnly || typeof request.value!=='string' || request.value.length>16000))throw Error('Field is not writable or text is invalid; no scroll sent');
+    if(request.op==='check' && (typeof request.checked!=='boolean' || !validChecked(el,checkedValue(el))))throw Error('Invalid check state; no scroll sent');
+    if(request.op==='select' && [...el.options].filter(option=>!option.disabled && normalize(option.label)===normalize(request.value)).length!==1)throw Error('No unique option; no scroll sent');
+    let context=targetContext(record.query);
+    if(context.scope!==record.scope || chooseWithin(context.target,predicate,context.scope,true)!==el)throw Error('Named target changed before scrolling');
+    el.scrollIntoView({behavior:'instant',block:'center',inline:'center'});
+    // Scroll events are delivered at rendering updates, not timer deadlines. Wait
+    // for two frames so handlers and their queued layout work can run first.
+    // No scroll retry or alternate target is attempted after this point.
+    await new Promise((resolve,reject)=>{
+      let frame;
+      const timer=setTimeout(()=>{cancelAnimationFrame(frame);reject(Error('Page did not render after scrolling; requested action not sent'));},Math.max(0,Math.min(500,request.deadline-Date.now())));
+      frame=requestAnimationFrame(()=>{frame=requestAnimationFrame(()=>{clearTimeout(timer);resolve();});});
+    });
+    checkContext(bound);flush();context=targetContext(record.query);
+    if(!el.isConnected || context.scope!==record.scope || !visible(el) || !enabled(el) ||
+       signature(el,false)!==record.structuralSignature || chooseWithin(context.target,predicate,context.scope)!==el)throw Error('Target changed or remained covered after scrolling; requested action not sent');
+    record.signature=signature(el);record.offscreen=false;
+    return bound;
   }
   function targetFor(request) {
     switch(request.op) {
@@ -578,7 +680,7 @@
     if(!measurable || !before.valid) return null;
     while(performance.now()-started<500) {
       checkContext({...request,expectedURL:location.href});
-      recheckScopedTarget(request,el,binding);
+      recheckScopedTarget(request,el,binding,true);
       const candidate=activationChange(before,activationState(el)),now=performance.now();
       // Once observed, reversal/replacement/contradiction ends verification.
       // This function only reads state; it never repeats the click.
@@ -607,7 +709,11 @@
         return {ok:true,armedToken:ticket.token,outcome:'verified',message:'Search field rechecked'};
       }
       pendingSearch=null;
-      el=targetFor(request);before=state(el);
+      // Ordinary visible actions keep their original fast path. Only a failed,
+      // read-only target lookup can attempt one viewport reveal before any input.
+      try {el=targetFor(request);}
+      catch {request=await revealRequestedTarget(request);el=targetFor(request);}
+      before=state(el);
       const binding=scopeBinding(request);
       const observation=observe();
       const expectedNavigationURL=request.op==='click'?navigationURL(el):null;
@@ -630,7 +736,7 @@
       while(performance.now()-verifyStart<180) {
         await new Promise(resolve=>setTimeout(resolve,30));
         checkContext({...request,expectedURL:location.href}); after=state(el);
-        recheckScopedTarget(request,el,binding);
+        recheckScopedTarget(request,el,binding,true);
         if(['type','fill','prepareSearch','select','check'].includes(request.op)) {
           if(!after.connected || !within(interactionScope(),el) || (['type','fill','prepareSearch','select'].includes(request.op) && after.value!==expected.value) || (request.op==='check' && after.checked!==expected.checked)) {
             return {ok:false,commandId,outcome:'failed',error:'The page reverted or replaced the control; action not repeated',evidence:{before:evidence(before),after:evidence(after)}};
@@ -662,5 +768,5 @@
       return {ok:false,commandId,outcome:before?'unverified':'failed',error:error.message};
     }
   }
-  globalThis.LocalVoiceDOM=Object.freeze({version:18,run,runVerified,observe,dispose:()=>observer.disconnect()});
+  globalThis.LocalVoiceDOM=Object.freeze({version:19,run,runVerified,observe,dispose:()=>observer.disconnect()});
 })();

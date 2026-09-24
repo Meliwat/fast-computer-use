@@ -8,6 +8,7 @@ const path=require('node:path');
 class Headless {
   constructor({virtualTime=false}={}){this.pending=new Map();this.events=new EventEmitter();this.sequence=0;this.buffer='';this.virtualTime=virtualTime;}
   async start(){
+    try {
     this.profile=fs.mkdtempSync(path.join(os.tmpdir(),'localvoice-headless-'));
     const binary=process.env.VOICE_TEST_CHROME || '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
     this.child=spawn(binary,['--headless=new','--no-first-run','--no-default-browser-check','--disable-background-networking','--disable-sync','--use-mock-keychain','--password-store=basic','--remote-debugging-pipe',`--user-data-dir=${this.profile}`,'about:blank'],{stdio:['ignore','ignore','ignore','pipe','pipe']});
@@ -33,6 +34,7 @@ class Headless {
     this.version=await this.call('Browser.getVersion');
     if(this.virtualTime)await this.call('Emulation.setVirtualTimePolicy',{policy:'pause'},true);
     return this;
+    } catch(error) {await this.close();throw error;}
   }
   call(method,params={},page=false){
     const id=++this.sequence;

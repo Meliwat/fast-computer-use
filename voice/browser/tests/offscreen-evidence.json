@@ -1,0 +1,769 @@
+{
+  "scope": "Generic authored offscreen layouts, actual isolated controller and DOM effects in disposable offline Chrome. No app, microphone, personal profile, screenshot or language model; real rendering events; behavior test, not a latency benchmark.",
+  "passed": 49,
+  "total": 49,
+  "browser": "Chrome/153.0.8010.53",
+  "sourceSHA256": {
+    "controller": "ed77e32ea8c011ca61ada20763c61766cfe0592aa0a8056ba68262673893320b",
+    "test": "6a7bf87a6f6d1f9306fba3fce1c1d2ec40870e43af45c2f24e87b9463870dfc7",
+    "headless": "d791142e4ba8ff7a8abecfce097b6a22a46533baf2f0b23074bad2d9dea7c2ee"
+  },
+  "rows": [
+    {
+      "name": "bound button below viewport",
+      "passed": true,
+      "outcome": "verified",
+      "actual": {
+        "actions": [
+          "target"
+        ],
+        "writes": 0,
+        "hookRuns": 0,
+        "value": "",
+        "focused": false,
+        "x": 0,
+        "y": 1561,
+        "pane": 0
+      }
+    },
+    {
+      "name": "named button below viewport",
+      "passed": true,
+      "outcome": "verified",
+      "actual": {
+        "actions": [
+          "target"
+        ],
+        "writes": 0,
+        "hookRuns": 0,
+        "value": "",
+        "focused": false,
+        "x": 0,
+        "y": 1561,
+        "pane": 0
+      }
+    },
+    {
+      "name": "bound field below viewport focuses",
+      "passed": true,
+      "outcome": "verified",
+      "actual": {
+        "actions": [],
+        "writes": 0,
+        "hookRuns": 0,
+        "value": "",
+        "focused": true,
+        "x": 0,
+        "y": 1561,
+        "pane": 0
+      }
+    },
+    {
+      "name": "named field below viewport fills",
+      "passed": true,
+      "outcome": "verified",
+      "actual": {
+        "actions": [],
+        "writes": 1,
+        "hookRuns": 0,
+        "value": "Hello",
+        "focused": true,
+        "x": 0,
+        "y": 1561,
+        "pane": 0
+      }
+    },
+    {
+      "name": "bound field below viewport fills",
+      "passed": true,
+      "outcome": "verified",
+      "actual": {
+        "actions": [],
+        "writes": 1,
+        "hookRuns": 0,
+        "value": "Hello",
+        "focused": true,
+        "x": 0,
+        "y": 1561,
+        "pane": 0
+      }
+    },
+    {
+      "name": "native checkbox below viewport",
+      "passed": true,
+      "outcome": "verified",
+      "actual": {
+        "actions": [
+          "target"
+        ],
+        "writes": 1,
+        "hookRuns": 0,
+        "value": "on",
+        "focused": false,
+        "x": 0,
+        "y": 1560,
+        "pane": 0,
+        "read": true
+      }
+    },
+    {
+      "name": "select below viewport",
+      "passed": true,
+      "outcome": "verified",
+      "actual": {
+        "actions": [],
+        "writes": 1,
+        "hookRuns": 0,
+        "value": "Red",
+        "focused": false,
+        "x": 0,
+        "y": 1560,
+        "pane": 0,
+        "read": "Red"
+      }
+    },
+    {
+      "name": "horizontal scroll to named control",
+      "passed": true,
+      "outcome": "verified",
+      "actual": {
+        "actions": [
+          "target"
+        ],
+        "writes": 0,
+        "hookRuns": 0,
+        "value": "",
+        "focused": false,
+        "x": 1788,
+        "y": 0,
+        "pane": 0
+      }
+    },
+    {
+      "name": "scroll upwards to named control",
+      "passed": true,
+      "outcome": "verified",
+      "actual": {
+        "actions": [
+          "target"
+        ],
+        "writes": 0,
+        "hookRuns": 0,
+        "value": "",
+        "focused": false,
+        "x": 0,
+        "y": 0,
+        "pane": 0
+      }
+    },
+    {
+      "name": "scroll a nested container",
+      "passed": true,
+      "outcome": "verified",
+      "actual": {
+        "actions": [
+          "target"
+        ],
+        "writes": 0,
+        "hookRuns": 0,
+        "value": "",
+        "focused": false,
+        "x": 0,
+        "y": 0,
+        "pane": 581
+      }
+    },
+    {
+      "name": "nested container below page viewport",
+      "passed": true,
+      "outcome": "verified",
+      "actual": {
+        "actions": [
+          "target"
+        ],
+        "writes": 0,
+        "hookRuns": 0,
+        "value": "",
+        "focused": false,
+        "x": 0,
+        "y": 1640,
+        "pane": 571
+      }
+    },
+    {
+      "name": "open shadow root scrolls",
+      "passed": true,
+      "outcome": "verified",
+      "actual": {
+        "actions": [
+          "target"
+        ],
+        "writes": 0,
+        "hookRuns": 0,
+        "value": "",
+        "focused": false,
+        "x": 0,
+        "y": 1561,
+        "pane": 0
+      }
+    },
+    {
+      "name": "smooth page setting does not defer action",
+      "passed": true,
+      "outcome": "verified",
+      "actual": {
+        "actions": [
+          "target"
+        ],
+        "writes": 0,
+        "hookRuns": 0,
+        "value": "",
+        "focused": false,
+        "x": 0,
+        "y": 1561,
+        "pane": 0
+      }
+    },
+    {
+      "name": "target in a named form",
+      "passed": true,
+      "outcome": "verified",
+      "actual": {
+        "actions": [],
+        "writes": 1,
+        "hookRuns": 0,
+        "value": "Hello",
+        "focused": true,
+        "x": 0,
+        "y": 1561,
+        "pane": 0
+      }
+    },
+    {
+      "name": "scoped field remains verified after its edit moves it",
+      "passed": true,
+      "outcome": "verified",
+      "actual": {
+        "actions": [],
+        "writes": 1,
+        "hookRuns": 0,
+        "value": "Hello",
+        "focused": true,
+        "x": 0,
+        "y": 1561,
+        "pane": 0
+      }
+    },
+    {
+      "name": "scoped relabel after edit is not verified",
+      "passed": true,
+      "outcome": "unverified",
+      "actual": {
+        "actions": [],
+        "writes": 1,
+        "hookRuns": 0,
+        "value": "Hello",
+        "focused": true,
+        "x": 0,
+        "y": 1561,
+        "pane": 0
+      }
+    },
+    {
+      "name": "entire named form starts below viewport",
+      "passed": true,
+      "outcome": "verified",
+      "actual": {
+        "actions": [],
+        "writes": 1,
+        "hookRuns": 0,
+        "value": "Hello",
+        "focused": true,
+        "x": 0,
+        "y": 1561,
+        "pane": 0
+      }
+    },
+    {
+      "name": "named heading can scroll out of view",
+      "passed": true,
+      "outcome": "verified",
+      "actual": {
+        "actions": [],
+        "writes": 1,
+        "hookRuns": 0,
+        "value": "Hello",
+        "focused": true,
+        "x": 0,
+        "y": 1561,
+        "pane": 0
+      }
+    },
+    {
+      "name": "binding without document refuses before scroll",
+      "passed": true,
+      "outcome": "failed",
+      "actual": {
+        "actions": [],
+        "writes": 0,
+        "hookRuns": 0,
+        "value": "",
+        "focused": false,
+        "x": 0,
+        "y": 0,
+        "pane": 0
+      }
+    },
+    {
+      "name": "frame timeout sends no click",
+      "passed": true,
+      "outcome": "failed",
+      "actual": {
+        "actions": [],
+        "writes": 0,
+        "hookRuns": 0,
+        "value": "",
+        "focused": false,
+        "x": 0,
+        "y": 1561,
+        "pane": 0
+      }
+    },
+    {
+      "name": "wrong visible type cannot choose a related offscreen label",
+      "passed": true,
+      "outcome": null,
+      "actual": {
+        "actions": [],
+        "writes": 0,
+        "hookRuns": 0,
+        "value": "",
+        "focused": false,
+        "x": 0,
+        "y": 0,
+        "pane": 0
+      }
+    },
+    {
+      "name": "fixed offscreen target is not scroll reachable",
+      "passed": true,
+      "outcome": null,
+      "actual": {
+        "actions": [],
+        "writes": 0,
+        "hookRuns": 0,
+        "value": "",
+        "focused": false,
+        "x": 0,
+        "y": 0,
+        "pane": 0
+      }
+    },
+    {
+      "name": "readonly offscreen field is not scrolled for a fill",
+      "passed": true,
+      "outcome": "failed",
+      "actual": {
+        "actions": [],
+        "writes": 0,
+        "hookRuns": 0,
+        "value": "",
+        "focused": false,
+        "x": 0,
+        "y": 0,
+        "pane": 0
+      }
+    },
+    {
+      "name": "visible match retains priority",
+      "passed": true,
+      "outcome": "verified",
+      "actual": {
+        "actions": [
+          "target"
+        ],
+        "writes": 0,
+        "hookRuns": 0,
+        "value": "",
+        "focused": false,
+        "x": 0,
+        "y": 0,
+        "pane": 0
+      }
+    },
+    {
+      "name": "two offscreen homonyms refuse",
+      "passed": true,
+      "outcome": null,
+      "actual": {
+        "actions": [],
+        "writes": 0,
+        "hookRuns": 0,
+        "value": "",
+        "focused": false,
+        "x": 0,
+        "y": 0,
+        "pane": 0
+      }
+    },
+    {
+      "name": "unbound homonyms refuse",
+      "passed": true,
+      "outcome": "failed",
+      "actual": {
+        "actions": [],
+        "writes": 0,
+        "hookRuns": 0,
+        "value": "",
+        "focused": false,
+        "x": 0,
+        "y": 0,
+        "pane": 0
+      }
+    },
+    {
+      "name": "untargeted observation stays within viewport",
+      "passed": true,
+      "outcome": null,
+      "actual": {
+        "actions": [],
+        "writes": 0,
+        "hookRuns": 0,
+        "value": "",
+        "focused": false,
+        "x": 0,
+        "y": 0,
+        "pane": 0
+      }
+    },
+    {
+      "name": "named observation retains offscreen link destination",
+      "passed": true,
+      "outcome": null,
+      "actual": {
+        "actions": [],
+        "writes": 0,
+        "hookRuns": 0,
+        "focused": false,
+        "x": 0,
+        "y": 0,
+        "pane": 0
+      }
+    },
+    {
+      "name": "hidden content visibility does not invite reveal",
+      "passed": true,
+      "outcome": null,
+      "actual": {
+        "actions": [],
+        "writes": 0,
+        "hookRuns": 0,
+        "value": "",
+        "focused": false,
+        "x": 0,
+        "y": 0,
+        "pane": 0
+      }
+    },
+    {
+      "name": "hidden overflow does not invite reveal",
+      "passed": true,
+      "outcome": null,
+      "actual": {
+        "actions": [],
+        "writes": 0,
+        "hookRuns": 0,
+        "value": "",
+        "focused": false,
+        "x": 0,
+        "y": 0,
+        "pane": 0
+      }
+    },
+    {
+      "name": "disabled offscreen target refuses",
+      "passed": true,
+      "outcome": null,
+      "actual": {
+        "actions": [],
+        "writes": 0,
+        "hookRuns": 0,
+        "value": "",
+        "focused": false,
+        "x": 0,
+        "y": 0,
+        "pane": 0
+      }
+    },
+    {
+      "name": "hidden attribute does not invite reveal",
+      "passed": true,
+      "outcome": null,
+      "actual": {
+        "actions": [],
+        "writes": 0,
+        "hookRuns": 0,
+        "value": "",
+        "focused": false,
+        "x": 0,
+        "y": 0,
+        "pane": 0
+      }
+    },
+    {
+      "name": "display none does not invite reveal",
+      "passed": true,
+      "outcome": null,
+      "actual": {
+        "actions": [],
+        "writes": 0,
+        "hookRuns": 0,
+        "value": "",
+        "focused": false,
+        "x": 0,
+        "y": 0,
+        "pane": 0
+      }
+    },
+    {
+      "name": "opacity zero does not invite reveal",
+      "passed": true,
+      "outcome": null,
+      "actual": {
+        "actions": [],
+        "writes": 0,
+        "hookRuns": 0,
+        "value": "",
+        "focused": false,
+        "x": 0,
+        "y": 0,
+        "pane": 0
+      }
+    },
+    {
+      "name": "aria hidden does not invite reveal",
+      "passed": true,
+      "outcome": null,
+      "actual": {
+        "actions": [],
+        "writes": 0,
+        "hookRuns": 0,
+        "value": "",
+        "focused": false,
+        "x": 0,
+        "y": 0,
+        "pane": 0
+      }
+    },
+    {
+      "name": "inert does not invite reveal",
+      "passed": true,
+      "outcome": null,
+      "actual": {
+        "actions": [],
+        "writes": 0,
+        "hookRuns": 0,
+        "value": "",
+        "focused": false,
+        "x": 0,
+        "y": 0,
+        "pane": 0
+      }
+    },
+    {
+      "name": "closed disclosure is not a scroll problem",
+      "passed": true,
+      "outcome": null,
+      "actual": {
+        "actions": [],
+        "writes": 0,
+        "hookRuns": 0,
+        "value": "",
+        "focused": false,
+        "x": 0,
+        "y": 0,
+        "pane": 0
+      }
+    },
+    {
+      "name": "password field remains excluded",
+      "passed": true,
+      "outcome": "failed",
+      "actual": {
+        "actions": [],
+        "writes": 0,
+        "hookRuns": 0,
+        "value": "",
+        "focused": false,
+        "x": 0,
+        "y": 0,
+        "pane": 0
+      }
+    },
+    {
+      "name": "non scrolling clip does not invite reveal",
+      "passed": true,
+      "outcome": null,
+      "actual": {
+        "actions": [],
+        "writes": 0,
+        "hookRuns": 0,
+        "value": "",
+        "focused": false,
+        "x": 0,
+        "y": 0,
+        "pane": 0
+      }
+    },
+    {
+      "name": "fixed overlay blocks actual click after reveal",
+      "passed": true,
+      "outcome": "failed",
+      "actual": {
+        "actions": [],
+        "writes": 0,
+        "hookRuns": 0,
+        "value": "",
+        "focused": false,
+        "x": 0,
+        "y": 1561,
+        "pane": 0
+      }
+    },
+    {
+      "name": "replacement during scroll stops input",
+      "passed": true,
+      "outcome": "failed",
+      "actual": {
+        "actions": [],
+        "writes": 0,
+        "hookRuns": 1,
+        "value": "",
+        "focused": false,
+        "x": 0,
+        "y": 1561,
+        "pane": 0
+      }
+    },
+    {
+      "name": "label change during scroll stops input",
+      "passed": true,
+      "outcome": "failed",
+      "actual": {
+        "actions": [],
+        "writes": 0,
+        "hookRuns": 1,
+        "value": "",
+        "focused": false,
+        "x": 0,
+        "y": 1561,
+        "pane": 0
+      }
+    },
+    {
+      "name": "type change during scroll stops input",
+      "passed": true,
+      "outcome": "failed",
+      "actual": {
+        "actions": [],
+        "writes": 0,
+        "hookRuns": 1,
+        "value": "",
+        "focused": false,
+        "x": 0,
+        "y": 1561,
+        "pane": 0
+      }
+    },
+    {
+      "name": "new duplicate during scroll stops input",
+      "passed": true,
+      "outcome": "failed",
+      "actual": {
+        "actions": [],
+        "writes": 0,
+        "hookRuns": 1,
+        "value": "",
+        "focused": false,
+        "x": 0,
+        "y": 1561,
+        "pane": 0
+      }
+    },
+    {
+      "name": "URL change during scroll stops input",
+      "passed": true,
+      "outcome": "failed",
+      "actual": {
+        "actions": [],
+        "writes": 0,
+        "hookRuns": 1,
+        "value": "",
+        "focused": false,
+        "x": 0,
+        "y": 1561,
+        "pane": 0
+      }
+    },
+    {
+      "name": "modal appearing during scroll stops input",
+      "passed": true,
+      "outcome": "failed",
+      "actual": {
+        "actions": [],
+        "writes": 0,
+        "hookRuns": 1,
+        "value": "",
+        "focused": false,
+        "x": 0,
+        "y": 1561,
+        "pane": 0
+      }
+    },
+    {
+      "name": "bound target relabelled before scroll refuses",
+      "passed": true,
+      "outcome": "failed",
+      "actual": {
+        "actions": [],
+        "writes": 0,
+        "hookRuns": 0,
+        "value": "",
+        "focused": false,
+        "x": 0,
+        "y": 0,
+        "pane": 0
+      }
+    },
+    {
+      "name": "invalid check boolean causes no movement",
+      "passed": true,
+      "outcome": "failed",
+      "actual": {
+        "actions": [],
+        "writes": 0,
+        "hookRuns": 0,
+        "value": "on",
+        "focused": false,
+        "x": 0,
+        "y": 0,
+        "pane": 0
+      }
+    },
+    {
+      "name": "text reversion is detected without repeated edits",
+      "passed": true,
+      "outcome": "failed",
+      "actual": {
+        "actions": [],
+        "writes": 1,
+        "hookRuns": 0,
+        "value": "",
+        "focused": true,
+        "x": 0,
+        "y": 1561,
+        "pane": 0
+      }
+    }
+  ]
+}

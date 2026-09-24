@@ -1,4 +1,4 @@
-// Protocol lifecycle checks only: no browser, user input, or real timers.
+// Protocol lifecycle checks: controlled clocks and a fake CDP child; no Chrome or user input.
 const {test}=require('node:test');
 const assert=require('node:assert/strict');
 const {EventEmitter}=require('node:events');
@@ -43,4 +43,33 @@ test('a failed clock request removes its pending event listener',async()=>{
   await assert.rejects(browser.run('click'),/Transport rejected/);
   assert.equal(browser.events.listenerCount('Emulation.virtualTimeBudgetExpired'),0);
   assert.deepEqual(browser.calls,['advance','pause']);
+});
+test('startup protocol failure closes its child and removes the temporary profile',async()=>{
+  const fs=require('node:fs'),os=require('node:os'),path=require('node:path');
+  const temporary=fs.mkdtempSync(path.join(os.tmpdir(),'localvoice-protocol-test-'));
+  const binary=path.join(temporary,'fake-browser');
+  fs.writeFileSync(binary,`#!/usr/bin/env node
+const fs=require('node:fs');let buffer='';
+fs.createReadStream(null,{fd:3}).on('data',data=>{
+ buffer+=data.toString();let end;
+ while((end=buffer.indexOf('\\0'))>=0){
+  const request=JSON.parse(buffer.slice(0,end));buffer=buffer.slice(end+1);
+  const response=request.method==='Network.enable'?{error:{message:'Intentional startup protocol failure'}}:
+   {result:request.method==='Target.createTarget'?{targetId:'target'}:request.method==='Target.attachToTarget'?{sessionId:'session'}:{}};
+  fs.writeSync(4,JSON.stringify({id:request.id,...response})+'\\0');
+  if(request.method==='Browser.close')process.exit(0);
+ }
+});
+`,{mode:0o755});
+  const previous=process.env.VOICE_TEST_CHROME;process.env.VOICE_TEST_CHROME=binary;
+  const browser=new Headless();
+  try{
+    await assert.rejects(browser.start(),/Intentional startup protocol failure/);
+    assert.equal(fs.existsSync(browser.profile),false,'A failed start must release its profile');
+    assert.notEqual(browser.child.exitCode,null,'A failed start must not leave a browser running');
+  }finally{
+    await browser.close();
+    if(previous===undefined)delete process.env.VOICE_TEST_CHROME;else process.env.VOICE_TEST_CHROME=previous;
+    fs.rmSync(temporary,{recursive:true,force:true});
+  }
 });

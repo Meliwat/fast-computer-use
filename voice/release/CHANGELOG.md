@@ -2,6 +2,15 @@
 
 ## Unreleased
 
+- Extension 0.4.9 can scroll an explicitly named, mounted browser control into
+  view before clicking, focusing, filling, selecting or checking it. Revalidate
+  the target after scrolling; stop on replacement, ambiguity or occlusion.
+  Includes 49 offscreen behavior cases and four more Swift-to-browser sequences.
+  No model call or website-specific selector is added. The app's navigation
+  preflight now retains the named offscreen link's expected destination.
+- Release disposable browser profiles when test startup fails; run rendering
+  and simulated-time sequence checks in separate browser phases.
+
 - Extension 0.4.8 resolves explicit control types on the fast DOM path, preserves
   literal names, and revalidates named bindings before dispatch. Includes 64
   target checks and four additional Swift-to-browser sequence cases.

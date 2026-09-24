@@ -162,6 +162,12 @@ Exact and learned browser sequences share the same verification path. Try
 Reference number then type AB-123`. Exact commands need no model call. See
 [sequence behavior and offline evidence](voice/browser/SEQUENCES.md).
 
+An explicitly named browser control can now be reached outside the viewport.
+For example, `fill Email in Billing form with hello@example.test` can scroll to
+that field, recheck it, and enter the text. This also works with nested scroll
+panels and short command sequences, without a model call. Hidden or unmounted
+controls still need to be revealed first. See [offscreen targeting and limits](voice/browser/OFFSCREEN-TARGETS.md).
+
 Standard browser widgets also support named activation: switches, checkboxes,
 radio buttons, listbox options, menu items and custom links. Existing local
 semantic aliases can select these observed controls. Toggle/selection state is
@@ -185,6 +191,7 @@ npm run test:aria
 npm run test:existing-text
 npm run test:scoped-targets
 npm run test:role-targets
+npm run test:offscreen
 npm run test:sequences
 python3.11 voice/browser/setup.py
 python3.11 voice/browser/tests/test_native_host.py
