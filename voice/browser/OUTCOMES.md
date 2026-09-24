@@ -68,6 +68,26 @@ real-site work. The app was not opened and no personal Chrome tabs were used.
 The extension source is updated; live installed-extension behavior has not been
 retested for this revision. Reload the unpacked extension when next trying it.
 
+## Deterministic regression timing — September 24
+
+A post-release hosted CI run passed 30/31 cases: its nominal 220 ms delayed
+panel opened, but did not provide 120 ms of stable evidence before the 500 ms
+verification budget expired. A separate controlled main-thread stall reproduced
+this behavior. Returning unverified was correct; the fixture's nominal timer
+delay was not a guarantee of its actual firing time on a loaded host.
+
+The regression suite now opts into Chrome virtual time. It first verifies that
+page clocks remain frozen across a real host delay, then advances page and
+isolated-controller timers together. The same production controller passes all
+32 cases, including a new 400 ms opening that must remain unverified because
+it cannot supply the full stability interval within the budget. Production
+budgets and assertions are unchanged; no retry or widened acceptance is used.
+Reported regression milliseconds are explicitly simulated, not latency evidence.
+
+The shared headless helper retains real time by default. The separate matched
+latency benchmark below and other suites continue to use their real clocks.
+The historical real-time measurements above remain unchanged.
+
 ## Reproduce
 
 These commands launch a separate headless Chrome with a temporary profile and
