@@ -1,0 +1,935 @@
+{
+  "scope": "Production DOM controller in isolated offline headless Chrome; generated fixtures and independent actual effects. No speech/native host, live sites, user tabs or end-to-end latency claim.",
+  "clock": "virtual time",
+  "controllerSHA256": "7b36ca6a864a374691e37f622263dbfb6464220da5fb725453aaf1cc500d09a4",
+  "testSHA256": "89e890377c0e221e5ca9dd85fe47f6698f600c71690d26beb668eb221a07f449",
+  "sourceChangedDuringRun": false,
+  "browser": "Chrome/153.0.8010.53",
+  "passed": 32,
+  "total": 32,
+  "rows": [
+    {
+      "name": "named section selects one repeated button",
+      "passed": true,
+      "expectedOutcome": "verified",
+      "result": {
+        "ok": true,
+        "commandId": "fixture-1790278162859-3",
+        "outcome": "verified",
+        "message": "Control transition verified",
+        "transition": {
+          "signals": [
+            "pressed"
+          ],
+          "surface": null,
+          "stableMs": 120
+        },
+        "observationId": "fixture-1790278161859-1/2",
+        "documentId": "fixture-1790278161859-1",
+        "targetId": "fixture-1790278161859-1:1",
+        "evidence": {
+          "before": {
+            "connected": true,
+            "focused": false,
+            "valueLength": null,
+            "checked": null,
+            "expanded": null,
+            "selected": null,
+            "scrollTop": 0,
+            "scrollLeft": 0
+          },
+          "after": {
+            "connected": true,
+            "focused": false,
+            "valueLength": null,
+            "checked": null,
+            "expanded": null,
+            "selected": null,
+            "scrollTop": 0,
+            "scrollLeft": 0
+          }
+        },
+        "totalMs": 120,
+        "domMs": 0
+      },
+      "effects": {
+        "counts": {
+          "intended": 1
+        },
+        "inputs": 0,
+        "submits": 0,
+        "correct": true
+      }
+    },
+    {
+      "name": "direct named click uses same scope",
+      "passed": true,
+      "expectedOutcome": "verified",
+      "result": {
+        "ok": true,
+        "commandId": "fixture-1790278163859-5",
+        "outcome": "verified",
+        "message": "Control transition verified",
+        "transition": {
+          "signals": [
+            "pressed"
+          ],
+          "surface": null,
+          "stableMs": 139.89999997615814
+        },
+        "observationId": "fixture-1790278163859-4/1",
+        "documentId": "fixture-1790278163859-4",
+        "targetId": "fixture-1790278163859-4:1",
+        "evidence": {
+          "before": {
+            "connected": true,
+            "focused": false,
+            "valueLength": null,
+            "checked": null,
+            "expanded": null,
+            "selected": null,
+            "scrollTop": 0,
+            "scrollLeft": 0
+          },
+          "after": {
+            "connected": true,
+            "focused": false,
+            "valueLength": null,
+            "checked": null,
+            "expanded": null,
+            "selected": null,
+            "scrollTop": 0,
+            "scrollLeft": 0
+          }
+        },
+        "totalMs": 139.89999997615814,
+        "domMs": 0
+      },
+      "effects": {
+        "counts": {
+          "intended": 1
+        },
+        "inputs": 0,
+        "submits": 0,
+        "correct": true
+      }
+    },
+    {
+      "name": "heading names a section",
+      "passed": true,
+      "expectedOutcome": "verified",
+      "result": {
+        "ok": true,
+        "commandId": "fixture-1790278164859-7",
+        "outcome": "verified",
+        "message": "Control transition verified",
+        "transition": {
+          "signals": [
+            "pressed"
+          ],
+          "surface": null,
+          "stableMs": 120
+        },
+        "observationId": "fixture-1790278164859-6/1",
+        "documentId": "fixture-1790278164859-6",
+        "targetId": "fixture-1790278164859-6:1",
+        "evidence": {
+          "before": {
+            "connected": true,
+            "focused": false,
+            "valueLength": null,
+            "checked": null,
+            "expanded": null,
+            "selected": null,
+            "scrollTop": 0,
+            "scrollLeft": 0
+          },
+          "after": {
+            "connected": true,
+            "focused": false,
+            "valueLength": null,
+            "checked": null,
+            "expanded": null,
+            "selected": null,
+            "scrollTop": 0,
+            "scrollLeft": 0
+          }
+        },
+        "totalMs": 120,
+        "domMs": 0
+      },
+      "effects": {
+        "counts": {
+          "intended": 1
+        },
+        "inputs": 0,
+        "submits": 0,
+        "correct": true
+      }
+    },
+    {
+      "name": "ARIA labelledby names a region",
+      "passed": true,
+      "expectedOutcome": "verified",
+      "result": {
+        "ok": true,
+        "commandId": "fixture-1790278166859-10",
+        "outcome": "verified",
+        "message": "Control transition verified",
+        "transition": {
+          "signals": [
+            "pressed"
+          ],
+          "surface": null,
+          "stableMs": 120
+        },
+        "observationId": "fixture-1790278165859-8/2",
+        "documentId": "fixture-1790278165859-8",
+        "targetId": "fixture-1790278165859-8:1",
+        "evidence": {
+          "before": {
+            "connected": true,
+            "focused": false,
+            "valueLength": null,
+            "checked": null,
+            "expanded": null,
+            "selected": null,
+            "scrollTop": 0,
+            "scrollLeft": 0
+          },
+          "after": {
+            "connected": true,
+            "focused": false,
+            "valueLength": null,
+            "checked": null,
+            "expanded": null,
+            "selected": null,
+            "scrollTop": 0,
+            "scrollLeft": 0
+          }
+        },
+        "totalMs": 120,
+        "domMs": 0
+      },
+      "effects": {
+        "counts": {
+          "intended": 1
+        },
+        "inputs": 0,
+        "submits": 0,
+        "correct": true
+      }
+    },
+    {
+      "name": "named form disambiguates duplicate fields",
+      "passed": true,
+      "expectedOutcome": "verified",
+      "result": {
+        "ok": true,
+        "commandId": "fixture-1790278167859-12",
+        "outcome": "verified",
+        "message": "Text remained in the intended field",
+        "observationId": "fixture-1790278167859-11/1",
+        "documentId": "fixture-1790278167859-11",
+        "targetId": "fixture-1790278167859-11:1",
+        "evidence": {
+          "before": {
+            "connected": true,
+            "focused": false,
+            "valueLength": 3,
+            "checked": null,
+            "expanded": null,
+            "selected": null,
+            "scrollTop": 0,
+            "scrollLeft": 0
+          },
+          "after": {
+            "connected": true,
+            "focused": true,
+            "valueLength": 18,
+            "checked": null,
+            "expanded": null,
+            "selected": null,
+            "scrollTop": 0,
+            "scrollLeft": 0
+          }
+        },
+        "totalMs": 180,
+        "domMs": 0
+      },
+      "effects": {
+        "counts": {},
+        "inputs": 1,
+        "submits": 0,
+        "correct": true
+      }
+    },
+    {
+      "name": "fieldset legend names a group",
+      "passed": true,
+      "expectedOutcome": "verified",
+      "result": {
+        "ok": true,
+        "commandId": "fixture-1790278168859-14",
+        "outcome": "verified",
+        "message": "Checkable control state remained set",
+        "observationId": "fixture-1790278168859-13/1",
+        "documentId": "fixture-1790278168859-13",
+        "targetId": "fixture-1790278168859-13:1",
+        "evidence": {
+          "before": {
+            "connected": true,
+            "focused": false,
+            "valueLength": null,
+            "checked": "false",
+            "expanded": null,
+            "selected": null,
+            "scrollTop": 0,
+            "scrollLeft": 0
+          },
+          "after": {
+            "connected": true,
+            "focused": false,
+            "valueLength": null,
+            "checked": "true",
+            "expanded": null,
+            "selected": null,
+            "scrollTop": 0,
+            "scrollLeft": 0
+          }
+        },
+        "totalMs": 180,
+        "domMs": 0
+      },
+      "effects": {
+        "counts": {},
+        "inputs": 1,
+        "submits": 0,
+        "correct": true
+      }
+    },
+    {
+      "name": "select options in a named section",
+      "passed": true,
+      "expectedOutcome": "verified",
+      "result": {
+        "ok": true,
+        "commandId": "fixture-1790278169859-16",
+        "outcome": "verified",
+        "message": "Selection remained set",
+        "observationId": "fixture-1790278169859-15/1",
+        "documentId": "fixture-1790278169859-15",
+        "targetId": "fixture-1790278169859-15:1",
+        "evidence": {
+          "before": {
+            "connected": true,
+            "focused": false,
+            "valueLength": 6,
+            "checked": null,
+            "expanded": null,
+            "selected": null,
+            "scrollTop": 0,
+            "scrollLeft": 0
+          },
+          "after": {
+            "connected": true,
+            "focused": false,
+            "valueLength": 6,
+            "checked": null,
+            "expanded": null,
+            "selected": null,
+            "scrollTop": 0,
+            "scrollLeft": 0
+          }
+        },
+        "totalMs": 180.10000002384186,
+        "domMs": 0
+      },
+      "effects": {
+        "counts": {},
+        "inputs": 1,
+        "submits": 0,
+        "correct": true
+      }
+    },
+    {
+      "name": "copy resolves source and destination sections",
+      "passed": true,
+      "expectedOutcome": "verified",
+      "result": {
+        "ok": true,
+        "commandId": "fixture-1790278170859-18",
+        "outcome": "verified",
+        "message": "Field copied · text verified",
+        "documentId": "fixture-1790278170859-17",
+        "targetId": "fixture-1790278170859-17:1",
+        "sourceId": "fixture-1790278170859-17:2",
+        "totalMs": 180
+      },
+      "effects": {
+        "counts": {},
+        "inputs": 1,
+        "submits": 0,
+        "correct": true
+      }
+    },
+    {
+      "name": "case change targets one repeated field",
+      "passed": true,
+      "expectedOutcome": "verified",
+      "result": {
+        "ok": true,
+        "commandId": "fixture-1790278171859-20",
+        "outcome": "verified",
+        "message": "Text made uppercase · verified",
+        "documentId": "fixture-1790278171859-19",
+        "targetId": "fixture-1790278171859-19:1",
+        "sourceId": "fixture-1790278171859-19:1",
+        "totalMs": 180
+      },
+      "effects": {
+        "counts": {},
+        "inputs": 1,
+        "submits": 0,
+        "correct": true
+      }
+    },
+    {
+      "name": "open shadow root resolves its own scope label",
+      "passed": true,
+      "expectedOutcome": "verified",
+      "result": {
+        "ok": true,
+        "commandId": "fixture-1790278173859-23",
+        "outcome": "verified",
+        "message": "Control transition verified",
+        "transition": {
+          "signals": [
+            "pressed"
+          ],
+          "surface": null,
+          "stableMs": 120
+        },
+        "observationId": "fixture-1790278172859-21/2",
+        "documentId": "fixture-1790278172859-21",
+        "targetId": "fixture-1790278172859-21:1",
+        "evidence": {
+          "before": {
+            "connected": true,
+            "focused": false,
+            "valueLength": null,
+            "checked": null,
+            "expanded": null,
+            "selected": null,
+            "scrollTop": 0,
+            "scrollLeft": 0
+          },
+          "after": {
+            "connected": true,
+            "focused": false,
+            "valueLength": null,
+            "checked": null,
+            "expanded": null,
+            "selected": null,
+            "scrollTop": 0,
+            "scrollLeft": 0
+          }
+        },
+        "totalMs": 120,
+        "domMs": 0
+      },
+      "effects": {
+        "counts": {
+          "intended": 1
+        },
+        "inputs": 0,
+        "submits": 0,
+        "correct": true
+      }
+    },
+    {
+      "name": "unqualified repeated label still rejects",
+      "passed": true,
+      "expectedOutcome": "failed",
+      "result": {
+        "ok": false,
+        "commandId": "fixture-1790278174859-25",
+        "outcome": "failed",
+        "error": "More than one control matches “Save”; name its field or button"
+      },
+      "effects": {
+        "counts": {},
+        "inputs": 0,
+        "submits": 0,
+        "correct": true
+      }
+    },
+    {
+      "name": "duplicate scope names reject",
+      "passed": true,
+      "expectedOutcome": "failed",
+      "result": {
+        "ok": false,
+        "commandId": "fixture-1790278175859-27",
+        "outcome": "failed",
+        "error": "More than one named section matches “profile”"
+      },
+      "effects": {
+        "counts": {},
+        "inputs": 0,
+        "submits": 0,
+        "correct": true
+      }
+    },
+    {
+      "name": "duplicate target inside selected scope rejects",
+      "passed": true,
+      "expectedOutcome": "failed",
+      "result": {
+        "ok": false,
+        "commandId": "fixture-1790278176859-29",
+        "outcome": "failed",
+        "error": "More than one control matches “save button”; name its field or button"
+      },
+      "effects": {
+        "counts": {},
+        "inputs": 0,
+        "submits": 0,
+        "correct": true
+      }
+    },
+    {
+      "name": "missing scope does not fall back to global target",
+      "passed": true,
+      "expectedOutcome": "failed",
+      "result": {
+        "ok": false,
+        "commandId": "fixture-1790278177859-31",
+        "outcome": "failed",
+        "error": "No available section named “profile”"
+      },
+      "effects": {
+        "counts": {},
+        "inputs": 0,
+        "submits": 0,
+        "correct": true
+      }
+    },
+    {
+      "name": "hidden scope is not available",
+      "passed": true,
+      "expectedOutcome": "failed",
+      "result": {
+        "ok": false,
+        "commandId": "fixture-1790278178859-33",
+        "outcome": "failed",
+        "error": "No available section named “profile”"
+      },
+      "effects": {
+        "counts": {},
+        "inputs": 0,
+        "submits": 0,
+        "correct": true
+      }
+    },
+    {
+      "name": "disabled scope is not available",
+      "passed": true,
+      "expectedOutcome": "failed",
+      "result": {
+        "ok": false,
+        "commandId": "fixture-1790278179859-35",
+        "outcome": "failed",
+        "error": "No available section named “profile”"
+      },
+      "effects": {
+        "counts": {},
+        "inputs": 0,
+        "submits": 0,
+        "correct": true
+      }
+    },
+    {
+      "name": "scope cannot escape active modal",
+      "passed": true,
+      "expectedOutcome": "failed",
+      "result": {
+        "ok": false,
+        "commandId": "fixture-1790278180859-37",
+        "outcome": "failed",
+        "error": "No available section named “profile”"
+      },
+      "effects": {
+        "counts": {},
+        "inputs": 0,
+        "submits": 0,
+        "correct": true
+      }
+    },
+    {
+      "name": "named active dialog is usable",
+      "passed": true,
+      "expectedOutcome": "verified",
+      "result": {
+        "ok": true,
+        "commandId": "fixture-1790278182859-40",
+        "outcome": "verified",
+        "message": "Control transition verified",
+        "transition": {
+          "signals": [
+            "pressed"
+          ],
+          "surface": null,
+          "stableMs": 120
+        },
+        "observationId": "fixture-1790278181859-38/2",
+        "documentId": "fixture-1790278181859-38",
+        "targetId": "fixture-1790278181859-38:1",
+        "evidence": {
+          "before": {
+            "connected": true,
+            "focused": true,
+            "valueLength": null,
+            "checked": null,
+            "expanded": null,
+            "selected": null,
+            "scrollTop": 0,
+            "scrollLeft": 0
+          },
+          "after": {
+            "connected": true,
+            "focused": true,
+            "valueLength": null,
+            "checked": null,
+            "expanded": null,
+            "selected": null,
+            "scrollTop": 0,
+            "scrollLeft": 0
+          }
+        },
+        "totalMs": 120,
+        "domMs": 0
+      },
+      "effects": {
+        "counts": {
+          "dialogButton": 1
+        },
+        "inputs": 0,
+        "submits": 0,
+        "correct": true
+      }
+    },
+    {
+      "name": "ordinary sign in label remains literal",
+      "passed": true,
+      "expectedOutcome": "verified",
+      "result": {
+        "ok": true,
+        "commandId": "fixture-1790278183859-42",
+        "outcome": "verified",
+        "message": "Control transition verified",
+        "transition": {
+          "signals": [
+            "pressed"
+          ],
+          "surface": null,
+          "stableMs": 139.89999997615814
+        },
+        "observationId": "fixture-1790278183859-41/1",
+        "documentId": "fixture-1790278183859-41",
+        "targetId": "fixture-1790278183859-41:1",
+        "evidence": {
+          "before": {
+            "connected": true,
+            "focused": false,
+            "valueLength": null,
+            "checked": null,
+            "expanded": null,
+            "selected": null,
+            "scrollTop": 0,
+            "scrollLeft": 0
+          },
+          "after": {
+            "connected": true,
+            "focused": false,
+            "valueLength": null,
+            "checked": null,
+            "expanded": null,
+            "selected": null,
+            "scrollTop": 0,
+            "scrollLeft": 0
+          }
+        },
+        "totalMs": 139.89999997615814,
+        "domMs": 0
+      },
+      "effects": {
+        "counts": {
+          "intended": 1
+        },
+        "inputs": 0,
+        "submits": 0,
+        "correct": true
+      }
+    },
+    {
+      "name": "literal label containing scope words remains usable",
+      "passed": true,
+      "expectedOutcome": "verified",
+      "result": {
+        "ok": true,
+        "commandId": "fixture-1790278184859-44",
+        "outcome": "verified",
+        "message": "Control transition verified",
+        "transition": {
+          "signals": [
+            "pressed"
+          ],
+          "surface": null,
+          "stableMs": 140
+        },
+        "observationId": "fixture-1790278184859-43/1",
+        "documentId": "fixture-1790278184859-43",
+        "targetId": "fixture-1790278184859-43:1",
+        "evidence": {
+          "before": {
+            "connected": true,
+            "focused": false,
+            "valueLength": null,
+            "checked": null,
+            "expanded": null,
+            "selected": null,
+            "scrollTop": 0,
+            "scrollLeft": 0
+          },
+          "after": {
+            "connected": true,
+            "focused": false,
+            "valueLength": null,
+            "checked": null,
+            "expanded": null,
+            "selected": null,
+            "scrollTop": 0,
+            "scrollLeft": 0
+          }
+        },
+        "totalMs": 140,
+        "domMs": 0
+      },
+      "effects": {
+        "counts": {
+          "intended": 1
+        },
+        "inputs": 0,
+        "submits": 0,
+        "correct": true
+      }
+    },
+    {
+      "name": "literal and scoped interpretations cannot choose different buttons",
+      "passed": true,
+      "expectedOutcome": "failed",
+      "result": {
+        "ok": false,
+        "commandId": "fixture-1790278185859-46",
+        "outcome": "failed",
+        "error": "That phrase names both a control and a section; use a more specific target"
+      },
+      "effects": {
+        "counts": {},
+        "inputs": 0,
+        "submits": 0,
+        "correct": true
+      }
+    },
+    {
+      "name": "bare in phrase is not silently treated as scope",
+      "passed": true,
+      "expectedOutcome": "failed",
+      "result": {
+        "ok": false,
+        "commandId": "fixture-1790278186859-48",
+        "outcome": "failed",
+        "error": "No available control named “Save in Profile”"
+      },
+      "effects": {
+        "counts": {},
+        "inputs": 0,
+        "submits": 0,
+        "correct": true
+      }
+    },
+    {
+      "name": "renamed scope invalidates bound observation",
+      "passed": true,
+      "expectedOutcome": "failed",
+      "result": {
+        "ok": false,
+        "commandId": "fixture-1790278188859-51",
+        "outcome": "failed",
+        "error": "No available section named “profile”"
+      },
+      "effects": {
+        "counts": {},
+        "inputs": 0,
+        "submits": 0,
+        "correct": true
+      }
+    },
+    {
+      "name": "replacement scope invalidates bound observation",
+      "passed": true,
+      "expectedOutcome": "failed",
+      "result": {
+        "ok": false,
+        "commandId": "fixture-1790278190859-54",
+        "outcome": "failed",
+        "error": "Named scope changed since observation; observe again"
+      },
+      "effects": {
+        "counts": {},
+        "inputs": 0,
+        "submits": 0,
+        "correct": true
+      }
+    },
+    {
+      "name": "new matching target invalidates bound choice",
+      "passed": true,
+      "expectedOutcome": "failed",
+      "result": {
+        "ok": false,
+        "commandId": "fixture-1790278192859-57",
+        "outcome": "failed",
+        "error": "More than one control matches “save button”; name its field or button"
+      },
+      "effects": {
+        "counts": {},
+        "inputs": 0,
+        "submits": 0,
+        "correct": true
+      }
+    },
+    {
+      "name": "focus-time scope change prevents text input",
+      "passed": true,
+      "expectedOutcome": "failed",
+      "result": {
+        "ok": false,
+        "error": "No available section named “profile”",
+        "domMs": 0,
+        "commandId": "fixture-1790278193859-59",
+        "outcome": "failed"
+      },
+      "effects": {
+        "counts": {},
+        "inputs": 0,
+        "submits": 0,
+        "correct": true
+      }
+    },
+    {
+      "name": "moving field to a different same-name scope before input refuses",
+      "passed": true,
+      "expectedOutcome": "failed",
+      "result": {
+        "ok": false,
+        "error": "Named target or section changed; action not repeated",
+        "domMs": 0,
+        "commandId": "fixture-1790278194859-61",
+        "outcome": "failed"
+      },
+      "effects": {
+        "counts": {},
+        "inputs": 0,
+        "submits": 0,
+        "correct": true
+      }
+    },
+    {
+      "name": "post-input scope change is unverified and not retried",
+      "passed": true,
+      "expectedOutcome": "unverified",
+      "result": {
+        "ok": false,
+        "commandId": "fixture-1790278195859-63",
+        "outcome": "unverified",
+        "error": "No available section named “profile”"
+      },
+      "effects": {
+        "counts": {},
+        "inputs": 1,
+        "submits": 0,
+        "correct": true
+      }
+    },
+    {
+      "name": "moving field to a different same-name scope after input is unverified",
+      "passed": true,
+      "expectedOutcome": "unverified",
+      "result": {
+        "ok": false,
+        "commandId": "fixture-1790278196859-65",
+        "outcome": "unverified",
+        "error": "Named target or section changed; action not repeated"
+      },
+      "effects": {
+        "counts": {},
+        "inputs": 1,
+        "submits": 0,
+        "correct": true
+      }
+    },
+    {
+      "name": "copy cannot follow a destination moved to a replacement scope",
+      "passed": true,
+      "expectedOutcome": "failed",
+      "result": {
+        "ok": false,
+        "commandId": "fixture-1790278197859-67",
+        "outcome": "failed",
+        "error": "Source or destination changed before editing; no text sent"
+      },
+      "effects": {
+        "counts": {},
+        "inputs": 0,
+        "submits": 0,
+        "correct": true
+      }
+    },
+    {
+      "name": "multiple direct headings do not invent a scope name",
+      "passed": true,
+      "expectedOutcome": "failed",
+      "result": {
+        "ok": false,
+        "commandId": "fixture-1790278198859-69",
+        "outcome": "failed",
+        "error": "No available section named “profile”"
+      },
+      "effects": {
+        "counts": {},
+        "inputs": 0,
+        "submits": 0,
+        "correct": true
+      }
+    },
+    {
+      "name": "duplicate labelledby IDs cannot name a scope",
+      "passed": true,
+      "expectedOutcome": "failed",
+      "result": {
+        "ok": false,
+        "commandId": "fixture-1790278199859-71",
+        "outcome": "failed",
+        "error": "No available section named “profile”"
+      },
+      "effects": {
+        "counts": {},
+        "inputs": 0,
+        "submits": 0,
+        "correct": true
+      }
+    }
+  ]
+}

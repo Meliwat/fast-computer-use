@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+- Resolve repeated browser control names inside a named section, form, group or
+  dialog. Preserve container identity across observation, focus and verification.
+- Extension 0.4.6 includes 32 offline scope regressions; ambiguous or changing
+  containers stop, and literal labels/payloads retain their meaning.
+
 - Join nearby, aligned OCR lines belonging to one unnamed control. Duplicate,
   conflicting and low-confidence labels retain their existing checks.
 - Include a generated-image visual diagnostic with an OCR-only mode. Its known

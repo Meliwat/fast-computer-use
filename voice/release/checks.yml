@@ -60,6 +60,7 @@ jobs:
           npm run test:outcomes
           npm run test:aria
           npm run test:existing-text
+          npm run test:scoped-targets
           npm run test:editor
       - name: Confirm tracked source was not changed by checks
         run: git diff --exit-code

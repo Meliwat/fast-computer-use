@@ -1,6 +1,6 @@
 /* Generic DOM actions plus a read-only X search demo verifier. No eval or network. */
 (() => {
-  if (globalThis.LocalVoiceDOM?.version === 15) return;
+  if (globalThis.LocalVoiceDOM?.version === 16) return;
   globalThis.LocalVoiceDOM?.dispose?.();
   const documentId = crypto.randomUUID();
   const identities = new WeakMap();
@@ -25,7 +25,9 @@
   function* ancestors(el) {
     for(let node=el;node instanceof Element;node=node.parentElement || node.getRootNode().host) yield node;
   }
-  let cache = null, revision = 0, draft = null, pendingSearch = null;
+  let cache = null, scopeCache = [], revision = 0, draft = null, pendingSearch = null;
+  const scopeSelectors={section:'section,[role=region]',region:'section,[role=region]',panel:'section,[role=region]',group:'fieldset,[role=group]',form:'form,[role=form]',dialog:'dialog,[role=dialog]'};
+  const scopeSelector=[...new Set(Object.values(scopeSelectors))].join(',');
   const observer = new MutationObserver(() => { cache = null; revision++; });
   observer.observe(document, {subtree:true, childList:true, attributes:true, characterData:true});
   const blocked = el => el.matches('input[type=password],input[type=file],input[type=hidden]') || [...ancestors(el)].some(node=>node.matches('[inert],[aria-hidden="true"]'));
@@ -72,7 +74,7 @@
   const clickable = el => editable(el) || el.matches('button,a[href],input[type=submit],input[type=button],input[type=checkbox],input[type=radio],'+ariaActions) || !!detailsFor(el);
   function controls() {
     if (cache) return cache;
-    const result = [], roots = [document];
+    const result = [], scopes = [], roots = [document];
     let examined = 0;
     while (roots.length) {
       const root = roots.pop();
@@ -82,10 +84,11 @@
       while ((el = walker.nextNode())) {
         if (++examined > 20000) throw Error('Page is too large for a bounded fast scan');
         if (el.shadowRoot) { roots.push(el.shadowRoot); observer.observe(el.shadowRoot,{subtree:true,childList:true,attributes:true,characterData:true}); }
+        if (el.matches(scopeSelector)) scopes.push(el);
         if (el.matches('dialog,[role=dialog],button,input,textarea,select,a[href],summary,[role=textbox],[role=searchbox],[contenteditable]:not([contenteditable=false]),'+ariaActions)) result.push(el);
       }
     }
-    cache = result; return result;
+    scopeCache=scopes;cache = result; return result;
   }
   function chooseRequest(request, predicate) {
     if (!request.targetId) return choose(request.target, predicate);
@@ -93,7 +96,11 @@
     const el = controls().find(el => identity(el) === request.targetId);
     if (!el || !within(interactionScope(),el) || !predicate(el) || !visible(el) || !enabled(el)) throw Error('Target is no longer available');
     const recorded=observations.get(request.observationId)?.get(request.targetId);
-    if(!recorded || recorded!==signature(el)) throw Error('Target changed since observation; observe again');
+    if(!recorded || recorded.signature!==signature(el)) throw Error('Target changed since observation; observe again');
+    if(recorded.query) {
+      const context=targetContext(recorded.query);
+      if(context.scope!==recorded.scope || chooseWithin(context.target,predicate,context.scope)!==el) throw Error('Named scope changed since observation; observe again');
+    }
     return el;
   }
   function matchesTarget(el,target) {
@@ -110,10 +117,69 @@
     });
   }
   function choose(target, predicate) {
-    const scope=interactionScope();
+    const context=targetContext(target);
+    return chooseWithin(context.target,predicate,context.scope);
+  }
+  function chooseWithin(target,predicate,scope) {
     const matches=controls().filter(el=>within(scope,el) && predicate(el) && matchesTarget(el,target) && visible(el) && enabled(el));
     if(matches.length!==1) throw Error(matches.length ? `More than one control matches “${target}”; name its field or button` : `No available control named “${target}”`);
     return matches[0];
+  }
+  function qualifiedTarget(target) {
+    const match=normalize(target).match(/^(.+?)\s+in\s+(?:the\s+)?(.+?)\s+(section|region|panel|group|form|dialog)$/);
+    return match?{target:match[1],name:match[2],kind:match[3]}:null;
+  }
+  function scopeName(el) {
+    const references=el.getAttribute('aria-labelledby');
+    let text;
+    if(references!==null) {
+      const ids=references.trim().split(/\s+/).filter(Boolean),root=el.getRootNode();
+      if(!ids.length || ids.length>8) return null;
+      const parts=[];
+      for(const id of ids) {
+        if(id.length>256) return null;
+        const matches=root.querySelectorAll('#'+Array.from(id,c=>'\\'+c.codePointAt(0).toString(16)+' ').join(''));
+        if(matches.length!==1)return null;
+        parts.push(matches[0].textContent);
+      }
+      text=parts.join(' ');
+    } else if(el.hasAttribute('aria-label')) text=el.getAttribute('aria-label');
+    else {
+      const children=[...el.children],heading='h1,h2,h3,h4,h5,h6,[role=heading]';
+      const names=el.matches('fieldset')?children.filter(node=>node.matches('legend')):
+        children.flatMap(node=>node.matches(heading)?[node]:node.matches('header')?[...node.children].filter(child=>child.matches(heading)):[]);
+      if(names.length!==1 || !rendered(names[0]))return null;
+      text=names[0].textContent;
+    }
+    const name=normalize(text);
+    return name && name.length<=100?name:null;
+  }
+  function targetContext(target) {
+    flush();
+    const scope=interactionScope(),qualified=qualifiedTarget(target);
+    if(!qualified)return {target,scope,qualified:false};
+    const matches=scopeCache.filter(el=>within(scope,el) && el.matches(scopeSelectors[qualified.kind]) && scopeName(el)===qualified.name && rendered(el) && enabled(el));
+    // Scope syntax must not turn a literal label such as “Open in side panel”
+    // into a different action. Refuse when both readings are available.
+    const literal=normalize(target).replace(/^the\s+/,''),literalMatch=controls().some(el=>within(scope,el) && (clickable(el) || el.matches('select')) && labels(el).includes(literal) && visible(el));
+    if(literalMatch) {
+      if(matches.length)throw Error('That phrase names both a control and a section; use a more specific target');
+      return {target,scope,qualified:false};
+    }
+    if(matches.length!==1)throw Error(matches.length?`More than one named ${qualified.kind} matches “${qualified.name}”`:`No available ${qualified.kind} named “${qualified.name}”`);
+    return {target:qualified.target,scope:matches[0],qualified:true};
+  }
+  function scopeBinding(request) {
+    const recorded=request.targetId?observations.get(request.observationId)?.get(request.targetId):null;
+    if(recorded?.query)return {query:recorded.query,scope:recorded.scope};
+    if(!qualifiedTarget(request.target))return null;
+    const context=targetContext(request.target);
+    return context.qualified?{query:request.target,scope:context.scope}:null;
+  }
+  function recheckScopedTarget(request,el,binding) {
+    if(!binding)return;
+    const context=targetContext(binding.query);
+    if(!context.qualified || context.scope!==binding.scope || targetFor(request)!==el)throw Error('Named target or section changed; action not repeated');
   }
   function within(scope,el) {
     for(let node=el;node;node=node.parentNode || node.host) if(node===scope) return true;
@@ -162,10 +228,11 @@
       }
     }
   }
-  function fill(el, text, insert = false) {
+  function fill(el, text, insert = false, recheck = null) {
     if(typeof text!=='string' || text.length>16000) throw Error('Text is too long');
     if(typeof document.execCommand!=='function') throw Error('Browser editing engine unavailable; no text sent');
     focusField(el);
+    recheck?.();
     let expected;
     if(el.isContentEditable) {
       const selection=el.getRootNode().getSelection?.() || document.getSelection();
@@ -198,7 +265,7 @@
   function exactTextTarget(target, writable) {
     if(typeof target!=='string' || !target.trim() || target.length>100 || /[\u0000-\u001f\u007f]/.test(target)) throw Error('Name one text field');
     flush();
-    const scope=interactionScope(),raw=normalize(target),stripped=raw.replace(/^the\s+/,'').replace(/\s+(?:text field|text box|field|input|editor)$/,'');
+    const context=targetContext(target),scope=context.scope,raw=normalize(context.target),stripped=raw.replace(/^the\s+/,'').replace(/\s+(?:text field|text box|field|input|editor)$/,'');
     const fields=controls().filter(el=>within(scope,el) && editable(el) && visible(el));
     for(const wanted of [...new Set([raw,stripped])]) {
       const matches=fields.filter(el=>labels(el).some(label=>label.replace(/\s*:\s*$/,'')===wanted));
@@ -216,6 +283,7 @@
       if(copying ? request.value!=null : !['uppercase','lowercase'].includes(request.value) || request.source!=null) throw Error('Invalid existing-text operation');
       const sourceName=copying?request.source:request.target;
       const source=exactTextTarget(sourceName,false),target=exactTextTarget(request.target,true);
+      const sourceScope=targetContext(sourceName).scope,targetScope=targetContext(request.target).scope;
       const read=field=>field.isContentEditable?field.innerText:value(field);
       const original=read(source),before=read(target),sourceSignature=signature(source),targetSignature=signature(target);
       if(typeof original!=='string' || typeof before!=='string' || original.length>16000 || before.length>16000) throw Error('The field text is unavailable or too long');
@@ -225,7 +293,7 @@
         const probe=target.cloneNode(false);probe.value=expected;
         if(probe.value!==expected || target.maxLength>=0 && expected.length>target.maxLength) throw Error('The destination cannot preserve that text; no text sent');
       }
-      const sameFields=()=>exactTextTarget(sourceName,false)===source && exactTextTarget(request.target,true)===target;
+      const sameFields=()=>targetContext(sourceName).scope===sourceScope && targetContext(request.target).scope===targetScope && exactTextTarget(sourceName,false)===source && exactTextTarget(request.target,true)===target;
       checkContext(request);draft=null;pendingSearch=null;
       focusField(target);
       checkContext(request);
@@ -287,8 +355,8 @@
         case 'capabilities': return {ok:true,protocolVersion:2,verifiedDispatch:false,message:'Direct dispatcher'};
         case 'observe': return {ok:true,observation:observe(request.target),message:'Page observed'};
         case 'prepareSearch': { const el=searchField(); pendingSearch=null; searchSubmissionAllowed(el); checkContext(request); fill(el,request.value); draft=null; message='Search query prepared'; break; }
-        case 'fill': { const el = chooseRequest(request,editable); checkContext(request); fill(el,request.value); message='Field filled and read back'; break; }
-        case 'type': { const el=typingField(request); checkContext(request); fill(el,request.value,true); message='Draft inserted · say send it to submit'; break; }
+        case 'fill': { const el = chooseRequest(request,editable),binding=scopeBinding(request); checkContext(request); fill(el,request.value,false,()=>recheckScopedTarget(request,el,binding)); message='Field filled and read back'; break; }
+        case 'type': { const el=typingField(request),binding=scopeBinding(request); checkContext(request); fill(el,request.value,true,()=>recheckScopedTarget(request,el,binding)); message='Draft inserted · say send it to submit'; break; }
         case 'click': { const el=chooseRequest(request,clickable); checkContext(request); draft=null; if(editable(el)) { focusField(el); message='Field focused'; } else { el.click(); message='Click requested'; } break; }
         case 'select': {
           const el=chooseRequest(request,el=>el instanceof HTMLSelectElement);
@@ -371,10 +439,10 @@
   }
   function observe(target) {
     flush();
-    const scope=interactionScope();
-    const all=controls().filter(el=>within(scope,el) && visible(el) && (typeof target!=='string' || (clickable(el) && matchesTarget(el,target))));
+    const context=targetContext(target),scope=context.scope;
+    const all=controls().filter(el=>within(scope,el) && visible(el) && (typeof target!=='string' || (clickable(el) && matchesTarget(el,context.target))));
     const observationId=`${documentId}/${++observationSequence}`;
-    observations.set(observationId,new Map(all.slice(0,48).map(el=>[identity(el),signature(el)])));
+    observations.set(observationId,new Map(all.slice(0,48).map(el=>[identity(el),{signature:signature(el),scope:context.qualified?scope:null,query:context.qualified?target:null}])));
     while(observations.size>4) observations.delete(observations.keys().next().value);
     return {
       version:1,documentId,observationId,targetQuery:typeof target==='string'?target:null,
@@ -467,12 +535,13 @@
     if(b.kind!=='none' && after.shown && (!b.target || !visible(b.target))) return null;
     return {key:JSON.stringify([after.signals,after.shown,identity(b.target)]),signals,surface:surface?b.kind:null};
   }
-  async function verifyActivation(el,before,request) {
+  async function verifyActivation(el,before,request,binding) {
     const started=performance.now();let matchedAt=null,proof=null;
     const measurable=before.relation.kind!=='none' || Object.values(before.signals).some(value=>value!==null);
     if(!measurable || !before.valid) return null;
     while(performance.now()-started<500) {
       checkContext({...request,expectedURL:location.href});
+      recheckScopedTarget(request,el,binding);
       const candidate=activationChange(before,activationState(el)),now=performance.now();
       // Once observed, reversal/replacement/contradiction ends verification.
       // This function only reads state; it never repeats the click.
@@ -502,6 +571,7 @@
       }
       pendingSearch=null;
       el=targetFor(request);before=state(el);
+      const binding=scopeBinding(request);
       const observation=observe();
       const expectedNavigationURL=request.op==='click'?navigationURL(el):null;
       const activation=request.op==='click' && !editable(el)?activationState(el):null;
@@ -511,7 +581,7 @@
       // Acknowledge the single dispatch promptly; native code observes the exact URL.
       if(expectedNavigationURL) return {ok:true,commandId,outcome:location.href===expectedNavigationURL?'verified':'unverified',message:'Navigation requested; destination not yet verified',expectedNavigationURL,documentId,targetId:identity(el),totalMs:performance.now()-started,domMs:result.domMs};
       if(activation) {
-        const transition=await verifyActivation(el,activation,request);
+        const transition=await verifyActivation(el,activation,request,binding);
         return {ok:true,commandId,outcome:transition?'verified':'unverified',message:transition?'Control transition verified':'Click delivered; result not verified',
           transition,observationId:observation.observationId,documentId,targetId:identity(el),
           evidence:{before:evidence(before),after:evidence(state(el))},totalMs:performance.now()-started,domMs:result.domMs};
@@ -523,6 +593,7 @@
       while(performance.now()-verifyStart<180) {
         await new Promise(resolve=>setTimeout(resolve,30));
         checkContext({...request,expectedURL:location.href}); after=state(el);
+        recheckScopedTarget(request,el,binding);
         if(['type','fill','prepareSearch','select','check'].includes(request.op)) {
           if(!after.connected || !within(interactionScope(),el) || (['type','fill','prepareSearch','select'].includes(request.op) && after.value!==expected.value) || (request.op==='check' && after.checked!==expected.checked)) {
             return {ok:false,commandId,outcome:'failed',error:'The page reverted or replaced the control; action not repeated',evidence:{before:evidence(before),after:evidence(after)}};
@@ -554,5 +625,5 @@
       return {ok:false,commandId,outcome:before?'unverified':'failed',error:error.message};
     }
   }
-  globalThis.LocalVoiceDOM=Object.freeze({version:15,run,runVerified,observe,dispose:()=>observer.disconnect()});
+  globalThis.LocalVoiceDOM=Object.freeze({version:16,run,runVerified,observe,dispose:()=>observer.disconnect()});
 })();
