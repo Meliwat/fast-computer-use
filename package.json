@@ -1,0 +1,19 @@
+{
+  "name": "local-voice-source",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Offline browser tests for Fast Computer Use / Local Voice for macOS",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "test:browser": "node --test voice/browser/tests/*.test.cjs",
+    "test:editor": "node voice/browser/tests/editor-headless.cjs",
+    "test:outcomes": "node voice/browser/tests/outcomes-headless.cjs",
+    "test:aria": "node voice/browser/tests/aria-headless.cjs",
+    "test:existing-text": "node voice/browser/tests/existing-text-headless.cjs"
+  },
+  "devDependencies": {
+    "jsdom": "29.1.1"
+  }
+}

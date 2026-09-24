@@ -1,0 +1,14 @@
+.DS_Store
+.cache/
+.env
+.env.*
+node_modules/
+__pycache__/
+*.pyc
+*.tar.gz
+voice/.build/
+voice/dist/
+voice/parser/artifacts/
+voice/browser/native-host
+voice/browser/native-host-manifest.json
+voice/browser/host-config.json

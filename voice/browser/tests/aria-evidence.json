@@ -1,0 +1,2694 @@
+{
+  "date": "2026-09-24",
+  "version": {
+    "controller": 13,
+    "extension": "0.4.3"
+  },
+  "scope": "Generic widget activation and semantic role transfer. Disposable headless Chrome and real local workers. No personal tabs, microphone or live desktop input.",
+  "sourceHashes": {
+    "voice/browser/extension/controller.js": "895b50dcaeddfb81780d54b76c48a179eb7bd61c6eeda16e6840015195c607ae",
+    "voice/browser/extension/manifest.json": "63e91e7e93858cdcf919b56dafd9bf0cf38b7d92bba4d6debe3af430e5ce31dd",
+    "voice/research/grounded/pipeline.py": "79c1a7a77d88e13750474634a481e7981bd3b236443f6ea60b6a9e4ccfd89d73",
+    "voice/browser/tests/aria-headless.cjs": "d1fa90695c3365b3c180eb63804a39c3839322dea8eae016789a8dd5b5da1ed3",
+    "voice/research/grounded/verify-aria-model.cjs": "3d9311051de28076e412b79490b0b1e0519dad13da82452c799617fddac96d8a",
+    "voice/research/grounded/verify-sequences.cjs": "673e103bffba581188142b06652349cf80a682454a029b27a4bf07c531e4f341"
+  },
+  "initialBaseline": {
+    "scope": "Authored standard-widget fixtures, production controller in isolated headless Chrome. Independent DOM effects and click counters. No personal browser, speech, native host or app launch.",
+    "controllerSHA256": "4e59dcab444be971418c01300998d6a76720e645f969fcca7eab9f6e27f4db21",
+    "testSHA256": "5a7f632ffdc41e65bc466296578344e5f2c46e0a0853c2deb6ba50cb7166b3ec",
+    "browser": "Chrome/153.0.8010.53",
+    "passed": 2,
+    "total": 32,
+    "rows": [
+      {
+        "name": "custom menu item activates",
+        "passed": false,
+        "observed": false,
+        "outcome": "failed",
+        "expectedOutcome": "unverified",
+        "clicks": 0,
+        "message": "No available control named \u201cNight mode\u201d",
+        "totalMs": null,
+        "value": ""
+      },
+      {
+        "name": "menu item opens a linked submenu",
+        "passed": false,
+        "observed": false,
+        "outcome": "failed",
+        "expectedOutcome": "verified",
+        "clicks": 0,
+        "message": "No available control named \u201cNight mode\u201d",
+        "totalMs": null,
+        "value": true
+      },
+      {
+        "name": "custom switch toggles",
+        "passed": false,
+        "observed": false,
+        "outcome": "failed",
+        "expectedOutcome": "verified",
+        "clicks": 0,
+        "message": "No available control named \u201cNight mode\u201d",
+        "totalMs": null,
+        "value": "false"
+      },
+      {
+        "name": "button switch uses aria checked",
+        "passed": false,
+        "observed": true,
+        "outcome": "unverified",
+        "expectedOutcome": "verified",
+        "clicks": 1,
+        "message": "Click delivered; result not verified",
+        "totalMs": 1.2000000476837158,
+        "value": "true"
+      },
+      {
+        "name": "native checkbox activates through click",
+        "passed": false,
+        "observed": false,
+        "outcome": "failed",
+        "expectedOutcome": "verified",
+        "clicks": 0,
+        "message": "No available control named \u201cNight mode\u201d",
+        "totalMs": null,
+        "value": false
+      },
+      {
+        "name": "native checkbox switch uses native checked",
+        "passed": false,
+        "observed": false,
+        "outcome": "failed",
+        "expectedOutcome": "verified",
+        "clicks": 0,
+        "message": "No available control named \u201cNight mode\u201d",
+        "totalMs": null,
+        "value": false
+      },
+      {
+        "name": "native radio activates through click",
+        "passed": false,
+        "observed": false,
+        "outcome": "failed",
+        "expectedOutcome": "verified",
+        "clicks": 0,
+        "message": "No available control named \u201cNight mode\u201d",
+        "totalMs": null,
+        "value": false
+      },
+      {
+        "name": "custom radio changes group selection",
+        "passed": false,
+        "observed": false,
+        "outcome": "failed",
+        "expectedOutcome": "verified",
+        "clicks": 0,
+        "message": "No available control named \u201cNight mode\u201d",
+        "totalMs": null,
+        "value": false
+      },
+      {
+        "name": "menu checkbox activates",
+        "passed": false,
+        "observed": false,
+        "outcome": "failed",
+        "expectedOutcome": "verified",
+        "clicks": 0,
+        "message": "No available control named \u201cNight mode\u201d",
+        "totalMs": null,
+        "value": "false"
+      },
+      {
+        "name": "menu radio activates",
+        "passed": false,
+        "observed": false,
+        "outcome": "failed",
+        "expectedOutcome": "verified",
+        "clicks": 0,
+        "message": "No available control named \u201cNight mode\u201d",
+        "totalMs": null,
+        "value": "false"
+      },
+      {
+        "name": "custom checkbox visible text supplies label",
+        "passed": false,
+        "observed": false,
+        "outcome": "failed",
+        "expectedOutcome": "verified",
+        "clicks": 0,
+        "message": "No available control named \u201cNight mode\u201d",
+        "totalMs": null,
+        "value": "false"
+      },
+      {
+        "name": "listbox option selected state changes",
+        "passed": false,
+        "observed": false,
+        "outcome": "failed",
+        "expectedOutcome": "verified",
+        "clicks": 0,
+        "message": "No available control named \u201cNight mode\u201d",
+        "totalMs": null,
+        "value": "false"
+      },
+      {
+        "name": "listbox option checked state changes",
+        "passed": false,
+        "observed": false,
+        "outcome": "failed",
+        "expectedOutcome": "verified",
+        "clicks": 0,
+        "message": "No available control named \u201cNight mode\u201d",
+        "totalMs": null,
+        "value": "false"
+      },
+      {
+        "name": "custom link uses visible text",
+        "passed": false,
+        "observed": false,
+        "outcome": "failed",
+        "expectedOutcome": "unverified",
+        "clicks": 0,
+        "message": "No available control named \u201cNight mode\u201d",
+        "totalMs": null,
+        "value": ""
+      },
+      {
+        "name": "mixed checkbox can become checked",
+        "passed": false,
+        "observed": false,
+        "outcome": "failed",
+        "expectedOutcome": "verified",
+        "clicks": 0,
+        "message": "No available control named \u201cNight mode\u201d",
+        "totalMs": null,
+        "value": "mixed"
+      },
+      {
+        "name": "mixed switch is not valid verification evidence",
+        "passed": false,
+        "observed": false,
+        "outcome": "failed",
+        "expectedOutcome": "unverified",
+        "clicks": 0,
+        "message": "No available control named \u201cNight mode\u201d",
+        "totalMs": null,
+        "value": "mixed"
+      },
+      {
+        "name": "malformed resulting state is unverified",
+        "passed": false,
+        "observed": false,
+        "outcome": "failed",
+        "expectedOutcome": "unverified",
+        "clicks": 0,
+        "message": "No available control named \u201cNight mode\u201d",
+        "totalMs": null,
+        "value": "false"
+      },
+      {
+        "name": "reverted switch is not reported verified",
+        "passed": false,
+        "observed": false,
+        "outcome": "failed",
+        "expectedOutcome": "unverified",
+        "clicks": 0,
+        "message": "No available control named \u201cNight mode\u201d",
+        "totalMs": null,
+        "value": "false"
+      },
+      {
+        "name": "unchanged switch is acknowledged without success claim",
+        "passed": false,
+        "observed": false,
+        "outcome": "failed",
+        "expectedOutcome": "unverified",
+        "clicks": 0,
+        "message": "No available control named \u201cNight mode\u201d",
+        "totalMs": null,
+        "value": "false"
+      },
+      {
+        "name": "explicit check sets a switch once",
+        "passed": false,
+        "observed": false,
+        "outcome": "failed",
+        "expectedOutcome": "verified",
+        "clicks": 0,
+        "message": "No available control named \u201cNight mode\u201d",
+        "totalMs": null,
+        "value": "false"
+      },
+      {
+        "name": "explicit check preserves an already checked switch",
+        "passed": false,
+        "observed": false,
+        "outcome": "failed",
+        "expectedOutcome": "verified",
+        "clicks": 0,
+        "message": "No available control named \u201cNight mode\u201d",
+        "totalMs": null,
+        "value": "true"
+      },
+      {
+        "name": "explicit uncheck works for menu checkbox",
+        "passed": false,
+        "observed": false,
+        "outcome": "failed",
+        "expectedOutcome": "verified",
+        "clicks": 0,
+        "message": "No available control named \u201cNight mode\u201d",
+        "totalMs": null,
+        "value": "true"
+      },
+      {
+        "name": "check rejects malformed initial state without input",
+        "passed": false,
+        "observed": false,
+        "outcome": "failed",
+        "expectedOutcome": "failed",
+        "clicks": 0,
+        "message": "No available control named \u201cNight mode\u201d",
+        "totalMs": null,
+        "value": "banana"
+      },
+      {
+        "name": "check rejects missing requested boolean before input",
+        "passed": false,
+        "observed": false,
+        "outcome": "failed",
+        "expectedOutcome": "failed",
+        "clicks": 1,
+        "message": "Checkbox change not verified",
+        "totalMs": null,
+        "value": true
+      },
+      {
+        "name": "disabled menu item is not activated",
+        "passed": false,
+        "observed": false,
+        "outcome": "failed",
+        "expectedOutcome": "failed",
+        "clicks": 0,
+        "message": "No available control named \u201cNight mode\u201d",
+        "totalMs": null
+      },
+      {
+        "name": "disabled ancestor prevents custom activation",
+        "passed": false,
+        "observed": false,
+        "outcome": "failed",
+        "expectedOutcome": "failed",
+        "clicks": 0,
+        "message": "No available control named \u201cNight mode\u201d",
+        "totalMs": null,
+        "value": "false"
+      },
+      {
+        "name": "duplicate options are not guessed",
+        "passed": false,
+        "observed": false,
+        "outcome": "failed",
+        "expectedOutcome": "failed",
+        "clicks": 0,
+        "message": "No available control named \u201cNight mode\u201d",
+        "totalMs": null
+      },
+      {
+        "name": "bound role change invalidates old observation",
+        "passed": false,
+        "observed": false,
+        "outcome": "failed",
+        "expectedOutcome": "failed",
+        "clicks": 0,
+        "message": "No available control named \u201cNight mode\u201d",
+        "totalMs": null
+      },
+      {
+        "name": "open shadow root switch activates",
+        "passed": false,
+        "observed": false,
+        "outcome": "failed",
+        "expectedOutcome": "verified",
+        "clicks": 0,
+        "message": "No available control named \u201cNight mode\u201d",
+        "totalMs": null,
+        "value": "false"
+      },
+      {
+        "name": "disabled shadow host prevents activation",
+        "passed": false,
+        "observed": false,
+        "outcome": "failed",
+        "expectedOutcome": "failed",
+        "clicks": 0,
+        "message": "No available control named \u201cNight mode\u201d",
+        "totalMs": null,
+        "value": "false"
+      },
+      {
+        "name": "aria-hidden shadow host excludes its control",
+        "passed": true,
+        "observed": false,
+        "outcome": "failed",
+        "expectedOutcome": "failed",
+        "clicks": 0,
+        "message": "No available control named \u201cNight mode\u201d",
+        "totalMs": null,
+        "value": "false"
+      },
+      {
+        "name": "plain named text is not made clickable",
+        "passed": true,
+        "observed": false,
+        "outcome": "failed",
+        "expectedOutcome": "failed",
+        "clicks": 0,
+        "message": "No available control named \u201cNight mode\u201d",
+        "totalMs": null
+      }
+    ]
+  },
+  "initialImplementation": {
+    "scope": "Authored standard-widget fixtures, production controller in isolated headless Chrome. Independent DOM effects and click counters. No personal browser, speech, native host or app launch.",
+    "controllerSHA256": "5bc743e13e9fbac501d586bba28aba5b025b49f46d5b0d596899b638fc5f8c45",
+    "testSHA256": "5a7f632ffdc41e65bc466296578344e5f2c46e0a0853c2deb6ba50cb7166b3ec",
+    "browser": "Chrome/153.0.8010.53",
+    "passed": 32,
+    "total": 32,
+    "rows": [
+      {
+        "name": "custom menu item activates",
+        "passed": true,
+        "observed": true,
+        "outcome": "unverified",
+        "expectedOutcome": "unverified",
+        "clicks": 1,
+        "message": "Click delivered; result not verified",
+        "totalMs": 1,
+        "value": "opened"
+      },
+      {
+        "name": "menu item opens a linked submenu",
+        "passed": true,
+        "observed": true,
+        "outcome": "verified",
+        "expectedOutcome": "verified",
+        "clicks": 1,
+        "message": "Control transition verified",
+        "totalMs": 132.59999990463257,
+        "value": false,
+        "transition": {
+          "signals": [
+            "expanded"
+          ],
+          "surface": "controls",
+          "stableMs": 131.59999990463257
+        }
+      },
+      {
+        "name": "custom switch toggles",
+        "passed": true,
+        "observed": true,
+        "outcome": "verified",
+        "expectedOutcome": "verified",
+        "clicks": 1,
+        "message": "Control transition verified",
+        "totalMs": 130.70000004768372,
+        "value": "true",
+        "transition": {
+          "signals": [
+            "checked"
+          ],
+          "surface": null,
+          "stableMs": 130.30000007152557
+        }
+      },
+      {
+        "name": "button switch uses aria checked",
+        "passed": true,
+        "observed": true,
+        "outcome": "verified",
+        "expectedOutcome": "verified",
+        "clicks": 1,
+        "message": "Control transition verified",
+        "totalMs": 131.29999995231628,
+        "value": "true",
+        "transition": {
+          "signals": [
+            "checked"
+          ],
+          "surface": null,
+          "stableMs": 131
+        }
+      },
+      {
+        "name": "native checkbox activates through click",
+        "passed": true,
+        "observed": true,
+        "outcome": "verified",
+        "expectedOutcome": "verified",
+        "clicks": 1,
+        "message": "Control transition verified",
+        "totalMs": 131.89999997615814,
+        "value": true,
+        "transition": {
+          "signals": [
+            "checked"
+          ],
+          "surface": null,
+          "stableMs": 131.39999997615814
+        }
+      },
+      {
+        "name": "native checkbox switch uses native checked",
+        "passed": true,
+        "observed": true,
+        "outcome": "verified",
+        "expectedOutcome": "verified",
+        "clicks": 1,
+        "message": "Control transition verified",
+        "totalMs": 132.70000004768372,
+        "value": true,
+        "transition": {
+          "signals": [
+            "checked"
+          ],
+          "surface": null,
+          "stableMs": 132.29999995231628
+        }
+      },
+      {
+        "name": "native radio activates through click",
+        "passed": true,
+        "observed": true,
+        "outcome": "verified",
+        "expectedOutcome": "verified",
+        "clicks": 1,
+        "message": "Control transition verified",
+        "totalMs": 132.89999997615814,
+        "value": true,
+        "transition": {
+          "signals": [
+            "checked"
+          ],
+          "surface": null,
+          "stableMs": 132.29999995231628
+        }
+      },
+      {
+        "name": "custom radio changes group selection",
+        "passed": true,
+        "observed": true,
+        "outcome": "verified",
+        "expectedOutcome": "verified",
+        "clicks": 1,
+        "message": "Control transition verified",
+        "totalMs": 133.29999995231628,
+        "value": true,
+        "transition": {
+          "signals": [
+            "checked"
+          ],
+          "surface": null,
+          "stableMs": 133
+        }
+      },
+      {
+        "name": "menu checkbox activates",
+        "passed": true,
+        "observed": true,
+        "outcome": "verified",
+        "expectedOutcome": "verified",
+        "clicks": 1,
+        "message": "Control transition verified",
+        "totalMs": 129.89999997615814,
+        "value": "true",
+        "transition": {
+          "signals": [
+            "checked"
+          ],
+          "surface": null,
+          "stableMs": 129.5
+        }
+      },
+      {
+        "name": "menu radio activates",
+        "passed": true,
+        "observed": true,
+        "outcome": "verified",
+        "expectedOutcome": "verified",
+        "clicks": 1,
+        "message": "Control transition verified",
+        "totalMs": 131.80000007152557,
+        "value": "true",
+        "transition": {
+          "signals": [
+            "checked"
+          ],
+          "surface": null,
+          "stableMs": 131.39999997615814
+        }
+      },
+      {
+        "name": "custom checkbox visible text supplies label",
+        "passed": true,
+        "observed": true,
+        "outcome": "verified",
+        "expectedOutcome": "verified",
+        "clicks": 1,
+        "message": "Control transition verified",
+        "totalMs": 134.80000007152557,
+        "value": "true",
+        "transition": {
+          "signals": [
+            "checked"
+          ],
+          "surface": null,
+          "stableMs": 134.5
+        }
+      },
+      {
+        "name": "listbox option selected state changes",
+        "passed": true,
+        "observed": true,
+        "outcome": "verified",
+        "expectedOutcome": "verified",
+        "clicks": 1,
+        "message": "Control transition verified",
+        "totalMs": 134.89999997615814,
+        "value": "true",
+        "transition": {
+          "signals": [
+            "selected"
+          ],
+          "surface": null,
+          "stableMs": 134.60000002384186
+        }
+      },
+      {
+        "name": "listbox option checked state changes",
+        "passed": true,
+        "observed": true,
+        "outcome": "verified",
+        "expectedOutcome": "verified",
+        "clicks": 1,
+        "message": "Control transition verified",
+        "totalMs": 133.29999995231628,
+        "value": "true",
+        "transition": {
+          "signals": [
+            "checked"
+          ],
+          "surface": null,
+          "stableMs": 133.10000002384186
+        }
+      },
+      {
+        "name": "custom link uses visible text",
+        "passed": true,
+        "observed": true,
+        "outcome": "unverified",
+        "expectedOutcome": "unverified",
+        "clicks": 1,
+        "message": "Click delivered; result not verified",
+        "totalMs": 0.20000004768371582,
+        "value": "opened"
+      },
+      {
+        "name": "mixed checkbox can become checked",
+        "passed": true,
+        "observed": true,
+        "outcome": "verified",
+        "expectedOutcome": "verified",
+        "clicks": 1,
+        "message": "Control transition verified",
+        "totalMs": 136.39999997615814,
+        "value": "true",
+        "transition": {
+          "signals": [
+            "checked"
+          ],
+          "surface": null,
+          "stableMs": 136
+        }
+      },
+      {
+        "name": "mixed switch is not valid verification evidence",
+        "passed": true,
+        "observed": true,
+        "outcome": "unverified",
+        "expectedOutcome": "unverified",
+        "clicks": 1,
+        "message": "Click delivered; result not verified",
+        "totalMs": 0.10000002384185791,
+        "value": "true"
+      },
+      {
+        "name": "malformed resulting state is unverified",
+        "passed": true,
+        "observed": true,
+        "outcome": "unverified",
+        "expectedOutcome": "unverified",
+        "clicks": 1,
+        "message": "Click delivered; result not verified",
+        "totalMs": 503.6999999284744,
+        "value": "banana"
+      },
+      {
+        "name": "reverted switch is not reported verified",
+        "passed": true,
+        "observed": true,
+        "outcome": "unverified",
+        "expectedOutcome": "unverified",
+        "clicks": 1,
+        "message": "Click delivered; result not verified",
+        "totalMs": 88.29999995231628,
+        "value": "false"
+      },
+      {
+        "name": "unchanged switch is acknowledged without success claim",
+        "passed": true,
+        "observed": true,
+        "outcome": "unverified",
+        "expectedOutcome": "unverified",
+        "clicks": 1,
+        "message": "Click delivered; result not verified",
+        "totalMs": 522.2000000476837,
+        "value": "false"
+      },
+      {
+        "name": "explicit check sets a switch once",
+        "passed": true,
+        "observed": true,
+        "outcome": "verified",
+        "expectedOutcome": "verified",
+        "clicks": 1,
+        "message": "Checkable control state remained set",
+        "totalMs": 193.70000004768372,
+        "value": "true"
+      },
+      {
+        "name": "explicit check preserves an already checked switch",
+        "passed": true,
+        "observed": true,
+        "outcome": "verified",
+        "expectedOutcome": "verified",
+        "clicks": 0,
+        "message": "Checkable control state remained set",
+        "totalMs": 190.5,
+        "value": "true"
+      },
+      {
+        "name": "explicit uncheck works for menu checkbox",
+        "passed": true,
+        "observed": true,
+        "outcome": "verified",
+        "expectedOutcome": "verified",
+        "clicks": 1,
+        "message": "Checkable control state remained set",
+        "totalMs": 194.89999997615814,
+        "value": "false"
+      },
+      {
+        "name": "check rejects malformed initial state without input",
+        "passed": true,
+        "observed": true,
+        "outcome": "failed",
+        "expectedOutcome": "failed",
+        "clicks": 0,
+        "message": "The control does not expose a valid checked state",
+        "totalMs": null,
+        "value": "banana"
+      },
+      {
+        "name": "check rejects missing requested boolean before input",
+        "passed": true,
+        "observed": true,
+        "outcome": "failed",
+        "expectedOutcome": "failed",
+        "clicks": 0,
+        "message": "A check command requires a requested boolean state",
+        "totalMs": null,
+        "value": false
+      },
+      {
+        "name": "disabled menu item is not activated",
+        "passed": true,
+        "observed": true,
+        "outcome": "failed",
+        "expectedOutcome": "failed",
+        "clicks": 0,
+        "message": "No available control named \u201cNight mode\u201d",
+        "totalMs": null
+      },
+      {
+        "name": "disabled ancestor prevents custom activation",
+        "passed": true,
+        "observed": true,
+        "outcome": "failed",
+        "expectedOutcome": "failed",
+        "clicks": 0,
+        "message": "No available control named \u201cNight mode\u201d",
+        "totalMs": null,
+        "value": "false"
+      },
+      {
+        "name": "duplicate options are not guessed",
+        "passed": true,
+        "observed": true,
+        "outcome": "failed",
+        "expectedOutcome": "failed",
+        "clicks": 0,
+        "message": "More than one control matches \u201cNight mode\u201d; name its field or button",
+        "totalMs": null
+      },
+      {
+        "name": "bound role change invalidates old observation",
+        "passed": true,
+        "observed": true,
+        "outcome": "failed",
+        "expectedOutcome": "failed",
+        "clicks": 0,
+        "message": "Target changed since observation; observe again",
+        "totalMs": null
+      },
+      {
+        "name": "open shadow root switch activates",
+        "passed": true,
+        "observed": true,
+        "outcome": "verified",
+        "expectedOutcome": "verified",
+        "clicks": 1,
+        "message": "Control transition verified",
+        "totalMs": 129.39999997615814,
+        "value": "true",
+        "transition": {
+          "signals": [
+            "checked"
+          ],
+          "surface": null,
+          "stableMs": 129.10000002384186
+        }
+      },
+      {
+        "name": "disabled shadow host prevents activation",
+        "passed": true,
+        "observed": true,
+        "outcome": "failed",
+        "expectedOutcome": "failed",
+        "clicks": 0,
+        "message": "No available control named \u201cNight mode\u201d",
+        "totalMs": null,
+        "value": "false"
+      },
+      {
+        "name": "aria-hidden shadow host excludes its control",
+        "passed": true,
+        "observed": false,
+        "outcome": "failed",
+        "expectedOutcome": "failed",
+        "clicks": 0,
+        "message": "No available control named \u201cNight mode\u201d",
+        "totalMs": null,
+        "value": "false"
+      },
+      {
+        "name": "plain named text is not made clickable",
+        "passed": true,
+        "observed": false,
+        "outcome": "failed",
+        "expectedOutcome": "failed",
+        "clicks": 0,
+        "message": "No available control named \u201cNight mode\u201d",
+        "totalMs": null
+      }
+    ]
+  },
+  "reviewBeforeIndeterminateFix": {
+    "scope": "Authored standard-widget fixtures, production controller in isolated headless Chrome. Independent DOM effects and click counters. No personal browser, speech, native host or app launch.",
+    "controllerSHA256": "5bc743e13e9fbac501d586bba28aba5b025b49f46d5b0d596899b638fc5f8c45",
+    "testSHA256": "d1fa90695c3365b3c180eb63804a39c3839322dea8eae016789a8dd5b5da1ed3",
+    "browser": "Chrome/153.0.8010.53",
+    "passed": 34,
+    "total": 35,
+    "rows": [
+      {
+        "name": "custom menu item activates",
+        "passed": true,
+        "observed": true,
+        "outcome": "unverified",
+        "expectedOutcome": "unverified",
+        "clicks": 1,
+        "message": "Click delivered; result not verified",
+        "totalMs": 1.2000000476837158,
+        "value": "opened"
+      },
+      {
+        "name": "menu item opens a linked submenu",
+        "passed": true,
+        "observed": true,
+        "outcome": "verified",
+        "expectedOutcome": "verified",
+        "clicks": 1,
+        "message": "Control transition verified",
+        "totalMs": 134.5,
+        "value": false,
+        "transition": {
+          "signals": [
+            "expanded"
+          ],
+          "surface": "controls",
+          "stableMs": 133.89999997615814
+        }
+      },
+      {
+        "name": "custom switch toggles",
+        "passed": true,
+        "observed": true,
+        "outcome": "verified",
+        "expectedOutcome": "verified",
+        "clicks": 1,
+        "message": "Control transition verified",
+        "totalMs": 132.59999990463257,
+        "value": "true",
+        "transition": {
+          "signals": [
+            "checked"
+          ],
+          "surface": null,
+          "stableMs": 132.30000007152557
+        }
+      },
+      {
+        "name": "button switch uses aria checked",
+        "passed": true,
+        "observed": true,
+        "outcome": "verified",
+        "expectedOutcome": "verified",
+        "clicks": 1,
+        "message": "Control transition verified",
+        "totalMs": 130.10000002384186,
+        "value": "true",
+        "transition": {
+          "signals": [
+            "checked"
+          ],
+          "surface": null,
+          "stableMs": 129.79999995231628
+        }
+      },
+      {
+        "name": "native checkbox activates through click",
+        "passed": true,
+        "observed": true,
+        "outcome": "verified",
+        "expectedOutcome": "verified",
+        "clicks": 1,
+        "message": "Control transition verified",
+        "totalMs": 132.60000002384186,
+        "value": true,
+        "transition": {
+          "signals": [
+            "checked"
+          ],
+          "surface": null,
+          "stableMs": 132.20000004768372
+        }
+      },
+      {
+        "name": "native checkbox switch uses native checked",
+        "passed": true,
+        "observed": true,
+        "outcome": "verified",
+        "expectedOutcome": "verified",
+        "clicks": 1,
+        "message": "Control transition verified",
+        "totalMs": 130.89999997615814,
+        "value": true,
+        "transition": {
+          "signals": [
+            "checked"
+          ],
+          "surface": null,
+          "stableMs": 130.69999992847443
+        }
+      },
+      {
+        "name": "native radio activates through click",
+        "passed": true,
+        "observed": true,
+        "outcome": "verified",
+        "expectedOutcome": "verified",
+        "clicks": 1,
+        "message": "Control transition verified",
+        "totalMs": 133.20000004768372,
+        "value": true,
+        "transition": {
+          "signals": [
+            "checked"
+          ],
+          "surface": null,
+          "stableMs": 132.30000007152557
+        }
+      },
+      {
+        "name": "custom radio changes group selection",
+        "passed": true,
+        "observed": true,
+        "outcome": "verified",
+        "expectedOutcome": "verified",
+        "clicks": 1,
+        "message": "Control transition verified",
+        "totalMs": 130,
+        "value": true,
+        "transition": {
+          "signals": [
+            "checked"
+          ],
+          "surface": null,
+          "stableMs": 129.60000002384186
+        }
+      },
+      {
+        "name": "menu checkbox activates",
+        "passed": true,
+        "observed": true,
+        "outcome": "verified",
+        "expectedOutcome": "verified",
+        "clicks": 1,
+        "message": "Control transition verified",
+        "totalMs": 133.30000007152557,
+        "value": "true",
+        "transition": {
+          "signals": [
+            "checked"
+          ],
+          "surface": null,
+          "stableMs": 133.20000004768372
+        }
+      },
+      {
+        "name": "menu radio activates",
+        "passed": true,
+        "observed": true,
+        "outcome": "verified",
+        "expectedOutcome": "verified",
+        "clicks": 1,
+        "message": "Control transition verified",
+        "totalMs": 130.89999997615814,
+        "value": "true",
+        "transition": {
+          "signals": [
+            "checked"
+          ],
+          "surface": null,
+          "stableMs": 130.69999992847443
+        }
+      },
+      {
+        "name": "custom checkbox visible text supplies label",
+        "passed": true,
+        "observed": true,
+        "outcome": "verified",
+        "expectedOutcome": "verified",
+        "clicks": 1,
+        "message": "Control transition verified",
+        "totalMs": 131.30000007152557,
+        "value": "true",
+        "transition": {
+          "signals": [
+            "checked"
+          ],
+          "surface": null,
+          "stableMs": 130.89999997615814
+        }
+      },
+      {
+        "name": "listbox option selected state changes",
+        "passed": true,
+        "observed": true,
+        "outcome": "verified",
+        "expectedOutcome": "verified",
+        "clicks": 1,
+        "message": "Control transition verified",
+        "totalMs": 132.39999997615814,
+        "value": "true",
+        "transition": {
+          "signals": [
+            "selected"
+          ],
+          "surface": null,
+          "stableMs": 132.20000004768372
+        }
+      },
+      {
+        "name": "listbox option checked state changes",
+        "passed": true,
+        "observed": true,
+        "outcome": "verified",
+        "expectedOutcome": "verified",
+        "clicks": 1,
+        "message": "Control transition verified",
+        "totalMs": 129.20000004768372,
+        "value": "true",
+        "transition": {
+          "signals": [
+            "checked"
+          ],
+          "surface": null,
+          "stableMs": 129
+        }
+      },
+      {
+        "name": "custom link uses visible text",
+        "passed": true,
+        "observed": true,
+        "outcome": "unverified",
+        "expectedOutcome": "unverified",
+        "clicks": 1,
+        "message": "Click delivered; result not verified",
+        "totalMs": 0.2999999523162842,
+        "value": "opened"
+      },
+      {
+        "name": "mixed checkbox can become checked",
+        "passed": true,
+        "observed": true,
+        "outcome": "verified",
+        "expectedOutcome": "verified",
+        "clicks": 1,
+        "message": "Control transition verified",
+        "totalMs": 133.19999992847443,
+        "value": "true",
+        "transition": {
+          "signals": [
+            "checked"
+          ],
+          "surface": null,
+          "stableMs": 133
+        }
+      },
+      {
+        "name": "mixed switch is not valid verification evidence",
+        "passed": true,
+        "observed": true,
+        "outcome": "unverified",
+        "expectedOutcome": "unverified",
+        "clicks": 1,
+        "message": "Click delivered; result not verified",
+        "totalMs": 0.19999992847442627,
+        "value": "true"
+      },
+      {
+        "name": "malformed resulting state is unverified",
+        "passed": true,
+        "observed": true,
+        "outcome": "unverified",
+        "expectedOutcome": "unverified",
+        "clicks": 1,
+        "message": "Click delivered; result not verified",
+        "totalMs": 503.3000000715256,
+        "value": "banana"
+      },
+      {
+        "name": "reverted switch is not reported verified",
+        "passed": true,
+        "observed": true,
+        "outcome": "unverified",
+        "expectedOutcome": "unverified",
+        "clicks": 1,
+        "message": "Click delivered; result not verified",
+        "totalMs": 86.20000004768372,
+        "value": "false"
+      },
+      {
+        "name": "unchanged switch is acknowledged without success claim",
+        "passed": true,
+        "observed": true,
+        "outcome": "unverified",
+        "expectedOutcome": "unverified",
+        "clicks": 1,
+        "message": "Click delivered; result not verified",
+        "totalMs": 505,
+        "value": "false"
+      },
+      {
+        "name": "explicit check sets a switch once",
+        "passed": true,
+        "observed": true,
+        "outcome": "verified",
+        "expectedOutcome": "verified",
+        "clicks": 1,
+        "message": "Checkable control state remained set",
+        "totalMs": 191.5,
+        "value": "true"
+      },
+      {
+        "name": "explicit check preserves an already checked switch",
+        "passed": true,
+        "observed": true,
+        "outcome": "verified",
+        "expectedOutcome": "verified",
+        "clicks": 0,
+        "message": "Checkable control state remained set",
+        "totalMs": 192.89999997615814,
+        "value": "true"
+      },
+      {
+        "name": "explicit uncheck works for menu checkbox",
+        "passed": true,
+        "observed": true,
+        "outcome": "verified",
+        "expectedOutcome": "verified",
+        "clicks": 1,
+        "message": "Checkable control state remained set",
+        "totalMs": 191.09999990463257,
+        "value": "false"
+      },
+      {
+        "name": "check rejects malformed initial state without input",
+        "passed": true,
+        "observed": true,
+        "outcome": "failed",
+        "expectedOutcome": "failed",
+        "clicks": 0,
+        "message": "The control does not expose a valid checked state",
+        "totalMs": null,
+        "value": "banana"
+      },
+      {
+        "name": "check rejects missing requested boolean before input",
+        "passed": true,
+        "observed": true,
+        "outcome": "failed",
+        "expectedOutcome": "failed",
+        "clicks": 0,
+        "message": "A check command requires a requested boolean state",
+        "totalMs": null,
+        "value": false
+      },
+      {
+        "name": "check detects delayed native indeterminate state",
+        "passed": false,
+        "observed": true,
+        "outcome": "verified",
+        "expectedOutcome": "failed",
+        "clicks": 1,
+        "message": "Checkable control state remained set",
+        "totalMs": 189.39999997615814,
+        "value": true
+      },
+      {
+        "name": "disabled fieldset prevents native activation",
+        "passed": true,
+        "observed": true,
+        "outcome": "failed",
+        "expectedOutcome": "failed",
+        "clicks": 0,
+        "message": "No available control named \u201cNight mode\u201d",
+        "totalMs": null,
+        "value": false
+      },
+      {
+        "name": "disabled menu item is not activated",
+        "passed": true,
+        "observed": true,
+        "outcome": "failed",
+        "expectedOutcome": "failed",
+        "clicks": 0,
+        "message": "No available control named \u201cNight mode\u201d",
+        "totalMs": null
+      },
+      {
+        "name": "disabled ancestor prevents custom activation",
+        "passed": true,
+        "observed": true,
+        "outcome": "failed",
+        "expectedOutcome": "failed",
+        "clicks": 0,
+        "message": "No available control named \u201cNight mode\u201d",
+        "totalMs": null,
+        "value": "false"
+      },
+      {
+        "name": "duplicate options are not guessed",
+        "passed": true,
+        "observed": true,
+        "outcome": "failed",
+        "expectedOutcome": "failed",
+        "clicks": 0,
+        "message": "More than one control matches \u201cNight mode\u201d; name its field or button",
+        "totalMs": null
+      },
+      {
+        "name": "bound role change invalidates old observation",
+        "passed": true,
+        "observed": true,
+        "outcome": "failed",
+        "expectedOutcome": "failed",
+        "clicks": 0,
+        "message": "Target changed since observation; observe again",
+        "totalMs": null
+      },
+      {
+        "name": "open shadow root switch activates",
+        "passed": true,
+        "observed": true,
+        "outcome": "verified",
+        "expectedOutcome": "verified",
+        "clicks": 1,
+        "message": "Control transition verified",
+        "totalMs": 129.90000009536743,
+        "value": "true",
+        "transition": {
+          "signals": [
+            "checked"
+          ],
+          "surface": null,
+          "stableMs": 129.60000002384186
+        }
+      },
+      {
+        "name": "disabled shadow host prevents activation",
+        "passed": true,
+        "observed": true,
+        "outcome": "failed",
+        "expectedOutcome": "failed",
+        "clicks": 0,
+        "message": "No available control named \u201cNight mode\u201d",
+        "totalMs": null,
+        "value": "false"
+      },
+      {
+        "name": "aria-hidden shadow host excludes its control",
+        "passed": true,
+        "observed": false,
+        "outcome": "failed",
+        "expectedOutcome": "failed",
+        "clicks": 0,
+        "message": "No available control named \u201cNight mode\u201d",
+        "totalMs": null,
+        "value": "false"
+      },
+      {
+        "name": "inert shadow host excludes its control",
+        "passed": true,
+        "observed": false,
+        "outcome": "failed",
+        "expectedOutcome": "failed",
+        "clicks": 0,
+        "message": "No available control named \u201cNight mode\u201d",
+        "totalMs": null,
+        "value": "false"
+      },
+      {
+        "name": "plain named text is not made clickable",
+        "passed": true,
+        "observed": false,
+        "outcome": "failed",
+        "expectedOutcome": "failed",
+        "clicks": 0,
+        "message": "No available control named \u201cNight mode\u201d",
+        "totalMs": null
+      }
+    ]
+  },
+  "finalWidgets": {
+    "scope": "Authored standard-widget fixtures, production controller in isolated headless Chrome. Independent DOM effects and click counters. No personal browser, speech, native host or app launch.",
+    "controllerSHA256": "895b50dcaeddfb81780d54b76c48a179eb7bd61c6eeda16e6840015195c607ae",
+    "testSHA256": "d1fa90695c3365b3c180eb63804a39c3839322dea8eae016789a8dd5b5da1ed3",
+    "browser": "Chrome/153.0.8010.53",
+    "passed": 35,
+    "total": 35,
+    "rows": [
+      {
+        "name": "custom menu item activates",
+        "passed": true,
+        "observed": true,
+        "outcome": "unverified",
+        "expectedOutcome": "unverified",
+        "clicks": 1,
+        "message": "Click delivered; result not verified",
+        "totalMs": 1.1999999284744263,
+        "value": "opened"
+      },
+      {
+        "name": "menu item opens a linked submenu",
+        "passed": true,
+        "observed": true,
+        "outcome": "verified",
+        "expectedOutcome": "verified",
+        "clicks": 1,
+        "message": "Control transition verified",
+        "totalMs": 132.39999997615814,
+        "value": false,
+        "transition": {
+          "signals": [
+            "expanded"
+          ],
+          "surface": "controls",
+          "stableMs": 131.69999992847443
+        }
+      },
+      {
+        "name": "custom switch toggles",
+        "passed": true,
+        "observed": true,
+        "outcome": "verified",
+        "expectedOutcome": "verified",
+        "clicks": 1,
+        "message": "Control transition verified",
+        "totalMs": 132.69999992847443,
+        "value": "true",
+        "transition": {
+          "signals": [
+            "checked"
+          ],
+          "surface": null,
+          "stableMs": 132.39999997615814
+        }
+      },
+      {
+        "name": "button switch uses aria checked",
+        "passed": true,
+        "observed": true,
+        "outcome": "verified",
+        "expectedOutcome": "verified",
+        "clicks": 1,
+        "message": "Control transition verified",
+        "totalMs": 131.39999997615814,
+        "value": "true",
+        "transition": {
+          "signals": [
+            "checked"
+          ],
+          "surface": null,
+          "stableMs": 131.10000002384186
+        }
+      },
+      {
+        "name": "native checkbox activates through click",
+        "passed": true,
+        "observed": true,
+        "outcome": "verified",
+        "expectedOutcome": "verified",
+        "clicks": 1,
+        "message": "Control transition verified",
+        "totalMs": 132.70000004768372,
+        "value": true,
+        "transition": {
+          "signals": [
+            "checked"
+          ],
+          "surface": null,
+          "stableMs": 132.20000004768372
+        }
+      },
+      {
+        "name": "native checkbox switch uses native checked",
+        "passed": true,
+        "observed": true,
+        "outcome": "verified",
+        "expectedOutcome": "verified",
+        "clicks": 1,
+        "message": "Control transition verified",
+        "totalMs": 128.70000004768372,
+        "value": true,
+        "transition": {
+          "signals": [
+            "checked"
+          ],
+          "surface": null,
+          "stableMs": 128.29999995231628
+        }
+      },
+      {
+        "name": "native radio activates through click",
+        "passed": true,
+        "observed": true,
+        "outcome": "verified",
+        "expectedOutcome": "verified",
+        "clicks": 1,
+        "message": "Control transition verified",
+        "totalMs": 128,
+        "value": true,
+        "transition": {
+          "signals": [
+            "checked"
+          ],
+          "surface": null,
+          "stableMs": 127.5
+        }
+      },
+      {
+        "name": "custom radio changes group selection",
+        "passed": true,
+        "observed": true,
+        "outcome": "verified",
+        "expectedOutcome": "verified",
+        "clicks": 1,
+        "message": "Control transition verified",
+        "totalMs": 130,
+        "value": true,
+        "transition": {
+          "signals": [
+            "checked"
+          ],
+          "surface": null,
+          "stableMs": 129.59999990463257
+        }
+      },
+      {
+        "name": "menu checkbox activates",
+        "passed": true,
+        "observed": true,
+        "outcome": "verified",
+        "expectedOutcome": "verified",
+        "clicks": 1,
+        "message": "Control transition verified",
+        "totalMs": 132.60000002384186,
+        "value": "true",
+        "transition": {
+          "signals": [
+            "checked"
+          ],
+          "surface": null,
+          "stableMs": 132.29999995231628
+        }
+      },
+      {
+        "name": "menu radio activates",
+        "passed": true,
+        "observed": true,
+        "outcome": "verified",
+        "expectedOutcome": "verified",
+        "clicks": 1,
+        "message": "Control transition verified",
+        "totalMs": 133.30000007152557,
+        "value": "true",
+        "transition": {
+          "signals": [
+            "checked"
+          ],
+          "surface": null,
+          "stableMs": 132.89999997615814
+        }
+      },
+      {
+        "name": "custom checkbox visible text supplies label",
+        "passed": true,
+        "observed": true,
+        "outcome": "verified",
+        "expectedOutcome": "verified",
+        "clicks": 1,
+        "message": "Control transition verified",
+        "totalMs": 129.30000007152557,
+        "value": "true",
+        "transition": {
+          "signals": [
+            "checked"
+          ],
+          "surface": null,
+          "stableMs": 129
+        }
+      },
+      {
+        "name": "listbox option selected state changes",
+        "passed": true,
+        "observed": true,
+        "outcome": "verified",
+        "expectedOutcome": "verified",
+        "clicks": 1,
+        "message": "Control transition verified",
+        "totalMs": 131.5,
+        "value": "true",
+        "transition": {
+          "signals": [
+            "selected"
+          ],
+          "surface": null,
+          "stableMs": 131
+        }
+      },
+      {
+        "name": "listbox option checked state changes",
+        "passed": true,
+        "observed": true,
+        "outcome": "verified",
+        "expectedOutcome": "verified",
+        "clicks": 1,
+        "message": "Control transition verified",
+        "totalMs": 134.5,
+        "value": "true",
+        "transition": {
+          "signals": [
+            "checked"
+          ],
+          "surface": null,
+          "stableMs": 134
+        }
+      },
+      {
+        "name": "custom link uses visible text",
+        "passed": true,
+        "observed": true,
+        "outcome": "unverified",
+        "expectedOutcome": "unverified",
+        "clicks": 1,
+        "message": "Click delivered; result not verified",
+        "totalMs": 0.19999992847442627,
+        "value": "opened"
+      },
+      {
+        "name": "mixed checkbox can become checked",
+        "passed": true,
+        "observed": true,
+        "outcome": "verified",
+        "expectedOutcome": "verified",
+        "clicks": 1,
+        "message": "Control transition verified",
+        "totalMs": 132.19999992847443,
+        "value": "true",
+        "transition": {
+          "signals": [
+            "checked"
+          ],
+          "surface": null,
+          "stableMs": 131.80000007152557
+        }
+      },
+      {
+        "name": "mixed switch is not valid verification evidence",
+        "passed": true,
+        "observed": true,
+        "outcome": "unverified",
+        "expectedOutcome": "unverified",
+        "clicks": 1,
+        "message": "Click delivered; result not verified",
+        "totalMs": 0.20000004768371582,
+        "value": "true"
+      },
+      {
+        "name": "malformed resulting state is unverified",
+        "passed": true,
+        "observed": true,
+        "outcome": "unverified",
+        "expectedOutcome": "unverified",
+        "clicks": 1,
+        "message": "Click delivered; result not verified",
+        "totalMs": 505.5,
+        "value": "banana"
+      },
+      {
+        "name": "reverted switch is not reported verified",
+        "passed": true,
+        "observed": true,
+        "outcome": "unverified",
+        "expectedOutcome": "unverified",
+        "clicks": 1,
+        "message": "Click delivered; result not verified",
+        "totalMs": 89.40000009536743,
+        "value": "false"
+      },
+      {
+        "name": "unchanged switch is acknowledged without success claim",
+        "passed": true,
+        "observed": true,
+        "outcome": "unverified",
+        "expectedOutcome": "unverified",
+        "clicks": 1,
+        "message": "Click delivered; result not verified",
+        "totalMs": 502.2000000476837,
+        "value": "false"
+      },
+      {
+        "name": "explicit check sets a switch once",
+        "passed": true,
+        "observed": true,
+        "outcome": "verified",
+        "expectedOutcome": "verified",
+        "clicks": 1,
+        "message": "Checkable control state remained set",
+        "totalMs": 190.79999995231628,
+        "value": "true"
+      },
+      {
+        "name": "explicit check preserves an already checked switch",
+        "passed": true,
+        "observed": true,
+        "outcome": "verified",
+        "expectedOutcome": "verified",
+        "clicks": 0,
+        "message": "Checkable control state remained set",
+        "totalMs": 188.59999990463257,
+        "value": "true"
+      },
+      {
+        "name": "explicit uncheck works for menu checkbox",
+        "passed": true,
+        "observed": true,
+        "outcome": "verified",
+        "expectedOutcome": "verified",
+        "clicks": 1,
+        "message": "Checkable control state remained set",
+        "totalMs": 194.70000004768372,
+        "value": "false"
+      },
+      {
+        "name": "check rejects malformed initial state without input",
+        "passed": true,
+        "observed": true,
+        "outcome": "failed",
+        "expectedOutcome": "failed",
+        "clicks": 0,
+        "message": "The control does not expose a valid checked state",
+        "totalMs": null,
+        "value": "banana"
+      },
+      {
+        "name": "check rejects missing requested boolean before input",
+        "passed": true,
+        "observed": true,
+        "outcome": "failed",
+        "expectedOutcome": "failed",
+        "clicks": 0,
+        "message": "A check command requires a requested boolean state",
+        "totalMs": null,
+        "value": false
+      },
+      {
+        "name": "check detects delayed native indeterminate state",
+        "passed": true,
+        "observed": true,
+        "outcome": "failed",
+        "expectedOutcome": "failed",
+        "clicks": 1,
+        "message": "The page reverted or replaced the control; action not repeated",
+        "totalMs": null,
+        "value": true
+      },
+      {
+        "name": "disabled fieldset prevents native activation",
+        "passed": true,
+        "observed": true,
+        "outcome": "failed",
+        "expectedOutcome": "failed",
+        "clicks": 0,
+        "message": "No available control named \u201cNight mode\u201d",
+        "totalMs": null,
+        "value": false
+      },
+      {
+        "name": "disabled menu item is not activated",
+        "passed": true,
+        "observed": true,
+        "outcome": "failed",
+        "expectedOutcome": "failed",
+        "clicks": 0,
+        "message": "No available control named \u201cNight mode\u201d",
+        "totalMs": null
+      },
+      {
+        "name": "disabled ancestor prevents custom activation",
+        "passed": true,
+        "observed": true,
+        "outcome": "failed",
+        "expectedOutcome": "failed",
+        "clicks": 0,
+        "message": "No available control named \u201cNight mode\u201d",
+        "totalMs": null,
+        "value": "false"
+      },
+      {
+        "name": "duplicate options are not guessed",
+        "passed": true,
+        "observed": true,
+        "outcome": "failed",
+        "expectedOutcome": "failed",
+        "clicks": 0,
+        "message": "More than one control matches \u201cNight mode\u201d; name its field or button",
+        "totalMs": null
+      },
+      {
+        "name": "bound role change invalidates old observation",
+        "passed": true,
+        "observed": true,
+        "outcome": "failed",
+        "expectedOutcome": "failed",
+        "clicks": 0,
+        "message": "Target changed since observation; observe again",
+        "totalMs": null
+      },
+      {
+        "name": "open shadow root switch activates",
+        "passed": true,
+        "observed": true,
+        "outcome": "verified",
+        "expectedOutcome": "verified",
+        "clicks": 1,
+        "message": "Control transition verified",
+        "totalMs": 132.20000004768372,
+        "value": "true",
+        "transition": {
+          "signals": [
+            "checked"
+          ],
+          "surface": null,
+          "stableMs": 131.79999995231628
+        }
+      },
+      {
+        "name": "disabled shadow host prevents activation",
+        "passed": true,
+        "observed": true,
+        "outcome": "failed",
+        "expectedOutcome": "failed",
+        "clicks": 0,
+        "message": "No available control named \u201cNight mode\u201d",
+        "totalMs": null,
+        "value": "false"
+      },
+      {
+        "name": "aria-hidden shadow host excludes its control",
+        "passed": true,
+        "observed": false,
+        "outcome": "failed",
+        "expectedOutcome": "failed",
+        "clicks": 0,
+        "message": "No available control named \u201cNight mode\u201d",
+        "totalMs": null,
+        "value": "false"
+      },
+      {
+        "name": "inert shadow host excludes its control",
+        "passed": true,
+        "observed": false,
+        "outcome": "failed",
+        "expectedOutcome": "failed",
+        "clicks": 0,
+        "message": "No available control named \u201cNight mode\u201d",
+        "totalMs": null,
+        "value": "false"
+      },
+      {
+        "name": "plain named text is not made clickable",
+        "passed": true,
+        "observed": false,
+        "outcome": "failed",
+        "expectedOutcome": "failed",
+        "clicks": 0,
+        "message": "No available control named \u201cNight mode\u201d",
+        "totalMs": null
+      }
+    ]
+  },
+  "sourceModels": {
+    "scope": "32 authored named/known-semantic/negated/disabled cases across eight ARIA roles. Real resident local models plus headless production controller. Semantic aliases were present in prior training; not unseen concept generalization. Plain custom link activation is observed independently but remains unverified by the controller. No speech/native host/app launch.",
+    "passed": 32,
+    "rows": [
+      {
+        "role": "menuitem",
+        "case": "named",
+        "text": "Click Notifications",
+        "source": "observed_label",
+        "reason": "bound",
+        "outcome": "verified",
+        "actions": [
+          "target"
+        ]
+      },
+      {
+        "role": "menuitem",
+        "case": "semantic",
+        "text": "Bring up the alerts",
+        "source": "semantic_ranker",
+        "reason": "bound",
+        "outcome": "verified",
+        "actions": [
+          "target"
+        ]
+      },
+      {
+        "role": "menuitem",
+        "case": "negated",
+        "text": "Don't click Notifications",
+        "source": null,
+        "reason": "unsupported_or_uncertain_operation",
+        "outcome": null,
+        "actions": []
+      },
+      {
+        "role": "menuitem",
+        "case": "disabled",
+        "text": "Click Notifications",
+        "source": null,
+        "reason": "named_control_disabled",
+        "outcome": null,
+        "actions": []
+      },
+      {
+        "role": "menuitemcheckbox",
+        "case": "named",
+        "text": "Click Notifications",
+        "source": "observed_label",
+        "reason": "bound",
+        "outcome": "verified",
+        "actions": [
+          "target"
+        ]
+      },
+      {
+        "role": "menuitemcheckbox",
+        "case": "semantic",
+        "text": "Bring up the alerts",
+        "source": "semantic_ranker",
+        "reason": "bound",
+        "outcome": "verified",
+        "actions": [
+          "target"
+        ]
+      },
+      {
+        "role": "menuitemcheckbox",
+        "case": "negated",
+        "text": "Don't click Notifications",
+        "source": null,
+        "reason": "unsupported_or_uncertain_operation",
+        "outcome": null,
+        "actions": []
+      },
+      {
+        "role": "menuitemcheckbox",
+        "case": "disabled",
+        "text": "Click Notifications",
+        "source": null,
+        "reason": "named_control_disabled",
+        "outcome": null,
+        "actions": []
+      },
+      {
+        "role": "menuitemradio",
+        "case": "named",
+        "text": "Click Notifications",
+        "source": "observed_label",
+        "reason": "bound",
+        "outcome": "verified",
+        "actions": [
+          "target"
+        ]
+      },
+      {
+        "role": "menuitemradio",
+        "case": "semantic",
+        "text": "Bring up the alerts",
+        "source": "semantic_ranker",
+        "reason": "bound",
+        "outcome": "verified",
+        "actions": [
+          "target"
+        ]
+      },
+      {
+        "role": "menuitemradio",
+        "case": "negated",
+        "text": "Don't click Notifications",
+        "source": null,
+        "reason": "unsupported_or_uncertain_operation",
+        "outcome": null,
+        "actions": []
+      },
+      {
+        "role": "menuitemradio",
+        "case": "disabled",
+        "text": "Click Notifications",
+        "source": null,
+        "reason": "named_control_disabled",
+        "outcome": null,
+        "actions": []
+      },
+      {
+        "role": "checkbox",
+        "case": "named",
+        "text": "Click Notifications",
+        "source": "observed_label",
+        "reason": "bound",
+        "outcome": "verified",
+        "actions": [
+          "target"
+        ]
+      },
+      {
+        "role": "checkbox",
+        "case": "semantic",
+        "text": "Bring up the alerts",
+        "source": "semantic_ranker",
+        "reason": "bound",
+        "outcome": "verified",
+        "actions": [
+          "target"
+        ]
+      },
+      {
+        "role": "checkbox",
+        "case": "negated",
+        "text": "Don't click Notifications",
+        "source": null,
+        "reason": "unsupported_or_uncertain_operation",
+        "outcome": null,
+        "actions": []
+      },
+      {
+        "role": "checkbox",
+        "case": "disabled",
+        "text": "Click Notifications",
+        "source": null,
+        "reason": "named_control_disabled",
+        "outcome": null,
+        "actions": []
+      },
+      {
+        "role": "switch",
+        "case": "named",
+        "text": "Click Notifications",
+        "source": "observed_label",
+        "reason": "bound",
+        "outcome": "verified",
+        "actions": [
+          "target"
+        ]
+      },
+      {
+        "role": "switch",
+        "case": "semantic",
+        "text": "Bring up the alerts",
+        "source": "semantic_ranker",
+        "reason": "bound",
+        "outcome": "verified",
+        "actions": [
+          "target"
+        ]
+      },
+      {
+        "role": "switch",
+        "case": "negated",
+        "text": "Don't click Notifications",
+        "source": null,
+        "reason": "unsupported_or_uncertain_operation",
+        "outcome": null,
+        "actions": []
+      },
+      {
+        "role": "switch",
+        "case": "disabled",
+        "text": "Click Notifications",
+        "source": null,
+        "reason": "named_control_disabled",
+        "outcome": null,
+        "actions": []
+      },
+      {
+        "role": "radio",
+        "case": "named",
+        "text": "Click Notifications",
+        "source": "observed_label",
+        "reason": "bound",
+        "outcome": "verified",
+        "actions": [
+          "target"
+        ]
+      },
+      {
+        "role": "radio",
+        "case": "semantic",
+        "text": "Bring up the alerts",
+        "source": "semantic_ranker",
+        "reason": "bound",
+        "outcome": "verified",
+        "actions": [
+          "target"
+        ]
+      },
+      {
+        "role": "radio",
+        "case": "negated",
+        "text": "Don't click Notifications",
+        "source": null,
+        "reason": "unsupported_or_uncertain_operation",
+        "outcome": null,
+        "actions": []
+      },
+      {
+        "role": "radio",
+        "case": "disabled",
+        "text": "Click Notifications",
+        "source": null,
+        "reason": "named_control_disabled",
+        "outcome": null,
+        "actions": []
+      },
+      {
+        "role": "option",
+        "case": "named",
+        "text": "Click Notifications",
+        "source": "observed_label",
+        "reason": "bound",
+        "outcome": "verified",
+        "actions": [
+          "target"
+        ]
+      },
+      {
+        "role": "option",
+        "case": "semantic",
+        "text": "Bring up the alerts",
+        "source": "semantic_ranker",
+        "reason": "bound",
+        "outcome": "verified",
+        "actions": [
+          "target"
+        ]
+      },
+      {
+        "role": "option",
+        "case": "negated",
+        "text": "Don't click Notifications",
+        "source": null,
+        "reason": "unsupported_or_uncertain_operation",
+        "outcome": null,
+        "actions": []
+      },
+      {
+        "role": "option",
+        "case": "disabled",
+        "text": "Click Notifications",
+        "source": null,
+        "reason": "named_control_disabled",
+        "outcome": null,
+        "actions": []
+      },
+      {
+        "role": "link",
+        "case": "named",
+        "text": "Click Notifications",
+        "source": "observed_label",
+        "reason": "bound",
+        "outcome": "unverified",
+        "actions": [
+          "target"
+        ]
+      },
+      {
+        "role": "link",
+        "case": "semantic",
+        "text": "Bring up the alerts",
+        "source": "semantic_ranker",
+        "reason": "bound",
+        "outcome": "unverified",
+        "actions": [
+          "target"
+        ]
+      },
+      {
+        "role": "link",
+        "case": "negated",
+        "text": "Don't click Notifications",
+        "source": null,
+        "reason": "unsupported_or_uncertain_operation",
+        "outcome": null,
+        "actions": []
+      },
+      {
+        "role": "link",
+        "case": "disabled",
+        "text": "Click Notifications",
+        "source": null,
+        "reason": "named_control_disabled",
+        "outcome": null,
+        "actions": []
+      }
+    ],
+    "controllerSHA256": "895b50dcaeddfb81780d54b76c48a179eb7bd61c6eeda16e6840015195c607ae",
+    "pipelineSHA256": "79c1a7a77d88e13750474634a481e7981bd3b236443f6ea60b6a9e4ccfd89d73",
+    "workerSHA256": "cca1a5f8d4e45926b5f0e4a22bfe0de961567f2aba2e3f479fbefb5f416258b5",
+    "testSHA256": "3d9311051de28076e412b79490b0b1e0519dad13da82452c799617fddac96d8a"
+  },
+  "bundledModels": {
+    "scope": "32 authored named/known-semantic/negated/disabled cases across eight ARIA roles. Real resident local models plus headless production controller. Semantic aliases were present in prior training; not unseen concept generalization. Plain custom link activation is observed independently but remains unverified by the controller. No speech/native host/app launch.",
+    "passed": 32,
+    "rows": [
+      {
+        "role": "menuitem",
+        "case": "named",
+        "text": "Click Notifications",
+        "source": "observed_label",
+        "reason": "bound",
+        "outcome": "verified",
+        "actions": [
+          "target"
+        ]
+      },
+      {
+        "role": "menuitem",
+        "case": "semantic",
+        "text": "Bring up the alerts",
+        "source": "semantic_ranker",
+        "reason": "bound",
+        "outcome": "verified",
+        "actions": [
+          "target"
+        ]
+      },
+      {
+        "role": "menuitem",
+        "case": "negated",
+        "text": "Don't click Notifications",
+        "source": null,
+        "reason": "unsupported_or_uncertain_operation",
+        "outcome": null,
+        "actions": []
+      },
+      {
+        "role": "menuitem",
+        "case": "disabled",
+        "text": "Click Notifications",
+        "source": null,
+        "reason": "named_control_disabled",
+        "outcome": null,
+        "actions": []
+      },
+      {
+        "role": "menuitemcheckbox",
+        "case": "named",
+        "text": "Click Notifications",
+        "source": "observed_label",
+        "reason": "bound",
+        "outcome": "verified",
+        "actions": [
+          "target"
+        ]
+      },
+      {
+        "role": "menuitemcheckbox",
+        "case": "semantic",
+        "text": "Bring up the alerts",
+        "source": "semantic_ranker",
+        "reason": "bound",
+        "outcome": "verified",
+        "actions": [
+          "target"
+        ]
+      },
+      {
+        "role": "menuitemcheckbox",
+        "case": "negated",
+        "text": "Don't click Notifications",
+        "source": null,
+        "reason": "unsupported_or_uncertain_operation",
+        "outcome": null,
+        "actions": []
+      },
+      {
+        "role": "menuitemcheckbox",
+        "case": "disabled",
+        "text": "Click Notifications",
+        "source": null,
+        "reason": "named_control_disabled",
+        "outcome": null,
+        "actions": []
+      },
+      {
+        "role": "menuitemradio",
+        "case": "named",
+        "text": "Click Notifications",
+        "source": "observed_label",
+        "reason": "bound",
+        "outcome": "verified",
+        "actions": [
+          "target"
+        ]
+      },
+      {
+        "role": "menuitemradio",
+        "case": "semantic",
+        "text": "Bring up the alerts",
+        "source": "semantic_ranker",
+        "reason": "bound",
+        "outcome": "verified",
+        "actions": [
+          "target"
+        ]
+      },
+      {
+        "role": "menuitemradio",
+        "case": "negated",
+        "text": "Don't click Notifications",
+        "source": null,
+        "reason": "unsupported_or_uncertain_operation",
+        "outcome": null,
+        "actions": []
+      },
+      {
+        "role": "menuitemradio",
+        "case": "disabled",
+        "text": "Click Notifications",
+        "source": null,
+        "reason": "named_control_disabled",
+        "outcome": null,
+        "actions": []
+      },
+      {
+        "role": "checkbox",
+        "case": "named",
+        "text": "Click Notifications",
+        "source": "observed_label",
+        "reason": "bound",
+        "outcome": "verified",
+        "actions": [
+          "target"
+        ]
+      },
+      {
+        "role": "checkbox",
+        "case": "semantic",
+        "text": "Bring up the alerts",
+        "source": "semantic_ranker",
+        "reason": "bound",
+        "outcome": "verified",
+        "actions": [
+          "target"
+        ]
+      },
+      {
+        "role": "checkbox",
+        "case": "negated",
+        "text": "Don't click Notifications",
+        "source": null,
+        "reason": "unsupported_or_uncertain_operation",
+        "outcome": null,
+        "actions": []
+      },
+      {
+        "role": "checkbox",
+        "case": "disabled",
+        "text": "Click Notifications",
+        "source": null,
+        "reason": "named_control_disabled",
+        "outcome": null,
+        "actions": []
+      },
+      {
+        "role": "switch",
+        "case": "named",
+        "text": "Click Notifications",
+        "source": "observed_label",
+        "reason": "bound",
+        "outcome": "verified",
+        "actions": [
+          "target"
+        ]
+      },
+      {
+        "role": "switch",
+        "case": "semantic",
+        "text": "Bring up the alerts",
+        "source": "semantic_ranker",
+        "reason": "bound",
+        "outcome": "verified",
+        "actions": [
+          "target"
+        ]
+      },
+      {
+        "role": "switch",
+        "case": "negated",
+        "text": "Don't click Notifications",
+        "source": null,
+        "reason": "unsupported_or_uncertain_operation",
+        "outcome": null,
+        "actions": []
+      },
+      {
+        "role": "switch",
+        "case": "disabled",
+        "text": "Click Notifications",
+        "source": null,
+        "reason": "named_control_disabled",
+        "outcome": null,
+        "actions": []
+      },
+      {
+        "role": "radio",
+        "case": "named",
+        "text": "Click Notifications",
+        "source": "observed_label",
+        "reason": "bound",
+        "outcome": "verified",
+        "actions": [
+          "target"
+        ]
+      },
+      {
+        "role": "radio",
+        "case": "semantic",
+        "text": "Bring up the alerts",
+        "source": "semantic_ranker",
+        "reason": "bound",
+        "outcome": "verified",
+        "actions": [
+          "target"
+        ]
+      },
+      {
+        "role": "radio",
+        "case": "negated",
+        "text": "Don't click Notifications",
+        "source": null,
+        "reason": "unsupported_or_uncertain_operation",
+        "outcome": null,
+        "actions": []
+      },
+      {
+        "role": "radio",
+        "case": "disabled",
+        "text": "Click Notifications",
+        "source": null,
+        "reason": "named_control_disabled",
+        "outcome": null,
+        "actions": []
+      },
+      {
+        "role": "option",
+        "case": "named",
+        "text": "Click Notifications",
+        "source": "observed_label",
+        "reason": "bound",
+        "outcome": "verified",
+        "actions": [
+          "target"
+        ]
+      },
+      {
+        "role": "option",
+        "case": "semantic",
+        "text": "Bring up the alerts",
+        "source": "semantic_ranker",
+        "reason": "bound",
+        "outcome": "verified",
+        "actions": [
+          "target"
+        ]
+      },
+      {
+        "role": "option",
+        "case": "negated",
+        "text": "Don't click Notifications",
+        "source": null,
+        "reason": "unsupported_or_uncertain_operation",
+        "outcome": null,
+        "actions": []
+      },
+      {
+        "role": "option",
+        "case": "disabled",
+        "text": "Click Notifications",
+        "source": null,
+        "reason": "named_control_disabled",
+        "outcome": null,
+        "actions": []
+      },
+      {
+        "role": "link",
+        "case": "named",
+        "text": "Click Notifications",
+        "source": "observed_label",
+        "reason": "bound",
+        "outcome": "unverified",
+        "actions": [
+          "target"
+        ]
+      },
+      {
+        "role": "link",
+        "case": "semantic",
+        "text": "Bring up the alerts",
+        "source": "semantic_ranker",
+        "reason": "bound",
+        "outcome": "unverified",
+        "actions": [
+          "target"
+        ]
+      },
+      {
+        "role": "link",
+        "case": "negated",
+        "text": "Don't click Notifications",
+        "source": null,
+        "reason": "unsupported_or_uncertain_operation",
+        "outcome": null,
+        "actions": []
+      },
+      {
+        "role": "link",
+        "case": "disabled",
+        "text": "Click Notifications",
+        "source": null,
+        "reason": "named_control_disabled",
+        "outcome": null,
+        "actions": []
+      }
+    ],
+    "controllerSHA256": "895b50dcaeddfb81780d54b76c48a179eb7bd61c6eeda16e6840015195c607ae",
+    "pipelineSHA256": "79c1a7a77d88e13750474634a481e7981bd3b236443f6ea60b6a9e4ccfd89d73",
+    "workerSHA256": "cca1a5f8d4e45926b5f0e4a22bfe0de961567f2aba2e3f479fbefb5f416258b5",
+    "testSHA256": "3d9311051de28076e412b79490b0b1e0519dad13da82452c799617fddac96d8a"
+  },
+  "sourceAndBundledPerCaseOutcomesMatch": true,
+  "regression": [
+    {
+      "name": "development",
+      "metrics": {
+        "total": 60,
+        "supported": 33,
+        "accepted": 27,
+        "correctCompleted": 27,
+        "correctAbstentions": 27,
+        "wrongProposals": 0,
+        "wrongExecuted": 0,
+        "verificationClaims": 27,
+        "medianRankingMs": 1.3967499835416675,
+        "p95RankingMs": 3.018000046722591,
+        "medianVerifiedDispatchMs": 132.10000002384186
+      },
+      "perCaseDecisionsAndEffectsUnchanged": true,
+      "challengeSHA256": "01ea24d60ee4ef865a7cc765181427d38e2c4d4d84a5ec4c558cfd3c6e09cb5b",
+      "oldReportSHA256": "07e417ca814fdd28e43e71e137763c86bc24d3f97c1db08846a2b0afbac2b615",
+      "newReportSHA256": "6881fca6bee8c7ad144d179cc7e9df68a86d4c80c02d5adea0154985118e086f"
+    },
+    {
+      "name": "holdout",
+      "metrics": {
+        "total": 40,
+        "supported": 22,
+        "accepted": 22,
+        "correctCompleted": 22,
+        "correctAbstentions": 18,
+        "wrongProposals": 0,
+        "wrongExecuted": 0,
+        "verificationClaims": 22,
+        "medianRankingMs": 1.325374934822321,
+        "p95RankingMs": 2.1366660948842764,
+        "medianVerifiedDispatchMs": 133.60000002384186
+      },
+      "perCaseDecisionsAndEffectsUnchanged": true,
+      "challengeSHA256": "522fc38a9b4d26c85618d5324eb6e9289e80c4063f361f25f7c47a760483c27d",
+      "oldReportSHA256": "283bf48748a5a493e60b5c2f2b7e0ca2aeff9e611cc08673483941282dfcc302",
+      "newReportSHA256": "dcd31c271fd2a152fb852991badaa37ec2af1327f4df6f9ca738f0aee92ca5b7"
+    },
+    {
+      "name": "semantic",
+      "metrics": {
+        "total": 20,
+        "supported": 11,
+        "accepted": 8,
+        "correctCompleted": 8,
+        "correctAbstentions": 9,
+        "wrongProposals": 0,
+        "wrongExecuted": 0,
+        "verificationClaims": 8,
+        "medianRankingMs": 2.917999983765185,
+        "p95RankingMs": 7.541959057562053,
+        "medianVerifiedDispatchMs": 130.10000002384186
+      },
+      "perCaseDecisionsAndEffectsUnchanged": true,
+      "challengeSHA256": "7e70c7d505985ac8530947d53171359bc9680fcc1a2cae0094be0ebdfefe022c",
+      "oldReportSHA256": "c75c7de93d9709894499c505a0a79b6b951d5a62fce3b66119677e6a6227af21",
+      "newReportSHA256": "2f27acaed6c535dbc79b7eaf5f0cbb6f73c430715b6737e1d66a1ce25c87ecbb"
+    }
+  ],
+  "sequences": {
+    "passed": 9,
+    "rows": [
+      {
+        "name": "revealed target",
+        "verified": 2,
+        "actions": [
+          "tools",
+          "playground"
+        ]
+      },
+      {
+        "name": "revealed field",
+        "verified": 2,
+        "actions": [
+          "tools"
+        ]
+      },
+      {
+        "name": "unsupported later operation",
+        "verified": 0,
+        "actions": []
+      },
+      {
+        "name": "unverified first action",
+        "verified": 0,
+        "actions": [
+          "tools"
+        ]
+      },
+      {
+        "name": "missing later target",
+        "verified": 1,
+        "actions": [
+          "tools"
+        ]
+      },
+      {
+        "name": "native disclosure reveals the next target",
+        "verified": 2,
+        "actions": [
+          "details",
+          "playground"
+        ]
+      },
+      {
+        "name": "native popover reveals the next field",
+        "verified": 2,
+        "actions": [
+          "filters"
+        ]
+      },
+      {
+        "name": "ARIA menu item reveals the next field",
+        "verified": 2,
+        "actions": [
+          "tools"
+        ]
+      },
+      {
+        "name": "ARIA switch reveals the next field",
+        "verified": 2,
+        "actions": [
+          "filters"
+        ]
+      }
+    ]
+  },
+  "otherChecks": {
+    "rows": [
+      {
+        "name": "widgets",
+        "exitCode": 0,
+        "seconds": 4.564
+      },
+      {
+        "name": "model",
+        "exitCode": 0,
+        "seconds": 4.031
+      },
+      {
+        "name": "development",
+        "exitCode": 0,
+        "seconds": 5.922
+      },
+      {
+        "name": "holdout",
+        "exitCode": 0,
+        "seconds": 5.182
+      },
+      {
+        "name": "semantic",
+        "exitCode": 0,
+        "seconds": 2.756
+      },
+      {
+        "name": "sequences",
+        "exitCode": 0,
+        "seconds": 4.166
+      },
+      {
+        "name": "navigation",
+        "exitCode": 0,
+        "seconds": 0.671
+      },
+      {
+        "name": "observer",
+        "exitCode": 0,
+        "seconds": 0.764
+      },
+      {
+        "name": "text-binding",
+        "exitCode": 0,
+        "seconds": 0.879
+      },
+      {
+        "name": "x-search",
+        "exitCode": 0,
+        "seconds": 0.663
+      },
+      {
+        "name": "editor",
+        "exitCode": 0,
+        "seconds": 0.833
+      },
+      {
+        "name": "outcomes",
+        "exitCode": 0,
+        "seconds": 7.443
+      },
+      {
+        "name": "unit",
+        "exitCode": 0,
+        "seconds": 4.546
+      }
+    ],
+    "controllerSHA256": "895b50dcaeddfb81780d54b76c48a179eb7bd61c6eeda16e6840015195c607ae",
+    "pipelineSHA256": "79c1a7a77d88e13750474634a481e7981bd3b236443f6ea60b6a9e4ccfd89d73"
+  },
+  "build": {
+    "signed": true,
+    "strictSignatureVerifiedAfterBundledInference": true,
+    "designatedRequirementUnchanged": true,
+    "designatedRequirementSHA256": "81a10015af2a65d504208a2b30b4c31256317eab3d5bd037ab35c96b6244188d",
+    "executableSHA256": "ffcdb2a065fb4622682150bd629b8d225fb6d16da5ee828cbc2f0dfaeb7d2f94",
+    "runtimeManifestSHA256": "ad5b4c6cedfa802cfd2482482137fe867a243cff51f7da9526ca8e1b8e5bd51d",
+    "resourceFiles": 25,
+    "allResourceHashesVerified": true,
+    "passiveDoctorChecks": 9,
+    "appLaunched": false
+  },
+  "retainedEvidence": {
+    "swiftTests": 85,
+    "nativeLiveFixtureCases": 60,
+    "reason": "Swift sources unchanged; native and spoken behavior not re-exercised for this revision."
+  },
+  "limits": [
+    "Authored fixtures and familiar semantic aliases are not broad website accuracy.",
+    "Click delivery does not prove arbitrary application outcomes.",
+    "New roles do not add arbitrary language understanding or planning.",
+    "The extension requires reloading before a live trial.",
+    "Vision weights and confidence thresholds are unchanged."
+  ]
+}

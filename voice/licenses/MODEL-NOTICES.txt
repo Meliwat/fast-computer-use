@@ -1,0 +1,35 @@
+Local Voice model asset notices
+
+Command models
+--------------
+The parser, operation classifier and candidate ranker are modified/fine-tuned
+derivatives of google/bert_uncased_L-2_H-128_A-2, revision
+30b0a37ccaaa32f332884b96992754e246e48c5f (Apache-2.0, per the model card).
+https://huggingface.co/google/bert_uncased_L-2_H-128_A-2
+
+Local Voice modifications (2026): task-specific intent/span, operation and
+candidate-scoring heads, plus supervised local fine-tuning on generated command
+examples. See voice/parser and voice/research/grounded for the model/training
+source and the associated evaluation limits. These derivative checkpoints are
+not Google's unmodified pretrained models. No user audio was used for training.
+The upstream BERT Apache 2.0 license is included as BERT-Apache-2.0.txt.
+
+Visual grounder
+---------------
+HongxinLi/GoClick-Base, revision
+05633a495f9d2ce823372d0c7fd9b0b4bb67c6fa (MIT, per the model card).
+https://huggingface.co/HongxinLi/GoClick-Base
+https://github.com/ZJULiHongxin/GoClick
+
+The model weights were not fine-tuned by Local Voice. Inference uses the local
+MLX implementation, with supported floating parameters cast to FP16. The
+upstream GoClick MIT license is included as GoClick-MIT.txt, with its copyright
+notice intact. The model card also ships beside the GoClick weights.
+
+Scope
+-----
+These notices cover the above model sources, not every software dependency.
+Python, PyTorch, Transformers, MLX, mlx-vlm and their dependencies retain their
+own licenses. They are currently installed separately by the runtime installer.
+A binary runtime distribution requires a complete dependency-notice review.
+The experimental TinyCLIP/icon-adaptation weights are not in the app bundle.

@@ -1,0 +1,204 @@
+{
+  "check": {
+    "allPassed": true,
+    "cases": [
+      {
+        "accepted": true,
+        "expectedAccepted": true,
+        "id": "fill",
+        "milliseconds": 224,
+        "passed": true,
+        "result": "Field filled · text verified"
+      },
+      {
+        "accepted": true,
+        "expectedAccepted": true,
+        "id": "type",
+        "milliseconds": 210,
+        "passed": true,
+        "result": "Text inserted · say ‘send it’ to submit"
+      },
+      {
+        "accepted": true,
+        "expectedAccepted": true,
+        "id": "literal",
+        "milliseconds": 224,
+        "passed": true,
+        "result": "Field filled · text verified"
+      },
+      {
+        "accepted": true,
+        "expectedAccepted": true,
+        "id": "same-value",
+        "milliseconds": 233,
+        "passed": true,
+        "result": "Field already matches · text verified"
+      },
+      {
+        "accepted": true,
+        "expectedAccepted": true,
+        "id": "placeholder",
+        "milliseconds": 247,
+        "passed": true,
+        "result": "Field filled · text verified"
+      },
+      {
+        "accepted": true,
+        "expectedAccepted": true,
+        "id": "linked-label",
+        "milliseconds": 252,
+        "passed": true,
+        "result": "Field filled · text verified"
+      },
+      {
+        "accepted": false,
+        "error": "Could not identify one visible, writable field named ‘Duplicate’",
+        "expectedAccepted": false,
+        "id": "duplicate",
+        "milliseconds": 34,
+        "passed": true
+      },
+      {
+        "accepted": false,
+        "error": "Could not identify one visible, writable field named ‘Disabled’",
+        "expectedAccepted": false,
+        "id": "disabled",
+        "milliseconds": 28,
+        "passed": true
+      },
+      {
+        "accepted": false,
+        "error": "Could not identify one visible, writable field named ‘Read only’",
+        "expectedAccepted": false,
+        "id": "read-only",
+        "milliseconds": 27,
+        "passed": true
+      },
+      {
+        "accepted": false,
+        "error": "Could not identify one visible, writable field named ‘Password’",
+        "expectedAccepted": false,
+        "id": "password",
+        "milliseconds": 25,
+        "passed": true
+      },
+      {
+        "accepted": false,
+        "error": "Could not identify one visible, writable field named ‘Hidden’",
+        "expectedAccepted": false,
+        "id": "hidden",
+        "milliseconds": 28,
+        "passed": true
+      },
+      {
+        "accepted": false,
+        "error": "Could not identify one visible, writable field named ‘Missing’",
+        "expectedAccepted": false,
+        "id": "missing",
+        "milliseconds": 30,
+        "passed": true
+      },
+      {
+        "accepted": false,
+        "error": "Text changed, focus moved, or insertion could not be verified; not retrying",
+        "expectedAccepted": false,
+        "id": "reversion",
+        "milliseconds": 132,
+        "passed": true
+      },
+      {
+        "accepted": false,
+        "error": "Text changed, focus moved, or insertion could not be verified; not retrying",
+        "expectedAccepted": false,
+        "id": "focus-moved",
+        "milliseconds": 115,
+        "passed": true
+      }
+    ],
+    "scope": "Read fixture state independently; a rejected reversion/focus case may have received its single initial write."
+  },
+  "ok": true,
+  "scope": "Signed app → fixed native text commands → disposable Text Fixture only. No microphone, screenshots, model workers or hotkeys.",
+  "independentFixtureState": {
+    "changes": {
+      "destination": 3,
+      "disabled": 0,
+      "duplicateA": 0,
+      "duplicateB": 0,
+      "hidden": 0,
+      "linked": 1,
+      "moving": 1,
+      "password": 0,
+      "placeholder": 1,
+      "readonly": 0,
+      "reverting": 2
+    },
+    "foreground": true,
+    "history": {
+      "destination": [
+        "Original",
+        "Oslo",
+        "Oslo👋",
+        "Oslo and open Notes"
+      ],
+      "disabled": [
+        "Original"
+      ],
+      "duplicateA": [
+        "Original"
+      ],
+      "duplicateB": [
+        "Original"
+      ],
+      "hidden": [
+        "Original"
+      ],
+      "linked": [
+        "Original",
+        "Hello"
+      ],
+      "moving": [
+        "Original",
+        "Focus test"
+      ],
+      "placeholder": [
+        "Original",
+        "Paris"
+      ],
+      "readonly": [
+        "Original"
+      ],
+      "reverting": [
+        "Original",
+        "Changed",
+        "Original"
+      ]
+    },
+    "scope": "Disposable fixture strings only",
+    "values": {
+      "destination": "Oslo and open Notes",
+      "disabled": "Original",
+      "duplicateA": "Original",
+      "duplicateB": "Original",
+      "hidden": "Original",
+      "linked": "Hello",
+      "moving": "Focus test",
+      "placeholder": "Paris",
+      "readonly": "Original",
+      "reverting": "Original"
+    },
+    "version": 1
+  },
+  "protectedAndAmbiguousFieldsUntouched": true,
+  "expectedFinalEffects": true,
+  "passed": true,
+  "date": "2026-09-23",
+  "environment": "M1 Pro, macOS 15.5; existing Accessibility permission; original GoClick and command weights unchanged",
+  "sourceSHA256": {
+    "voice/Sources/LocalVoice/AppInteraction.swift": "a60c6daa09b5f9a364071d5b193252b4b2ed892b41433809ca5bcb650cd144b6",
+    "voice/Sources/LocalVoice/LocalVoiceApp.swift": "44e3f4fb77f8276458c519a2f7219f4b27d1dcc30197381c5aa2bdb9dfec7179",
+    "voice/Sources/VoiceCore/NativeText.swift": "99b31c35c70808e6fb4871848c9dac5fa246545e159798517c3e886ed2264509",
+    "voice/research/native/TextFixture.swift": "d326994a028aae45c7539b7acd65697eac6fbba4ec89e4a6240453405eae05b2",
+    "voice/research/native/run-text-check.py": "8a90431d2f64b32c8f25018c5328230a423fd8fe686aab2dd1191d317465ece3"
+  }
+}

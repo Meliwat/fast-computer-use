@@ -1,0 +1,811 @@
+{
+  "date": "2026-09-23",
+  "scope": "Signed app on the same M1 Pro/macOS 15.5. Fixed final text and a disposable AppKit fixture; no microphone, physical Option key, screenshots or personal app input. Menu checks disable visual fallback. No claim of arbitrary command outcome verification.",
+  "reports": {
+    "menus": {
+      "check": {
+        "allPassed": true,
+        "cases": [
+          {
+            "accepted": true,
+            "expectedAccepted": true,
+            "id": "closed-definitions-excluded",
+            "milliseconds": 55,
+            "passed": true,
+            "result": "Only visible menu headers and window controls observed"
+          },
+          {
+            "accepted": true,
+            "expectedAccepted": true,
+            "id": "focus-before-menu",
+            "milliseconds": 213,
+            "passed": true,
+            "result": "Field focus verified"
+          },
+          {
+            "accepted": true,
+            "expectedAccepted": true,
+            "id": "open-file",
+            "milliseconds": 84,
+            "passed": true,
+            "result": "Menu opened \u00b7 verified"
+          },
+          {
+            "accepted": true,
+            "expectedAccepted": true,
+            "id": "already-open",
+            "milliseconds": 36,
+            "passed": true,
+            "result": "Menu already open \u00b7 verified"
+          },
+          {
+            "accepted": true,
+            "expectedAccepted": true,
+            "id": "menu-scope",
+            "milliseconds": 23,
+            "passed": true,
+            "result": "Visible menu chain owns interaction"
+          },
+          {
+            "accepted": false,
+            "error": "Could not identify one available field named \u2018City\u2019",
+            "expectedAccepted": false,
+            "id": "background-focus",
+            "milliseconds": 19,
+            "passed": true
+          },
+          {
+            "accepted": false,
+            "error": "Close the menu before filling a field",
+            "expectedAccepted": false,
+            "id": "background-fill",
+            "milliseconds": 0,
+            "passed": true
+          },
+          {
+            "accepted": false,
+            "error": "Choose an item in the open menu or say \u2018close menu\u2019",
+            "expectedAccepted": false,
+            "id": "background-type",
+            "milliseconds": 0,
+            "passed": true
+          },
+          {
+            "accepted": false,
+            "error": "Choose an item in the open menu or say \u2018close menu\u2019",
+            "expectedAccepted": false,
+            "id": "background-button",
+            "milliseconds": 21,
+            "passed": true
+          },
+          {
+            "accepted": false,
+            "error": "More than one menu item matches \u2018Details\u2019",
+            "expectedAccepted": false,
+            "id": "duplicate-menu-item",
+            "milliseconds": 7,
+            "passed": true
+          },
+          {
+            "accepted": false,
+            "error": "Menu target changed or is unavailable; no input sent",
+            "expectedAccepted": false,
+            "id": "disabled-menu-item",
+            "milliseconds": 12,
+            "passed": true
+          },
+          {
+            "accepted": true,
+            "expectedAccepted": true,
+            "id": "model-save-as",
+            "milliseconds": 448,
+            "passed": true,
+            "result": "Menu command delivered; menu closed; result not verified"
+          },
+          {
+            "accepted": false,
+            "error": "Native control proposal is missing or already used",
+            "expectedAccepted": false,
+            "id": "replay",
+            "milliseconds": 0,
+            "passed": true
+          },
+          {
+            "accepted": true,
+            "expectedAccepted": true,
+            "id": "model-open-file",
+            "milliseconds": 173,
+            "passed": true,
+            "result": "Menu opened \u00b7 verified"
+          },
+          {
+            "accepted": true,
+            "expectedAccepted": true,
+            "id": "open-submenu",
+            "milliseconds": 68,
+            "passed": true,
+            "result": "Menu opened \u00b7 verified"
+          },
+          {
+            "accepted": true,
+            "expectedAccepted": true,
+            "id": "select-submenu-item",
+            "milliseconds": 473,
+            "passed": true,
+            "result": "Menu command delivered; menu closed; result not verified"
+          },
+          {
+            "accepted": true,
+            "expectedAccepted": true,
+            "id": "reopen-for-dismiss",
+            "milliseconds": 66,
+            "passed": true,
+            "result": "Menu opened \u00b7 verified"
+          },
+          {
+            "accepted": true,
+            "expectedAccepted": true,
+            "id": "dismiss",
+            "milliseconds": 110,
+            "passed": true,
+            "result": "Menu closed \u00b7 verified"
+          },
+          {
+            "accepted": false,
+            "error": "Native control proposal is missing or already used",
+            "expectedAccepted": false,
+            "id": "dismiss-cancels-binding",
+            "milliseconds": 0,
+            "passed": true
+          },
+          {
+            "accepted": true,
+            "expectedAccepted": true,
+            "id": "already-closed",
+            "milliseconds": 4,
+            "passed": true,
+            "result": "No open native menu"
+          },
+          {
+            "accepted": true,
+            "expectedAccepted": true,
+            "id": "reopen-for-scene-check",
+            "milliseconds": 59,
+            "passed": true,
+            "result": "Menu opened \u00b7 verified"
+          },
+          {
+            "accepted": false,
+            "error": "Native controls changed after observation; no action sent",
+            "expectedAccepted": false,
+            "id": "closed-scene-rejected",
+            "milliseconds": 63,
+            "passed": true
+          },
+          {
+            "accepted": true,
+            "expectedAccepted": true,
+            "id": "reopen-for-cancel",
+            "milliseconds": 59,
+            "passed": true,
+            "result": "Menu opened \u00b7 verified"
+          },
+          {
+            "accepted": true,
+            "expectedAccepted": true,
+            "id": "cancel-after-acknowledgement",
+            "milliseconds": 42,
+            "passed": true,
+            "result": "Menu command delivered; result not verified"
+          },
+          {
+            "accepted": false,
+            "error": "Close the menu before filling a field",
+            "expectedAccepted": false,
+            "id": "closing-menu-blocks-fill",
+            "milliseconds": 1,
+            "passed": true
+          },
+          {
+            "accepted": true,
+            "expectedAccepted": true,
+            "id": "background-restored",
+            "milliseconds": 239,
+            "passed": true,
+            "result": "Field focus verified"
+          }
+        ]
+      },
+      "ok": true,
+      "independentFixtureState": {
+        "changes": {
+          "destination": 0,
+          "disabled": 0,
+          "duplicateA": 0,
+          "duplicateB": 0,
+          "hidden": 0,
+          "linked": 0,
+          "moving": 0,
+          "password": 0,
+          "placeholder": 0,
+          "readonly": 0,
+          "reverting": 0
+        },
+        "clicks": {
+          "details-a": 0,
+          "details-b": 0,
+          "help": 0,
+          "open": 0,
+          "preferences": 0,
+          "save": 0,
+          "save-as": 0,
+          "unavailable": 0
+        },
+        "focused": "linked",
+        "focusHistory": [
+          "destination",
+          "linked"
+        ],
+        "foreground": true,
+        "helpRenamed": false,
+        "history": {
+          "destination": [
+            "Original"
+          ],
+          "disabled": [
+            "Original"
+          ],
+          "duplicateA": [
+            "Original"
+          ],
+          "duplicateB": [
+            "Original"
+          ],
+          "hidden": [
+            "Original"
+          ],
+          "linked": [
+            ""
+          ],
+          "moving": [
+            "Original"
+          ],
+          "placeholder": [
+            "Original"
+          ],
+          "readonly": [
+            "Original"
+          ],
+          "reverting": [
+            "Original"
+          ]
+        },
+        "menuCommands": [
+          "save-as",
+          "image",
+          "save"
+        ],
+        "menuEvents": [
+          "willOpen:File",
+          "didClose:File",
+          "willOpen:File",
+          "willOpen:Export",
+          "didClose:File",
+          "didClose:Export",
+          "willOpen:File",
+          "didClose:File",
+          "willOpen:File",
+          "didClose:File",
+          "willOpen:File",
+          "didClose:File"
+        ],
+        "scope": "Disposable fixture strings only",
+        "values": {
+          "destination": "Original",
+          "disabled": "Original",
+          "duplicateA": "Original",
+          "duplicateB": "Original",
+          "hidden": "Original",
+          "linked": "",
+          "moving": "Original",
+          "placeholder": "Original",
+          "readonly": "Original",
+          "reverting": "Original"
+        },
+        "version": 1
+      },
+      "protectedAndAmbiguousFieldsUntouched": true,
+      "expectedFinalEffects": true,
+      "passed": true
+    },
+    "nativeGrounding": {
+      "check": {
+        "allPassed": true,
+        "cases": [
+          {
+            "accepted": false,
+            "error": "Native control proposal is missing or already used",
+            "id": "replay",
+            "passed": true
+          },
+          {
+            "accepted": true,
+            "expectedAccepted": true,
+            "id": "activate",
+            "milliseconds": 111,
+            "modelMs": 1.5613340074196458,
+            "passed": true,
+            "reason": "bound",
+            "result": "Click delivered; result not verified"
+          },
+          {
+            "accepted": true,
+            "expectedAccepted": true,
+            "id": "long-label",
+            "milliseconds": 155,
+            "modelMs": 1.4219579752534628,
+            "passed": true,
+            "reason": "bound",
+            "result": "Click delivered; result not verified"
+          },
+          {
+            "accepted": true,
+            "expectedAccepted": true,
+            "id": "focus-label",
+            "milliseconds": 214,
+            "modelMs": 1.34170800447464,
+            "passed": true,
+            "reason": "bound",
+            "result": "Field focus verified"
+          },
+          {
+            "accepted": true,
+            "expectedAccepted": true,
+            "id": "focus-placeholder",
+            "milliseconds": 297,
+            "passed": true,
+            "result": "Field focus verified",
+            "source": "exact native focus"
+          },
+          {
+            "accepted": false,
+            "error": "Could not identify one available field named \u2018Duplicate\u2019",
+            "expectedAccepted": false,
+            "id": "duplicate-field",
+            "milliseconds": 54,
+            "passed": true
+          },
+          {
+            "accepted": false,
+            "error": "Could not identify one available field named \u2018Disabled\u2019",
+            "expectedAccepted": false,
+            "id": "disabled-field",
+            "milliseconds": 64,
+            "passed": true
+          },
+          {
+            "accepted": false,
+            "error": "Could not identify one available field named \u2018Read only\u2019",
+            "expectedAccepted": false,
+            "id": "read-only",
+            "milliseconds": 33,
+            "passed": true
+          },
+          {
+            "accepted": false,
+            "error": "Could not identify one available field named \u2018Password\u2019",
+            "expectedAccepted": false,
+            "id": "protected-field",
+            "milliseconds": 22,
+            "passed": true
+          },
+          {
+            "accepted": false,
+            "error": "Could not identify one available field named \u2018Hidden\u2019",
+            "expectedAccepted": false,
+            "id": "hidden-field",
+            "milliseconds": 30,
+            "passed": true
+          },
+          {
+            "accepted": false,
+            "expectedAccepted": false,
+            "id": "duplicate-button",
+            "milliseconds": 34,
+            "modelMs": 1.281333970837295,
+            "passed": true,
+            "reason": "multiple_named_controls"
+          },
+          {
+            "accepted": false,
+            "expectedAccepted": false,
+            "id": "disabled-button",
+            "milliseconds": 30,
+            "modelMs": 1.1299169855192304,
+            "passed": true,
+            "reason": "named_control_disabled"
+          },
+          {
+            "accepted": false,
+            "expectedAccepted": false,
+            "id": "operator-collision",
+            "milliseconds": 35,
+            "modelMs": 3.6544579779729247,
+            "passed": true,
+            "reason": "uncertain"
+          },
+          {
+            "accepted": false,
+            "expectedAccepted": false,
+            "id": "negated",
+            "milliseconds": 1,
+            "passed": true,
+            "reason": "operation abstained"
+          },
+          {
+            "accepted": false,
+            "expectedAccepted": false,
+            "id": "question",
+            "milliseconds": 1,
+            "passed": true,
+            "reason": "operation abstained"
+          },
+          {
+            "accepted": true,
+            "id": "routed-field-focus",
+            "milliseconds": 210,
+            "passed": true,
+            "result": "Field focus verified"
+          },
+          {
+            "accepted": true,
+            "id": "type-after-focus",
+            "milliseconds": 192,
+            "passed": true,
+            "result": "Text inserted \u00b7 say \u2018send it\u2019 to submit"
+          },
+          {
+            "accepted": false,
+            "error": "Native controls changed after observation; no action sent",
+            "id": "changed-target",
+            "passed": true
+          },
+          {
+            "accepted": false,
+            "error": "Native observation expired; no action sent",
+            "id": "expired-target",
+            "passed": true
+          },
+          {
+            "accepted": false,
+            "error": "Native control proposal is missing or already used",
+            "id": "cancelled-target",
+            "passed": true
+          }
+        ],
+        "scope": "Fixed final text through actual local models, native observation, binding and executor. Read independent fixture state; ordinary button presses can remain result-unverified."
+      },
+      "ok": true,
+      "scope": "Signed app \u2192 local command models \u2192 native AX controls in disposable Text Fixture only. No microphone, screenshots or hotkeys.",
+      "independentFixtureState": {
+        "changes": {
+          "destination": 0,
+          "disabled": 0,
+          "duplicateA": 0,
+          "duplicateB": 0,
+          "hidden": 0,
+          "linked": 1,
+          "moving": 0,
+          "password": 0,
+          "placeholder": 0,
+          "readonly": 0,
+          "reverting": 0
+        },
+        "clicks": {
+          "details-a": 0,
+          "details-b": 0,
+          "help": 0,
+          "open": 0,
+          "preferences": 1,
+          "save": 0,
+          "save-as": 1,
+          "unavailable": 0
+        },
+        "focused": "linked",
+        "focusHistory": [
+          "destination",
+          "linked",
+          "placeholder",
+          "linked"
+        ],
+        "foreground": true,
+        "helpRenamed": true,
+        "history": {
+          "destination": [
+            "Original"
+          ],
+          "disabled": [
+            "Original"
+          ],
+          "duplicateA": [
+            "Original"
+          ],
+          "duplicateB": [
+            "Original"
+          ],
+          "hidden": [
+            "Original"
+          ],
+          "linked": [
+            "",
+            "Native focus works"
+          ],
+          "moving": [
+            "Original"
+          ],
+          "placeholder": [
+            "Original"
+          ],
+          "readonly": [
+            "Original"
+          ],
+          "reverting": [
+            "Original"
+          ]
+        },
+        "menuCommands": [],
+        "menuEvents": [],
+        "scope": "Disposable fixture strings only",
+        "values": {
+          "destination": "Original",
+          "disabled": "Original",
+          "duplicateA": "Original",
+          "duplicateB": "Original",
+          "hidden": "Original",
+          "linked": "Native focus works",
+          "moving": "Original",
+          "placeholder": "Original",
+          "readonly": "Original",
+          "reverting": "Original"
+        },
+        "version": 1
+      },
+      "protectedAndAmbiguousFieldsUntouched": true,
+      "expectedFinalEffects": true,
+      "passed": true
+    },
+    "nativeText": {
+      "check": {
+        "allPassed": true,
+        "cases": [
+          {
+            "accepted": true,
+            "expectedAccepted": true,
+            "id": "fill",
+            "milliseconds": 247,
+            "passed": true,
+            "result": "Field filled \u00b7 text verified"
+          },
+          {
+            "accepted": true,
+            "expectedAccepted": true,
+            "id": "type",
+            "milliseconds": 215,
+            "passed": true,
+            "result": "Text inserted \u00b7 say \u2018send it\u2019 to submit"
+          },
+          {
+            "accepted": true,
+            "expectedAccepted": true,
+            "id": "literal",
+            "milliseconds": 241,
+            "passed": true,
+            "result": "Field filled \u00b7 text verified"
+          },
+          {
+            "accepted": true,
+            "expectedAccepted": true,
+            "id": "same-value",
+            "milliseconds": 222,
+            "passed": true,
+            "result": "Field already matches \u00b7 text verified"
+          },
+          {
+            "accepted": true,
+            "expectedAccepted": true,
+            "id": "placeholder",
+            "milliseconds": 249,
+            "passed": true,
+            "result": "Field filled \u00b7 text verified"
+          },
+          {
+            "accepted": true,
+            "expectedAccepted": true,
+            "id": "linked-label",
+            "milliseconds": 264,
+            "passed": true,
+            "result": "Field filled \u00b7 text verified"
+          },
+          {
+            "accepted": false,
+            "error": "Could not identify one visible, writable field named \u2018Duplicate\u2019",
+            "expectedAccepted": false,
+            "id": "duplicate",
+            "milliseconds": 34,
+            "passed": true
+          },
+          {
+            "accepted": false,
+            "error": "Could not identify one visible, writable field named \u2018Disabled\u2019",
+            "expectedAccepted": false,
+            "id": "disabled",
+            "milliseconds": 33,
+            "passed": true
+          },
+          {
+            "accepted": false,
+            "error": "Could not identify one visible, writable field named \u2018Read only\u2019",
+            "expectedAccepted": false,
+            "id": "read-only",
+            "milliseconds": 28,
+            "passed": true
+          },
+          {
+            "accepted": false,
+            "error": "Could not identify one visible, writable field named \u2018Password\u2019",
+            "expectedAccepted": false,
+            "id": "password",
+            "milliseconds": 25,
+            "passed": true
+          },
+          {
+            "accepted": false,
+            "error": "Could not identify one visible, writable field named \u2018Hidden\u2019",
+            "expectedAccepted": false,
+            "id": "hidden",
+            "milliseconds": 28,
+            "passed": true
+          },
+          {
+            "accepted": false,
+            "error": "Could not identify one visible, writable field named \u2018Missing\u2019",
+            "expectedAccepted": false,
+            "id": "missing",
+            "milliseconds": 34,
+            "passed": true
+          },
+          {
+            "accepted": false,
+            "error": "Text changed, focus moved, or insertion could not be verified; not retrying",
+            "expectedAccepted": false,
+            "id": "reversion",
+            "milliseconds": 147,
+            "passed": true
+          },
+          {
+            "accepted": false,
+            "error": "Text changed, focus moved, or insertion could not be verified; not retrying",
+            "expectedAccepted": false,
+            "id": "focus-moved",
+            "milliseconds": 112,
+            "passed": true
+          }
+        ],
+        "scope": "Read fixture state independently; a rejected reversion/focus case may have received its single initial write."
+      },
+      "ok": true,
+      "scope": "Signed app \u2192 fixed native text commands \u2192 disposable Text Fixture only. No microphone, screenshots, model workers or hotkeys.",
+      "independentFixtureState": {
+        "changes": {
+          "destination": 3,
+          "disabled": 0,
+          "duplicateA": 0,
+          "duplicateB": 0,
+          "hidden": 0,
+          "linked": 1,
+          "moving": 1,
+          "password": 0,
+          "placeholder": 1,
+          "readonly": 0,
+          "reverting": 2
+        },
+        "clicks": {},
+        "focused": "destination",
+        "focusHistory": [
+          "destination",
+          "placeholder",
+          "linked",
+          "reverting",
+          "moving",
+          "destination"
+        ],
+        "foreground": true,
+        "helpRenamed": false,
+        "history": {
+          "destination": [
+            "Original",
+            "Oslo",
+            "Oslo\ud83d\udc4b",
+            "Oslo and open Notes"
+          ],
+          "disabled": [
+            "Original"
+          ],
+          "duplicateA": [
+            "Original"
+          ],
+          "duplicateB": [
+            "Original"
+          ],
+          "hidden": [
+            "Original"
+          ],
+          "linked": [
+            "Original",
+            "Hello"
+          ],
+          "moving": [
+            "Original",
+            "Focus test"
+          ],
+          "placeholder": [
+            "Original",
+            "Paris"
+          ],
+          "readonly": [
+            "Original"
+          ],
+          "reverting": [
+            "Original",
+            "Changed",
+            "Original"
+          ]
+        },
+        "menuCommands": [],
+        "menuEvents": [],
+        "scope": "Disposable fixture strings only",
+        "values": {
+          "destination": "Oslo and open Notes",
+          "disabled": "Original",
+          "duplicateA": "Original",
+          "duplicateB": "Original",
+          "hidden": "Original",
+          "linked": "Hello",
+          "moving": "Focus test",
+          "placeholder": "Paris",
+          "readonly": "Original",
+          "reverting": "Original"
+        },
+        "version": 1
+      },
+      "protectedAndAmbiguousFieldsUntouched": true,
+      "expectedFinalEffects": true,
+      "passed": true
+    }
+  },
+  "sourceSHA256": {
+    "voice/Sources/LocalVoice/AppInteraction.swift": "5d3ca8dd771aa47211586a899c38950842297abba605afc0a79d803f7c9a3a5f",
+    "voice/Sources/LocalVoice/NativeMenus.swift": "c877e905f2e90f614034aac5cfa1554a2d7d00b0871cb34c5af1b2ae16795a4e",
+    "voice/Sources/LocalVoice/LocalVoiceApp.swift": "ad5295383dc5cdb7055640fabd7caee88ae4ca9e2cb56c43208d80c6f8d601d0",
+    "voice/Sources/VoiceCore/NativeMenuLabels.swift": "a5e75f200ce3c1ede02978b2305c5f77c0889f9bf8c8cb12c821af1a69b2c316",
+    "voice/Sources/VoiceCore/Command.swift": "22ebfe9128e2198569742468c6127723ab22d4fb9e1d37361df69a32fcc03c6f",
+    "voice/research/native/TextFixture.swift": "c6bbaa5031122bafdbd254fc6fd68e0ca5863790fc61b6c142002b52ff8047ea",
+    "voice/research/native/run-text-check.py": "98c1cf5851b9649ded430a803591a5861b8761a9183bea1fbd7c3990ce778cf8"
+  },
+  "swiftTests": 85,
+  "signedFullBuild": true,
+  "bundleRuntimeFilesHashVerified": 25,
+  "strictSignatureVerified": true,
+  "testAppsClosedAfterChecks": true,
+  "builtExecutableSHA256": "ec33e348f45190d75dedf5f1dd1653169807f02c3211007de539935f896ec4ee",
+  "failedTrials": [
+    {
+      "report": "check-9aa5584bfea24499b1ba9e19bbec9293.json",
+      "finding": "Selection acknowledged before closure; reopening mistook closing menu for an already-open menu."
+    },
+    {
+      "report": "check-589c0857cfdd47659ee78c42db0c1549.json",
+      "finding": "Expected leaf callbacks occurred, but dismissal assertion was too weak. AXSelected cleared before menu surfaces disappeared; already-closed did not exercise dismissal."
+    }
+  ]
+}

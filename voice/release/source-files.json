@@ -1,0 +1,455 @@
+{
+  "version": 1,
+  "files": [
+    {
+      "source": "voice/release/CHANGELOG.md"
+    },
+    {
+      "source": "voice/release/CHANGELOG.md",
+      "destination": "CHANGELOG.md"
+    },
+    {
+      "source": "voice/release/CONTRIBUTING.md"
+    },
+    {
+      "source": "voice/release/CONTRIBUTING.md",
+      "destination": "CONTRIBUTING.md"
+    },
+    {
+      "source": "voice/Package.swift"
+    },
+    {
+      "source": "voice/Sources/LocalVoice/AppCatalog.swift"
+    },
+    {
+      "source": "voice/Sources/LocalVoice/AppInteraction.swift"
+    },
+    {
+      "source": "voice/Sources/LocalVoice/BrowserBridge.swift"
+    },
+    {
+      "source": "voice/Sources/LocalVoice/GroundedParser.swift"
+    },
+    {
+      "source": "voice/Sources/LocalVoice/LearnedParser.swift"
+    },
+    {
+      "source": "voice/Sources/LocalVoice/LocalVoiceApp.swift"
+    },
+    {
+      "source": "voice/Sources/LocalVoice/VisualClick.swift"
+    },
+    {
+      "source": "voice/Sources/VoiceCore/BrowserCommand.swift"
+    },
+    {
+      "source": "voice/Sources/VoiceCore/Command.swift"
+    },
+    {
+      "source": "voice/Sources/VoiceCore/GroundedProposal.swift"
+    },
+    {
+      "source": "voice/Sources/VoiceCore/GroundedSequence.swift"
+    },
+    {
+      "source": "voice/Sources/VoiceCore/InteractionRules.swift"
+    },
+    {
+      "source": "voice/Sources/VoiceCore/NavigationEvidence.swift"
+    },
+    {
+      "source": "voice/Sources/VoiceCore/Observation.swift"
+    },
+    {
+      "source": "voice/Sources/VoiceCore/PushToTalk.swift"
+    },
+    {
+      "source": "voice/Sources/VoiceCore/RuntimeConfiguration.swift"
+    },
+    {
+      "source": "voice/Sources/VoiceCore/SpeechBoundary.swift"
+    },
+    {
+      "source": "voice/Sources/VoiceCore/VisualTarget.swift"
+    },
+    {
+      "source": "voice/Sources/VoiceCore/VisualTextEvidence.swift"
+    },
+    {
+      "source": "voice/Sources/VoiceCore/WebDestination.swift"
+    },
+    {
+      "source": "voice/Sources/VoiceCore/XSearchEvidence.swift"
+    },
+    {
+      "source": "voice/Sources/VoicePerception/GoClickWorker.swift"
+    },
+    {
+      "source": "voice/Sources/VoicePerception/ScreenObserver.swift"
+    },
+    {
+      "source": "voice/Tests/VoiceCoreTests/AppCommandsTests.swift"
+    },
+    {
+      "source": "voice/Tests/VoiceCoreTests/BrowserCommandTests.swift"
+    },
+    {
+      "source": "voice/Tests/VoiceCoreTests/BrowserProtocolTests.swift"
+    },
+    {
+      "source": "voice/Tests/VoiceCoreTests/CommandTests.swift"
+    },
+    {
+      "source": "voice/Tests/VoiceCoreTests/ContextSearchTests.swift"
+    },
+    {
+      "source": "voice/Tests/VoiceCoreTests/GroundedProposalTests.swift"
+    },
+    {
+      "source": "voice/Tests/VoiceCoreTests/GroundedSequenceTests.swift"
+    },
+    {
+      "source": "voice/Tests/VoiceCoreTests/GroundedTextTests.swift"
+    },
+    {
+      "source": "voice/Tests/VoiceCoreTests/InteractionTests.swift"
+    },
+    {
+      "source": "voice/Tests/VoiceCoreTests/NavigationEvidenceTests.swift"
+    },
+    {
+      "source": "voice/Tests/VoiceCoreTests/ObservationTests.swift"
+    },
+    {
+      "source": "voice/Tests/VoiceCoreTests/PushToTalkTests.swift"
+    },
+    {
+      "source": "voice/Tests/VoiceCoreTests/RuntimeConfigurationTests.swift"
+    },
+    {
+      "source": "voice/Tests/VoiceCoreTests/SpeechBoundaryTests.swift"
+    },
+    {
+      "source": "voice/Tests/VoiceCoreTests/VisualTargetTests.swift"
+    },
+    {
+      "source": "voice/Tests/VoiceCoreTests/VisualTextTests.swift"
+    },
+    {
+      "source": "voice/Tests/VoiceCoreTests/XSearchEvidenceTests.swift"
+    },
+    {
+      "source": "voice/Tests/VoicePerceptionTests/GoClickWorkerTests.swift"
+    },
+    {
+      "source": "voice/Tests/VoicePerceptionTests/RegionFreshnessTests.swift"
+    },
+    {
+      "source": "voice/Tests/VoicePerceptionTests/ScreenObserverTests.swift"
+    },
+    {
+      "source": "voice/Tests/test_build_replacement.py"
+    },
+    {
+      "source": "voice/Tests/test_browser_installation.py"
+    },
+    {
+      "source": "voice/Tests/test_model_assets.py"
+    },
+    {
+      "source": "voice/Tests/test_runtime_install.py"
+    },
+    {
+      "source": "voice/Tests/test_runtime_packaging.py"
+    },
+    {
+      "source": "voice/Tests/test_source_export.py"
+    },
+    {
+      "source": "voice/browser/extension/background.js"
+    },
+    {
+      "source": "voice/browser/extension/controller.js"
+    },
+    {
+      "source": "voice/browser/extension/manifest.json"
+    },
+    {
+      "source": "voice/browser/native_host.py"
+    },
+    {
+      "source": "voice/browser/setup.py"
+    },
+    {
+      "source": "voice/browser/tests/background.test.cjs"
+    },
+    {
+      "source": "voice/browser/tests/editing-stub.cjs"
+    },
+    {
+      "source": "voice/browser/tests/editor-headless.cjs"
+    },
+    {
+      "source": "voice/browser/tests/fixture-tests.js"
+    },
+    {
+      "source": "voice/browser/tests/fixture.html"
+    },
+    {
+      "source": "voice/browser/tests/headless.cjs"
+    },
+    {
+      "source": "voice/browser/tests/live-check.html"
+    },
+    {
+      "source": "voice/browser/tests/test_native_host.py"
+    },
+    {
+      "source": "voice/browser/tests/verification.test.cjs"
+    },
+    {
+      "source": "voice/build.sh",
+      "executable": true
+    },
+    {
+      "source": "voice/licenses/BERT-Apache-2.0.txt"
+    },
+    {
+      "source": "voice/licenses/GoClick-MIT.txt"
+    },
+    {
+      "source": "voice/licenses/MODEL-NOTICES.txt"
+    },
+    {
+      "source": "voice/licenses/sources.json"
+    },
+    {
+      "source": "voice/models/models.lock.json"
+    },
+    {
+      "source": "voice/parser/model.py"
+    },
+    {
+      "source": "voice/parser/worker.py"
+    },
+    {
+      "source": "voice/release/README.md"
+    },
+    {
+      "source": "voice/release/package-lock.json"
+    },
+    {
+      "source": "voice/release/package.json"
+    },
+    {
+      "source": "voice/release/source-files.json"
+    },
+    {
+      "source": "voice/release/source.gitignore"
+    },
+    {
+      "source": "voice/research/grounded/operation.py"
+    },
+    {
+      "source": "voice/research/grounded/pipeline.py"
+    },
+    {
+      "source": "voice/research/grounded/ranker.py"
+    },
+    {
+      "source": "voice/research/grounded/test_contract.py"
+    },
+    {
+      "source": "voice/research/grounded/test_pipeline.py"
+    },
+    {
+      "source": "voice/research/grounded/worker.py"
+    },
+    {
+      "source": "voice/runtime/parser-requirements.lock"
+    },
+    {
+      "source": "voice/runtime/vision-requirements.in"
+    },
+    {
+      "source": "voice/runtime/vision-requirements.lock"
+    },
+    {
+      "source": "voice/tools/doctor.py"
+    },
+    {
+      "source": "voice/tools/export_source.py"
+    },
+    {
+      "source": "voice/tools/install_runtime.py"
+    },
+    {
+      "source": "voice/tools/model_assets.py"
+    },
+    {
+      "source": "voice/tools/stage_runtime.py"
+    },
+    {
+      "source": "voice/vision/test_worker.py"
+    },
+    {
+      "source": "voice/vision/worker.py"
+    },
+    {
+      "source": "voice/release/README.md",
+      "destination": "README.md"
+    },
+    {
+      "source": "voice/release/package.json",
+      "destination": "package.json"
+    },
+    {
+      "source": "voice/release/package-lock.json",
+      "destination": "package-lock.json"
+    },
+    {
+      "source": "voice/release/source.gitignore",
+      "destination": ".gitignore"
+    },
+    {
+      "source": "voice/Sources/VoiceCore/NativeText.swift"
+    },
+    {
+      "source": "voice/Tests/VoiceCoreTests/NativeTextTests.swift"
+    },
+    {
+      "source": "voice/research/native/TextFixture.swift"
+    },
+    {
+      "source": "voice/research/native/build-text-fixture.sh",
+      "executable": true
+    },
+    {
+      "source": "voice/research/native/run-text-check.py"
+    },
+    {
+      "source": "voice/research/native/NATIVE-TEXT.md"
+    },
+    {
+      "source": "voice/research/native/native-text-evidence.json"
+    },
+    {
+      "source": "voice/research/native/NATIVE-GROUNDING.md"
+    },
+    {
+      "source": "voice/research/native/native-grounding-evidence.json"
+    },
+    {
+      "source": "voice/Sources/LocalVoice/NativeMenus.swift"
+    },
+    {
+      "source": "voice/Sources/VoiceCore/NativeMenuLabels.swift"
+    },
+    {
+      "source": "voice/Tests/VoiceCoreTests/NativeMenuTests.swift"
+    },
+    {
+      "source": "voice/research/native/NATIVE-MENUS.md"
+    },
+    {
+      "source": "voice/research/native/native-menu-evidence.json"
+    },
+    {
+      "source": "voice/LICENSE"
+    },
+    {
+      "source": "voice/LICENSE",
+      "destination": "LICENSE"
+    },
+    {
+      "source": "voice/tools/inventory_dependency_licenses.py"
+    },
+    {
+      "source": "voice/tools/pack_runtime_notices.py"
+    },
+    {
+      "source": "voice/licenses/DEPENDENCY-REVIEW.md"
+    },
+    {
+      "source": "voice/licenses/dependency-inventory.json"
+    },
+    {
+      "source": "voice/licenses/runtime-notices-evidence.json"
+    },
+    {
+      "source": "voice/licenses/test_inventory.py"
+    },
+    {
+      "source": "voice/licenses/test_notice_pack.py"
+    },
+    {
+      "source": "voice/licenses/runtime-upstream/sources.json"
+    },
+    {
+      "source": "voice/licenses/runtime-upstream/safetensors-0.3.1-LICENSE.txt"
+    },
+    {
+      "source": "voice/licenses/runtime-upstream/sentencepiece-0.2.2-LICENSE.txt"
+    },
+    {
+      "source": "voice/licenses/runtime-upstream/tokenizers-0.13.3-LICENSE.txt"
+    },
+    {
+      "source": "voice/licenses/runtime-upstream/tokenizers-0.23.2-LICENSE.txt"
+    },
+    {
+      "source": "voice/browser/OUTCOMES.md"
+    },
+    {
+      "source": "voice/browser/tests/outcomes-headless.cjs"
+    },
+    {
+      "source": "voice/browser/tests/benchmark-outcomes.cjs"
+    },
+    {
+      "source": "voice/browser/tests/outcomes-baseline.json"
+    },
+    {
+      "source": "voice/browser/tests/outcomes-evidence.json"
+    },
+    {
+      "source": "voice/browser/ARIA-WIDGETS.md"
+    },
+    {
+      "source": "voice/browser/tests/aria-headless.cjs"
+    },
+    {
+      "source": "voice/browser/tests/aria-evidence.json"
+    },
+    {
+      "source": "voice/research/grounded/verify-aria-model.cjs"
+    },
+    {
+      "source": "voice/research/grounded/verify-sequences.cjs"
+    },
+    {
+      "source": "voice/browser/ROLE-LANGUAGE.md"
+    },
+    {
+      "source": "voice/browser/tests/role-language-evidence.json"
+    },
+    {
+      "source": "voice/research/grounded/probe-role-language.cjs"
+    },
+    {
+      "source": "voice/Sources/VoiceCore/ExistingText.swift"
+    },
+    {
+      "source": "voice/Tests/VoiceCoreTests/ExistingTextTests.swift"
+    },
+    {
+      "source": "voice/browser/tests/existing-text-headless.cjs"
+    },
+    {
+      "source": "voice/browser/EXISTING-TEXT.md"
+    },
+    {
+      "source": "voice/browser/tests/existing-text-evidence.json"
+    }
+  ]
+}

@@ -1,0 +1,188 @@
+{
+  "scope": "Authored fixtures in isolated headless Chrome; actual default browser actions and isolated-world production controller. No user tabs, networking, speech, native host or app launch.",
+  "controllerSHA256": "cdc5d7bba093e58a6b4f79553e71fcff8a26438a919c9b66c1400b8161a5ce74",
+  "browser": "Chrome/153.0.8010.53",
+  "passed": 6,
+  "total": 19,
+  "rows": [
+    {
+      "name": "native details opens",
+      "passed": false,
+      "expectedOutcome": "verified",
+      "outcome": "failed",
+      "clicks": 0,
+      "totalMs": null,
+      "message": "No available control named “Details”",
+      "value": false
+    },
+    {
+      "name": "native details closes",
+      "passed": false,
+      "expectedOutcome": "verified",
+      "outcome": "failed",
+      "clicks": 0,
+      "totalMs": null,
+      "message": "No available control named “Details”",
+      "value": true
+    },
+    {
+      "name": "pressed toggle",
+      "passed": false,
+      "expectedOutcome": "verified",
+      "outcome": "unverified",
+      "clicks": 1,
+      "totalMs": 194.80000007152557,
+      "message": "Click delivered; result not verified",
+      "value": "true"
+    },
+    {
+      "name": "mixed toggle becomes on",
+      "passed": false,
+      "expectedOutcome": "verified",
+      "outcome": "unverified",
+      "clicks": 1,
+      "totalMs": 187.39999997615814,
+      "message": "Click delivered; result not verified"
+    },
+    {
+      "name": "native popover opens",
+      "passed": false,
+      "expectedOutcome": "verified",
+      "outcome": "unverified",
+      "clicks": 1,
+      "totalMs": 187.70000004768372,
+      "message": "Click delivered; result not verified",
+      "value": true
+    },
+    {
+      "name": "native popover closes",
+      "passed": false,
+      "expectedOutcome": "verified",
+      "outcome": "unverified",
+      "clicks": 1,
+      "totalMs": 186.29999995231628,
+      "message": "Click delivered; result not verified",
+      "value": false
+    },
+    {
+      "name": "linked surface opens",
+      "passed": false,
+      "expectedOutcome": "verified",
+      "outcome": "unverified",
+      "clicks": 1,
+      "totalMs": 185.59999990463257,
+      "message": "Click delivered; result not verified",
+      "value": false
+    },
+    {
+      "name": "linked surface opens after 220 ms",
+      "passed": false,
+      "expectedOutcome": "verified",
+      "outcome": "unverified",
+      "clicks": 1,
+      "totalMs": 186.60000002384186,
+      "message": "Click delivered; result not verified",
+      "value": true
+    },
+    {
+      "name": "linked surface and state disagree",
+      "passed": false,
+      "expectedOutcome": "unverified",
+      "outcome": "verified",
+      "clicks": 1,
+      "totalMs": 186.60000002384186,
+      "message": "Control transition verified"
+    },
+    {
+      "name": "linked dialog opens",
+      "passed": false,
+      "expectedOutcome": "verified",
+      "outcome": "unverified",
+      "clicks": 1,
+      "totalMs": 188.70000004768372,
+      "message": "Click delivered; result not verified",
+      "value": true
+    },
+    {
+      "name": "brief delayed expansion reverts",
+      "passed": false,
+      "expectedOutcome": "unverified",
+      "outcome": "verified",
+      "clicks": 1,
+      "totalMs": 187,
+      "message": "Control transition verified"
+    },
+    {
+      "name": "malformed state is not proof",
+      "passed": false,
+      "expectedOutcome": "unverified",
+      "outcome": "verified",
+      "clicks": 1,
+      "totalMs": 188.29999995231628,
+      "message": "Control transition verified"
+    },
+    {
+      "name": "incidental mutation is not proof",
+      "passed": true,
+      "expectedOutcome": "unverified",
+      "outcome": "unverified",
+      "clicks": 1,
+      "totalMs": 185.5,
+      "message": "Click delivered; result not verified"
+    },
+    {
+      "name": "linked surface replacement is not proof",
+      "passed": true,
+      "expectedOutcome": "unverified",
+      "outcome": "unverified",
+      "clicks": 1,
+      "totalMs": 185.29999995231628,
+      "message": "Click delivered; result not verified"
+    },
+    {
+      "name": "changed association is not proof",
+      "passed": true,
+      "expectedOutcome": "unverified",
+      "outcome": "unverified",
+      "clicks": 1,
+      "totalMs": 186.10000002384186,
+      "message": "Click delivered; result not verified"
+    },
+    {
+      "name": "detached control is not proof",
+      "passed": true,
+      "expectedOutcome": "unverified",
+      "outcome": "unverified",
+      "clicks": 1,
+      "totalMs": 185.39999997615814,
+      "message": "Click delivered; result not verified"
+    },
+    {
+      "name": "ordinary stable expansion",
+      "passed": true,
+      "expectedOutcome": "verified",
+      "outcome": "verified",
+      "clicks": 1,
+      "totalMs": 186.69999992847443,
+      "message": "Control transition verified"
+    },
+    {
+      "name": "ordinary selected tab",
+      "passed": true,
+      "expectedOutcome": "verified",
+      "outcome": "verified",
+      "clicks": 1,
+      "totalMs": 184.79999995231628,
+      "message": "Control transition verified"
+    },
+    {
+      "name": "invalidates previous observation when target relation changes",
+      "passed": false,
+      "expectedOutcome": "failed",
+      "outcome": "unverified",
+      "clicks": 1,
+      "totalMs": 186.30000007152557,
+      "message": "Click delivered; result not verified"
+    }
+  ]
+}

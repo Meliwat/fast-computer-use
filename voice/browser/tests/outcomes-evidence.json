@@ -1,0 +1,1215 @@
+{
+  "date": "2026-09-23",
+  "status": "verified offline; live extension not exercised",
+  "scope": "Authored synthetic fixtures and repeated browser regressions; not broad website, speech, native host, Swift sequence-runner or live desktop evidence. Runtime/model weights and app executable unchanged.",
+  "controllerSHA256": "4e59dcab444be971418c01300998d6a76720e645f969fcca7eab9f6e27f4db21",
+  "baseline": "outcomes-baseline.json",
+  "outcomes": {
+    "scope": "Authored fixtures in isolated headless Chrome; actual default browser actions and isolated-world production controller. No user tabs, networking, speech, native host or app launch.",
+    "controllerSHA256": "4e59dcab444be971418c01300998d6a76720e645f969fcca7eab9f6e27f4db21",
+    "testSHA256": "adc4d5ffab03955f1b12870998c37bc30a9b459a147e73ef8187a1b84a518681",
+    "browser": "Chrome/153.0.8010.53",
+    "passed": 31,
+    "total": 31,
+    "rows": [
+      {
+        "name": "native details opens",
+        "passed": true,
+        "expectedOutcome": "verified",
+        "outcome": "verified",
+        "clicks": 1,
+        "totalMs": 132.60000002384186,
+        "message": "Control transition verified",
+        "value": true,
+        "transition": {
+          "signals": [],
+          "surface": "details",
+          "stableMs": 128.39999997615814
+        }
+      },
+      {
+        "name": "native details closes",
+        "passed": true,
+        "expectedOutcome": "verified",
+        "outcome": "verified",
+        "clicks": 1,
+        "totalMs": 129,
+        "message": "Control transition verified",
+        "value": false,
+        "transition": {
+          "signals": [],
+          "surface": "details",
+          "stableMs": 128.5
+        }
+      },
+      {
+        "name": "pressed toggle",
+        "passed": true,
+        "expectedOutcome": "verified",
+        "outcome": "verified",
+        "clicks": 1,
+        "totalMs": 127,
+        "message": "Control transition verified",
+        "value": "true",
+        "transition": {
+          "signals": [
+            "pressed"
+          ],
+          "surface": null,
+          "stableMs": 126.69999992847443
+        }
+      },
+      {
+        "name": "mixed toggle becomes on",
+        "passed": true,
+        "expectedOutcome": "verified",
+        "outcome": "verified",
+        "clicks": 1,
+        "totalMs": 127.70000004768372,
+        "message": "Control transition verified",
+        "value": "true",
+        "transition": {
+          "signals": [
+            "pressed"
+          ],
+          "surface": null,
+          "stableMs": 127.29999995231628
+        }
+      },
+      {
+        "name": "native popover opens",
+        "passed": true,
+        "expectedOutcome": "verified",
+        "outcome": "verified",
+        "clicks": 1,
+        "totalMs": 127.10000002384186,
+        "message": "Control transition verified",
+        "value": true,
+        "transition": {
+          "signals": [],
+          "surface": "popover",
+          "stableMs": 126.40000009536743
+        }
+      },
+      {
+        "name": "native popover closes",
+        "passed": true,
+        "expectedOutcome": "verified",
+        "outcome": "verified",
+        "clicks": 1,
+        "totalMs": 127.60000002384186,
+        "message": "Control transition verified",
+        "value": false,
+        "transition": {
+          "signals": [],
+          "surface": "popover",
+          "stableMs": 127.30000007152557
+        }
+      },
+      {
+        "name": "linked surface opens",
+        "passed": true,
+        "expectedOutcome": "verified",
+        "outcome": "verified",
+        "clicks": 1,
+        "totalMs": 128.70000004768372,
+        "message": "Control transition verified",
+        "value": false,
+        "transition": {
+          "signals": [],
+          "surface": "controls",
+          "stableMs": 128.20000004768372
+        }
+      },
+      {
+        "name": "linked surface opens after 220 ms",
+        "passed": true,
+        "expectedOutcome": "verified",
+        "outcome": "verified",
+        "clicks": 1,
+        "totalMs": 357.1999999284744,
+        "message": "Control transition verified",
+        "value": false,
+        "transition": {
+          "signals": [],
+          "surface": "controls",
+          "stableMs": 126.59999990463257
+        }
+      },
+      {
+        "name": "linked surface and state disagree",
+        "passed": true,
+        "expectedOutcome": "unverified",
+        "outcome": "unverified",
+        "clicks": 1,
+        "totalMs": 507.2000000476837,
+        "message": "Click delivered; result not verified"
+      },
+      {
+        "name": "linked dialog opens",
+        "passed": true,
+        "expectedOutcome": "verified",
+        "outcome": "verified",
+        "clicks": 1,
+        "totalMs": 127.80000007152557,
+        "message": "Control transition verified",
+        "value": true,
+        "transition": {
+          "signals": [],
+          "surface": "controls",
+          "stableMs": 126.79999995231628
+        }
+      },
+      {
+        "name": "brief delayed expansion reverts",
+        "passed": true,
+        "expectedOutcome": "unverified",
+        "outcome": "unverified",
+        "clicks": 1,
+        "totalMs": 242.80000007152557,
+        "message": "Click delivered; result not verified"
+      },
+      {
+        "name": "malformed state is not proof",
+        "passed": true,
+        "expectedOutcome": "unverified",
+        "outcome": "unverified",
+        "clicks": 1,
+        "totalMs": 503.1999999284744,
+        "message": "Click delivered; result not verified"
+      },
+      {
+        "name": "incidental mutation is not proof",
+        "passed": true,
+        "expectedOutcome": "unverified",
+        "outcome": "unverified",
+        "clicks": 1,
+        "totalMs": 0.3999999761581421,
+        "message": "Click delivered; result not verified"
+      },
+      {
+        "name": "linked surface replacement is not proof",
+        "passed": true,
+        "expectedOutcome": "unverified",
+        "outcome": "unverified",
+        "clicks": 1,
+        "totalMs": 501.7999999523163,
+        "message": "Click delivered; result not verified"
+      },
+      {
+        "name": "changed association is not proof",
+        "passed": true,
+        "expectedOutcome": "unverified",
+        "outcome": "unverified",
+        "clicks": 1,
+        "totalMs": 502.10000002384186,
+        "message": "Click delivered; result not verified"
+      },
+      {
+        "name": "detached control is not proof",
+        "passed": true,
+        "expectedOutcome": "unverified",
+        "outcome": "unverified",
+        "clicks": 1,
+        "totalMs": 504.10000002384186,
+        "message": "Click delivered; result not verified"
+      },
+      {
+        "name": "ordinary stable expansion",
+        "passed": true,
+        "expectedOutcome": "verified",
+        "outcome": "verified",
+        "clicks": 1,
+        "totalMs": 132.30000007152557,
+        "message": "Control transition verified",
+        "value": "true",
+        "transition": {
+          "signals": [
+            "expanded"
+          ],
+          "surface": null,
+          "stableMs": 131.89999997615814
+        }
+      },
+      {
+        "name": "ordinary selected tab",
+        "passed": true,
+        "expectedOutcome": "verified",
+        "outcome": "verified",
+        "clicks": 1,
+        "totalMs": 127.19999992847443,
+        "message": "Control transition verified",
+        "value": "true",
+        "transition": {
+          "signals": [
+            "selected"
+          ],
+          "surface": null,
+          "stableMs": 126.79999995231628
+        }
+      },
+      {
+        "name": "invalidates previous observation when target relation changes",
+        "passed": true,
+        "expectedOutcome": "failed",
+        "outcome": "failed",
+        "clicks": 0,
+        "totalMs": null,
+        "message": "Target changed since observation; observe again"
+      },
+      {
+        "name": "linked surface is created lazily",
+        "passed": true,
+        "expectedOutcome": "verified",
+        "outcome": "verified",
+        "clicks": 1,
+        "totalMs": 130.69999992847443,
+        "message": "Control transition verified",
+        "value": false,
+        "transition": {
+          "signals": [],
+          "surface": "controls",
+          "stableMs": 130.29999995231628
+        }
+      },
+      {
+        "name": "linked surface is removed on close",
+        "passed": true,
+        "expectedOutcome": "verified",
+        "outcome": "verified",
+        "clicks": 1,
+        "totalMs": 128.40000009536743,
+        "message": "Control transition verified",
+        "value": true,
+        "transition": {
+          "signals": [],
+          "surface": "controls",
+          "stableMs": 128.10000002384186
+        }
+      },
+      {
+        "name": "duplicate surface IDs cannot verify",
+        "passed": true,
+        "expectedOutcome": "unverified",
+        "outcome": "unverified",
+        "clicks": 1,
+        "totalMs": 0.3999999761581421,
+        "message": "Click delivered; result not verified"
+      },
+      {
+        "name": "multiple surface references cannot verify",
+        "passed": true,
+        "expectedOutcome": "unverified",
+        "outcome": "unverified",
+        "clicks": 1,
+        "totalMs": 0.19999992847442627,
+        "message": "Click delivered; result not verified"
+      },
+      {
+        "name": "popover opening can be cancelled by the page",
+        "passed": true,
+        "expectedOutcome": "unverified",
+        "outcome": "unverified",
+        "clicks": 1,
+        "totalMs": 501.10000002384186,
+        "message": "Click delivered; result not verified",
+        "value": false
+      },
+      {
+        "name": "replacement invalidates a previously bound relation",
+        "passed": true,
+        "expectedOutcome": "failed",
+        "outcome": "failed",
+        "clicks": 0,
+        "totalMs": null,
+        "message": "Target changed since observation; observe again"
+      },
+      {
+        "name": "open shadow root uses its own surface ID",
+        "passed": true,
+        "expectedOutcome": "verified",
+        "outcome": "verified",
+        "clicks": 1,
+        "totalMs": 134.79999995231628,
+        "message": "Control transition verified",
+        "value": true,
+        "transition": {
+          "signals": [],
+          "surface": "controls",
+          "stableMs": 134.10000002384186
+        }
+      },
+      {
+        "name": "native popover in an open shadow root",
+        "passed": true,
+        "expectedOutcome": "verified",
+        "outcome": "verified",
+        "clicks": 1,
+        "totalMs": 133.10000002384186,
+        "message": "Control transition verified",
+        "value": true,
+        "transition": {
+          "signals": [],
+          "surface": "popover",
+          "stableMs": 132.60000002384186
+        }
+      },
+      {
+        "name": "only the first summary is a native disclosure",
+        "passed": true,
+        "expectedOutcome": "failed",
+        "outcome": "failed",
+        "clicks": 0,
+        "totalMs": null,
+        "message": "No available control named \u201cSecond\u201d"
+      },
+      {
+        "name": "ARIA hidden alone does not visibly close a surface",
+        "passed": true,
+        "expectedOutcome": "unverified",
+        "outcome": "unverified",
+        "clicks": 1,
+        "totalMs": 501.2999999523163,
+        "message": "Click delivered; result not verified",
+        "value": true
+      },
+      {
+        "name": "inert alone does not visibly close a surface",
+        "passed": true,
+        "expectedOutcome": "unverified",
+        "outcome": "unverified",
+        "clicks": 1,
+        "totalMs": 501.39999997615814,
+        "message": "Click delivered; result not verified",
+        "value": true
+      },
+      {
+        "name": "surface ID may contain punctuation and Unicode",
+        "passed": true,
+        "expectedOutcome": "verified",
+        "outcome": "verified",
+        "clicks": 1,
+        "totalMs": 129.89999997615814,
+        "message": "Control transition verified",
+        "value": false,
+        "transition": {
+          "signals": [],
+          "surface": "controls",
+          "stableMs": 129.39999997615814
+        }
+      }
+    ]
+  },
+  "latency": {
+    "scope": "One synthetic stable aria-expanded button in isolated headless Chrome. Twenty measured samples per controller, alternating arm order; two excluded warmups per arm. Controller observation/dispatch/verification time only, excludes fixture setup, IPC, speech, model parsing, extension/native host and real sites.",
+    "browser": "Chrome/153.0.8010.53",
+    "sourceSHA256": {
+      "baseline": "cdc5d7bba093e58a6b4f79553e71fcff8a26438a919c9b66c1400b8161a5ce74",
+      "current": "4e59dcab444be971418c01300998d6a76720e645f969fcca7eab9f6e27f4db21"
+    },
+    "samples": {
+      "baseline": [
+        193,
+        192.89999997615814,
+        189.60000002384186,
+        193,
+        191,
+        188.89999997615814,
+        194.19999992847443,
+        195.30000007152557,
+        189.70000004768372,
+        191.19999992847443,
+        193.79999995231628,
+        190,
+        190.89999997615814,
+        190.79999995231628,
+        191.19999992847443,
+        190.79999995231628,
+        192.69999992847443,
+        190.20000004768372,
+        193.89999997615814,
+        193.10000002384186
+      ],
+      "current": [
+        134.89999997615814,
+        132,
+        132.19999992847443,
+        133.39999997615814,
+        133.09999990463257,
+        132.10000002384186,
+        134,
+        129.39999997615814,
+        131.80000007152557,
+        131.10000002384186,
+        132.39999997615814,
+        129.29999995231628,
+        132.79999995231628,
+        130.60000002384186,
+        133.89999997615814,
+        132.20000004768372,
+        131.39999997615814,
+        129.60000002384186,
+        134.20000004768372,
+        132.89999997615814
+      ]
+    },
+    "metrics": {
+      "baseline": {
+        "n": 20,
+        "medianMs": 191.19999992847443,
+        "p95Ms": 194.19999992847443
+      },
+      "current": {
+        "n": 20,
+        "medianMs": 132.19999992847443,
+        "p95Ms": 134.20000004768372
+      }
+    }
+  },
+  "modelSequences": {
+    "passed": 7,
+    "rows": [
+      {
+        "name": "revealed target",
+        "verified": 2,
+        "actions": [
+          "tools",
+          "playground"
+        ]
+      },
+      {
+        "name": "revealed field",
+        "verified": 2,
+        "actions": [
+          "tools"
+        ]
+      },
+      {
+        "name": "unsupported later operation",
+        "verified": 0,
+        "actions": []
+      },
+      {
+        "name": "unverified first action",
+        "verified": 0,
+        "actions": [
+          "tools"
+        ]
+      },
+      {
+        "name": "missing later target",
+        "verified": 1,
+        "actions": [
+          "tools"
+        ]
+      },
+      {
+        "name": "native disclosure reveals the next target",
+        "verified": 2,
+        "actions": [
+          "details",
+          "playground"
+        ]
+      },
+      {
+        "name": "native popover reveals the next field",
+        "verified": 2,
+        "actions": [
+          "filters"
+        ]
+      }
+    ]
+  },
+  "regressions": [
+    {
+      "name": "development",
+      "metrics": {
+        "total": 60,
+        "supported": 33,
+        "accepted": 27,
+        "correctCompleted": 27,
+        "correctAbstentions": 27,
+        "wrongProposals": 0,
+        "wrongExecuted": 0,
+        "verificationClaims": 27,
+        "medianRankingMs": 1.3994999462738633,
+        "p95RankingMs": 3.3247920218855143,
+        "medianVerifiedDispatchMs": 131.79999995231628
+      },
+      "changesFromHistoricalPerCaseOutcomes": [],
+      "rawReportSHA256": "71df3ab0bf734cb518862c06aa2e8a7fb48559026e2a33b166772f060e4118ea",
+      "challengeSHA256": "01ea24d60ee4ef865a7cc765181427d38e2c4d4d84a5ec4c558cfd3c6e09cb5b",
+      "cases": [
+        {
+          "id": "dashboard-1",
+          "correct": true,
+          "outcome": "verified"
+        },
+        {
+          "id": "dashboard-2",
+          "correct": true,
+          "outcome": "verified"
+        },
+        {
+          "id": "dashboard-3",
+          "correct": true,
+          "outcome": "verified"
+        },
+        {
+          "id": "dashboard-4",
+          "correct": true,
+          "outcome": "verified"
+        },
+        {
+          "id": "dashboard-5",
+          "correct": true,
+          "outcome": "verified"
+        },
+        {
+          "id": "dashboard-6",
+          "correct": true,
+          "outcome": "verified"
+        },
+        {
+          "id": "dashboard-7",
+          "correct": true,
+          "outcome": "verified"
+        },
+        {
+          "id": "dashboard-8",
+          "correct": true,
+          "outcome": null
+        },
+        {
+          "id": "dashboard-9",
+          "correct": true,
+          "outcome": null
+        },
+        {
+          "id": "dashboard-10",
+          "correct": true,
+          "outcome": null
+        },
+        {
+          "id": "dashboard-11",
+          "correct": true,
+          "outcome": null
+        },
+        {
+          "id": "dashboard-12",
+          "correct": true,
+          "outcome": null
+        },
+        {
+          "id": "library-1",
+          "correct": true,
+          "outcome": "verified"
+        },
+        {
+          "id": "library-2",
+          "correct": true,
+          "outcome": "verified"
+        },
+        {
+          "id": "library-3",
+          "correct": true,
+          "outcome": "verified"
+        },
+        {
+          "id": "library-4",
+          "correct": false,
+          "outcome": null
+        },
+        {
+          "id": "library-5",
+          "correct": false,
+          "outcome": null
+        },
+        {
+          "id": "library-6",
+          "correct": false,
+          "outcome": null
+        },
+        {
+          "id": "library-7",
+          "correct": true,
+          "outcome": "verified"
+        },
+        {
+          "id": "library-8",
+          "correct": true,
+          "outcome": "verified"
+        },
+        {
+          "id": "library-9",
+          "correct": true,
+          "outcome": null
+        },
+        {
+          "id": "library-10",
+          "correct": true,
+          "outcome": null
+        },
+        {
+          "id": "library-11",
+          "correct": true,
+          "outcome": null
+        },
+        {
+          "id": "library-12",
+          "correct": true,
+          "outcome": null
+        },
+        {
+          "id": "workshop-1",
+          "correct": true,
+          "outcome": "verified"
+        },
+        {
+          "id": "workshop-2",
+          "correct": false,
+          "outcome": null
+        },
+        {
+          "id": "workshop-3",
+          "correct": true,
+          "outcome": "verified"
+        },
+        {
+          "id": "workshop-4",
+          "correct": false,
+          "outcome": null
+        },
+        {
+          "id": "workshop-5",
+          "correct": false,
+          "outcome": null
+        },
+        {
+          "id": "workshop-6",
+          "correct": true,
+          "outcome": "verified"
+        },
+        {
+          "id": "workshop-7",
+          "correct": true,
+          "outcome": "verified"
+        },
+        {
+          "id": "workshop-8",
+          "correct": true,
+          "outcome": "verified"
+        },
+        {
+          "id": "workshop-9",
+          "correct": true,
+          "outcome": null
+        },
+        {
+          "id": "workshop-10",
+          "correct": true,
+          "outcome": null
+        },
+        {
+          "id": "workshop-11",
+          "correct": true,
+          "outcome": null
+        },
+        {
+          "id": "workshop-12",
+          "correct": true,
+          "outcome": null
+        },
+        {
+          "id": "overlay-1",
+          "correct": true,
+          "outcome": "verified"
+        },
+        {
+          "id": "overlay-2",
+          "correct": true,
+          "outcome": "verified"
+        },
+        {
+          "id": "overlay-3",
+          "correct": true,
+          "outcome": "verified"
+        },
+        {
+          "id": "overlay-4",
+          "correct": true,
+          "outcome": "verified"
+        },
+        {
+          "id": "overlay-5",
+          "correct": true,
+          "outcome": "verified"
+        },
+        {
+          "id": "overlay-6",
+          "correct": true,
+          "outcome": "verified"
+        },
+        {
+          "id": "overlay-7",
+          "correct": true,
+          "outcome": null
+        },
+        {
+          "id": "overlay-8",
+          "correct": true,
+          "outcome": null
+        },
+        {
+          "id": "overlay-9",
+          "correct": true,
+          "outcome": null
+        },
+        {
+          "id": "overlay-10",
+          "correct": true,
+          "outcome": null
+        },
+        {
+          "id": "overlay-11",
+          "correct": true,
+          "outcome": null
+        },
+        {
+          "id": "overlay-12",
+          "correct": true,
+          "outcome": null
+        },
+        {
+          "id": "ambiguous-1",
+          "correct": true,
+          "outcome": "verified"
+        },
+        {
+          "id": "ambiguous-2",
+          "correct": true,
+          "outcome": "verified"
+        },
+        {
+          "id": "ambiguous-3",
+          "correct": true,
+          "outcome": "verified"
+        },
+        {
+          "id": "ambiguous-4",
+          "correct": true,
+          "outcome": "verified"
+        },
+        {
+          "id": "ambiguous-5",
+          "correct": true,
+          "outcome": null
+        },
+        {
+          "id": "ambiguous-6",
+          "correct": true,
+          "outcome": null
+        },
+        {
+          "id": "ambiguous-7",
+          "correct": true,
+          "outcome": null
+        },
+        {
+          "id": "ambiguous-8",
+          "correct": true,
+          "outcome": null
+        },
+        {
+          "id": "ambiguous-9",
+          "correct": true,
+          "outcome": null
+        },
+        {
+          "id": "ambiguous-10",
+          "correct": true,
+          "outcome": null
+        },
+        {
+          "id": "ambiguous-11",
+          "correct": true,
+          "outcome": null
+        },
+        {
+          "id": "ambiguous-12",
+          "correct": true,
+          "outcome": null
+        }
+      ]
+    },
+    {
+      "name": "holdout",
+      "metrics": {
+        "total": 40,
+        "supported": 22,
+        "accepted": 22,
+        "correctCompleted": 22,
+        "correctAbstentions": 18,
+        "wrongProposals": 0,
+        "wrongExecuted": 0,
+        "verificationClaims": 22,
+        "medianRankingMs": 1.4089590404182673,
+        "p95RankingMs": 2.9275419656187296,
+        "medianVerifiedDispatchMs": 131.69999992847443
+      },
+      "changesFromHistoricalPerCaseOutcomes": [],
+      "rawReportSHA256": "b0323f327ba81aeadeaefd4cfd4df088376237bee461ac8af7cd63b5898cb1d8",
+      "challengeSHA256": "522fc38a9b4d26c85618d5324eb6e9289e80c4063f361f25f7c47a760483c27d",
+      "cases": [
+        {
+          "id": "holdout-workspace-1",
+          "correct": true,
+          "outcome": "verified"
+        },
+        {
+          "id": "holdout-workspace-2",
+          "correct": true,
+          "outcome": "verified"
+        },
+        {
+          "id": "holdout-workspace-3",
+          "correct": true,
+          "outcome": "verified"
+        },
+        {
+          "id": "holdout-workspace-4",
+          "correct": true,
+          "outcome": "verified"
+        },
+        {
+          "id": "holdout-workspace-5",
+          "correct": true,
+          "outcome": "verified"
+        },
+        {
+          "id": "holdout-workspace-6",
+          "correct": true,
+          "outcome": "verified"
+        },
+        {
+          "id": "holdout-workspace-7",
+          "correct": true,
+          "outcome": null
+        },
+        {
+          "id": "holdout-workspace-8",
+          "correct": true,
+          "outcome": null
+        },
+        {
+          "id": "holdout-workspace-9",
+          "correct": true,
+          "outcome": null
+        },
+        {
+          "id": "holdout-workspace-10",
+          "correct": true,
+          "outcome": null
+        },
+        {
+          "id": "holdout-form-1",
+          "correct": true,
+          "outcome": "verified"
+        },
+        {
+          "id": "holdout-form-2",
+          "correct": true,
+          "outcome": "verified"
+        },
+        {
+          "id": "holdout-form-3",
+          "correct": true,
+          "outcome": "verified"
+        },
+        {
+          "id": "holdout-form-4",
+          "correct": true,
+          "outcome": "verified"
+        },
+        {
+          "id": "holdout-form-5",
+          "correct": true,
+          "outcome": "verified"
+        },
+        {
+          "id": "holdout-form-6",
+          "correct": true,
+          "outcome": "verified"
+        },
+        {
+          "id": "holdout-form-7",
+          "correct": true,
+          "outcome": null
+        },
+        {
+          "id": "holdout-form-8",
+          "correct": true,
+          "outcome": null
+        },
+        {
+          "id": "holdout-form-9",
+          "correct": true,
+          "outcome": null
+        },
+        {
+          "id": "holdout-form-10",
+          "correct": true,
+          "outcome": null
+        },
+        {
+          "id": "holdout-sheet-1",
+          "correct": true,
+          "outcome": "verified"
+        },
+        {
+          "id": "holdout-sheet-2",
+          "correct": true,
+          "outcome": "verified"
+        },
+        {
+          "id": "holdout-sheet-3",
+          "correct": true,
+          "outcome": "verified"
+        },
+        {
+          "id": "holdout-sheet-4",
+          "correct": true,
+          "outcome": "verified"
+        },
+        {
+          "id": "holdout-sheet-5",
+          "correct": true,
+          "outcome": "verified"
+        },
+        {
+          "id": "holdout-sheet-6",
+          "correct": true,
+          "outcome": "verified"
+        },
+        {
+          "id": "holdout-sheet-7",
+          "correct": true,
+          "outcome": null
+        },
+        {
+          "id": "holdout-sheet-8",
+          "correct": true,
+          "outcome": null
+        },
+        {
+          "id": "holdout-sheet-9",
+          "correct": true,
+          "outcome": null
+        },
+        {
+          "id": "holdout-sheet-10",
+          "correct": true,
+          "outcome": null
+        },
+        {
+          "id": "holdout-ambiguous-1",
+          "correct": true,
+          "outcome": "verified"
+        },
+        {
+          "id": "holdout-ambiguous-2",
+          "correct": true,
+          "outcome": "verified"
+        },
+        {
+          "id": "holdout-ambiguous-3",
+          "correct": true,
+          "outcome": "verified"
+        },
+        {
+          "id": "holdout-ambiguous-4",
+          "correct": true,
+          "outcome": "verified"
+        },
+        {
+          "id": "holdout-ambiguous-5",
+          "correct": true,
+          "outcome": null
+        },
+        {
+          "id": "holdout-ambiguous-6",
+          "correct": true,
+          "outcome": null
+        },
+        {
+          "id": "holdout-ambiguous-7",
+          "correct": true,
+          "outcome": null
+        },
+        {
+          "id": "holdout-ambiguous-8",
+          "correct": true,
+          "outcome": null
+        },
+        {
+          "id": "holdout-ambiguous-9",
+          "correct": true,
+          "outcome": null
+        },
+        {
+          "id": "holdout-ambiguous-10",
+          "correct": true,
+          "outcome": null
+        }
+      ]
+    },
+    {
+      "name": "semantic",
+      "metrics": {
+        "total": 20,
+        "supported": 11,
+        "accepted": 8,
+        "correctCompleted": 8,
+        "correctAbstentions": 9,
+        "wrongProposals": 0,
+        "wrongExecuted": 0,
+        "verificationClaims": 8,
+        "medianRankingMs": 2.879000036045909,
+        "p95RankingMs": 3.3876249799504876,
+        "medianVerifiedDispatchMs": 131.30000007152557
+      },
+      "changesFromHistoricalPerCaseOutcomes": [],
+      "rawReportSHA256": "8ddf379fcc2a6295da4584456f93f0e3cbfbeb99fbc89426250d086471052020",
+      "challengeSHA256": "7e70c7d505985ac8530947d53171359bc9680fcc1a2cae0094be0ebdfefe022c",
+      "cases": [
+        {
+          "id": "semantic-1",
+          "correct": true,
+          "outcome": "verified"
+        },
+        {
+          "id": "semantic-2",
+          "correct": true,
+          "outcome": "verified"
+        },
+        {
+          "id": "semantic-3",
+          "correct": true,
+          "outcome": "verified"
+        },
+        {
+          "id": "semantic-4",
+          "correct": true,
+          "outcome": "verified"
+        },
+        {
+          "id": "semantic-5",
+          "correct": true,
+          "outcome": "verified"
+        },
+        {
+          "id": "semantic-6",
+          "correct": true,
+          "outcome": "verified"
+        },
+        {
+          "id": "semantic-7",
+          "correct": false,
+          "outcome": null
+        },
+        {
+          "id": "semantic-8",
+          "correct": true,
+          "outcome": "verified"
+        },
+        {
+          "id": "semantic-9",
+          "correct": false,
+          "outcome": null
+        },
+        {
+          "id": "semantic-10",
+          "correct": false,
+          "outcome": null
+        },
+        {
+          "id": "semantic-11",
+          "correct": true,
+          "outcome": "verified"
+        },
+        {
+          "id": "semantic-12",
+          "correct": true,
+          "outcome": null
+        },
+        {
+          "id": "semantic-13",
+          "correct": true,
+          "outcome": null
+        },
+        {
+          "id": "semantic-14",
+          "correct": true,
+          "outcome": null
+        },
+        {
+          "id": "semantic-15",
+          "correct": true,
+          "outcome": null
+        },
+        {
+          "id": "semantic-16",
+          "correct": true,
+          "outcome": null
+        },
+        {
+          "id": "semantic-17",
+          "correct": true,
+          "outcome": null
+        },
+        {
+          "id": "semantic-18",
+          "correct": true,
+          "outcome": null
+        },
+        {
+          "id": "semantic-19",
+          "correct": true,
+          "outcome": null
+        },
+        {
+          "id": "semantic-20",
+          "correct": true,
+          "outcome": null
+        }
+      ]
+    }
+  ],
+  "otherChecks": {
+    "browserUnitTests": 22,
+    "navigationContractChecks": 4,
+    "observerContractChecks": 6,
+    "textBindingChecks": 4,
+    "xSearchEvidenceChecks": 10,
+    "realChromeRichTextEditing": true
+  },
+  "sourceSHA256": {
+    "voice/browser/extension/controller.js": "4e59dcab444be971418c01300998d6a76720e645f969fcca7eab9f6e27f4db21",
+    "voice/browser/tests/outcomes-headless.cjs": "adc4d5ffab03955f1b12870998c37bc30a9b459a147e73ef8187a1b84a518681",
+    "voice/browser/tests/benchmark-outcomes.cjs": "697aa2c14a5863d40a6669c0fd5ea7a9c847f4707efe60eccf3a9501eaddbd6a",
+    "voice/browser/tests/verification.test.cjs": "fa6f3cef2db17b0afb4a6190398e34da5a74e2474a5c87c8e3fa8522d262baca",
+    "voice/research/grounded/verify-sequences.cjs": "5e772428c17536e67d8528849b7cd7ed66db27e7dfbd77c84a5cbc679534291c",
+    "voice/research/grounded/pipeline.py": "970f412c893bfe72928498baed87867a8ce8cc09c7ec82177b86f6d40b4da74e"
+  },
+  "visibilityFollowup": {
+    "beforeControllerSHA256": "9af8611df71c3c69305792861e77e144cca8248f06765bb11b5055d3360240f7",
+    "beforePassed": 29,
+    "beforeTotal": 31,
+    "beforeFalseVerifications": [
+      "ARIA hidden alone does not visibly close a surface",
+      "inert alone does not visibly close a surface"
+    ],
+    "afterPassed": 31,
+    "afterTotal": 31
+  }
+}

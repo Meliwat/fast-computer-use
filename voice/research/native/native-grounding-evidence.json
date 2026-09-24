@@ -1,0 +1,291 @@
+{
+  "check": {
+    "allPassed": true,
+    "cases": [
+      {
+        "accepted": false,
+        "error": "Native control proposal is missing or already used",
+        "id": "replay",
+        "passed": true
+      },
+      {
+        "accepted": true,
+        "expectedAccepted": true,
+        "id": "activate",
+        "milliseconds": 106,
+        "modelMs": 1.8131659599021077,
+        "passed": true,
+        "reason": "bound",
+        "result": "Click delivered; result not verified"
+      },
+      {
+        "accepted": true,
+        "expectedAccepted": true,
+        "id": "long-label",
+        "milliseconds": 165,
+        "modelMs": 1.4596669934689999,
+        "passed": true,
+        "reason": "bound",
+        "result": "Click delivered; result not verified"
+      },
+      {
+        "accepted": true,
+        "expectedAccepted": true,
+        "id": "focus-label",
+        "milliseconds": 220,
+        "modelMs": 1.1783330701291561,
+        "passed": true,
+        "reason": "bound",
+        "result": "Field focus verified"
+      },
+      {
+        "accepted": true,
+        "expectedAccepted": true,
+        "id": "focus-placeholder",
+        "milliseconds": 257,
+        "passed": true,
+        "result": "Field focus verified",
+        "source": "exact native focus"
+      },
+      {
+        "accepted": false,
+        "error": "Could not identify one available field named ‘Duplicate’",
+        "expectedAccepted": false,
+        "id": "duplicate-field",
+        "milliseconds": 63,
+        "passed": true
+      },
+      {
+        "accepted": false,
+        "error": "Could not identify one available field named ‘Disabled’",
+        "expectedAccepted": false,
+        "id": "disabled-field",
+        "milliseconds": 50,
+        "passed": true
+      },
+      {
+        "accepted": false,
+        "error": "Could not identify one available field named ‘Read only’",
+        "expectedAccepted": false,
+        "id": "read-only",
+        "milliseconds": 46,
+        "passed": true
+      },
+      {
+        "accepted": false,
+        "error": "Could not identify one available field named ‘Password’",
+        "expectedAccepted": false,
+        "id": "protected-field",
+        "milliseconds": 25,
+        "passed": true
+      },
+      {
+        "accepted": false,
+        "error": "Could not identify one available field named ‘Hidden’",
+        "expectedAccepted": false,
+        "id": "hidden-field",
+        "milliseconds": 28,
+        "passed": true
+      },
+      {
+        "accepted": false,
+        "expectedAccepted": false,
+        "id": "duplicate-button",
+        "milliseconds": 31,
+        "modelMs": 1.0303339222446084,
+        "passed": true,
+        "reason": "multiple_named_controls"
+      },
+      {
+        "accepted": false,
+        "expectedAccepted": false,
+        "id": "disabled-button",
+        "milliseconds": 25,
+        "modelMs": 1.3111250009387732,
+        "passed": true,
+        "reason": "named_control_disabled"
+      },
+      {
+        "accepted": false,
+        "expectedAccepted": false,
+        "id": "operator-collision",
+        "milliseconds": 33,
+        "modelMs": 4.647957975976169,
+        "passed": true,
+        "reason": "uncertain"
+      },
+      {
+        "accepted": false,
+        "expectedAccepted": false,
+        "id": "negated",
+        "milliseconds": 1,
+        "passed": true,
+        "reason": "operation abstained"
+      },
+      {
+        "accepted": false,
+        "expectedAccepted": false,
+        "id": "question",
+        "milliseconds": 1,
+        "passed": true,
+        "reason": "operation abstained"
+      },
+      {
+        "accepted": true,
+        "id": "routed-field-focus",
+        "milliseconds": 194,
+        "passed": true,
+        "result": "Field focus verified"
+      },
+      {
+        "accepted": true,
+        "id": "type-after-focus",
+        "milliseconds": 199,
+        "passed": true,
+        "result": "Text inserted · say ‘send it’ to submit"
+      },
+      {
+        "accepted": false,
+        "error": "Native controls changed after observation; no action sent",
+        "id": "changed-target",
+        "passed": true
+      },
+      {
+        "accepted": false,
+        "error": "Native observation expired; no action sent",
+        "id": "expired-target",
+        "passed": true
+      },
+      {
+        "accepted": false,
+        "error": "Native control proposal is missing or already used",
+        "id": "cancelled-target",
+        "passed": true
+      }
+    ],
+    "scope": "Fixed final text through actual local models, native observation, binding and executor. Read independent fixture state; ordinary button presses can remain result-unverified."
+  },
+  "ok": true,
+  "scope": "Signed app → local command models → native AX controls in disposable Text Fixture only. No microphone, screenshots or hotkeys.",
+  "independentFixtureState": {
+    "changes": {
+      "destination": 0,
+      "disabled": 0,
+      "duplicateA": 0,
+      "duplicateB": 0,
+      "hidden": 0,
+      "linked": 1,
+      "moving": 0,
+      "password": 0,
+      "placeholder": 0,
+      "readonly": 0,
+      "reverting": 0
+    },
+    "clicks": {
+      "details-a": 0,
+      "details-b": 0,
+      "help": 0,
+      "open": 0,
+      "preferences": 1,
+      "save": 0,
+      "save-as": 1,
+      "unavailable": 0
+    },
+    "focused": "linked",
+    "focusHistory": [
+      "destination",
+      "linked",
+      "placeholder",
+      "linked"
+    ],
+    "foreground": true,
+    "helpRenamed": true,
+    "history": {
+      "destination": [
+        "Original"
+      ],
+      "disabled": [
+        "Original"
+      ],
+      "duplicateA": [
+        "Original"
+      ],
+      "duplicateB": [
+        "Original"
+      ],
+      "hidden": [
+        "Original"
+      ],
+      "linked": [
+        "",
+        "Native focus works"
+      ],
+      "moving": [
+        "Original"
+      ],
+      "placeholder": [
+        "Original"
+      ],
+      "readonly": [
+        "Original"
+      ],
+      "reverting": [
+        "Original"
+      ]
+    },
+    "scope": "Disposable fixture strings only",
+    "values": {
+      "destination": "Original",
+      "disabled": "Original",
+      "duplicateA": "Original",
+      "duplicateB": "Original",
+      "hidden": "Original",
+      "linked": "Native focus works",
+      "moving": "Original",
+      "placeholder": "Original",
+      "readonly": "Original",
+      "reverting": "Original"
+    },
+    "version": 1
+  },
+  "protectedAndAmbiguousFieldsUntouched": true,
+  "expectedFinalEffects": true,
+  "passed": true,
+  "date": "2026-09-23",
+  "environment": "M1 Pro, macOS 15.5; existing Accessibility permission; unchanged operation/ranker model weights",
+  "sourceSHA256": {
+    "voice/Sources/LocalVoice/AppInteraction.swift": "7c420e0f3a7f6d7b91baddf8d6e67edf36b78c7c08226cc67e9dfdb32efa7db8",
+    "voice/Sources/LocalVoice/LocalVoiceApp.swift": "237555e5185eea708d00d9582c7d3c92beb5c4f14f1b9daa11f6c0e8bd62c89a",
+    "voice/Sources/VoiceCore/Observation.swift": "a4dc861b9b02801486552792fa7babcc40313f2c91082aed12014fc1735d96b4",
+    "voice/Sources/VoiceCore/Command.swift": "cfdc37fdd2c8785f0446783b8532bdea16af0db2ed859f0d0ce1b8f7aa6bb850",
+    "voice/research/native/TextFixture.swift": "41fe6fb2cc424b63208914f6385a9dd995c9ef75d10d26a3d5fa256874a62acf",
+    "voice/research/native/run-text-check.py": "1d9b7013a81944bf284a39cda01983c15dbde055961e6c0c4fa7fed1e942ce73"
+  },
+  "legacyFallbackProbe": {
+    "scope": "Bundled legacy parser invoked offline on the two requests rejected by operation preflight. No executor or app UI.",
+    "results": [
+      {
+        "text": "Do not open Preferences",
+        "result": {
+          "action": "abstain",
+          "value": "",
+          "confidence": 0.9919,
+          "spanConfidence": 0.9996,
+          "milliseconds": 0.91,
+          "inferenceOnly": true
+        }
+      },
+      {
+        "text": "What does Preferences do?",
+        "result": {
+          "action": "abstain",
+          "value": "",
+          "confidence": 0.9924,
+          "spanConfidence": 0.9976,
+          "milliseconds": 0.86,
+          "inferenceOnly": true
+        }
+      }
+    ]
+  }
+}

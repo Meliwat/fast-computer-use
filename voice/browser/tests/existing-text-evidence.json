@@ -1,0 +1,587 @@
+{
+  "scope": "Production controller in offline disposable Chrome; independent actual field values/input events and transparent insertion-dispatch counting, no ASR, native app or personal pages.",
+  "controllerSHA256": "e88b99ebbb0fa1e881f3da4ebf69e749404b63066124060f6b4237c529f25b12",
+  "testSHA256": "ce6beca38e019b2bffa7a0610815fc4420ab6b029641b5ff222e4769abba8cb5",
+  "sourceChangedDuringRun": false,
+  "browser": "Chrome/153.0.8010.53",
+  "passed": 28,
+  "total": 28,
+  "rows": [
+    {
+      "name": "copy text updates actual app model once",
+      "passed": true,
+      "expectedOutcome": "verified",
+      "result": {
+        "ok": true,
+        "commandId": "fixture-1790255712907-2",
+        "outcome": "verified",
+        "message": "Field copied \u00b7 text verified",
+        "documentId": "fixture-1790255712904-1",
+        "targetId": "fixture-1790255712904-1:1",
+        "sourceId": "fixture-1790255712904-1:2",
+        "totalMs": 196.39999997615814
+      },
+      "effects": {
+        "inputEvents": 1,
+        "trustedInputs": 1,
+        "submits": 0,
+        "correct": true,
+        "editDispatches": 1
+      },
+      "undoRestored": true
+    },
+    {
+      "name": "readonly source may be read",
+      "passed": true,
+      "expectedOutcome": "verified",
+      "result": {
+        "ok": true,
+        "commandId": "fixture-1790255713108-4",
+        "outcome": "verified",
+        "message": "Field copied \u00b7 text verified",
+        "documentId": "fixture-1790255713107-3",
+        "targetId": "fixture-1790255713107-3:1",
+        "sourceId": "fixture-1790255713107-3:2",
+        "totalMs": 193.09999990463257
+      },
+      "effects": {
+        "inputEvents": 1,
+        "trustedInputs": 1,
+        "submits": 0,
+        "correct": true,
+        "editDispatches": 1
+      },
+      "undoRestored": null
+    },
+    {
+      "name": "empty source intentionally clears destination",
+      "passed": true,
+      "expectedOutcome": "verified",
+      "result": {
+        "ok": true,
+        "commandId": "fixture-1790255713305-6",
+        "outcome": "verified",
+        "message": "Field copied \u00b7 text verified",
+        "documentId": "fixture-1790255713304-5",
+        "targetId": "fixture-1790255713304-5:1",
+        "sourceId": "fixture-1790255713304-5:2",
+        "totalMs": 192.60000002384186
+      },
+      "effects": {
+        "inputEvents": 1,
+        "trustedInputs": 1,
+        "submits": 0,
+        "correct": true,
+        "editDispatches": 1
+      },
+      "undoRestored": null
+    },
+    {
+      "name": "source instructions stay literal data",
+      "passed": true,
+      "expectedOutcome": "verified",
+      "result": {
+        "ok": true,
+        "commandId": "fixture-1790255713501-8",
+        "outcome": "verified",
+        "message": "Field copied \u00b7 text verified",
+        "documentId": "fixture-1790255713500-7",
+        "targetId": "fixture-1790255713500-7:1",
+        "sourceId": "fixture-1790255713500-7:2",
+        "totalMs": 192.60000002384186
+      },
+      "effects": {
+        "inputEvents": 1,
+        "trustedInputs": 1,
+        "submits": 0,
+        "correct": true,
+        "editDispatches": 1
+      },
+      "undoRestored": null
+    },
+    {
+      "name": "unicode case expansion",
+      "passed": true,
+      "expectedOutcome": "verified",
+      "result": {
+        "ok": true,
+        "commandId": "fixture-1790255713709-10",
+        "outcome": "verified",
+        "message": "Text made uppercase \u00b7 verified",
+        "documentId": "fixture-1790255713709-9",
+        "targetId": "fixture-1790255713709-9:1",
+        "sourceId": "fixture-1790255713709-9:1",
+        "totalMs": 192.30000007152557
+      },
+      "effects": {
+        "inputEvents": 1,
+        "trustedInputs": 1,
+        "submits": 0,
+        "correct": true,
+        "editDispatches": 1
+      },
+      "undoRestored": null
+    },
+    {
+      "name": "lowercase existing text",
+      "passed": true,
+      "expectedOutcome": "verified",
+      "result": {
+        "ok": true,
+        "commandId": "fixture-1790255713905-12",
+        "outcome": "verified",
+        "message": "Text made lowercase \u00b7 verified",
+        "documentId": "fixture-1790255713904-11",
+        "targetId": "fixture-1790255713904-11:1",
+        "sourceId": "fixture-1790255713904-11:1",
+        "totalMs": 195.09999990463257
+      },
+      "effects": {
+        "inputEvents": 1,
+        "trustedInputs": 1,
+        "submits": 0,
+        "correct": true,
+        "editDispatches": 1
+      },
+      "undoRestored": null
+    },
+    {
+      "name": "already correct causes no input event",
+      "passed": true,
+      "expectedOutcome": "verified",
+      "result": {
+        "ok": true,
+        "commandId": "fixture-1790255714107-14",
+        "outcome": "verified",
+        "message": "Field already matches \u00b7 text verified",
+        "documentId": "fixture-1790255714107-13",
+        "targetId": "fixture-1790255714107-13:1",
+        "sourceId": "fixture-1790255714107-13:1",
+        "totalMs": 196
+      },
+      "effects": {
+        "inputEvents": 0,
+        "trustedInputs": 0,
+        "submits": 0,
+        "correct": true,
+        "editDispatches": 0
+      },
+      "undoRestored": null
+    },
+    {
+      "name": "copy to same field is a verified no-op",
+      "passed": true,
+      "expectedOutcome": "verified",
+      "result": {
+        "ok": true,
+        "commandId": "fixture-1790255714308-16",
+        "outcome": "verified",
+        "message": "Field already matches \u00b7 text verified",
+        "documentId": "fixture-1790255714307-15",
+        "targetId": "fixture-1790255714307-15:1",
+        "sourceId": "fixture-1790255714307-15:1",
+        "totalMs": 196.39999997615814
+      },
+      "effects": {
+        "inputEvents": 0,
+        "trustedInputs": 0,
+        "submits": 0,
+        "correct": true,
+        "editDispatches": 0
+      },
+      "undoRestored": null
+    },
+    {
+      "name": "duplicate sources are not guessed",
+      "passed": true,
+      "expectedOutcome": "failed",
+      "result": {
+        "ok": false,
+        "commandId": "fixture-1790255714508-18",
+        "outcome": "failed",
+        "error": "Could not identify one available field named \u201cCity\u201d"
+      },
+      "effects": {
+        "inputEvents": 0,
+        "trustedInputs": 0,
+        "submits": 0,
+        "correct": true,
+        "editDispatches": 0
+      },
+      "undoRestored": null
+    },
+    {
+      "name": "duplicate destinations are not guessed",
+      "passed": true,
+      "expectedOutcome": "failed",
+      "result": {
+        "ok": false,
+        "commandId": "fixture-1790255714511-20",
+        "outcome": "failed",
+        "error": "Could not identify one available field named \u201cHeading\u201d"
+      },
+      "effects": {
+        "inputEvents": 0,
+        "trustedInputs": 0,
+        "submits": 0,
+        "correct": true,
+        "editDispatches": 0
+      },
+      "undoRestored": null
+    },
+    {
+      "name": "related label is not a source match",
+      "passed": true,
+      "expectedOutcome": "failed",
+      "result": {
+        "ok": false,
+        "commandId": "fixture-1790255714514-22",
+        "outcome": "failed",
+        "error": "No available text field named \u201cCity\u201d"
+      },
+      "effects": {
+        "inputEvents": 0,
+        "trustedInputs": 0,
+        "submits": 0,
+        "correct": true,
+        "editDispatches": 0
+      },
+      "undoRestored": null
+    },
+    {
+      "name": "source password is excluded",
+      "passed": true,
+      "expectedOutcome": "failed",
+      "result": {
+        "ok": false,
+        "commandId": "fixture-1790255714516-24",
+        "outcome": "failed",
+        "error": "No available text field named \u201cCity\u201d"
+      },
+      "effects": {
+        "inputEvents": 0,
+        "trustedInputs": 0,
+        "submits": 0,
+        "correct": true,
+        "editDispatches": 0
+      },
+      "undoRestored": null
+    },
+    {
+      "name": "destination password is excluded",
+      "passed": true,
+      "expectedOutcome": "failed",
+      "result": {
+        "ok": false,
+        "commandId": "fixture-1790255714518-26",
+        "outcome": "failed",
+        "error": "No available text field named \u201cHeading\u201d"
+      },
+      "effects": {
+        "inputEvents": 0,
+        "trustedInputs": 0,
+        "submits": 0,
+        "correct": true,
+        "editDispatches": 0
+      },
+      "undoRestored": null
+    },
+    {
+      "name": "readonly destination rejects before writing",
+      "passed": true,
+      "expectedOutcome": "failed",
+      "result": {
+        "ok": false,
+        "commandId": "fixture-1790255714521-28",
+        "outcome": "failed",
+        "error": "Could not identify one available field named \u201cHeading\u201d"
+      },
+      "effects": {
+        "inputEvents": 0,
+        "trustedInputs": 0,
+        "submits": 0,
+        "correct": true,
+        "editDispatches": 0
+      },
+      "undoRestored": null
+    },
+    {
+      "name": "disabled destination rejects before writing",
+      "passed": true,
+      "expectedOutcome": "failed",
+      "result": {
+        "ok": false,
+        "commandId": "fixture-1790255714523-30",
+        "outcome": "failed",
+        "error": "Could not identify one available field named \u201cHeading\u201d"
+      },
+      "effects": {
+        "inputEvents": 0,
+        "trustedInputs": 0,
+        "submits": 0,
+        "correct": true,
+        "editDispatches": 0
+      },
+      "undoRestored": null
+    },
+    {
+      "name": "focus mutation of source cancels before input",
+      "passed": true,
+      "expectedOutcome": "failed",
+      "result": {
+        "ok": false,
+        "commandId": "fixture-1790255714525-32",
+        "outcome": "failed",
+        "error": "Source or destination changed before editing; no text sent"
+      },
+      "effects": {
+        "inputEvents": 0,
+        "trustedInputs": 0,
+        "submits": 0,
+        "correct": true,
+        "editDispatches": 0
+      },
+      "undoRestored": null
+    },
+    {
+      "name": "focus mutation of destination cancels before input",
+      "passed": true,
+      "expectedOutcome": "failed",
+      "result": {
+        "ok": false,
+        "commandId": "fixture-1790255714528-34",
+        "outcome": "failed",
+        "error": "Source or destination changed before editing; no text sent"
+      },
+      "effects": {
+        "inputEvents": 0,
+        "trustedInputs": 0,
+        "submits": 0,
+        "correct": true,
+        "editDispatches": 0
+      },
+      "undoRestored": null
+    },
+    {
+      "name": "focus replacement of destination cancels before input",
+      "passed": true,
+      "expectedOutcome": "failed",
+      "result": {
+        "ok": false,
+        "commandId": "fixture-1790255714531-36",
+        "outcome": "failed",
+        "error": "Field did not receive focus"
+      },
+      "effects": {
+        "inputEvents": 0,
+        "trustedInputs": 0,
+        "submits": 0,
+        "correct": true,
+        "editDispatches": 0
+      },
+      "undoRestored": null
+    },
+    {
+      "name": "source change caused by input cannot report success",
+      "passed": true,
+      "expectedOutcome": "unverified",
+      "result": {
+        "ok": false,
+        "commandId": "fixture-1790255714534-38",
+        "outcome": "unverified",
+        "error": "Source or destination changed; action not repeated"
+      },
+      "effects": {
+        "inputEvents": 1,
+        "trustedInputs": 1,
+        "submits": 0,
+        "correct": true,
+        "editDispatches": 1
+      },
+      "undoRestored": null
+    },
+    {
+      "name": "delayed destination reversion is not retried",
+      "passed": true,
+      "expectedOutcome": "unverified",
+      "result": {
+        "ok": false,
+        "commandId": "fixture-1790255714537-40",
+        "outcome": "unverified",
+        "error": "Source or destination changed; action not repeated"
+      },
+      "effects": {
+        "inputEvents": 1,
+        "trustedInputs": 1,
+        "submits": 0,
+        "correct": true,
+        "editDispatches": 1
+      },
+      "undoRestored": null
+    },
+    {
+      "name": "source change during verification fails once",
+      "passed": true,
+      "expectedOutcome": "unverified",
+      "result": {
+        "ok": false,
+        "commandId": "fixture-1790255714604-42",
+        "outcome": "unverified",
+        "error": "Source or destination changed; action not repeated"
+      },
+      "effects": {
+        "inputEvents": 1,
+        "trustedInputs": 1,
+        "submits": 0,
+        "correct": true,
+        "editDispatches": 1
+      },
+      "undoRestored": null
+    },
+    {
+      "name": "maxlength is checked before input",
+      "passed": true,
+      "expectedOutcome": "failed",
+      "result": {
+        "ok": false,
+        "commandId": "fixture-1790255714672-44",
+        "outcome": "failed",
+        "error": "The destination cannot preserve that text; no text sent"
+      },
+      "effects": {
+        "inputEvents": 0,
+        "trustedInputs": 0,
+        "submits": 0,
+        "correct": true,
+        "editDispatches": 0
+      },
+      "undoRestored": null
+    },
+    {
+      "name": "numeric sanitization is checked before input",
+      "passed": true,
+      "expectedOutcome": "failed",
+      "result": {
+        "ok": false,
+        "commandId": "fixture-1790255714676-46",
+        "outcome": "failed",
+        "error": "The destination cannot preserve that text; no text sent"
+      },
+      "effects": {
+        "inputEvents": 0,
+        "trustedInputs": 0,
+        "submits": 0,
+        "correct": true,
+        "editDispatches": 0
+      },
+      "undoRestored": null
+    },
+    {
+      "name": "multiline textarea copy preserves line breaks",
+      "passed": true,
+      "expectedOutcome": "verified",
+      "result": {
+        "ok": true,
+        "commandId": "fixture-1790255714679-48",
+        "outcome": "verified",
+        "message": "Field copied \u00b7 text verified",
+        "documentId": "fixture-1790255714678-47",
+        "targetId": "fixture-1790255714678-47:1",
+        "sourceId": "fixture-1790255714678-47:2",
+        "totalMs": 197.30000007152557
+      },
+      "effects": {
+        "inputEvents": 3,
+        "trustedInputs": 3,
+        "submits": 0,
+        "correct": true,
+        "editDispatches": 1
+      },
+      "undoRestored": null
+    },
+    {
+      "name": "rich text source preserves visible line breaks",
+      "passed": true,
+      "expectedOutcome": "verified",
+      "result": {
+        "ok": true,
+        "commandId": "fixture-1790255714881-50",
+        "outcome": "verified",
+        "message": "Field copied \u00b7 text verified",
+        "documentId": "fixture-1790255714881-49",
+        "targetId": "fixture-1790255714881-49:1",
+        "sourceId": "fixture-1790255714881-49:2",
+        "totalMs": 192.70000004768372
+      },
+      "effects": {
+        "inputEvents": 3,
+        "trustedInputs": 3,
+        "submits": 0,
+        "correct": true,
+        "editDispatches": 1
+      },
+      "undoRestored": null
+    },
+    {
+      "name": "rich text destination receives trusted editing",
+      "passed": true,
+      "expectedOutcome": "verified",
+      "result": {
+        "ok": true,
+        "commandId": "fixture-1790255715077-52",
+        "outcome": "verified",
+        "message": "Text made uppercase \u00b7 verified",
+        "documentId": "fixture-1790255715077-51",
+        "targetId": "fixture-1790255715077-51:1",
+        "sourceId": "fixture-1790255715077-51:1",
+        "totalMs": 188.90000009536743
+      },
+      "effects": {
+        "inputEvents": 1,
+        "trustedInputs": 1,
+        "submits": 0,
+        "correct": true,
+        "editDispatches": 1
+      },
+      "undoRestored": null
+    },
+    {
+      "name": "expansion beyond bound rejects before input",
+      "passed": true,
+      "expectedOutcome": "failed",
+      "result": {
+        "ok": false,
+        "commandId": "fixture-1790255715270-54",
+        "outcome": "failed",
+        "error": "The resulting text is too long"
+      },
+      "effects": {
+        "inputEvents": 0,
+        "trustedInputs": 0,
+        "submits": 0,
+        "correct": true,
+        "editDispatches": 0
+      },
+      "undoRestored": null
+    },
+    {
+      "name": "incomplete copy operation does not accept generated text",
+      "passed": true,
+      "expectedOutcome": "failed",
+      "result": {
+        "ok": false,
+        "commandId": "fixture-1790255715273-56",
+        "outcome": "failed",
+        "error": "Invalid existing-text operation"
+      },
+      "effects": {
+        "inputEvents": 0,
+        "trustedInputs": 0,
+        "submits": 0,
+        "correct": true,
+        "editDispatches": 0
+      },
+      "undoRestored": null
+    }
+  ]
+}

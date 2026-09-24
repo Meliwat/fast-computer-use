@@ -1,0 +1,22 @@
+{
+  "date": "2026-09-23",
+  "status": "unpublished notice review artifact",
+  "archive": {
+    "name": "local-voice-runtime-notices-2026-09-23.tar.gz",
+    "bytes": 321646,
+    "sha256": "fd3b86b778c3ce0b7e54b3f6050e573d0899e113794722f35b0c176bc19f8a50",
+    "packageEntries": 85,
+    "noticeFiles": 266
+  },
+  "allMemberNamesAndHashesVerified": true,
+  "deterministicReexport": true,
+  "inventoryAndPackagingTests": 8,
+  "sourceSHA256": {
+    "voice/tools/pack_runtime_notices.py": "79071b0093443da3f9568304fe6c84b4ce8ad2d36068a4c5a24c9050eafaed15",
+    "voice/licenses/dependency-inventory.json": "8cca04ca327ea82ee69b890cbe45c859f563fc76b0bc80eecf67c1c32c5b5c20",
+    "voice/licenses/runtime-upstream/sources.json": "a50aa796f2e24f1099ba07777b298cf15d01da866c420164fca39c303ea03de2",
+    "voice/runtime/parser-requirements.lock": "c53d526251939af3c5799176c3eabec1c0dfcd3f9a07ec720a812a44d3928e8b",
+    "voice/runtime/vision-requirements.lock": "d29b2f3f678cd1aff4a3429f5793c015f1d6dc862021c3cf81a080b2521696d9"
+  },
+  "scope": "Notice text preservation and package association only. No complete embedded-library/legal review, publication or app/runtime changes."
+}

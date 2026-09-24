@@ -1,0 +1,742 @@
+{
+  "files": {
+    ".gitignore": {
+      "bytes": 219,
+      "mode": "0o644",
+      "sha256": "84487ddbc5990562db9d5a3106bda93db0f27a9eced76d187fcd366f320f7777"
+    },
+    "CHANGELOG.md": {
+      "bytes": 2796,
+      "mode": "0o644",
+      "sha256": "168404e112266f2cd8cf4da0b6d85a511f406a26207e1eecc524b36be872df64"
+    },
+    "CONTRIBUTING.md": {
+      "bytes": 2448,
+      "mode": "0o644",
+      "sha256": "03d58c2226d13b0eaf13e031a6e3bfd1014d6491a339cc5474f8ed59c1ff5cf4"
+    },
+    "LICENSE": {
+      "bytes": 1081,
+      "mode": "0o644",
+      "sha256": "f3de4f1c8a6c81b0bd129770fb4b85ef7348270bce06c4f357d6db992fe118c5"
+    },
+    "README.md": {
+      "bytes": 12562,
+      "mode": "0o644",
+      "sha256": "d162c276954347a164e72407f91c8c46e195618b4a4ef4ac52271a15d1a3ed3c"
+    },
+    "package-lock.json": {
+      "bytes": 19556,
+      "mode": "0o644",
+      "sha256": "03e8e04181313ba5c17d0fb2a302bdbc19217d3aaf78963b2f60641ec67517b1"
+    },
+    "package.json": {
+      "bytes": 625,
+      "mode": "0o644",
+      "sha256": "d64376bc3f09caefb7b762889e05c0ce8d224958d44573812565430b4230ef62"
+    },
+    "voice/LICENSE": {
+      "bytes": 1081,
+      "mode": "0o644",
+      "sha256": "f3de4f1c8a6c81b0bd129770fb4b85ef7348270bce06c4f357d6db992fe118c5"
+    },
+    "voice/Package.swift": {
+      "bytes": 553,
+      "mode": "0o644",
+      "sha256": "533635e64743c2d62382c9e32ecfceeb1a670e6cf6874d9d3e291df9766ebc81"
+    },
+    "voice/Sources/LocalVoice/AppCatalog.swift": {
+      "bytes": 1277,
+      "mode": "0o644",
+      "sha256": "0116e128c7491ebeae7408adb144783c39240b343a8044ac00b732104727f924"
+    },
+    "voice/Sources/LocalVoice/AppInteraction.swift": {
+      "bytes": 43095,
+      "mode": "0o644",
+      "sha256": "06042ead06379806e5c787cd6e8398034ebb18cf72e05f92c13e3f397908c3d7"
+    },
+    "voice/Sources/LocalVoice/BrowserBridge.swift": {
+      "bytes": 5263,
+      "mode": "0o644",
+      "sha256": "9e13567d6a80e8b078e0844cee1e72c378b440addbaa6f3ae96b3b08d72c45e6"
+    },
+    "voice/Sources/LocalVoice/GroundedParser.swift": {
+      "bytes": 4907,
+      "mode": "0o644",
+      "sha256": "aec3b60c7b39c130d2c12ad163192a5b9b54b02422b2b1fa1b98181c18e8a16b"
+    },
+    "voice/Sources/LocalVoice/LearnedParser.swift": {
+      "bytes": 3837,
+      "mode": "0o644",
+      "sha256": "a8461c1d59a987986c3ebbe00bc2f0265242d59c280dcdcaf41bb959b1b2c2d6"
+    },
+    "voice/Sources/LocalVoice/LocalVoiceApp.swift": {
+      "bytes": 80976,
+      "mode": "0o644",
+      "sha256": "e37ad7f0ab3927d4f1b1e8043329ddacac99c3a0a46f92166e9f2ce19ad72733"
+    },
+    "voice/Sources/LocalVoice/NativeMenus.swift": {
+      "bytes": 13544,
+      "mode": "0o644",
+      "sha256": "c877e905f2e90f614034aac5cfa1554a2d7d00b0871cb34c5af1b2ae16795a4e"
+    },
+    "voice/Sources/LocalVoice/VisualClick.swift": {
+      "bytes": 8727,
+      "mode": "0o644",
+      "sha256": "ef41f93faaffbb85161000257c65e7e0e6d95345bc0d92425a6452d254cd99e7"
+    },
+    "voice/Sources/VoiceCore/BrowserCommand.swift": {
+      "bytes": 1230,
+      "mode": "0o644",
+      "sha256": "64e9e141236e1282521bdebc5607685692e32d0ccae0afcb005523b07e03fb19"
+    },
+    "voice/Sources/VoiceCore/Command.swift": {
+      "bytes": 11928,
+      "mode": "0o644",
+      "sha256": "ff8b1403e1ee6c2f61096e3c424ff4800172920cae4635cdd5e31f65d659f7b5"
+    },
+    "voice/Sources/VoiceCore/ExistingText.swift": {
+      "bytes": 1929,
+      "mode": "0o644",
+      "sha256": "ea4e9ffa6b1f46e16b79b8fe97e4ca17cd2b4ba763a849cb12c220bc0f1fa644"
+    },
+    "voice/Sources/VoiceCore/GroundedProposal.swift": {
+      "bytes": 2151,
+      "mode": "0o644",
+      "sha256": "cb7ca6c2f36aa058866eff65f0ea3b3cff2c30efbbddb1af73cb354648ccbe92"
+    },
+    "voice/Sources/VoiceCore/GroundedSequence.swift": {
+      "bytes": 6388,
+      "mode": "0o644",
+      "sha256": "a74c942d5ad35bf7e14d53d2fd30ca75449ce1b09a5d5a281b06c40b81f55f4b"
+    },
+    "voice/Sources/VoiceCore/InteractionRules.swift": {
+      "bytes": 1620,
+      "mode": "0o644",
+      "sha256": "d40ec1dae5669eb54f8257eadb77a9347b8456528819a64f6ae97a3c3ee98284"
+    },
+    "voice/Sources/VoiceCore/NativeMenuLabels.swift": {
+      "bytes": 690,
+      "mode": "0o644",
+      "sha256": "a5e75f200ce3c1ede02978b2305c5f77c0889f9bf8c8cb12c821af1a69b2c316"
+    },
+    "voice/Sources/VoiceCore/NativeText.swift": {
+      "bytes": 2926,
+      "mode": "0o644",
+      "sha256": "39b7a515df4bf4f2a8c1c838f5fb0c0ab4b83fcfe8f4dcd31e542388f402da31"
+    },
+    "voice/Sources/VoiceCore/NavigationEvidence.swift": {
+      "bytes": 593,
+      "mode": "0o644",
+      "sha256": "eebfd53ef11abe831c73c7ad1554b67d01d24f0b42f2773b2647f21758872d17"
+    },
+    "voice/Sources/VoiceCore/Observation.swift": {
+      "bytes": 5257,
+      "mode": "0o644",
+      "sha256": "b95063ab79aef7aacb84046e90c495839bcf1f868fdb7dbe3bf0ee225deebfdd"
+    },
+    "voice/Sources/VoiceCore/PushToTalk.swift": {
+      "bytes": 762,
+      "mode": "0o644",
+      "sha256": "eec2632e910d05008e5f36fe28af958ab5d32e19f8250f236a5331e2669ffbd0"
+    },
+    "voice/Sources/VoiceCore/RuntimeConfiguration.swift": {
+      "bytes": 1079,
+      "mode": "0o644",
+      "sha256": "1d4c10eeb2394db177d63b92758567d6862588ef8f026729f03ad1716a94b632"
+    },
+    "voice/Sources/VoiceCore/SpeechBoundary.swift": {
+      "bytes": 583,
+      "mode": "0o644",
+      "sha256": "f274d0d659607ca1e8339d502004f4e6a88179e0370b4d7e1ac6197608581411"
+    },
+    "voice/Sources/VoiceCore/VisualTarget.swift": {
+      "bytes": 3685,
+      "mode": "0o644",
+      "sha256": "de75d049077e0bbab69bbdcaba1b0369d3e2fc6dd18379d7048415026ca4439c"
+    },
+    "voice/Sources/VoiceCore/VisualTextEvidence.swift": {
+      "bytes": 2646,
+      "mode": "0o644",
+      "sha256": "29fefd45ceed0fa94cb6dd5bb5fa8dbb5dec07c9ab4a4de8891060ff3b44486a"
+    },
+    "voice/Sources/VoiceCore/WebDestination.swift": {
+      "bytes": 2251,
+      "mode": "0o644",
+      "sha256": "a58de4ae735af3118c5d3970d7b4d1fea37be87120ed85661ae92ac48ce48e1c"
+    },
+    "voice/Sources/VoiceCore/XSearchEvidence.swift": {
+      "bytes": 595,
+      "mode": "0o644",
+      "sha256": "d87db33ea0cd8668cc4ec8b4202aa7ca0b8df229bb45ef0f459c71523ceca911"
+    },
+    "voice/Sources/VoicePerception/GoClickWorker.swift": {
+      "bytes": 8483,
+      "mode": "0o644",
+      "sha256": "1feef1833318906343f00874769de55153b081d36f4fdd3ccfabb9a7db3a617c"
+    },
+    "voice/Sources/VoicePerception/ScreenObserver.swift": {
+      "bytes": 9670,
+      "mode": "0o644",
+      "sha256": "0d3724fe8ef7a3484ebba04fd8f7f931afa58e14ff68a1aa923c45b683062005"
+    },
+    "voice/Tests/VoiceCoreTests/AppCommandsTests.swift": {
+      "bytes": 2673,
+      "mode": "0o644",
+      "sha256": "4458884b4b0ba53d131638a2ffa4efb56f1fe91dfea1b00841a841db429d33b4"
+    },
+    "voice/Tests/VoiceCoreTests/BrowserCommandTests.swift": {
+      "bytes": 1632,
+      "mode": "0o644",
+      "sha256": "5d8c8e76437368ade272988b34c2e0d75e9b40a5be6194fe0efaba1997b9ded4"
+    },
+    "voice/Tests/VoiceCoreTests/BrowserProtocolTests.swift": {
+      "bytes": 1288,
+      "mode": "0o644",
+      "sha256": "44cd2fbaa133274fdb2c754841acc7b239e932216c560be0af28b3154c06ec27"
+    },
+    "voice/Tests/VoiceCoreTests/CommandTests.swift": {
+      "bytes": 1973,
+      "mode": "0o644",
+      "sha256": "353268189d3111becafc2d1228b6c60c1a1fb7f490dfcb0dc83d1809999729fd"
+    },
+    "voice/Tests/VoiceCoreTests/ContextSearchTests.swift": {
+      "bytes": 1440,
+      "mode": "0o644",
+      "sha256": "aa55455fa8a1281b2d8eaac3d5c8e33f257c0a8575e8f7b4e837fe3eaac2c318"
+    },
+    "voice/Tests/VoiceCoreTests/ExistingTextTests.swift": {
+      "bytes": 5035,
+      "mode": "0o644",
+      "sha256": "6cb5ead6a123f819499f167a2f97bcc8638a168db366a2706d5d3a706ed191f7"
+    },
+    "voice/Tests/VoiceCoreTests/GroundedProposalTests.swift": {
+      "bytes": 3148,
+      "mode": "0o644",
+      "sha256": "57c8da25f4b4daee17c8c1c203804ed9e2b8f6623c624ea60cebbb452f871d7a"
+    },
+    "voice/Tests/VoiceCoreTests/GroundedSequenceTests.swift": {
+      "bytes": 3006,
+      "mode": "0o644",
+      "sha256": "09663b62672adaffccc71798a57e2a366014c93f1e2f3da40486473013cb5769"
+    },
+    "voice/Tests/VoiceCoreTests/GroundedTextTests.swift": {
+      "bytes": 3827,
+      "mode": "0o644",
+      "sha256": "c39731a2dbda61bb22e648d94d413860985086529e12f285c7c66e346029b020"
+    },
+    "voice/Tests/VoiceCoreTests/InteractionTests.swift": {
+      "bytes": 2991,
+      "mode": "0o644",
+      "sha256": "46250053d42dc4422732e838f66ed23e79941546d1c2eef55d4b277320d09123"
+    },
+    "voice/Tests/VoiceCoreTests/NativeMenuTests.swift": {
+      "bytes": 1989,
+      "mode": "0o644",
+      "sha256": "51bfe0f6827db338e0c2046fc5f7d10e5ea618fa09c6919c9f5ecdaabcc57c6e"
+    },
+    "voice/Tests/VoiceCoreTests/NativeTextTests.swift": {
+      "bytes": 3977,
+      "mode": "0o644",
+      "sha256": "9f51c28396dd78c227d0d0c028307b52e5bb19ce0d77e8a60190f7ec535e0fbd"
+    },
+    "voice/Tests/VoiceCoreTests/NavigationEvidenceTests.swift": {
+      "bytes": 749,
+      "mode": "0o644",
+      "sha256": "a1abe454ab59797b0baf7d159cec56dfa49248d038b14814face3f7e77fc8f31"
+    },
+    "voice/Tests/VoiceCoreTests/ObservationTests.swift": {
+      "bytes": 1281,
+      "mode": "0o644",
+      "sha256": "29b806da3f334847f2e2f602789a5dd0f9277f4df9f70aa1fec54a2cfbe99e16"
+    },
+    "voice/Tests/VoiceCoreTests/PushToTalkTests.swift": {
+      "bytes": 1264,
+      "mode": "0o644",
+      "sha256": "6e570350af7f6f09692218606ec2796ff36d6b05e1929bca739ab0b4c8f71dd1"
+    },
+    "voice/Tests/VoiceCoreTests/RuntimeConfigurationTests.swift": {
+      "bytes": 1008,
+      "mode": "0o644",
+      "sha256": "3da056a1a521bea7da140c1af2e726f26160f88725fc9eddcf094d5bc68bb45e"
+    },
+    "voice/Tests/VoiceCoreTests/SpeechBoundaryTests.swift": {
+      "bytes": 1399,
+      "mode": "0o644",
+      "sha256": "3d340be29ed362071a0fad9754023aecd4285468101e4384c76a230103f2cfe5"
+    },
+    "voice/Tests/VoiceCoreTests/VisualTargetTests.swift": {
+      "bytes": 2971,
+      "mode": "0o644",
+      "sha256": "cf93896d5066405201ced98ec699fc6394f860cd64b5e503c8afc9636d96f7f3"
+    },
+    "voice/Tests/VoiceCoreTests/VisualTextTests.swift": {
+      "bytes": 4507,
+      "mode": "0o644",
+      "sha256": "2da263b54b09bb2e0d00d38d78e39827937b1dfbd8d7ad517a8eaf6be1187ebd"
+    },
+    "voice/Tests/VoiceCoreTests/XSearchEvidenceTests.swift": {
+      "bytes": 1332,
+      "mode": "0o644",
+      "sha256": "a6e39b27868243577e63fc58a685ecfb10464da63eb8d406e6d0425b24e250f7"
+    },
+    "voice/Tests/VoicePerceptionTests/GoClickWorkerTests.swift": {
+      "bytes": 3182,
+      "mode": "0o644",
+      "sha256": "ab125593bc45882eb566d8699dce29940845db6789af5516aca78b5d722e6105"
+    },
+    "voice/Tests/VoicePerceptionTests/RegionFreshnessTests.swift": {
+      "bytes": 2467,
+      "mode": "0o644",
+      "sha256": "004da7253e28c16085d8a1a90eb1711f809e1dcb11d0675e4f86b60fdbc4af31"
+    },
+    "voice/Tests/VoicePerceptionTests/ScreenObserverTests.swift": {
+      "bytes": 2236,
+      "mode": "0o644",
+      "sha256": "14b1f8a21510e41d6ce7b5d23e9ee85ed40b703bd7d5a50836a3845816196b46"
+    },
+    "voice/Tests/test_browser_installation.py": {
+      "bytes": 4326,
+      "mode": "0o644",
+      "sha256": "629538985fca708f52a6e4be94f7ff3688a6c02ffd61c5193b5f273cbed0883b"
+    },
+    "voice/Tests/test_build_replacement.py": {
+      "bytes": 5155,
+      "mode": "0o644",
+      "sha256": "1b7e0501e146a3a4113702d15eefa9faff9668ee96602820c3bc8b8f9c10ea47"
+    },
+    "voice/Tests/test_model_assets.py": {
+      "bytes": 9752,
+      "mode": "0o644",
+      "sha256": "d131a913e35ede89fc1fbfcb816eed940084e8362c71fa958e643ceee87910e9"
+    },
+    "voice/Tests/test_runtime_install.py": {
+      "bytes": 6164,
+      "mode": "0o644",
+      "sha256": "ee48d564d9167eb6c3ecf9c49285f841b02225e8e455231b1f2c9230dca0ef80"
+    },
+    "voice/Tests/test_runtime_packaging.py": {
+      "bytes": 5179,
+      "mode": "0o644",
+      "sha256": "d25fe95090cb4a9929be88d4171b0cb46efa0bb3ecd2ae7fd5821680cef13aea"
+    },
+    "voice/Tests/test_source_export.py": {
+      "bytes": 6533,
+      "mode": "0o644",
+      "sha256": "4c4df96a818934cea24b8701d24ce04779609d604ea25333d029b2b89961e810"
+    },
+    "voice/browser/ARIA-WIDGETS.md": {
+      "bytes": 4812,
+      "mode": "0o644",
+      "sha256": "045d339f168c95ce0a3690e269aa6527cd0dada545f657cd1171bc06347df1a5"
+    },
+    "voice/browser/EXISTING-TEXT.md": {
+      "bytes": 4207,
+      "mode": "0o644",
+      "sha256": "3d5959a115570c1247affdb519c9271d1f397c67f1ff367186edd067b3896693"
+    },
+    "voice/browser/OUTCOMES.md": {
+      "bytes": 4473,
+      "mode": "0o644",
+      "sha256": "f8405f3d2a1d67426f5060cb4d0949f8ceefc343c2c99895212f4112075828f4"
+    },
+    "voice/browser/ROLE-LANGUAGE.md": {
+      "bytes": 4126,
+      "mode": "0o644",
+      "sha256": "5f1cdce7cea70979a2b304555b13bca139b1abb6e8d16ea4933d2f5ec4de70dd"
+    },
+    "voice/browser/extension/background.js": {
+      "bytes": 2880,
+      "mode": "0o644",
+      "sha256": "0ff5d17acb349b3adedea62e62ac6d2e05c183644197a449d1416e4ad3c54193"
+    },
+    "voice/browser/extension/controller.js": {
+      "bytes": 38801,
+      "mode": "0o644",
+      "sha256": "e88b99ebbb0fa1e881f3da4ebf69e749404b63066124060f6b4237c529f25b12"
+    },
+    "voice/browser/extension/manifest.json": {
+      "bytes": 871,
+      "mode": "0o644",
+      "sha256": "1c22cba83def35c6e7ab88191cee6d0920c086b789ef137234cb79d5cc376dcc"
+    },
+    "voice/browser/native_host.py": {
+      "bytes": 2891,
+      "mode": "0o644",
+      "sha256": "2d48381d35da30a28275b3fc4175b76fba4f95c349939c39dafe411baa952522"
+    },
+    "voice/browser/setup.py": {
+      "bytes": 2280,
+      "mode": "0o644",
+      "sha256": "40c4a4b661cdb6e70d56e74a29b71508c8396fe9504cc1d23998a6b07133ffb9"
+    },
+    "voice/browser/tests/aria-evidence.json": {
+      "bytes": 77467,
+      "mode": "0o644",
+      "sha256": "65ccdcf73906007004ce229bd78e95f8a8e428d2b6dbb64f1f801246e936ff26"
+    },
+    "voice/browser/tests/aria-headless.cjs": {
+      "bytes": 11708,
+      "mode": "0o644",
+      "sha256": "8bc58b0860d306e67c8d07411e6d1eb06da5ee9bc7c742c455259b511d11a12d"
+    },
+    "voice/browser/tests/background.test.cjs": {
+      "bytes": 2043,
+      "mode": "0o644",
+      "sha256": "3cd34d0c75edf3872afc996d0d43874548903936d48a812ff69c9578db8f9f74"
+    },
+    "voice/browser/tests/benchmark-outcomes.cjs": {
+      "bytes": 2531,
+      "mode": "0o644",
+      "sha256": "697aa2c14a5863d40a6669c0fd5ea7a9c847f4707efe60eccf3a9501eaddbd6a"
+    },
+    "voice/browser/tests/editing-stub.cjs": {
+      "bytes": 739,
+      "mode": "0o644",
+      "sha256": "1716c4bedd71fb37eb555701c9c74e690f48ebf4e74cc34acca36e3853c04490"
+    },
+    "voice/browser/tests/editor-headless.cjs": {
+      "bytes": 4273,
+      "mode": "0o644",
+      "sha256": "e61840388ead5338b13ec4c3fa3d016e0b0ff943c7db1b2c8075782e12bf9850"
+    },
+    "voice/browser/tests/existing-text-evidence.json": {
+      "bytes": 16682,
+      "mode": "0o644",
+      "sha256": "9599eaf62f823f9912c324fc0a99da69507a7ed6106c2a880b277bb58d58bc82"
+    },
+    "voice/browser/tests/existing-text-headless.cjs": {
+      "bytes": 8578,
+      "mode": "0o644",
+      "sha256": "ce6beca38e019b2bffa7a0610815fc4420ab6b029641b5ff222e4769abba8cb5"
+    },
+    "voice/browser/tests/fixture-tests.js": {
+      "bytes": 6300,
+      "mode": "0o644",
+      "sha256": "8974d2da767f2de215e55786a7c31f6f4eac22280d8c667ddc90c112133aeff4"
+    },
+    "voice/browser/tests/fixture.html": {
+      "bytes": 760,
+      "mode": "0o644",
+      "sha256": "e22a5fb1d1d6ef21b12b1aa38ee0aef821e2feb6e00cd8eee2520eb0d1f62257"
+    },
+    "voice/browser/tests/headless.cjs": {
+      "bytes": 4063,
+      "mode": "0o644",
+      "sha256": "38eaabbff9274a9163a25e0d49bb2cc03ae2400005a3faa08fb434c65fb7c5ea"
+    },
+    "voice/browser/tests/live-check.html": {
+      "bytes": 1600,
+      "mode": "0o644",
+      "sha256": "a1421a19ebff330fb6254eac904a6e7850df4004dfe878eeb2595c6a6a1d00ac"
+    },
+    "voice/browser/tests/outcomes-baseline.json": {
+      "bytes": 5407,
+      "mode": "0o644",
+      "sha256": "8146b12d09ba63eb9c137485e261a77661ecf48e1fb9988c92e0ba663a238e4a"
+    },
+    "voice/browser/tests/outcomes-evidence.json": {
+      "bytes": 31748,
+      "mode": "0o644",
+      "sha256": "0651d99a80a4cfffc39e759f0550e5bc9f7e8ff39727e4ca50411eb23c604465"
+    },
+    "voice/browser/tests/outcomes-headless.cjs": {
+      "bytes": 12875,
+      "mode": "0o644",
+      "sha256": "adc4d5ffab03955f1b12870998c37bc30a9b459a147e73ef8187a1b84a518681"
+    },
+    "voice/browser/tests/role-language-evidence.json": {
+      "bytes": 314971,
+      "mode": "0o644",
+      "sha256": "ed1365356fe1445e1f15c351541189f0a8aebf4a962eef4755b1c9dbb65497e9"
+    },
+    "voice/browser/tests/test_native_host.py": {
+      "bytes": 2507,
+      "mode": "0o644",
+      "sha256": "a4506498f61076379895b5ba1dc13d7805a7feb1a07f7e81dab1e1d5500c0026"
+    },
+    "voice/browser/tests/verification.test.cjs": {
+      "bytes": 11748,
+      "mode": "0o644",
+      "sha256": "fa6f3cef2db17b0afb4a6190398e34da5a74e2474a5c87c8e3fa8522d262baca"
+    },
+    "voice/build.sh": {
+      "bytes": 3178,
+      "mode": "0o755",
+      "sha256": "68a40e2358093b8f2e5015ee77a8d4b8ae6253977bb940be1956192d051d519b"
+    },
+    "voice/licenses/BERT-Apache-2.0.txt": {
+      "bytes": 11358,
+      "mode": "0o644",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    "voice/licenses/DEPENDENCY-REVIEW.md": {
+      "bytes": 4499,
+      "mode": "0o644",
+      "sha256": "5212bf148087bcc6bccf8d2778c23d042508390b726ecd7e2769841b592a0d87"
+    },
+    "voice/licenses/GoClick-MIT.txt": {
+      "bytes": 1069,
+      "mode": "0o644",
+      "sha256": "975364a1369b95b2c2f679add35fbddc3db31540b1c3fbc4466a0992b3302e2f"
+    },
+    "voice/licenses/MODEL-NOTICES.txt": {
+      "bytes": 1721,
+      "mode": "0o644",
+      "sha256": "8fbe065d3fc23f6dfd2f08035398037488818ec5023481883c75a02dd0cf1149"
+    },
+    "voice/licenses/dependency-inventory.json": {
+      "bytes": 112839,
+      "mode": "0o644",
+      "sha256": "8cca04ca327ea82ee69b890cbe45c859f563fc76b0bc80eecf67c1c32c5b5c20"
+    },
+    "voice/licenses/runtime-notices-evidence.json": {
+      "bytes": 1168,
+      "mode": "0o644",
+      "sha256": "0ae436386d48ad01fa1f631848250e8aacd5cb0d3ffb7f8cc151e97690e17695"
+    },
+    "voice/licenses/runtime-upstream/safetensors-0.3.1-LICENSE.txt": {
+      "bytes": 11357,
+      "mode": "0o644",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    "voice/licenses/runtime-upstream/sentencepiece-0.2.2-LICENSE.txt": {
+      "bytes": 11358,
+      "mode": "0o644",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    "voice/licenses/runtime-upstream/sources.json": {
+      "bytes": 3024,
+      "mode": "0o644",
+      "sha256": "a50aa796f2e24f1099ba07777b298cf15d01da866c420164fca39c303ea03de2"
+    },
+    "voice/licenses/runtime-upstream/tokenizers-0.13.3-LICENSE.txt": {
+      "bytes": 11357,
+      "mode": "0o644",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    "voice/licenses/runtime-upstream/tokenizers-0.23.2-LICENSE.txt": {
+      "bytes": 11357,
+      "mode": "0o644",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    "voice/licenses/sources.json": {
+      "bytes": 459,
+      "mode": "0o644",
+      "sha256": "e4089d0daa9de96530363e31efbd87dbaaaa5c1f253fa750740290eacadc2722"
+    },
+    "voice/licenses/test_inventory.py": {
+      "bytes": 2905,
+      "mode": "0o644",
+      "sha256": "2f69358968d2b25b9fb6d6cf939819173ada21e77b632d8c9b1986dd61bc0f15"
+    },
+    "voice/licenses/test_notice_pack.py": {
+      "bytes": 3485,
+      "mode": "0o644",
+      "sha256": "39d2c2b4cd4c4751930bf88523de6f4b56bbe97ea960c4f73e03a3d5061eeb07"
+    },
+    "voice/models/models.lock.json": {
+      "bytes": 3553,
+      "mode": "0o644",
+      "sha256": "2b76d2848e826239bec59eca6eaee62d23d99ad326a2c9b307e7273f53bcc0b8"
+    },
+    "voice/parser/model.py": {
+      "bytes": 2448,
+      "mode": "0o644",
+      "sha256": "a0e33cc88e6f0872eb201cb648866c11cf8cbcef053f33238ed26a966e838d69"
+    },
+    "voice/parser/worker.py": {
+      "bytes": 752,
+      "mode": "0o644",
+      "sha256": "60ff582db5c0418879188281511338037a26f1b53f246006c95147754e720f92"
+    },
+    "voice/release/CHANGELOG.md": {
+      "bytes": 2796,
+      "mode": "0o644",
+      "sha256": "168404e112266f2cd8cf4da0b6d85a511f406a26207e1eecc524b36be872df64"
+    },
+    "voice/release/CONTRIBUTING.md": {
+      "bytes": 2448,
+      "mode": "0o644",
+      "sha256": "03d58c2226d13b0eaf13e031a6e3bfd1014d6491a339cc5474f8ed59c1ff5cf4"
+    },
+    "voice/release/README.md": {
+      "bytes": 12562,
+      "mode": "0o644",
+      "sha256": "d162c276954347a164e72407f91c8c46e195618b4a4ef4ac52271a15d1a3ed3c"
+    },
+    "voice/release/package-lock.json": {
+      "bytes": 19556,
+      "mode": "0o644",
+      "sha256": "03e8e04181313ba5c17d0fb2a302bdbc19217d3aaf78963b2f60641ec67517b1"
+    },
+    "voice/release/package.json": {
+      "bytes": 625,
+      "mode": "0o644",
+      "sha256": "d64376bc3f09caefb7b762889e05c0ce8d224958d44573812565430b4230ef62"
+    },
+    "voice/release/source-files.json": {
+      "bytes": 10833,
+      "mode": "0o644",
+      "sha256": "fcf0137e851f6b1a8735e59f29e555c15e5d3ecd53152e6b2565dc068d0ae6d0"
+    },
+    "voice/release/source.gitignore": {
+      "bytes": 219,
+      "mode": "0o644",
+      "sha256": "84487ddbc5990562db9d5a3106bda93db0f27a9eced76d187fcd366f320f7777"
+    },
+    "voice/research/grounded/operation.py": {
+      "bytes": 6487,
+      "mode": "0o644",
+      "sha256": "9415f4fef3d1ae5b2f00d2ae77e7e97ca17a43c0eabfc9b59e28534fc6d01ea7"
+    },
+    "voice/research/grounded/pipeline.py": {
+      "bytes": 7907,
+      "mode": "0o644",
+      "sha256": "8d1c2dbdac89484df995ac6fbaf45a45c42b97bbe1133e18583e7731e7abc236"
+    },
+    "voice/research/grounded/probe-role-language.cjs": {
+      "bytes": 7024,
+      "mode": "0o644",
+      "sha256": "405065617733e04adaf68c48eca69a76452c88209b2226f0f5bc34377a3e675d"
+    },
+    "voice/research/grounded/ranker.py": {
+      "bytes": 4034,
+      "mode": "0o644",
+      "sha256": "538b346c4afd4ccb8e59de12c746a926d34ae2f4630a2eac44ea20fe749de1ac"
+    },
+    "voice/research/grounded/test_contract.py": {
+      "bytes": 1763,
+      "mode": "0o644",
+      "sha256": "3f685bae5dd9c155b76aa6a91938cd99fee749110e5f3df32f98ec6639f4094c"
+    },
+    "voice/research/grounded/test_pipeline.py": {
+      "bytes": 8759,
+      "mode": "0o644",
+      "sha256": "14743ccc266dd16fb25232512d89f0a93f9331bb58475e714282c3012b71743e"
+    },
+    "voice/research/grounded/verify-aria-model.cjs": {
+      "bytes": 4689,
+      "mode": "0o644",
+      "sha256": "3d9311051de28076e412b79490b0b1e0519dad13da82452c799617fddac96d8a"
+    },
+    "voice/research/grounded/verify-sequences.cjs": {
+      "bytes": 5098,
+      "mode": "0o644",
+      "sha256": "fbd921cfd7e81860a2a4a2475e5c0846846f43ecda285dd3ee4bc3107b408e2f"
+    },
+    "voice/research/grounded/worker.py": {
+      "bytes": 1892,
+      "mode": "0o644",
+      "sha256": "e2eb3941ca89df32c82cb7ba282be3e908652dd7a217ad743cebecd32ab1b909"
+    },
+    "voice/research/native/NATIVE-GROUNDING.md": {
+      "bytes": 6463,
+      "mode": "0o644",
+      "sha256": "03c708e706b666f5a31d2f6573e289d7df26f5958ef46e74948a062b9808309a"
+    },
+    "voice/research/native/NATIVE-MENUS.md": {
+      "bytes": 5349,
+      "mode": "0o644",
+      "sha256": "dff78b4d70e21b79e2aafd40469e83ac641f4b8a4e4b71364be791c6ba730d47"
+    },
+    "voice/research/native/NATIVE-TEXT.md": {
+      "bytes": 4859,
+      "mode": "0o644",
+      "sha256": "8e5fa24efc51f0a8b0188f5d572999948edbda290de958a39c4c34b0b3ece7b6"
+    },
+    "voice/research/native/TextFixture.swift": {
+      "bytes": 9537,
+      "mode": "0o644",
+      "sha256": "c6bbaa5031122bafdbd254fc6fd68e0ca5863790fc61b6c142002b52ff8047ea"
+    },
+    "voice/research/native/build-text-fixture.sh": {
+      "bytes": 796,
+      "mode": "0o755",
+      "sha256": "14cca53682c4b6e46acdaeb8472c4866ea6abfa1d65fbd1bcf10e50e33aae198"
+    },
+    "voice/research/native/native-grounding-evidence.json": {
+      "bytes": 8140,
+      "mode": "0o644",
+      "sha256": "10a0ad95c2dc94e64022728d7c57659b6b2de3e2d4fd54d2134144376f9e09fe"
+    },
+    "voice/research/native/native-menu-evidence.json": {
+      "bytes": 25004,
+      "mode": "0o644",
+      "sha256": "e1adaa93420f283e296939330ea17b098ddc2d5ceb15dd9aedc5da10663d2eb3"
+    },
+    "voice/research/native/native-text-evidence.json": {
+      "bytes": 5823,
+      "mode": "0o644",
+      "sha256": "3ba353973b3365f02a41a5e4ff17f0125f5574dea3fb7f54bf26706fd9e5023c"
+    },
+    "voice/research/native/run-text-check.py": {
+      "bytes": 5445,
+      "mode": "0o644",
+      "sha256": "e4922da6bfe6b6f50260e6c66b3ca7fe47102b1f3178c174dd731df40ab276f3"
+    },
+    "voice/runtime/parser-requirements.lock": {
+      "bytes": 1447,
+      "mode": "0o644",
+      "sha256": "c53d526251939af3c5799176c3eabec1c0dfcd3f9a07ec720a812a44d3928e8b"
+    },
+    "voice/runtime/vision-requirements.in": {
+      "bytes": 199,
+      "mode": "0o644",
+      "sha256": "faf0d6750d6cf89833cd6e16f3cbf79028bdb738f467c73a473c8140a768cded"
+    },
+    "voice/runtime/vision-requirements.lock": {
+      "bytes": 7822,
+      "mode": "0o644",
+      "sha256": "d29b2f3f678cd1aff4a3429f5793c015f1d6dc862021c3cf81a080b2521696d9"
+    },
+    "voice/tools/doctor.py": {
+      "bytes": 8852,
+      "mode": "0o644",
+      "sha256": "d6c5ed2283eea83e5aade8a8735d7765346614195787e26b43e5b9c236853299"
+    },
+    "voice/tools/export_source.py": {
+      "bytes": 7667,
+      "mode": "0o644",
+      "sha256": "f58a799a9b0acfaf33ed65ec62fc3bec072f99e62a2c33908f6456925c4b2991"
+    },
+    "voice/tools/install_runtime.py": {
+      "bytes": 7649,
+      "mode": "0o644",
+      "sha256": "5ab239c3e6d238f9e008b0f76cbbd6a07a474e7cdbdccab98e264d0f54073ea4"
+    },
+    "voice/tools/inventory_dependency_licenses.py": {
+      "bytes": 5290,
+      "mode": "0o644",
+      "sha256": "b3cfe0b9794bd2d421e65e1e219199a4d84464481110746008ca0d5f0520122a"
+    },
+    "voice/tools/model_assets.py": {
+      "bytes": 10541,
+      "mode": "0o644",
+      "sha256": "3d31f3b67914dc587bdbc89b1b51c4f7f4987106895182c29581340239deb13d"
+    },
+    "voice/tools/pack_runtime_notices.py": {
+      "bytes": 6841,
+      "mode": "0o644",
+      "sha256": "79071b0093443da3f9568304fe6c84b4ce8ad2d36068a4c5a24c9050eafaed15"
+    },
+    "voice/tools/stage_runtime.py": {
+      "bytes": 6382,
+      "mode": "0o644",
+      "sha256": "f4b9a460a52535cab0dc31d4b385962c8ac1fe184ac08df44a54ffd48f9ee494"
+    },
+    "voice/vision/test_worker.py": {
+      "bytes": 2657,
+      "mode": "0o644",
+      "sha256": "8c9840f16d5ec333337db2c407ce37d98cb6176642a7bbb43872dd55a8eddb83"
+    },
+    "voice/vision/worker.py": {
+      "bytes": 6330,
+      "mode": "0o644",
+      "sha256": "e5e563ca19b9cee1c62bcef7a816c00fcff8cbceeee658e44712b44fd5d200c7"
+    }
+  },
+  "scope": "Explicitly selected app, runtime and test source. No model weights, research captures, local configuration or credentials. Content-pattern checks are not a complete security/legal audit.",
+  "status": "source snapshot; publication tracked by repository releases",
+  "version": 1
+}

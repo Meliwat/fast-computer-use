@@ -1,0 +1,8 @@
+# Native Apple Silicon Python 3.12. Inference only, no benchmark dataset tools.
+mlx-vlm==0.7.1
+mlx==0.32.2
+mlx-metal==0.32.2
+transformers==5.17.0
+torch==2.14.0
+torchvision==0.29.0
+safetensors==0.8.0

@@ -1,0 +1,101 @@
+{
+  "commands": {
+    "base": {
+      "license": "Apache-2.0",
+      "repo": "google/bert_uncased_L-2_H-128_A-2",
+      "revision": "30b0a37ccaaa32f332884b96992754e246e48c5f"
+    },
+    "description": "Three locally fine-tuned command checkpoints. Synthetic command data; no user audio. See the associated evaluation reports for limitations.",
+    "files": {
+      "models/base/config.json": {
+        "bytes": 382,
+        "sha256": "508e1f01aae55d73355cbdd82609be2f43ba5a0d3428837adbe56cf8391f8b39"
+      },
+      "models/base/vocab.txt": {
+        "bytes": 231508,
+        "sha256": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+      },
+      "models/operation.pt": {
+        "bytes": 17566341,
+        "sha256": "3868f5185107b6eb60ec85def40ab6b59286f8aa22b54d98e8fcd5b0cf76e69f"
+      },
+      "models/parser.pt": {
+        "bytes": 17567149,
+        "sha256": "98c416a781b61689efc385fa8b88743fbd37189c5f2b81dab7bdbab583803d60"
+      },
+      "models/ranker.pt": {
+        "bytes": 17565317,
+        "sha256": "5f3e28d8252ffc6924681b25cf8213c29c3586d4946535ee9ac8ce6515b4600f"
+      },
+      "models/source.json": {
+        "bytes": 134,
+        "sha256": "c00e3f86cc1de92fa3a7919bc3e1c9e30f9c1764d3007ae98c5b58d3dcb6d772"
+      }
+    },
+    "trainingSources": [
+      "voice/parser/train.py",
+      "voice/parser/data.py",
+      "voice/research/grounded/train.py",
+      "voice/research/grounded/operation.py"
+    ]
+  },
+  "notices": {
+    "licenses/BERT-Apache-2.0.txt": {
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    "licenses/GoClick-MIT.txt": {
+      "bytes": 1069,
+      "sha256": "975364a1369b95b2c2f679add35fbddc3db31540b1c3fbc4466a0992b3302e2f"
+    },
+    "licenses/MODEL-NOTICES.txt": {
+      "bytes": 1721,
+      "sha256": "8fbe065d3fc23f6dfd2f08035398037488818ec5023481883c75a02dd0cf1149"
+    },
+    "licenses/sources.json": {
+      "bytes": 459,
+      "sha256": "e4089d0daa9de96530363e31efbd87dbaaaa5c1f253fa750740290eacadc2722"
+    }
+  },
+  "release": "development-2026-09-23",
+  "version": 1,
+  "vision": {
+    "files": {
+      "models/goclick/README.md": {
+        "bytes": 5892,
+        "sha256": "47e2d4e8882c180ed657b9ce227208447570579904639264816a4b50fc08926a"
+      },
+      "models/goclick/config.json": {
+        "bytes": 2430,
+        "sha256": "c666d0fe0172d46e115e8fba6cd93cd83714575b33a73005cab8d24ce2a3aa8f"
+      },
+      "models/goclick/generation_config.json": {
+        "bytes": 292,
+        "sha256": "dc60ba0a427187371e43340dd402b598e49a6adc23d3ddc76b841a262ef05513"
+      },
+      "models/goclick/model.safetensors": {
+        "bytes": 1083916964,
+        "sha256": "8c122bc1ddbf188b1fe00dc1be2c3a4a92b93ee022570f790fcd8e94aab13907"
+      },
+      "models/goclick/preprocessor_config.json": {
+        "bytes": 806,
+        "sha256": "2f5921bbc53c7cc04251e1027b45b1cec726276be6db23d1bb40641bfbe2cf29"
+      },
+      "models/goclick/tokenizer.json": {
+        "bytes": 1355863,
+        "sha256": "847bbeab6174d66a88898f729d52fa8d355fafe1bea101cf960dd404581df70e"
+      },
+      "models/goclick/tokenizer_config.json": {
+        "bytes": 34,
+        "sha256": "79ffcf43af8ebda99d165f61d243180da2e2639952e41e71e11611c18770489c"
+      },
+      "models/goclick/vocab.json": {
+        "bytes": 1099884,
+        "sha256": "394fdc63c71aabe0a9b97117f5d62fb5fcc4d59b2b3ea929a3929e6a53217b3c"
+      }
+    },
+    "license": "MIT",
+    "repo": "HongxinLi/GoClick-Base",
+    "revision": "05633a495f9d2ce823372d0c7fd9b0b4bb67c6fa"
+  }
+}

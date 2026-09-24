@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Local Voice Browser",
+  "version": "0.4.5",
+  "description": "Local voice actions on the active website. Hold Option and speak. No cloud connection.",
+  "permissions": [
+    "scripting",
+    "nativeMessaging"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Local Voice \u00b7 automatic website control"
+  },
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAyAoy8zUP1Te3AgZpTSeKbs5RmXROQG6AMLnY3+FHEr/+uS6Ke2qNZUNE+5IOWqwLbQ7wSmzUzvjv4RCZUh7+ZiHJ7TcOFfLVzj6n/5D09bm/hL8bG/dRqXEb1MwJC6eaGhUlnYRznkoc5oyHQugMcnAKS0aXxcTWOy1c0aNXQJxYbopmaZOkhIVwkVDP+MfFxeDjpxyLNnepanIkRyqIeTmSknAni9y0TaPtZewWWrPrGLX4UB6U7HoNAPL9BhkIMTbPVihAlI8T736Xg48HKV0UHETcu7z4J6OgK4yjb6nzinAAIL5GYuLDiQ0PxuAMQG0LNpcvqWIYysiTqIzuawIDAQAB",
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ]
+}
