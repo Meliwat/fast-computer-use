@@ -26,6 +26,7 @@ model fine-tunes are not integrated. See the [release notes](CHANGELOG.md).
 | `type hello there` | Literal insertion into the focused editor; Chrome can also find one unambiguous composer. |
 | `search this site for local AI` / `scroll down` | Current Chrome page. |
 | `choose Canada from the Country dropdown` | An observed browser option. |
+| `click Save in Profile section` / `fill Email in Billing form with me@example.test` | Named browser sections disambiguate repeated controls. |
 | `click Notifications link` / `check Email updates` | Observed controls, with role and state checks. |
 | `open File menu` / `close menu` | Focused native app's menus. |
 | `show the tools menu, then open Playground` | A supported short browser sequence with new observations between steps. |
@@ -42,7 +43,11 @@ Generic search submission does not establish that the results match the request.
 contents of named fields without a model call. Browser tests cover 28 cases;
 native execution of these new operations still awaits a live fixture check. See
 [behavior and measured scope](voice/browser/EXISTING-TEXT.md). Reload the extension
-to 0.4.5 when updating.
+to 0.4.6 when updating.
+
+Named section, form, group and dialog targeting is available on current main;
+see [scope behavior and fixtures](voice/browser/SCOPED-TARGETS.md). These post-release
+improvements are not part of the immutable v0.1.0 source archive.
 
 ## Build requirements
 
@@ -167,6 +172,7 @@ npm run test:browser
 npm run test:outcomes
 npm run test:aria
 npm run test:existing-text
+npm run test:scoped-targets
 python3.11 voice/browser/setup.py
 python3.11 voice/browser/tests/test_native_host.py
 ```

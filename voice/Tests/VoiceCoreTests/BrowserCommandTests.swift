@@ -24,4 +24,16 @@ final class BrowserCommandTests: XCTestCase {
         XCTAssertTrue(Parser.hasDictation("search this site for toys"))
         XCTAssertEqual(Parser.parse("don't check Email updates"),[])
     }
+    func testNamedSectionQualifiersReachBrowserWithoutChangingLiteralValues() {
+        let cases: [(String, Command)] = [
+            ("click Save button in the Profile section",Command(.clickControl,"Save button in the Profile section")),
+            ("fill Email in the Billing form with local@example.test",BrowserCommand(op:"fill",target:"Email in the Billing form",value:"local@example.test").command),
+            ("choose Canada from Country in Shipping section",BrowserCommand(op:"select",target:"Country in Shipping section",value:"Canada").command),
+            ("check Updates in Billing group",BrowserCommand(op:"check",target:"Updates in Billing group",checked:true).command),
+            ("copy Email in Profile section into Email in Billing section",BrowserCommand(op:"copyText",target:"Email in Billing section",source:"Email in Profile section").command),
+            ("make Email in Billing section uppercase",BrowserCommand(op:"changeCase",target:"Email in Billing section",value:"uppercase").command),
+            ("fill Message in Profile section with click Save in Billing section",BrowserCommand(op:"fill",target:"Message in Profile section",value:"click Save in Billing section").command)
+        ]
+        for (text,expected) in cases { XCTAssertEqual(Parser.parse(text,browserContext:true),[expected],text) }
+    }
 }

@@ -466,6 +466,15 @@
     },
     {
       "source": "voice/vision/multiline-text-evaluation.json"
+    },
+    {
+      "source": "voice/browser/SCOPED-TARGETS.md"
+    },
+    {
+      "source": "voice/browser/tests/scoped-targets-headless.cjs"
+    },
+    {
+      "source": "voice/browser/tests/scoped-targets-evidence.json"
     }
   ]
 }
