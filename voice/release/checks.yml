@@ -1,0 +1,59 @@
+name: Regression checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: checks-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  macos:
+    name: macOS source and browser checks
+    runs-on: macos-15
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Check source selection and reproducible export
+        run: |
+          python voice/tools/export_source.py --check
+          python voice/tools/export_source.py --output "$RUNNER_TEMP/source-one.tar.gz"
+          python voice/tools/export_source.py --output "$RUNNER_TEMP/source-two.tar.gz"
+          cmp "$RUNNER_TEMP/source-one.tar.gz" "$RUNNER_TEMP/source-two.tar.gz"
+      - name: Swift contracts and worker protocol
+        run: swift test --package-path voice
+      - name: Packaging and notice tools
+        run: |
+          python -m unittest discover -s voice/Tests -p 'test_*.py'
+          python -m unittest discover -s voice/licenses -p 'test_*.py'
+      - name: Native messaging transport with simulated Chrome
+        run: |
+          python voice/browser/setup.py
+          python voice/browser/tests/test_native_host.py
+      - name: Install browser test dependencies
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Browser contracts
+        run: npm run test:browser
+      - name: Disposable headless browser behavior
+        run: |
+          npm run test:outcomes
+          npm run test:aria
+          npm run test:existing-text
+          npm run test:editor
+      - name: Confirm tracked source was not changed by checks
+        run: git diff --exit-code
