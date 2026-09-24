@@ -40,6 +40,18 @@ and keep timing claims scoped to the measured stages. Do not enable speculative
 model actions just because a model always returns valid JSON. Target selection
 and post-action evidence must agree with the current UI state.
 
+## Automated checks
+
+Pull requests and updates to `main` run the source-export, Swift, packaging,
+native-host and headless browser checks on a fresh GitHub-hosted macOS runner.
+The workflow uses pinned actions, a read-only token and a 20-minute timeout.
+It does not download model weights, sign a bundle, launch Local Voice, record
+speech or request macOS permissions. A green run verifies these contracts and
+fixtures; it is not a full installation or end-to-end voice test.
+
+The workflow source lives in `voice/release/checks.yml` and is mirrored to
+`.github/workflows/checks.yml` for source export. Keep both copies in sync.
+
 ## Source packaging
 
 `voice/release/source-files.json` explicitly selects the published source. Update

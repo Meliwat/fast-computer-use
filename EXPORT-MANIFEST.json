@@ -1,5 +1,10 @@
 {
   "files": {
+    ".github/workflows/checks.yml": {
+      "bytes": 2099,
+      "mode": "0o644",
+      "sha256": "c86736be2e84eb6a4f8ab432dfc1674b5245bee0ce05305a04a12239b922fbe9"
+    },
     ".gitignore": {
       "bytes": 219,
       "mode": "0o644",
@@ -11,9 +16,9 @@
       "sha256": "168404e112266f2cd8cf4da0b6d85a511f406a26207e1eecc524b36be872df64"
     },
     "CONTRIBUTING.md": {
-      "bytes": 2448,
+      "bytes": 3077,
       "mode": "0o644",
-      "sha256": "03d58c2226d13b0eaf13e031a6e3bfd1014d6491a339cc5474f8ed59c1ff5cf4"
+      "sha256": "66f2706b662b49642c27a0c093285d6baf33f1b989b026b716e736753598f409"
     },
     "LICENSE": {
       "bytes": 1081,
@@ -556,14 +561,19 @@
       "sha256": "168404e112266f2cd8cf4da0b6d85a511f406a26207e1eecc524b36be872df64"
     },
     "voice/release/CONTRIBUTING.md": {
-      "bytes": 2448,
+      "bytes": 3077,
       "mode": "0o644",
-      "sha256": "03d58c2226d13b0eaf13e031a6e3bfd1014d6491a339cc5474f8ed59c1ff5cf4"
+      "sha256": "66f2706b662b49642c27a0c093285d6baf33f1b989b026b716e736753598f409"
     },
     "voice/release/README.md": {
       "bytes": 12562,
       "mode": "0o644",
       "sha256": "d162c276954347a164e72407f91c8c46e195618b4a4ef4ac52271a15d1a3ed3c"
+    },
+    "voice/release/checks.yml": {
+      "bytes": 2099,
+      "mode": "0o644",
+      "sha256": "c86736be2e84eb6a4f8ab432dfc1674b5245bee0ce05305a04a12239b922fbe9"
     },
     "voice/release/package-lock.json": {
       "bytes": 19556,
@@ -576,9 +586,9 @@
       "sha256": "d64376bc3f09caefb7b762889e05c0ce8d224958d44573812565430b4230ef62"
     },
     "voice/release/source-files.json": {
-      "bytes": 10833,
+      "bytes": 10998,
       "mode": "0o644",
-      "sha256": "fcf0137e851f6b1a8735e59f29e555c15e5d3ecd53152e6b2565dc068d0ae6d0"
+      "sha256": "9687e0ef18b09094076a4a4240708aeffd469100af8084d9feaf9e03f80ee340"
     },
     "voice/release/source.gitignore": {
       "bytes": 219,

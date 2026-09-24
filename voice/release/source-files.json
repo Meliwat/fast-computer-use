@@ -450,6 +450,13 @@
     },
     {
       "source": "voice/browser/tests/existing-text-evidence.json"
+    },
+    {
+      "source": "voice/release/checks.yml"
+    },
+    {
+      "source": "voice/release/checks.yml",
+      "destination": ".github/workflows/checks.yml"
     }
   ]
 }
