@@ -37,6 +37,12 @@ jobs:
           cmp "$RUNNER_TEMP/source-one.tar.gz" "$RUNNER_TEMP/source-two.tar.gz"
       - name: Swift contracts and worker protocol
         run: swift test --package-path voice
+      - name: Compile offline visual diagnostic
+        run: |
+          swiftc -parse-as-library -I voice/.build/debug/Modules \
+            voice/.build/debug/VoiceCore.build/*.o \
+            voice/.build/debug/VoicePerception.build/*.o \
+            voice/tools/visual_grounding_check.swift -o "$RUNNER_TEMP/localvoice-visual-check"
       - name: Packaging and notice tools
         run: |
           python -m unittest discover -s voice/Tests -p 'test_*.py'

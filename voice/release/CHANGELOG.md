@@ -1,5 +1,12 @@
 # Release notes
 
+## Unreleased
+
+- Join nearby, aligned OCR lines belonging to one unnamed control. Duplicate,
+  conflicting and low-confidence labels retain their existing checks.
+- Include a generated-image visual diagnostic with an OCR-only mode. Its known
+  confidence-related coverage miss is preserved in the documented results.
+
 ## v0.1.0 — 2026-09-24
 
 First public developer preview of Fast Computer Use. The Mac app is named

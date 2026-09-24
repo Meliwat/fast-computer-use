@@ -1,0 +1,2476 @@
+{
+  "version": 1,
+  "scope": "Generated development fixtures only. No personal capture, microphone, UI input, action outcome or general GUI accuracy claim. No calibration or OCR threshold change. Both runs retain one positive refusal and exit 1.",
+  "runs": [
+    {
+      "reportSHA256": "97caa95342cde85f68f44f8dba907385d0de10942a0fdf746be4925d27ea75ff",
+      "report": {
+        "cases": [
+          {
+            "augmentedLabels": [
+              {
+                "id": "save",
+                "labels": [
+                  "Save"
+                ]
+              },
+              {
+                "id": "cancel",
+                "labels": [
+                  "Cancel"
+                ]
+              }
+            ],
+            "correct": true,
+            "eligibleCount": 1,
+            "expected": "save",
+            "id": "document",
+            "ocrMs": 80.47870826721191,
+            "point": [],
+            "predictRoundtripMs": 0,
+            "prepareRoundtripMs": 0,
+            "previousEligibleCount": 0,
+            "recognized": [
+              {
+                "bounds": [
+                  0.03281249834375004,
+                  0.9275000003,
+                  0.171875,
+                  0.030000000000000027
+                ],
+                "confidence": 1,
+                "text": "Document editor"
+              },
+              {
+                "bounds": [
+                  0.5155246529148176,
+                  0.816900157633946,
+                  0.06895069479942317,
+                  0.031199684143066397
+                ],
+                "confidence": 1,
+                "text": "Cancel"
+              },
+              {
+                "bounds": [
+                  0.7170217182777575,
+                  0.8167543783046578,
+                  0.05189406275749209,
+                  0.03149124383926394
+                ],
+                "confidence": 1,
+                "text": "Save"
+              }
+            ],
+            "selected": "save",
+            "target": "Save",
+            "totalSelectionMs": 80.85129165649414
+          },
+          {
+            "augmentedLabels": [
+              {
+                "id": "home",
+                "labels": [
+                  "Home"
+                ]
+              },
+              {
+                "id": "files",
+                "labels": [
+                  "Files"
+                ]
+              },
+              {
+                "id": "settings",
+                "labels": [
+                  "Settings"
+                ]
+              }
+            ],
+            "correct": true,
+            "eligibleCount": 1,
+            "expected": "settings",
+            "id": "sidebar",
+            "ocrMs": 99.10099995136261,
+            "point": [],
+            "predictRoundtripMs": 0,
+            "prepareRoundtripMs": 0,
+            "previousEligibleCount": 0,
+            "recognized": [
+              {
+                "bounds": [
+                  0.030843532164252674,
+                  0.9193919300481814,
+                  0.11942921876907348,
+                  0.03947690248489377
+                ],
+                "confidence": 1,
+                "text": "Workspace"
+              },
+              {
+                "bounds": [
+                  0.05466403608423975,
+                  0.7923951450491205,
+                  0.06098442673683166,
+                  0.03520971059799194
+                ],
+                "confidence": 1,
+                "text": "Home"
+              },
+              {
+                "bounds": [
+                  0.05468749969726563,
+                  0.6549999998906251,
+                  0.0484375,
+                  0.03249999999999997
+                ],
+                "confidence": 1,
+                "text": "Files"
+              },
+              {
+                "bounds": [
+                  0.05259920284572452,
+                  0.21440389981913288,
+                  0.08387899398803711,
+                  0.036490292549133274
+                ],
+                "confidence": 1,
+                "text": "Settings"
+              }
+            ],
+            "selected": "settings",
+            "target": "Settings",
+            "totalSelectionMs": 99.20566666126251
+          },
+          {
+            "augmentedLabels": [
+              {
+                "id": "import",
+                "labels": [
+                  "Import"
+                ]
+              },
+              {
+                "id": "export",
+                "labels": [
+                  "Export"
+                ]
+              },
+              {
+                "id": "archive",
+                "labels": [
+                  "Archive"
+                ]
+              }
+            ],
+            "correct": true,
+            "eligibleCount": 1,
+            "expected": "export",
+            "id": "export",
+            "ocrMs": 81.2610832452774,
+            "point": [],
+            "predictRoundtripMs": 0,
+            "prepareRoundtripMs": 0,
+            "previousEligibleCount": 0,
+            "recognized": [
+              {
+                "bounds": [
+                  0.03257985832847403,
+                  0.9204567099776872,
+                  0.12234028577804566,
+                  0.04158657789230347
+                ],
+                "confidence": 1,
+                "text": "Project files"
+              },
+              {
+                "bounds": [
+                  0.07656250006696427,
+                  0.74999999975,
+                  0.06562500000000002,
+                  0.03500000000000003
+                ],
+                "confidence": 1,
+                "text": "Import"
+              },
+              {
+                "bounds": [
+                  0.6874406494246748,
+                  0.7546457792149318,
+                  0.07511870265007026,
+                  0.03320844173431392
+                ],
+                "confidence": 1,
+                "text": "Archive"
+              },
+              {
+                "bounds": [
+                  0.3827377945692966,
+                  0.3871626612393996,
+                  0.06577441096305847,
+                  0.038174676895141646
+                ],
+                "confidence": 1,
+                "text": "Export"
+              }
+            ],
+            "selected": "export",
+            "target": "Export",
+            "totalSelectionMs": 81.37462496757507
+          },
+          {
+            "augmentedLabels": [
+              {
+                "id": "cancel",
+                "labels": [
+                  "Cancel"
+                ]
+              },
+              {
+                "id": "apply",
+                "labels": [
+                  "Apply"
+                ]
+              }
+            ],
+            "correct": true,
+            "eligibleCount": 1,
+            "expected": "apply",
+            "id": "dialog",
+            "ocrMs": 95.14808332920074,
+            "point": [],
+            "predictRoundtripMs": 0,
+            "prepareRoundtripMs": 0,
+            "previousEligibleCount": 0,
+            "recognized": [
+              {
+                "bounds": [
+                  0.03125000130859375,
+                  0.9200000001249999,
+                  0.20937500000000003,
+                  0.040000000000000036
+                ],
+                "confidence": 1,
+                "text": "Display preferences"
+              },
+              {
+                "bounds": [
+                  0.2343749996484375,
+                  0.2924999998875001,
+                  0.0703125,
+                  0.03249999999999997
+                ],
+                "confidence": 1,
+                "text": "Cancel"
+              },
+              {
+                "bounds": [
+                  0.6078124996386719,
+                  0.287499999890625,
+                  0.05781249999999993,
+                  0.03749999999999998
+                ],
+                "confidence": 1,
+                "text": "Apply"
+              }
+            ],
+            "selected": "apply",
+            "target": "Apply",
+            "totalSelectionMs": 95.24654173851013
+          },
+          {
+            "augmentedLabels": [
+              {
+                "id": "browse",
+                "labels": [
+                  "Browse"
+                ]
+              },
+              {
+                "id": "search",
+                "labels": [
+                  "Search"
+                ]
+              }
+            ],
+            "correct": true,
+            "eligibleCount": 1,
+            "expected": "search",
+            "id": "search",
+            "ocrMs": 103.42420828342438,
+            "point": [],
+            "predictRoundtripMs": 0,
+            "prepareRoundtripMs": 0,
+            "previousEligibleCount": 0,
+            "recognized": [
+              {
+                "bounds": [
+                  0.031249998437500027,
+                  0.9199999999166667,
+                  0.18749999999999997,
+                  0.039999999999999925
+                ],
+                "confidence": 1,
+                "text": "Knowledge library"
+              },
+              {
+                "bounds": [
+                  0.08583198561170571,
+                  0.7067597711484519,
+                  0.07364853024482726,
+                  0.028980457782745273
+                ],
+                "confidence": 1,
+                "text": "Browse"
+              },
+              {
+                "bounds": [
+                  0.7264457578525654,
+                  0.7042999349853103,
+                  0.0689834833145141,
+                  0.03140012979507445
+                ],
+                "confidence": 1,
+                "text": "Search"
+              }
+            ],
+            "selected": "search",
+            "target": "Search",
+            "totalSelectionMs": 103.55199992656708
+          },
+          {
+            "augmentedLabels": [
+              {
+                "id": "back",
+                "labels": [
+                  "Back"
+                ]
+              },
+              {
+                "id": "continue",
+                "labels": [
+                  "Continue"
+                ]
+              }
+            ],
+            "correct": true,
+            "eligibleCount": 1,
+            "expected": "continue",
+            "id": "form",
+            "ocrMs": 87.69900000095367,
+            "point": [],
+            "predictRoundtripMs": 0,
+            "prepareRoundtripMs": 0,
+            "previousEligibleCount": 0,
+            "recognized": [
+              {
+                "bounds": [
+                  0.030670483166871286,
+                  0.9166897740851649,
+                  0.16674340963363646,
+                  0.04506066322326652
+                ],
+                "confidence": 1,
+                "text": "New workspace"
+              },
+              {
+                "bounds": [
+                  0.09374999962239583,
+                  0.14250000027083332,
+                  0.05156250000000001,
+                  0.03249999999999997
+                ],
+                "confidence": 1,
+                "text": "Back"
+              },
+              {
+                "bounds": [
+                  0.7187270170738626,
+                  0.14232744343517656,
+                  0.08754596710205076,
+                  0.030345113277435276
+                ],
+                "confidence": 1,
+                "text": "Continue"
+              }
+            ],
+            "selected": "continue",
+            "target": "Continue",
+            "totalSelectionMs": 87.7951250076294
+          },
+          {
+            "augmentedLabels": [
+              {
+                "id": "top",
+                "labels": [
+                  "Settings"
+                ]
+              },
+              {
+                "id": "bottom",
+                "labels": [
+                  "Settings"
+                ]
+              }
+            ],
+            "correct": true,
+            "eligibleCount": 1,
+            "expected": "bottom",
+            "id": "position",
+            "ocrMs": 98.73383331298828,
+            "point": [],
+            "predictRoundtripMs": 0,
+            "prepareRoundtripMs": 0,
+            "previousEligibleCount": 0,
+            "recognized": [
+              {
+                "bounds": [
+                  0.029628818116668842,
+                  0.9195119253480608,
+                  0.12042986154556273,
+                  0.03847615003585814
+                ],
+                "confidence": 1,
+                "text": "Two panels"
+              },
+              {
+                "bounds": [
+                  0.4056932087934138,
+                  0.7378246124661609,
+                  0.08055009245872496,
+                  0.033417518138885605
+                ],
+                "confidence": 1,
+                "text": "Settings"
+              },
+              {
+                "bounds": [
+                  0.40616296178302747,
+                  0.19951138166201043,
+                  0.08142407536506657,
+                  0.03847723722457885
+                ],
+                "confidence": 1,
+                "text": "Settings"
+              }
+            ],
+            "selected": "bottom",
+            "target": "bottom Settings",
+            "totalSelectionMs": 98.8767499923706
+          },
+          {
+            "augmentedLabels": [
+              {
+                "id": "one",
+                "labels": [
+                  "Settings"
+                ]
+              },
+              {
+                "id": "two",
+                "labels": [
+                  "Settings"
+                ]
+              }
+            ],
+            "correct": true,
+            "eligibleCount": 2,
+            "expected": null,
+            "id": "duplicate",
+            "ocrMs": 94.44941675662994,
+            "point": [],
+            "predictRoundtripMs": 0,
+            "prepareRoundtripMs": 0,
+            "previousEligibleCount": 0,
+            "recognized": [
+              {
+                "bounds": [
+                  0.02964474447807186,
+                  0.9196455959189964,
+                  0.12039800882339477,
+                  0.03820880889892586
+                ],
+                "confidence": 1,
+                "text": "Two panels"
+              },
+              {
+                "bounds": [
+                  0.10156250044270834,
+                  0.4999999996875001,
+                  0.08124999999999999,
+                  0.03749999999999998
+                ],
+                "confidence": 1,
+                "text": "Settings"
+              },
+              {
+                "bounds": [
+                  0.6562016821720607,
+                  0.4997302127881127,
+                  0.08134663701057443,
+                  0.03803957462310792
+                ],
+                "confidence": 1,
+                "text": "Settings"
+              }
+            ],
+            "selected": null,
+            "target": "Settings",
+            "totalSelectionMs": 94.5495834350586
+          },
+          {
+            "augmentedLabels": [
+              {
+                "id": "save",
+                "labels": [
+                  "Save"
+                ]
+              },
+              {
+                "id": "cancel",
+                "labels": [
+                  "Cancel"
+                ]
+              }
+            ],
+            "correct": true,
+            "eligibleCount": 0,
+            "expected": null,
+            "id": "absent",
+            "ocrMs": 73.97150003910065,
+            "point": [],
+            "predictRoundtripMs": 0,
+            "prepareRoundtripMs": 0,
+            "previousEligibleCount": 0,
+            "recognized": [
+              {
+                "bounds": [
+                  0.03281249834375004,
+                  0.9275000003,
+                  0.171875,
+                  0.030000000000000027
+                ],
+                "confidence": 1,
+                "text": "Document editor"
+              },
+              {
+                "bounds": [
+                  0.5155246529148176,
+                  0.816900157633946,
+                  0.06895069479942317,
+                  0.031199684143066397
+                ],
+                "confidence": 1,
+                "text": "Cancel"
+              },
+              {
+                "bounds": [
+                  0.7170217182777575,
+                  0.8167543783046578,
+                  0.05189406275749209,
+                  0.03149124383926394
+                ],
+                "confidence": 1,
+                "text": "Save"
+              }
+            ],
+            "selected": null,
+            "target": "Delete",
+            "totalSelectionMs": 74.07062494754791
+          },
+          {
+            "augmentedLabels": [
+              {
+                "id": "conflict",
+                "labels": [
+                  "Delete"
+                ]
+              }
+            ],
+            "correct": true,
+            "eligibleCount": 0,
+            "expected": null,
+            "id": "conflict",
+            "ocrMs": 103.8482916355133,
+            "point": [],
+            "predictRoundtripMs": 0,
+            "prepareRoundtripMs": 0,
+            "previousEligibleCount": 0,
+            "recognized": [
+              {
+                "bounds": [
+                  0.031249997187500034,
+                  0.9200000003333333,
+                  0.346875,
+                  0.040000000000000036
+                ],
+                "confidence": 1,
+                "text": "Conflicting accessibility metadata"
+              },
+              {
+                "bounds": [
+                  0.406249999609375,
+                  0.44250000025,
+                  0.050000000000000044,
+                  0.029999999999999916
+                ],
+                "confidence": 1,
+                "text": "Save"
+              }
+            ],
+            "selected": null,
+            "target": "Save",
+            "totalSelectionMs": 103.95291674137115
+          },
+          {
+            "augmentedLabels": [
+              {
+                "id": "submit",
+                "labels": []
+              }
+            ],
+            "correct": true,
+            "eligibleCount": 0,
+            "expected": null,
+            "id": "disabled",
+            "ocrMs": 96.16762495040894,
+            "point": [],
+            "predictRoundtripMs": 0,
+            "prepareRoundtripMs": 0,
+            "previousEligibleCount": 0,
+            "recognized": [
+              {
+                "bounds": [
+                  0.03124999794921881,
+                  0.92000000046875,
+                  0.1734375,
+                  0.03749999999999998
+                ],
+                "confidence": 1,
+                "text": "Form incomplete"
+              },
+              {
+                "bounds": [
+                  0.717187499388021,
+                  0.1949999998541666,
+                  0.07343749999999993,
+                  0.032500000000000084
+                ],
+                "confidence": 1,
+                "text": "Submit"
+              }
+            ],
+            "selected": null,
+            "target": "Submit",
+            "totalSelectionMs": 96.22629165649414
+          },
+          {
+            "augmentedLabels": [
+              {
+                "id": "one",
+                "labels": []
+              },
+              {
+                "id": "two",
+                "labels": []
+              }
+            ],
+            "correct": true,
+            "eligibleCount": 0,
+            "expected": null,
+            "id": "overlap",
+            "ocrMs": 104.06658339500427,
+            "point": [],
+            "predictRoundtripMs": 0,
+            "prepareRoundtripMs": 0,
+            "previousEligibleCount": 0,
+            "recognized": [
+              {
+                "bounds": [
+                  0.031249998515625,
+                  0.9200000002857143,
+                  0.21718749999999998,
+                  0.040000000000000036
+                ],
+                "confidence": 1,
+                "text": "Overlapping controls"
+              },
+              {
+                "bounds": [
+                  0.4062499995625,
+                  0.4425000002999999,
+                  0.04999999999999999,
+                  0.030000000000000027
+                ],
+                "confidence": 1,
+                "text": "Save"
+              }
+            ],
+            "selected": null,
+            "target": "Save",
+            "totalSelectionMs": 104.13212513923645
+          },
+          {
+            "augmentedLabels": [
+              {
+                "id": "create",
+                "labels": [
+                  "Create"
+                ]
+              },
+              {
+                "id": "cancel",
+                "labels": [
+                  "Cancel"
+                ]
+              }
+            ],
+            "correct": false,
+            "eligibleCount": 0,
+            "expected": "create",
+            "id": "wrapped-create",
+            "ocrMs": 94.19875001907349,
+            "point": [],
+            "predictRoundtripMs": 0,
+            "prepareRoundtripMs": 0,
+            "previousEligibleCount": 0,
+            "recognized": [
+              {
+                "bounds": [
+                  0.03125000179687496,
+                  0.92499999959375,
+                  0.15,
+                  0.03249999999999997
+                ],
+                "confidence": 1,
+                "text": "Conversations"
+              },
+              {
+                "bounds": [
+                  0.4530462200188522,
+                  0.7670310273215055,
+                  0.06890755891799927,
+                  0.030937945842742898
+                ],
+                "confidence": 1,
+                "text": "Cancel"
+              },
+              {
+                "bounds": [
+                  0.7107708372102686,
+                  0.7665381916370185,
+                  0.0659583270549774,
+                  0.03192361593246462
+                ],
+                "confidence": 1,
+                "text": "Create"
+              },
+              {
+                "bounds": [
+                  0.7108747365293373,
+                  0.724515499128976,
+                  0.08918802738189702,
+                  0.030969003438949594
+                ],
+                "confidence": 0.5,
+                "text": "new chat"
+              }
+            ],
+            "selected": null,
+            "target": "Create new chat",
+            "totalSelectionMs": 94.30062508583069
+          },
+          {
+            "augmentedLabels": [
+              {
+                "id": "home",
+                "labels": [
+                  "Home"
+                ]
+              },
+              {
+                "id": "account",
+                "labels": [
+                  "Account preferences"
+                ]
+              }
+            ],
+            "correct": true,
+            "eligibleCount": 1,
+            "expected": "account",
+            "id": "wrapped-sidebar",
+            "ocrMs": 101.97404170036316,
+            "point": [],
+            "predictRoundtripMs": 0,
+            "prepareRoundtripMs": 0,
+            "previousEligibleCount": 0,
+            "recognized": [
+              {
+                "bounds": [
+                  0.030781024777650955,
+                  0.9188461959365615,
+                  0.11955423355102537,
+                  0.040568370819091815
+                ],
+                "confidence": 1,
+                "text": "Workspace"
+              },
+              {
+                "bounds": [
+                  0.05463950588349731,
+                  0.792284933617073,
+                  0.06103348731994629,
+                  0.03543013334274292
+                ],
+                "confidence": 1,
+                "text": "Home"
+              },
+              {
+                "bounds": [
+                  0.05298027764434523,
+                  0.46650961053519613,
+                  0.08466444611549376,
+                  0.03448077917099002
+                ],
+                "confidence": 1,
+                "text": "Account"
+              },
+              {
+                "bounds": [
+                  0.053102778740788545,
+                  0.4198190483772286,
+                  0.11879444122314455,
+                  0.03786190271377565
+                ],
+                "confidence": 1,
+                "text": "preferences"
+              }
+            ],
+            "selected": "account",
+            "target": "Account preferences",
+            "totalSelectionMs": 102.12004172801971
+          },
+          {
+            "augmentedLabels": [
+              {
+                "id": "create",
+                "labels": [
+                  "Create a new workspace"
+                ]
+              }
+            ],
+            "correct": true,
+            "eligibleCount": 1,
+            "expected": "create",
+            "id": "wrapped-three",
+            "ocrMs": 89.89145839214325,
+            "point": [],
+            "predictRoundtripMs": 0,
+            "prepareRoundtripMs": 0,
+            "previousEligibleCount": 0,
+            "recognized": [
+              {
+                "bounds": [
+                  0.031052761508539205,
+                  0.9213075856356508,
+                  0.08633197546005247,
+                  0.03988482952117922
+                ],
+                "confidence": 1,
+                "text": "Projects"
+              },
+              {
+                "bounds": [
+                  0.5546874995052083,
+                  0.40500000025000005,
+                  0.06562499999999993,
+                  0.030000000000000027
+                ],
+                "confidence": 1,
+                "text": "Create"
+              },
+              {
+                "bounds": [
+                  0.5546874995870535,
+                  0.3624999998571429,
+                  0.05781249999999993,
+                  0.02499999999999991
+                ],
+                "confidence": 1,
+                "text": "a new"
+              },
+              {
+                "bounds": [
+                  0.5530720355739608,
+                  0.31455073210556517,
+                  0.10635592937469485,
+                  0.03339853525161751
+                ],
+                "confidence": 1,
+                "text": "workspace"
+              }
+            ],
+            "selected": "create",
+            "target": "Create a new workspace",
+            "totalSelectionMs": 90.00370836257935
+          },
+          {
+            "augmentedLabels": [
+              {
+                "id": "one",
+                "labels": [
+                  "Open settings"
+                ]
+              },
+              {
+                "id": "two",
+                "labels": [
+                  "Open settings"
+                ]
+              }
+            ],
+            "correct": true,
+            "eligibleCount": 2,
+            "expected": null,
+            "id": "wrapped-duplicate",
+            "ocrMs": 99.88745832443237,
+            "point": [],
+            "predictRoundtripMs": 0,
+            "prepareRoundtripMs": 0,
+            "previousEligibleCount": 0,
+            "recognized": [
+              {
+                "bounds": [
+                  0.029687498781250023,
+                  0.91999999995,
+                  0.12187499999999998,
+                  0.039999999999999925
+                ],
+                "confidence": 1,
+                "text": "Two panels"
+              },
+              {
+                "bounds": [
+                  0.12500000001302083,
+                  0.4999999996875001,
+                  0.0546875,
+                  0.03749999999999998
+                ],
+                "confidence": 1,
+                "text": "Open"
+              },
+              {
+                "bounds": [
+                  0.12337155277035923,
+                  0.4571452270837496,
+                  0.07825689315795896,
+                  0.03820954561233514
+                ],
+                "confidence": 1,
+                "text": "settings"
+              },
+              {
+                "bounds": [
+                  0.6717887192952118,
+                  0.49966622325815124,
+                  0.05642256140708923,
+                  0.03816755294799812
+                ],
+                "confidence": 1,
+                "text": "Open"
+              },
+              {
+                "bounds": [
+                  0.6703125003794643,
+                  0.45749999973214284,
+                  0.078125,
+                  0.03749999999999998
+                ],
+                "confidence": 1,
+                "text": "settings"
+              }
+            ],
+            "selected": null,
+            "target": "Open settings",
+            "totalSelectionMs": 100.01854169368744
+          },
+          {
+            "augmentedLabels": [
+              {
+                "id": "conflict",
+                "labels": [
+                  "Delete"
+                ]
+              }
+            ],
+            "correct": true,
+            "eligibleCount": 0,
+            "expected": null,
+            "id": "wrapped-conflict",
+            "ocrMs": 99.58770835399628,
+            "point": [],
+            "predictRoundtripMs": 0,
+            "prepareRoundtripMs": 0,
+            "previousEligibleCount": 0,
+            "recognized": [
+              {
+                "bounds": [
+                  0.031249997187500034,
+                  0.9200000003333333,
+                  0.346875,
+                  0.040000000000000036
+                ],
+                "confidence": 1,
+                "text": "Conflicting accessibility metadata"
+              },
+              {
+                "bounds": [
+                  0.406250000546875,
+                  0.44250000008333334,
+                  0.06562499999999999,
+                  0.029999999999999916
+                ],
+                "confidence": 1,
+                "text": "Create"
+              },
+              {
+                "bounds": [
+                  0.40450355732354276,
+                  0.3985059645213771,
+                  0.09099288582801818,
+                  0.03298807144165039
+                ],
+                "confidence": 1,
+                "text": "new chat"
+              }
+            ],
+            "selected": null,
+            "target": "Create new chat",
+            "totalSelectionMs": 99.66858339309692
+          },
+          {
+            "augmentedLabels": [
+              {
+                "id": "separate",
+                "labels": []
+              }
+            ],
+            "correct": true,
+            "eligibleCount": 0,
+            "expected": null,
+            "id": "separated-lines",
+            "ocrMs": 83.79516673088074,
+            "point": [],
+            "predictRoundtripMs": 0,
+            "prepareRoundtripMs": 0,
+            "previousEligibleCount": 0,
+            "recognized": [
+              {
+                "bounds": [
+                  0.03124999921875,
+                  0.9199999996,
+                  0.15625,
+                  0.040000000000000036
+                ],
+                "confidence": 1,
+                "text": "Separated text"
+              },
+              {
+                "bounds": [
+                  0.406249999609375,
+                  0.44250000025,
+                  0.050000000000000044,
+                  0.029999999999999916
+                ],
+                "confidence": 1,
+                "text": "Save"
+              },
+              {
+                "bounds": [
+                  0.40625000059374994,
+                  0.3574999997,
+                  0.0625,
+                  0.030000000000000027
+                ],
+                "confidence": 1,
+                "text": "Delete"
+              }
+            ],
+            "selected": null,
+            "target": "Save Delete",
+            "totalSelectionMs": 83.87920832633972
+          },
+          {
+            "augmentedLabels": [
+              {
+                "id": "submit",
+                "labels": []
+              }
+            ],
+            "correct": true,
+            "eligibleCount": 0,
+            "expected": null,
+            "id": "wrapped-disabled",
+            "ocrMs": 91.79762506484985,
+            "point": [],
+            "predictRoundtripMs": 0,
+            "prepareRoundtripMs": 0,
+            "previousEligibleCount": 0,
+            "recognized": [
+              {
+                "bounds": [
+                  0.03124999794921881,
+                  0.92000000046875,
+                  0.1734375,
+                  0.03749999999999998
+                ],
+                "confidence": 1,
+                "text": "Form incomplete"
+              },
+              {
+                "bounds": [
+                  0.7093749992812499,
+                  0.25749999989999994,
+                  0.07187500000000002,
+                  0.030000000000000027
+                ],
+                "confidence": 1,
+                "text": "Submit"
+              },
+              {
+                "bounds": [
+                  0.7091835892059966,
+                  0.20869586972598564,
+                  0.07694532275199883,
+                  0.03260826110839854
+                ],
+                "confidence": 1,
+                "text": "request"
+              }
+            ],
+            "selected": null,
+            "target": "Submit request",
+            "totalSelectionMs": 91.86000001430511
+          }
+        ],
+        "coldWarmupMs": 1694.0959582328796,
+        "mode": "ocr-only",
+        "scope": "Generated offline UI fixtures. No capture, AX discovery, speech, input delivery, live application outcome, or training. OCR-only mode checks label binding without loading GoClick; full mode also requires model-point agreement. Cold warmup separate. One sample per case.",
+        "version": 2
+      },
+      "positiveTargets": 10,
+      "positiveTargetsSelected": 9,
+      "negativeRequests": 9,
+      "negativeRequestsAbstained": 9,
+      "exitCode": 1
+    },
+    {
+      "reportSHA256": "81a6e715270025363c35c07fc605bf331e37935c823ae159084b6438b7511ec7",
+      "report": {
+        "cases": [
+          {
+            "augmentedLabels": [
+              {
+                "id": "save",
+                "labels": [
+                  "Save"
+                ]
+              },
+              {
+                "id": "cancel",
+                "labels": [
+                  "Cancel"
+                ]
+              }
+            ],
+            "correct": true,
+            "eligibleCount": 1,
+            "expected": "save",
+            "id": "document",
+            "ocrMs": 84.00529170036316,
+            "point": [
+              0.744,
+              0.164
+            ],
+            "predictRoundtripMs": 167.88108325004578,
+            "prepareRoundtripMs": 336.1428333520889,
+            "previousEligibleCount": 0,
+            "recognized": [
+              {
+                "bounds": [
+                  0.03281249834375004,
+                  0.9275000003,
+                  0.171875,
+                  0.030000000000000027
+                ],
+                "confidence": 1,
+                "text": "Document editor"
+              },
+              {
+                "bounds": [
+                  0.5155246529148176,
+                  0.816900157633946,
+                  0.06895069479942317,
+                  0.031199684143066397
+                ],
+                "confidence": 1,
+                "text": "Cancel"
+              },
+              {
+                "bounds": [
+                  0.7170217182777575,
+                  0.8167543783046578,
+                  0.05189406275749209,
+                  0.03149124383926394
+                ],
+                "confidence": 1,
+                "text": "Save"
+              }
+            ],
+            "selected": "save",
+            "target": "Save",
+            "totalSelectionMs": 590.0017083883286
+          },
+          {
+            "augmentedLabels": [
+              {
+                "id": "home",
+                "labels": [
+                  "Home"
+                ]
+              },
+              {
+                "id": "files",
+                "labels": [
+                  "Files"
+                ]
+              },
+              {
+                "id": "settings",
+                "labels": [
+                  "Settings"
+                ]
+              }
+            ],
+            "correct": true,
+            "eligibleCount": 1,
+            "expected": "settings",
+            "id": "sidebar",
+            "ocrMs": 89.99333322048187,
+            "point": [
+              0.126,
+              0.765
+            ],
+            "predictRoundtripMs": 143.57458329200745,
+            "prepareRoundtripMs": 293.2172917127609,
+            "previousEligibleCount": 0,
+            "recognized": [
+              {
+                "bounds": [
+                  0.030843532164252674,
+                  0.9193919300481814,
+                  0.11942921876907348,
+                  0.03947690248489377
+                ],
+                "confidence": 1,
+                "text": "Workspace"
+              },
+              {
+                "bounds": [
+                  0.05466403608423975,
+                  0.7923951450491205,
+                  0.06098442673683166,
+                  0.03520971059799194
+                ],
+                "confidence": 1,
+                "text": "Home"
+              },
+              {
+                "bounds": [
+                  0.05468749969726563,
+                  0.6549999998906251,
+                  0.0484375,
+                  0.03249999999999997
+                ],
+                "confidence": 1,
+                "text": "Files"
+              },
+              {
+                "bounds": [
+                  0.05259920284572452,
+                  0.21440389981913288,
+                  0.08387899398803711,
+                  0.036490292549133274
+                ],
+                "confidence": 1,
+                "text": "Settings"
+              }
+            ],
+            "selected": "settings",
+            "target": "Settings",
+            "totalSelectionMs": 526.9428333044052
+          },
+          {
+            "augmentedLabels": [
+              {
+                "id": "import",
+                "labels": [
+                  "Import"
+                ]
+              },
+              {
+                "id": "export",
+                "labels": [
+                  "Export"
+                ]
+              },
+              {
+                "id": "archive",
+                "labels": [
+                  "Archive"
+                ]
+              }
+            ],
+            "correct": true,
+            "eligibleCount": 1,
+            "expected": "export",
+            "id": "export",
+            "ocrMs": 82.44887495040894,
+            "point": [
+              0.456,
+              0.59
+            ],
+            "predictRoundtripMs": 155.92229163646698,
+            "prepareRoundtripMs": 293.20708334445953,
+            "previousEligibleCount": 0,
+            "recognized": [
+              {
+                "bounds": [
+                  0.03257985832847403,
+                  0.9204567099776872,
+                  0.12234028577804566,
+                  0.04158657789230347
+                ],
+                "confidence": 1,
+                "text": "Project files"
+              },
+              {
+                "bounds": [
+                  0.07656250006696427,
+                  0.74999999975,
+                  0.06562500000000002,
+                  0.03500000000000003
+                ],
+                "confidence": 1,
+                "text": "Import"
+              },
+              {
+                "bounds": [
+                  0.6874406494246748,
+                  0.7546457792149318,
+                  0.07511870265007026,
+                  0.03320844173431392
+                ],
+                "confidence": 1,
+                "text": "Archive"
+              },
+              {
+                "bounds": [
+                  0.3827377945692966,
+                  0.3871626612393996,
+                  0.06577441096305847,
+                  0.038174676895141646
+                ],
+                "confidence": 1,
+                "text": "Export"
+              }
+            ],
+            "selected": "export",
+            "target": "Export",
+            "totalSelectionMs": 531.7303332090378
+          },
+          {
+            "augmentedLabels": [
+              {
+                "id": "cancel",
+                "labels": [
+                  "Cancel"
+                ]
+              },
+              {
+                "id": "apply",
+                "labels": [
+                  "Apply"
+                ]
+              }
+            ],
+            "correct": true,
+            "eligibleCount": 1,
+            "expected": "apply",
+            "id": "dialog",
+            "ocrMs": 88.20662498474121,
+            "point": [
+              0.636,
+              0.689
+            ],
+            "predictRoundtripMs": 152.20008325576782,
+            "prepareRoundtripMs": 290.4832499027252,
+            "previousEligibleCount": 0,
+            "recognized": [
+              {
+                "bounds": [
+                  0.03125000130859375,
+                  0.9200000001249999,
+                  0.20937500000000003,
+                  0.040000000000000036
+                ],
+                "confidence": 1,
+                "text": "Display preferences"
+              },
+              {
+                "bounds": [
+                  0.2343749996484375,
+                  0.2924999998875001,
+                  0.0703125,
+                  0.03249999999999997
+                ],
+                "confidence": 1,
+                "text": "Cancel"
+              },
+              {
+                "bounds": [
+                  0.6078124996386719,
+                  0.287499999890625,
+                  0.05781249999999993,
+                  0.03749999999999998
+                ],
+                "confidence": 1,
+                "text": "Apply"
+              }
+            ],
+            "selected": "apply",
+            "target": "Apply",
+            "totalSelectionMs": 531.0263333320618
+          },
+          {
+            "augmentedLabels": [
+              {
+                "id": "browse",
+                "labels": [
+                  "Browse"
+                ]
+              },
+              {
+                "id": "search",
+                "labels": [
+                  "Search"
+                ]
+              }
+            ],
+            "correct": true,
+            "eligibleCount": 1,
+            "expected": "search",
+            "id": "search",
+            "ocrMs": 92.40458333492279,
+            "point": [
+              0.798,
+              0.278
+            ],
+            "predictRoundtripMs": 159.22183334827423,
+            "prepareRoundtripMs": 295.30887508392334,
+            "previousEligibleCount": 0,
+            "recognized": [
+              {
+                "bounds": [
+                  0.031249998437500027,
+                  0.9199999999166667,
+                  0.18749999999999997,
+                  0.039999999999999925
+                ],
+                "confidence": 1,
+                "text": "Knowledge library"
+              },
+              {
+                "bounds": [
+                  0.08583198561170571,
+                  0.7067597711484519,
+                  0.07364853024482726,
+                  0.028980457782745273
+                ],
+                "confidence": 1,
+                "text": "Browse"
+              },
+              {
+                "bounds": [
+                  0.7264457578525654,
+                  0.7042999349853103,
+                  0.0689834833145141,
+                  0.03140012979507445
+                ],
+                "confidence": 1,
+                "text": "Search"
+              }
+            ],
+            "selected": "search",
+            "target": "Search",
+            "totalSelectionMs": 547.0741249322891
+          },
+          {
+            "augmentedLabels": [
+              {
+                "id": "back",
+                "labels": [
+                  "Back"
+                ]
+              },
+              {
+                "id": "continue",
+                "labels": [
+                  "Continue"
+                ]
+              }
+            ],
+            "correct": true,
+            "eligibleCount": 1,
+            "expected": "continue",
+            "id": "form",
+            "ocrMs": 82.17208337783813,
+            "point": [
+              0.762,
+              0.84
+            ],
+            "predictRoundtripMs": 148.7543749809265,
+            "prepareRoundtripMs": 295.513791680336,
+            "previousEligibleCount": 0,
+            "recognized": [
+              {
+                "bounds": [
+                  0.030670483166871286,
+                  0.9166897740851649,
+                  0.16674340963363646,
+                  0.04506066322326652
+                ],
+                "confidence": 1,
+                "text": "New workspace"
+              },
+              {
+                "bounds": [
+                  0.09374999962239583,
+                  0.14250000027083332,
+                  0.05156250000000001,
+                  0.03249999999999997
+                ],
+                "confidence": 1,
+                "text": "Back"
+              },
+              {
+                "bounds": [
+                  0.7187270170738626,
+                  0.14232744343517656,
+                  0.08754596710205076,
+                  0.030345113277435276
+                ],
+                "confidence": 1,
+                "text": "Continue"
+              }
+            ],
+            "selected": "continue",
+            "target": "Continue",
+            "totalSelectionMs": 526.5745000839233
+          },
+          {
+            "augmentedLabels": [
+              {
+                "id": "top",
+                "labels": [
+                  "Settings"
+                ]
+              },
+              {
+                "id": "bottom",
+                "labels": [
+                  "Settings"
+                ]
+              }
+            ],
+            "correct": true,
+            "eligibleCount": 1,
+            "expected": "bottom",
+            "id": "position",
+            "ocrMs": 88.25004172325134,
+            "point": [
+              0.481,
+              0.777
+            ],
+            "predictRoundtripMs": 150.64729154109955,
+            "prepareRoundtripMs": 298.22037506103516,
+            "previousEligibleCount": 0,
+            "recognized": [
+              {
+                "bounds": [
+                  0.029628818116668842,
+                  0.9195119253480608,
+                  0.12042986154556273,
+                  0.03847615003585814
+                ],
+                "confidence": 1,
+                "text": "Two panels"
+              },
+              {
+                "bounds": [
+                  0.4056932087934138,
+                  0.7378246124661609,
+                  0.08055009245872496,
+                  0.033417518138885605
+                ],
+                "confidence": 1,
+                "text": "Settings"
+              },
+              {
+                "bounds": [
+                  0.40616296178302747,
+                  0.19951138166201043,
+                  0.08142407536506657,
+                  0.03847723722457885
+                ],
+                "confidence": 1,
+                "text": "Settings"
+              }
+            ],
+            "selected": "bottom",
+            "target": "bottom Settings",
+            "totalSelectionMs": 537.2698749303818
+          },
+          {
+            "augmentedLabels": [
+              {
+                "id": "one",
+                "labels": [
+                  "Settings"
+                ]
+              },
+              {
+                "id": "two",
+                "labels": [
+                  "Settings"
+                ]
+              }
+            ],
+            "correct": true,
+            "eligibleCount": 2,
+            "expected": null,
+            "id": "duplicate",
+            "ocrMs": 90.84279179573059,
+            "point": [],
+            "predictRoundtripMs": 0,
+            "prepareRoundtripMs": 0,
+            "previousEligibleCount": 0,
+            "recognized": [
+              {
+                "bounds": [
+                  0.02964474447807186,
+                  0.9196455959189964,
+                  0.12039800882339477,
+                  0.03820880889892586
+                ],
+                "confidence": 1,
+                "text": "Two panels"
+              },
+              {
+                "bounds": [
+                  0.10156250044270834,
+                  0.4999999996875001,
+                  0.08124999999999999,
+                  0.03749999999999998
+                ],
+                "confidence": 1,
+                "text": "Settings"
+              },
+              {
+                "bounds": [
+                  0.6562016821720607,
+                  0.4997302127881127,
+                  0.08134663701057443,
+                  0.03803957462310792
+                ],
+                "confidence": 1,
+                "text": "Settings"
+              }
+            ],
+            "selected": null,
+            "target": "Settings",
+            "totalSelectionMs": 90.9428334236145
+          },
+          {
+            "augmentedLabels": [
+              {
+                "id": "save",
+                "labels": [
+                  "Save"
+                ]
+              },
+              {
+                "id": "cancel",
+                "labels": [
+                  "Cancel"
+                ]
+              }
+            ],
+            "correct": true,
+            "eligibleCount": 0,
+            "expected": null,
+            "id": "absent",
+            "ocrMs": 78.08941674232483,
+            "point": [],
+            "predictRoundtripMs": 0,
+            "prepareRoundtripMs": 0,
+            "previousEligibleCount": 0,
+            "recognized": [
+              {
+                "bounds": [
+                  0.03281249834375004,
+                  0.9275000003,
+                  0.171875,
+                  0.030000000000000027
+                ],
+                "confidence": 1,
+                "text": "Document editor"
+              },
+              {
+                "bounds": [
+                  0.5155246529148176,
+                  0.816900157633946,
+                  0.06895069479942317,
+                  0.031199684143066397
+                ],
+                "confidence": 1,
+                "text": "Cancel"
+              },
+              {
+                "bounds": [
+                  0.7170217182777575,
+                  0.8167543783046578,
+                  0.05189406275749209,
+                  0.03149124383926394
+                ],
+                "confidence": 1,
+                "text": "Save"
+              }
+            ],
+            "selected": null,
+            "target": "Delete",
+            "totalSelectionMs": 78.1782500743866
+          },
+          {
+            "augmentedLabels": [
+              {
+                "id": "conflict",
+                "labels": [
+                  "Delete"
+                ]
+              }
+            ],
+            "correct": true,
+            "eligibleCount": 0,
+            "expected": null,
+            "id": "conflict",
+            "ocrMs": 104.36570835113525,
+            "point": [],
+            "predictRoundtripMs": 0,
+            "prepareRoundtripMs": 0,
+            "previousEligibleCount": 0,
+            "recognized": [
+              {
+                "bounds": [
+                  0.031249997187500034,
+                  0.9200000003333333,
+                  0.346875,
+                  0.040000000000000036
+                ],
+                "confidence": 1,
+                "text": "Conflicting accessibility metadata"
+              },
+              {
+                "bounds": [
+                  0.406249999609375,
+                  0.44250000025,
+                  0.050000000000000044,
+                  0.029999999999999916
+                ],
+                "confidence": 1,
+                "text": "Save"
+              }
+            ],
+            "selected": null,
+            "target": "Save",
+            "totalSelectionMs": 104.42616677284241
+          },
+          {
+            "augmentedLabels": [
+              {
+                "id": "submit",
+                "labels": []
+              }
+            ],
+            "correct": true,
+            "eligibleCount": 0,
+            "expected": null,
+            "id": "disabled",
+            "ocrMs": 101.80687499046326,
+            "point": [],
+            "predictRoundtripMs": 0,
+            "prepareRoundtripMs": 0,
+            "previousEligibleCount": 0,
+            "recognized": [
+              {
+                "bounds": [
+                  0.03124999794921881,
+                  0.92000000046875,
+                  0.1734375,
+                  0.03749999999999998
+                ],
+                "confidence": 1,
+                "text": "Form incomplete"
+              },
+              {
+                "bounds": [
+                  0.717187499388021,
+                  0.1949999998541666,
+                  0.07343749999999993,
+                  0.032500000000000084
+                ],
+                "confidence": 1,
+                "text": "Submit"
+              }
+            ],
+            "selected": null,
+            "target": "Submit",
+            "totalSelectionMs": 101.8584166765213
+          },
+          {
+            "augmentedLabels": [
+              {
+                "id": "one",
+                "labels": []
+              },
+              {
+                "id": "two",
+                "labels": []
+              }
+            ],
+            "correct": true,
+            "eligibleCount": 0,
+            "expected": null,
+            "id": "overlap",
+            "ocrMs": 96.0322083234787,
+            "point": [],
+            "predictRoundtripMs": 0,
+            "prepareRoundtripMs": 0,
+            "previousEligibleCount": 0,
+            "recognized": [
+              {
+                "bounds": [
+                  0.031249998515625,
+                  0.9200000002857143,
+                  0.21718749999999998,
+                  0.040000000000000036
+                ],
+                "confidence": 1,
+                "text": "Overlapping controls"
+              },
+              {
+                "bounds": [
+                  0.4062499995625,
+                  0.4425000002999999,
+                  0.04999999999999999,
+                  0.030000000000000027
+                ],
+                "confidence": 1,
+                "text": "Save"
+              }
+            ],
+            "selected": null,
+            "target": "Save",
+            "totalSelectionMs": 96.08691668510437
+          },
+          {
+            "augmentedLabels": [
+              {
+                "id": "create",
+                "labels": [
+                  "Create"
+                ]
+              },
+              {
+                "id": "cancel",
+                "labels": [
+                  "Cancel"
+                ]
+              }
+            ],
+            "correct": false,
+            "eligibleCount": 0,
+            "expected": "create",
+            "id": "wrapped-create",
+            "ocrMs": 103.98737502098083,
+            "point": [],
+            "predictRoundtripMs": 0,
+            "prepareRoundtripMs": 0,
+            "previousEligibleCount": 0,
+            "recognized": [
+              {
+                "bounds": [
+                  0.03125000179687496,
+                  0.92499999959375,
+                  0.15,
+                  0.03249999999999997
+                ],
+                "confidence": 1,
+                "text": "Conversations"
+              },
+              {
+                "bounds": [
+                  0.4530462200188522,
+                  0.7670310273215055,
+                  0.06890755891799927,
+                  0.030937945842742898
+                ],
+                "confidence": 1,
+                "text": "Cancel"
+              },
+              {
+                "bounds": [
+                  0.7107708372102686,
+                  0.7665381916370185,
+                  0.0659583270549774,
+                  0.03192361593246462
+                ],
+                "confidence": 1,
+                "text": "Create"
+              },
+              {
+                "bounds": [
+                  0.7108747365293373,
+                  0.724515499128976,
+                  0.08918802738189702,
+                  0.030969003438949594
+                ],
+                "confidence": 0.5,
+                "text": "new chat"
+              }
+            ],
+            "selected": null,
+            "target": "Create new chat",
+            "totalSelectionMs": 104.10241663455963
+          },
+          {
+            "augmentedLabels": [
+              {
+                "id": "home",
+                "labels": [
+                  "Home"
+                ]
+              },
+              {
+                "id": "account",
+                "labels": [
+                  "Account preferences"
+                ]
+              }
+            ],
+            "correct": true,
+            "eligibleCount": 1,
+            "expected": "account",
+            "id": "wrapped-sidebar",
+            "ocrMs": 94.10462498664856,
+            "point": [
+              0.145,
+              0.538
+            ],
+            "predictRoundtripMs": 136.72754168510437,
+            "prepareRoundtripMs": 282.8189582824707,
+            "previousEligibleCount": 0,
+            "recognized": [
+              {
+                "bounds": [
+                  0.030781024777650955,
+                  0.9188461959365615,
+                  0.11955423355102537,
+                  0.040568370819091815
+                ],
+                "confidence": 1,
+                "text": "Workspace"
+              },
+              {
+                "bounds": [
+                  0.05463950588349731,
+                  0.792284933617073,
+                  0.06103348731994629,
+                  0.03543013334274292
+                ],
+                "confidence": 1,
+                "text": "Home"
+              },
+              {
+                "bounds": [
+                  0.05298027764434523,
+                  0.46650961053519613,
+                  0.08466444611549376,
+                  0.03448077917099002
+                ],
+                "confidence": 1,
+                "text": "Account"
+              },
+              {
+                "bounds": [
+                  0.053102778740788545,
+                  0.4198190483772286,
+                  0.11879444122314455,
+                  0.03786190271377565
+                ],
+                "confidence": 1,
+                "text": "preferences"
+              }
+            ],
+            "selected": "account",
+            "target": "Account preferences",
+            "totalSelectionMs": 513.8794583082199
+          },
+          {
+            "augmentedLabels": [
+              {
+                "id": "create",
+                "labels": [
+                  "Create a new workspace"
+                ]
+              }
+            ],
+            "correct": true,
+            "eligibleCount": 1,
+            "expected": "create",
+            "id": "wrapped-three",
+            "ocrMs": 90.77233326435089,
+            "point": [
+              0.643,
+              0.622
+            ],
+            "predictRoundtripMs": 144.74495840072632,
+            "prepareRoundtripMs": 294.27641665935516,
+            "previousEligibleCount": 0,
+            "recognized": [
+              {
+                "bounds": [
+                  0.031052761508539205,
+                  0.9213075856356508,
+                  0.08633197546005247,
+                  0.03988482952117922
+                ],
+                "confidence": 1,
+                "text": "Projects"
+              },
+              {
+                "bounds": [
+                  0.5546874995052083,
+                  0.40500000025000005,
+                  0.06562499999999993,
+                  0.030000000000000027
+                ],
+                "confidence": 1,
+                "text": "Create"
+              },
+              {
+                "bounds": [
+                  0.5546874995870535,
+                  0.3624999998571429,
+                  0.05781249999999993,
+                  0.02499999999999991
+                ],
+                "confidence": 1,
+                "text": "a new"
+              },
+              {
+                "bounds": [
+                  0.5530720355739608,
+                  0.31455073210556517,
+                  0.10635592937469485,
+                  0.03339853525161751
+                ],
+                "confidence": 1,
+                "text": "workspace"
+              }
+            ],
+            "selected": "create",
+            "target": "Create a new workspace",
+            "totalSelectionMs": 529.9657082557678
+          },
+          {
+            "augmentedLabels": [
+              {
+                "id": "one",
+                "labels": [
+                  "Open settings"
+                ]
+              },
+              {
+                "id": "two",
+                "labels": [
+                  "Open settings"
+                ]
+              }
+            ],
+            "correct": true,
+            "eligibleCount": 2,
+            "expected": null,
+            "id": "wrapped-duplicate",
+            "ocrMs": 89.28820824623108,
+            "point": [],
+            "predictRoundtripMs": 0,
+            "prepareRoundtripMs": 0,
+            "previousEligibleCount": 0,
+            "recognized": [
+              {
+                "bounds": [
+                  0.029687498781250023,
+                  0.91999999995,
+                  0.12187499999999998,
+                  0.039999999999999925
+                ],
+                "confidence": 1,
+                "text": "Two panels"
+              },
+              {
+                "bounds": [
+                  0.12500000001302083,
+                  0.4999999996875001,
+                  0.0546875,
+                  0.03749999999999998
+                ],
+                "confidence": 1,
+                "text": "Open"
+              },
+              {
+                "bounds": [
+                  0.12337155277035923,
+                  0.4571452270837496,
+                  0.07825689315795896,
+                  0.03820954561233514
+                ],
+                "confidence": 1,
+                "text": "settings"
+              },
+              {
+                "bounds": [
+                  0.6717887192952118,
+                  0.49966622325815124,
+                  0.05642256140708923,
+                  0.03816755294799812
+                ],
+                "confidence": 1,
+                "text": "Open"
+              },
+              {
+                "bounds": [
+                  0.6703125003794643,
+                  0.45749999973214284,
+                  0.078125,
+                  0.03749999999999998
+                ],
+                "confidence": 1,
+                "text": "settings"
+              }
+            ],
+            "selected": null,
+            "target": "Open settings",
+            "totalSelectionMs": 89.3905416727066
+          },
+          {
+            "augmentedLabels": [
+              {
+                "id": "conflict",
+                "labels": [
+                  "Delete"
+                ]
+              }
+            ],
+            "correct": true,
+            "eligibleCount": 0,
+            "expected": null,
+            "id": "wrapped-conflict",
+            "ocrMs": 100.35558319091797,
+            "point": [],
+            "predictRoundtripMs": 0,
+            "prepareRoundtripMs": 0,
+            "previousEligibleCount": 0,
+            "recognized": [
+              {
+                "bounds": [
+                  0.031249997187500034,
+                  0.9200000003333333,
+                  0.346875,
+                  0.040000000000000036
+                ],
+                "confidence": 1,
+                "text": "Conflicting accessibility metadata"
+              },
+              {
+                "bounds": [
+                  0.406250000546875,
+                  0.44250000008333334,
+                  0.06562499999999999,
+                  0.029999999999999916
+                ],
+                "confidence": 1,
+                "text": "Create"
+              },
+              {
+                "bounds": [
+                  0.40450355732354276,
+                  0.3985059645213771,
+                  0.09099288582801818,
+                  0.03298807144165039
+                ],
+                "confidence": 1,
+                "text": "new chat"
+              }
+            ],
+            "selected": null,
+            "target": "Create new chat",
+            "totalSelectionMs": 100.43616664409637
+          },
+          {
+            "augmentedLabels": [
+              {
+                "id": "separate",
+                "labels": []
+              }
+            ],
+            "correct": true,
+            "eligibleCount": 0,
+            "expected": null,
+            "id": "separated-lines",
+            "ocrMs": 92.77495837211609,
+            "point": [],
+            "predictRoundtripMs": 0,
+            "prepareRoundtripMs": 0,
+            "previousEligibleCount": 0,
+            "recognized": [
+              {
+                "bounds": [
+                  0.03124999921875,
+                  0.9199999996,
+                  0.15625,
+                  0.040000000000000036
+                ],
+                "confidence": 1,
+                "text": "Separated text"
+              },
+              {
+                "bounds": [
+                  0.406249999609375,
+                  0.44250000025,
+                  0.050000000000000044,
+                  0.029999999999999916
+                ],
+                "confidence": 1,
+                "text": "Save"
+              },
+              {
+                "bounds": [
+                  0.40625000059374994,
+                  0.3574999997,
+                  0.0625,
+                  0.030000000000000027
+                ],
+                "confidence": 1,
+                "text": "Delete"
+              }
+            ],
+            "selected": null,
+            "target": "Save Delete",
+            "totalSelectionMs": 92.85954165458679
+          },
+          {
+            "augmentedLabels": [
+              {
+                "id": "submit",
+                "labels": []
+              }
+            ],
+            "correct": true,
+            "eligibleCount": 0,
+            "expected": null,
+            "id": "wrapped-disabled",
+            "ocrMs": 92.92995822429657,
+            "point": [],
+            "predictRoundtripMs": 0,
+            "prepareRoundtripMs": 0,
+            "previousEligibleCount": 0,
+            "recognized": [
+              {
+                "bounds": [
+                  0.03124999794921881,
+                  0.92000000046875,
+                  0.1734375,
+                  0.03749999999999998
+                ],
+                "confidence": 1,
+                "text": "Form incomplete"
+              },
+              {
+                "bounds": [
+                  0.7093749992812499,
+                  0.25749999989999994,
+                  0.07187500000000002,
+                  0.030000000000000027
+                ],
+                "confidence": 1,
+                "text": "Submit"
+              },
+              {
+                "bounds": [
+                  0.7091835892059966,
+                  0.20869586972598564,
+                  0.07694532275199883,
+                  0.03260826110839854
+                ],
+                "confidence": 1,
+                "text": "request"
+              }
+            ],
+            "selected": null,
+            "target": "Submit request",
+            "totalSelectionMs": 92.9882082939148
+          }
+        ],
+        "coldWarmupMs": 6754.1997500658035,
+        "mode": "ocr-and-goclick",
+        "scope": "Generated offline UI fixtures. No capture, AX discovery, speech, input delivery, live application outcome, or training. OCR-only mode checks label binding without loading GoClick; full mode also requires model-point agreement. Cold warmup separate. One sample per case.",
+        "version": 2
+      },
+      "positiveTargets": 10,
+      "positiveTargetsSelected": 9,
+      "negativeRequests": 9,
+      "negativeRequestsAbstained": 9,
+      "exitCode": 1
+    }
+  ],
+  "inputImageSHA256s": {
+    "document": "a6a77f7d60be3671aa39b9fd1b92e933c853aa5454f2d3ba6c079b7dfa4f169b",
+    "sidebar": "49a4a5cd345ab316d3847abcab8ef4aceeaef9222775ec50ce6dde0c575f8286",
+    "export": "e344c854cd83c442adba6e7160b06d2e71af0295c242991c2a97708b02022aee",
+    "dialog": "e35ca326db9c8e7a02dc936563185ffd2ef158944756b42e4eb29fc520f7f684",
+    "search": "710f92e4ce77c4c7ee3c9e5291d5b1e9b4fd9c2f4be2efd98f87b1afa18b1aa2",
+    "form": "649b4c15c1e59cae1d0c4f95546cfd96511975e7181d1d04dae9b47929c13e9e",
+    "position": "ef4bbaa3f673f1fd643e5c0f50d4c2f2b3e934b93c98c1a23656b5a9157b1614",
+    "duplicate": "8f6f5c871549b8ed7384f290234810eb7e9b8a1e7238ea6cb700bb620b6d1110",
+    "absent": "a6a77f7d60be3671aa39b9fd1b92e933c853aa5454f2d3ba6c079b7dfa4f169b",
+    "conflict": "16fb88a0bf4e47f3a79ad5536031a9a460d82b0d29991b4262f81ebee437067e",
+    "disabled": "24cd905aaaca455182c2478b978dd933f5d9e6534c00d0a2cdf88d321a668be9",
+    "overlap": "e64220b877932bf45505b3a69d6c9e0c69f09b7eab7d0ccffeef79695903ddae",
+    "wrapped-create": "15ef9d427666d844abb97dcc4c94021ceb00ba1f5b67ed9f3a8326e8225a61be",
+    "wrapped-sidebar": "3ca4bf721b95c7f410002f78167042c9009a5aca12ebf0e3bbefa457482f4bec",
+    "wrapped-three": "aef968825c35553e919d321557f55dceb9a5d7c0b68a703debd9d03b9437c328",
+    "wrapped-duplicate": "69ecc998bb6762ead4a709adb3155850e9a661e6560242d96b5adbf409876fbc",
+    "wrapped-conflict": "db8c888cb8567347c81a23e8133307c225679c1d22ccb41225aa7bb9e363278e",
+    "separated-lines": "e874967fc5487cf527a76bf375e064f7a50153bc8990000273e748878c863a02",
+    "wrapped-disabled": "136485ff373ced2732b433853d7429acbdec39396fb07a1f7ed63caaa233655c"
+  },
+  "sourceSHA256s": {
+    "voice/Sources/VoiceCore/BrowserCommand.swift": "64e9e141236e1282521bdebc5607685692e32d0ccae0afcb005523b07e03fb19",
+    "voice/Sources/VoiceCore/Command.swift": "ff8b1403e1ee6c2f61096e3c424ff4800172920cae4635cdd5e31f65d659f7b5",
+    "voice/Sources/VoiceCore/ExistingText.swift": "ea4e9ffa6b1f46e16b79b8fe97e4ca17cd2b4ba763a849cb12c220bc0f1fa644",
+    "voice/Sources/VoiceCore/GroundedProposal.swift": "cb7ca6c2f36aa058866eff65f0ea3b3cff2c30efbbddb1af73cb354648ccbe92",
+    "voice/Sources/VoiceCore/GroundedSequence.swift": "a74c942d5ad35bf7e14d53d2fd30ca75449ce1b09a5d5a281b06c40b81f55f4b",
+    "voice/Sources/VoiceCore/InteractionRules.swift": "d40ec1dae5669eb54f8257eadb77a9347b8456528819a64f6ae97a3c3ee98284",
+    "voice/Sources/VoiceCore/NativeMenuLabels.swift": "a5e75f200ce3c1ede02978b2305c5f77c0889f9bf8c8cb12c821af1a69b2c316",
+    "voice/Sources/VoiceCore/NativeText.swift": "39b7a515df4bf4f2a8c1c838f5fb0c0ab4b83fcfe8f4dcd31e542388f402da31",
+    "voice/Sources/VoiceCore/NavigationEvidence.swift": "eebfd53ef11abe831c73c7ad1554b67d01d24f0b42f2773b2647f21758872d17",
+    "voice/Sources/VoiceCore/Observation.swift": "b95063ab79aef7aacb84046e90c495839bcf1f868fdb7dbe3bf0ee225deebfdd",
+    "voice/Sources/VoiceCore/PushToTalk.swift": "eec2632e910d05008e5f36fe28af958ab5d32e19f8250f236a5331e2669ffbd0",
+    "voice/Sources/VoiceCore/RuntimeConfiguration.swift": "1d4c10eeb2394db177d63b92758567d6862588ef8f026729f03ad1716a94b632",
+    "voice/Sources/VoiceCore/SpeechBoundary.swift": "f274d0d659607ca1e8339d502004f4e6a88179e0370b4d7e1ac6197608581411",
+    "voice/Sources/VoiceCore/VisualTarget.swift": "de75d049077e0bbab69bbdcaba1b0369d3e2fc6dd18379d7048415026ca4439c",
+    "voice/Sources/VoiceCore/VisualTextEvidence.swift": "b991a46063a8e7c497c50f5b42aa53cba56a5e54f0fad8e76efc1a8b5f91e92b",
+    "voice/Sources/VoiceCore/WebDestination.swift": "a58de4ae735af3118c5d3970d7b4d1fea37be87120ed85661ae92ac48ce48e1c",
+    "voice/Sources/VoiceCore/XSearchEvidence.swift": "d87db33ea0cd8668cc4ec8b4202aa7ca0b8df229bb45ef0f459c71523ceca911",
+    "voice/Sources/VoicePerception/GoClickWorker.swift": "1feef1833318906343f00874769de55153b081d36f4fdd3ccfabb9a7db3a617c",
+    "voice/Sources/VoicePerception/ScreenObserver.swift": "0d3724fe8ef7a3484ebba04fd8f7f931afa58e14ff68a1aa923c45b683062005",
+    "voice/tools/visual_grounding_check.swift": "3b24ac7fdb661ce5a9e0fe7a63db101032aed16026cade02a37275041d24b18b"
+  },
+  "binarySHA256": "2c846ad9a1037d913d9b6841d1494222030805571c2a80cf4094cf9e2e2c9bea",
+  "positiveControlBoxesImagePixels": {
+    "document": [
+      900,
+      100,
+      220,
+      64
+    ],
+    "sidebar": [
+      50,
+      580,
+      220,
+      64
+    ],
+    "export": [
+      470,
+      440,
+      220,
+      64
+    ],
+    "dialog": [
+      760,
+      520,
+      220,
+      64
+    ],
+    "search": [
+      910,
+      190,
+      220,
+      64
+    ],
+    "form": [
+      900,
+      640,
+      220,
+      64
+    ],
+    "position": [
+      500,
+      590,
+      220,
+      64
+    ],
+    "wrapped-create": [
+      890,
+      140,
+      280,
+      110
+    ],
+    "wrapped-sidebar": [
+      50,
+      380,
+      270,
+      110
+    ],
+    "wrapped-three": [
+      690,
+      430,
+      270,
+      145
+    ]
+  },
+  "model": {
+    "repo": "HongxinLi/GoClick-Base",
+    "revision": "05633a495f9d2ce823372d0c7fd9b0b4bb67c6fa",
+    "filesVerifiedAfterRun": true,
+    "modelAssetsLockSHA256": "2b76d2848e826239bec59eca6eaee62d23d99ad326a2c9b307e7273f53bcc0b8",
+    "workerSHA256": "e5e563ca19b9cee1c62bcef7a816c00fcff8cbceeee658e44712b44fd5d200c7"
+  },
+  "concurrency": {
+    "cpuTraining": true,
+    "otherGPUModelDuringFullRun": false
+  },
+  "audit": "All case identities/counts, outcome flags, image hashes/dimensions, unchanged compiled-source hashes and accepted model points checked. Negative requests stopped at label binding; this is not GoClick absent-target rejection evidence.",
+  "auditSourceSHA256": "424892d0edff3e0d75be211335d65c2ed7a5183466c2217a70d7c618ead2584f"
+}
