@@ -19,4 +19,15 @@ final class BrowserProtocolTests: XCTestCase {
         let reply=try JSONDecoder().decode(BrowserCapabilities.self,from:Data(#"{"ok":true,"protocolVersion":2,"verifiedDispatch":true}"#.utf8))
         XCTAssertNoThrow(try reply.requireVerifiedDispatch())
     }
+
+    func testSequenceDispatcherRequiresAdvertisedDocumentBinding() throws {
+        for json in [#"{"ok":true,"protocolVersion":2,"verifiedDispatch":true}"#,
+                     #"{"ok":true,"protocolVersion":2,"verifiedDispatch":true,"sequenceDispatch":false}"#,
+                     #"{"ok":true,"protocolVersion":2,"verifiedDispatch":false,"sequenceDispatch":true}"#] {
+            let reply=try JSONDecoder().decode(BrowserCapabilities.self,from:Data(json.utf8))
+            XCTAssertThrowsError(try reply.requireSequenceDispatch())
+        }
+        let reply=try JSONDecoder().decode(BrowserCapabilities.self,from:Data(#"{"ok":true,"protocolVersion":2,"verifiedDispatch":true,"sequenceDispatch":true}"#.utf8))
+        XCTAssertNoThrow(try reply.requireSequenceDispatch())
+    }
 }

@@ -1,0 +1,432 @@
+{
+  "sourceSHA256": {
+    "voice/Sources/VoiceCore/BrowserSequence.swift": "0e986642d087d93ac9bd22b7f39613212c09f38bcc54639e7d336cb098386ade",
+    "voice/Sources/VoiceCore/GroundedSequence.swift": "a74c942d5ad35bf7e14d53d2fd30ca75449ce1b09a5d5a281b06c40b81f55f4b",
+    "voice/Sources/VoiceCore/Observation.swift": "2f29752f562b2fa6dde8ef58814b088e0d134fe90262fef2688e5a44411d1ea7",
+    "voice/Sources/LocalVoice/BrowserBridge.swift": "38c92ed8a6167b0db3c4dba5035709a91a0627d1d300e4ff0d4f1a10144753eb",
+    "voice/Sources/LocalVoice/LocalVoiceApp.swift": "5fa6ac3b089d0776b4167dc51975b3fee79c8b9bb98a5e68b4fad5782a00724f",
+    "voice/browser/extension/controller.js": "3c7164bae007fa008c94c30f953103afac39b4c7c1504f9d52462e5f2e160fd6",
+    "voice/browser/tests/headless.cjs": "e1a99187b2f2b0cb30f1ca784ca1580c2ff4597b9cce3db961eab7a8ac6eaa92",
+    "voice/tools/browser_sequence_check.swift": "aa4d1a822e704b6184dd4c3575b3347f1a6a0347ba6d7c224db30cbd9f198c74",
+    "voice/browser/tests/sequences-headless.cjs": "497d9ad9f81b338481fc93314eecc4c6b6fa56d80f9e472b1321ed64bb9918ec"
+  },
+  "browser": "Chrome/153.0.8010.53",
+  "scope": "Actual Swift planner/executor; generated pages; simulated page clock; controlled model replies only in two routing cases; no microphone or personal browser",
+  "total": 29,
+  "passed": 29,
+  "rows": [
+    {
+      "name": "delayed test transport starts before clock advances",
+      "passed": true,
+      "verified": 2,
+      "error": null,
+      "observed": 4,
+      "dispatched": 2,
+      "modelCalls": 0,
+      "events": [],
+      "submits": 0,
+      "textWrites": 1,
+      "value": "Hello"
+    },
+    {
+      "name": "disclosure reveals field",
+      "passed": true,
+      "verified": 2,
+      "error": null,
+      "observed": 4,
+      "dispatched": 2,
+      "modelCalls": 0,
+      "events": [
+        "details"
+      ],
+      "submits": 0,
+      "textWrites": 1,
+      "value": "Hello"
+    },
+    {
+      "name": "focus and literal tail",
+      "passed": true,
+      "verified": 2,
+      "error": null,
+      "observed": 4,
+      "dispatched": 2,
+      "modelCalls": 0,
+      "events": [],
+      "submits": 0,
+      "textWrites": 1,
+      "value": "Hello, then click Send!"
+    },
+    {
+      "name": "three steps through popover",
+      "passed": true,
+      "verified": 3,
+      "error": null,
+      "observed": 6,
+      "dispatched": 3,
+      "modelCalls": 0,
+      "events": [
+        "filters"
+      ],
+      "submits": 0,
+      "textWrites": 1,
+      "value": "Hello"
+    },
+    {
+      "name": "exact click field then type",
+      "passed": true,
+      "verified": 2,
+      "error": null,
+      "observed": 4,
+      "dispatched": 2,
+      "modelCalls": 0,
+      "events": [],
+      "submits": 0,
+      "textWrites": 1,
+      "value": "Hello"
+    },
+    {
+      "name": "named region with duplicate field",
+      "passed": true,
+      "verified": 2,
+      "error": null,
+      "observed": 4,
+      "dispatched": 2,
+      "modelCalls": 0,
+      "events": [
+        "details"
+      ],
+      "submits": 0,
+      "textWrites": 1,
+      "value": ""
+    },
+    {
+      "name": "checkbox reveals field",
+      "passed": true,
+      "verified": 2,
+      "error": null,
+      "observed": 4,
+      "dispatched": 2,
+      "modelCalls": 0,
+      "events": [
+        "check"
+      ],
+      "submits": 0,
+      "textWrites": 1,
+      "value": "Hello"
+    },
+    {
+      "name": "native select followed by check",
+      "passed": true,
+      "verified": 2,
+      "error": null,
+      "observed": 4,
+      "dispatched": 2,
+      "modelCalls": 0,
+      "events": [
+        "Blue",
+        "check"
+      ],
+      "submits": 0,
+      "textWrites": 0
+    },
+    {
+      "name": "exact and conjunction",
+      "passed": true,
+      "verified": 2,
+      "error": null,
+      "observed": 4,
+      "dispatched": 2,
+      "modelCalls": 0,
+      "events": [
+        "check",
+        "details"
+      ],
+      "submits": 0,
+      "textWrites": 0
+    },
+    {
+      "name": "unverified click stops before fill",
+      "passed": true,
+      "verified": null,
+      "error": "Stopped at step 1 (0 verified): Action result could not be verified; it will not be repeated",
+      "observed": 1,
+      "dispatched": 1,
+      "modelCalls": 0,
+      "events": [
+        "noop"
+      ],
+      "submits": 0,
+      "textWrites": 0,
+      "value": ""
+    },
+    {
+      "name": "missing later field",
+      "passed": true,
+      "verified": null,
+      "error": "Stopped at step 2 (1 verified): Couldn\u2019t identify one available control; name its field, button or section",
+      "observed": 3,
+      "dispatched": 1,
+      "modelCalls": 0,
+      "events": [
+        "details"
+      ],
+      "submits": 0,
+      "textWrites": 0,
+      "value": ""
+    },
+    {
+      "name": "duplicate later field",
+      "passed": true,
+      "verified": null,
+      "error": "Stopped at step 2 (1 verified): Couldn\u2019t identify one available control; name its field, button or section",
+      "observed": 3,
+      "dispatched": 1,
+      "modelCalls": 0,
+      "events": [
+        "details"
+      ],
+      "submits": 0,
+      "textWrites": 0,
+      "value": ""
+    },
+    {
+      "name": "protected field never receives text",
+      "passed": true,
+      "verified": null,
+      "error": "Stopped at step 2 (1 verified): Couldn\u2019t identify one available control; name its field, button or section",
+      "observed": 3,
+      "dispatched": 1,
+      "modelCalls": 0,
+      "events": [
+        "details"
+      ],
+      "submits": 0,
+      "textWrites": 0,
+      "value": ""
+    },
+    {
+      "name": "unsupported submission preflight",
+      "passed": true,
+      "verified": null,
+      "error": "Use that operation in a separate utterance",
+      "observed": 0,
+      "dispatched": 0,
+      "modelCalls": 0,
+      "events": [],
+      "submits": 0,
+      "textWrites": 0,
+      "value": ""
+    },
+    {
+      "name": "unsupported later operation model abstains",
+      "passed": true,
+      "verified": null,
+      "error": "Sequence contains an unsupported or uncertain operation; no actions sent",
+      "observed": 0,
+      "dispatched": 0,
+      "modelCalls": 1,
+      "events": [],
+      "submits": 0,
+      "textWrites": 0,
+      "value": ""
+    },
+    {
+      "name": "search must be separate",
+      "passed": true,
+      "verified": null,
+      "error": "Use search, submission and tab changes in separate utterances",
+      "observed": 0,
+      "dispatched": 0,
+      "modelCalls": 0,
+      "events": [],
+      "submits": 0,
+      "textWrites": 0,
+      "value": ""
+    },
+    {
+      "name": "page replaced after verified step",
+      "passed": true,
+      "verified": null,
+      "error": "Stopped at step 1 (0 verified): Page changed after verification",
+      "observed": 2,
+      "dispatched": 1,
+      "modelCalls": 0,
+      "events": [
+        "details"
+      ],
+      "submits": 0,
+      "textWrites": 0,
+      "value": ""
+    },
+    {
+      "name": "focus stolen before typing",
+      "passed": true,
+      "verified": null,
+      "error": "Stopped at step 2 (1 verified): The verified field lost focus or the page changed; no text sent",
+      "observed": 3,
+      "dispatched": 1,
+      "modelCalls": 0,
+      "events": [],
+      "submits": 0,
+      "textWrites": 0,
+      "value": ""
+    },
+    {
+      "name": "field replaced before later step",
+      "passed": true,
+      "verified": null,
+      "error": "Stopped at step 2 (1 verified): The verified field lost focus or the page changed; no text sent",
+      "observed": 3,
+      "dispatched": 1,
+      "modelCalls": 0,
+      "events": [],
+      "submits": 0,
+      "textWrites": 0,
+      "value": ""
+    },
+    {
+      "name": "replacement between binding and dispatch",
+      "passed": true,
+      "verified": null,
+      "error": "Stopped at step 2 (1 verified): Action result could not be verified; it will not be repeated",
+      "observed": 3,
+      "dispatched": 2,
+      "modelCalls": 0,
+      "events": [
+        "details"
+      ],
+      "submits": 0,
+      "textWrites": 0,
+      "value": ""
+    },
+    {
+      "name": "readonly field fails without text",
+      "passed": true,
+      "verified": null,
+      "error": "Stopped at step 2 (1 verified): Action result could not be verified; it will not be repeated",
+      "observed": 3,
+      "dispatched": 2,
+      "modelCalls": 0,
+      "events": [
+        "details"
+      ],
+      "submits": 0,
+      "textWrites": 0,
+      "value": ""
+    },
+    {
+      "name": "large page uses filtered target observations",
+      "passed": true,
+      "verified": 2,
+      "error": null,
+      "observed": 4,
+      "dispatched": 2,
+      "modelCalls": 0,
+      "events": [
+        "details"
+      ],
+      "submits": 0,
+      "textWrites": 1,
+      "value": "Hello"
+    },
+    {
+      "name": "copy text after disclosure",
+      "passed": true,
+      "verified": 2,
+      "error": null,
+      "observed": 4,
+      "dispatched": 2,
+      "modelCalls": 0,
+      "events": [
+        "details"
+      ],
+      "submits": 0,
+      "textWrites": 1,
+      "value": "Copied"
+    },
+    {
+      "name": "case change after disclosure",
+      "passed": true,
+      "verified": 2,
+      "error": null,
+      "observed": 4,
+      "dispatched": 2,
+      "modelCalls": 0,
+      "events": [
+        "details"
+      ],
+      "submits": 0,
+      "textWrites": 1,
+      "value": "HELLO"
+    },
+    {
+      "name": "reverted first text edit blocks later checkbox",
+      "passed": true,
+      "verified": null,
+      "error": "Stopped at step 1 (0 verified): Action result could not be verified; it will not be repeated",
+      "observed": 1,
+      "dispatched": 1,
+      "modelCalls": 0,
+      "events": [],
+      "submits": 0,
+      "textWrites": 1,
+      "value": "hello"
+    },
+    {
+      "name": "scroll followed by fill",
+      "passed": true,
+      "verified": 2,
+      "error": null,
+      "observed": 4,
+      "dispatched": 2,
+      "modelCalls": 0,
+      "events": [],
+      "submits": 0,
+      "textWrites": 1,
+      "value": "Hello"
+    },
+    {
+      "name": "scroll at boundary stops before text",
+      "passed": true,
+      "verified": null,
+      "error": "Stopped at step 1 (0 verified): Action result could not be verified; it will not be repeated",
+      "observed": 1,
+      "dispatched": 1,
+      "modelCalls": 0,
+      "events": [],
+      "submits": 0,
+      "textWrites": 0,
+      "value": ""
+    },
+    {
+      "name": "changed document blocks named text dispatch",
+      "passed": true,
+      "verified": null,
+      "error": "Stopped at step 2 (1 verified): Action result could not be verified; it will not be repeated",
+      "observed": 3,
+      "dispatched": 2,
+      "modelCalls": 0,
+      "events": [
+        "check"
+      ],
+      "submits": 0,
+      "textWrites": 0,
+      "value": "hello"
+    },
+    {
+      "name": "mixed learned phrase uses fresh state",
+      "passed": true,
+      "verified": 2,
+      "error": null,
+      "observed": 4,
+      "dispatched": 2,
+      "modelCalls": 2,
+      "events": [
+        "details"
+      ],
+      "submits": 0,
+      "textWrites": 1,
+      "value": "Hello"
+    }
+  ]
+}

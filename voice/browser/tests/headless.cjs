@@ -53,10 +53,13 @@ class Headless {
     const expression=`LocalVoiceDOM.runVerified({...${JSON.stringify({op,...rest})},expectedURL:location.href,deadline:Date.now()+2200})`;
     if(!this.virtualTime)return this.evaluate(expression,true);
     // Opt-in deterministic fixture timing. Benchmark callers keep the real clock.
-    // Start the action while paused before advancing its page and verifier timers.
+    // A CDP send order is not a start acknowledgement: Emulation can advance
+    // before Runtime begins evaluating. Store the promise and await the synchronous
+    // start reply while paused, then advance its page and verifier timers.
+    await this.evaluate(`globalThis.__localVoiceFixturePending=${expression}; true`,true);
     try {
       const [result]=await Promise.all([
-        this.evaluate(expression,true),
+        this.evaluate('globalThis.__localVoiceFixturePending',true),
         this.call('Emulation.setVirtualTimePolicy',{policy:'advance',budget:1000},true),
       ]);
       return result;

@@ -153,6 +153,11 @@ continue to a newly revealed control. Changes must persist for 120 ms within a
 500 ms observation budget. Unrelated mutations, contradictory state and replaced
 targets do not establish success. See [browser outcome checks](voice/browser/OUTCOMES.md).
 
+Exact and learned browser sequences share the same verification path. Try
+`click Details then fill Message with Hello`, or `click Filters then focus
+Reference number then type AB-123`. Exact commands need no model call. See
+[sequence behavior and offline evidence](voice/browser/SEQUENCES.md).
+
 Standard browser widgets also support named activation: switches, checkboxes,
 radio buttons, listbox options, menu items and custom links. Existing local
 semantic aliases can select these observed controls. Toggle/selection state is
@@ -173,6 +178,7 @@ npm run test:outcomes
 npm run test:aria
 npm run test:existing-text
 npm run test:scoped-targets
+npm run test:sequences
 python3.11 voice/browser/setup.py
 python3.11 voice/browser/tests/test_native_host.py
 ```

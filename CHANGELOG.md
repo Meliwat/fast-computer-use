@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+- Route exact and learned browser sequences through the same result checks.
+  Resolve each target from fresh state; stop after an unverified action. Exact
+  commands skip the language model. Includes 29 Swift-to-Chrome fixture checks.
+- Extension 0.4.7 includes native select controls in named observations and rejects
+  commands bound to a previous document before dispatch.
+
 - Resolve repeated browser control names inside a named section, form, group or
   dialog. Preserve container identity across observation, focus and verification.
 - Extension 0.4.6 includes 32 offline scope regressions; ambiguous or changing
@@ -58,7 +64,7 @@ planners and fine-tuned visual models are excluded.
 ### Validation scope
 
 The runtime baseline passed 90 Swift tests, 51 packaging/installation tests,
-22 browser unit tests, 31 disclosure, 37 widget and 28 existing-text browser cases,
+22 browser unit tests, 31 disclosure, 37 widget and 29 existing-text browser cases,
 plus rich-text editor checks. These are authored fixtures, not universal app/site
 compatibility or an end-to-end speech benchmark. The release smoke results are
 also recorded in the GitHub release body.

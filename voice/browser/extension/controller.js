@@ -1,6 +1,6 @@
 /* Generic DOM actions plus a read-only X search demo verifier. No eval or network. */
 (() => {
-  if (globalThis.LocalVoiceDOM?.version === 16) return;
+  if (globalThis.LocalVoiceDOM?.version === 17) return;
   globalThis.LocalVoiceDOM?.dispose?.();
   const documentId = crypto.randomUUID();
   const identities = new WeakMap();
@@ -340,6 +340,7 @@
       loaded:!!region && visible(region) && postsTab && !loading && articles.length>0 && links.length>0};
   }
   function checkContext(request) {
+    if (request.documentId && request.documentId !== documentId) throw Error('Page changed before the action');
     if (request.expectedURL !== location.href) throw Error('Page changed before the action');
     if (!document.hasFocus()) throw Error('Tab lost focus; no action sent');
     if (!Number.isFinite(request.deadline) || Date.now() > request.deadline) throw Error('Command expired; no action sent');
@@ -440,7 +441,7 @@
   function observe(target) {
     flush();
     const context=targetContext(target),scope=context.scope;
-    const all=controls().filter(el=>within(scope,el) && visible(el) && (typeof target!=='string' || (clickable(el) && matchesTarget(el,context.target))));
+    const all=controls().filter(el=>within(scope,el) && visible(el) && (typeof target!=='string' || ((clickable(el) || el.matches('select')) && matchesTarget(el,context.target))));
     const observationId=`${documentId}/${++observationSequence}`;
     observations.set(observationId,new Map(all.slice(0,48).map(el=>[identity(el),{signature:signature(el),scope:context.qualified?scope:null,query:context.qualified?target:null}])));
     while(observations.size>4) observations.delete(observations.keys().next().value);
@@ -559,7 +560,7 @@
     let before,el;
     try {
       checkContext(request);
-      if(request.op==='capabilities') return {...run(request),verifiedDispatch:true,existingTextOperations:true,message:'Verified dispatcher'};
+      if(request.op==='capabilities') return {...run(request),verifiedDispatch:true,existingTextOperations:true,sequenceDispatch:true,message:'Verified dispatcher'};
       if(request.op==='observe') return run(request);
       if(request.op==='observeXSearch') return {ok:true,xSearch:xSearchEvidence(request.value),message:'Search state observed'};
       if(['copyText','changeCase'].includes(request.op)) return runExistingText(request,commandId,started);
@@ -625,5 +626,5 @@
       return {ok:false,commandId,outcome:before?'unverified':'failed',error:error.message};
     }
   }
-  globalThis.LocalVoiceDOM=Object.freeze({version:16,run,runVerified,observe,dispose:()=>observer.disconnect()});
+  globalThis.LocalVoiceDOM=Object.freeze({version:17,run,runVerified,observe,dispose:()=>observer.disconnect()});
 })();
